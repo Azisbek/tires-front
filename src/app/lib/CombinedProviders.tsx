@@ -1,9 +1,10 @@
-import { Provider } from 'react-redux';
-import { RouterProvider } from 'react-router-dom';
-import { store } from 'app/model/store';
-import { RouterLayout } from '../layout/RouterLayout';
-import { router } from 'app/routes/routes';
+import { Provider } from 'react-redux'
+import { RouterProvider } from 'react-router-dom'
 
+import { store } from 'app/model/store'
+import { router } from 'app/routes/routes'
+
+import { RouterLayout } from '../layout/RouterLayout'
 
 export function CombinedProviders() {
   return (
@@ -12,5 +13,5 @@ export function CombinedProviders() {
         <RouterProvider router={router} />
       </RouterLayout>
     </Provider>
-  );
+  )
 }

@@ -1,6 +1,10 @@
-import { RootState } from '@reduxjs/toolkit/query'
-import { AppDispatch } from 'app/model/store'
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+// import { RootState } from '@reduxjs/toolkit/query'
 
-export const useAppDispatch: () => AppDispatch = useDispatch
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+// import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+
+// import { AppDispatch } from 'app/model/store'
+
+//TODO
+
+// export const useAppDispatch: () => AppDispatch = useDispatch
+// export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector

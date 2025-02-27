@@ -1,8 +1,9 @@
-import { lazy } from "react";
-import { createBrowserRouter } from "react-router-dom";
-import { navigationMap } from "shared/model/navigation";
+import { lazy } from 'react'
+import { createBrowserRouter } from 'react-router-dom'
 
-const Home = lazy(() => import("pages/home"));
+import { navigationMap } from 'shared/model/navigation'
+
+const Home = lazy(() => import('pages/home'))
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+])
 
-export default router;
+export default router

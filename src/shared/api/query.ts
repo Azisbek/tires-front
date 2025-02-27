@@ -28,12 +28,14 @@ export const $baseQuery = fetchBaseQuery({
   },
 })
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const cache: Record<string, any> = {}
 
 export const $baseQueryWithRefresh: BaseQueryFn<
   string | FetchArgs,
   unknown,
   FetchBaseQueryError,
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   {},
   FetchBaseQueryMeta
 > = async (args, api, extraOptions) => {

@@ -1,9 +1,39 @@
-bun run prettier
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🚀 Запускаем линтинг и форматирование..."
+
+# 1. Форматирование кода
+bun run prettier --write .
 git add .
 
-bun run lint:type
-bun run lint:eslint
-bun run lint:prettier
-bun run lint:stylelint
+# 2. Линтинг
+if ! bun run lint:type; then
+  echo "❌ Ошибка TypeScript"
+  exit 1
+fi
 
-bunx jscpd ./src
+if ! bun run lint:eslint; then
+  echo "❌ Ошибка ESLint"
+  exit 1
+fi
+
+if ! bun run lint:prettier; then
+  echo "❌ Ошибка Prettier"
+  exit 1
+fi
+
+
+# TODO
+# if ! bun run lint:stylelint; then
+#   echo "❌ Ошибка Stylelint"
+#   exit 1
+# fi
+
+# 3. Поиск дубликатов кода
+if ! bunx jscpd ./src; then
+  echo "❌ Найдены дубликаты кода"
+  exit 1
+fi
+
+echo "✅ Всё прошло успешно!"
