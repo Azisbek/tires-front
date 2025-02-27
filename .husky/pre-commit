@@ -23,12 +23,10 @@ if ! bun run lint:prettier; then
   exit 1
 fi
 
-
-# TODO
-# if ! bun run lint:stylelint; then
-#   echo "❌ Ошибка Stylelint"
-#   exit 1
-# fi
+if ! bun run lint:stylelint; then
+  echo "❌ Ошибка Stylelint"
+  exit 1
+fi
 
 # 3. Поиск дубликатов кода
 if ! bunx jscpd ./src; then
