@@ -1,0 +1,9 @@
+bun run prettier
+git add .
+
+bun run lint:type
+bun run lint:eslint
+bun run lint:prettier
+bun run lint:stylelint
+
+bunx jscpd ./src
