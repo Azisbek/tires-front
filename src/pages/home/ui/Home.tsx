@@ -1,5 +1,5 @@
-// import s from './Home.module.scss'
+import s from './Home.module.scss'
 
 export function Home() {
-  return <div>Home</div>
+  return <div className={s.container}>Home</div>
 }

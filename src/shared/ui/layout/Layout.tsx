@@ -1,8 +1,7 @@
 import { PropsWithOptionalChildren } from 'shared/types/PropsWithChildren'
 
-//TODO
-// import styles from './Layout.module.scss'
+import styles from './Layout.module.scss'
 
 export function Layout({ children }: PropsWithOptionalChildren) {
-  return <div>{children}</div>
+  return <div className={styles.root}>{children}</div>
 }
