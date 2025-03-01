@@ -13,8 +13,7 @@
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint '**/*.scss'",
     "prettier": "prettier --write .",
-    "prepare": "husky",
-    "jscpd": "jscpd ./src"
+    "prepare": "husky"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
@@ -34,10 +33,6 @@
       "bun run lint:eslint",
       "bun run lint:prettier",
       "bun run lint:stylelint",
-      "git add"
-    ],
-    "src/**/*": [
-      "bunx jscpd ./src",
       "git add"
     ]
   },
