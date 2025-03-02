@@ -1,5 +1,12 @@
-import s from './Home.module.scss'
+import { MainBanner } from '../../../widget/banner'
+import { HomeFilter } from '../../../widget/home-filter/ui/HomeFilter'
 
 export function Home() {
-  return <div className={s.container}>Home</div>
+  return (
+    <>
+      <MainBanner />
+
+      <HomeFilter />
+    </>
+  )
 }
