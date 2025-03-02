@@ -1,0 +1,22 @@
+.stocks {
+  display: grid;
+
+  .stocksSpan {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .stocksContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media screen and ((max-width: 480px)) {
+  .stocksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
