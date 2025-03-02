@@ -1,5 +1,9 @@
-import s from './Home.module.scss'
+// import s from './Home.module.scss'
+import { Partners } from '../../../widget/partners/ui/Partners';
+
 
 export function Home() {
-  return <div className={s.container}>Home</div>
+  return <div>
+    <Partners />
+  </div>
 }
