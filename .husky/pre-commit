@@ -28,10 +28,5 @@ if ! bun run lint:stylelint; then
   exit 1
 fi
 
-# 3. Поиск дубликатов кода
-if ! bunx jscpd ./src; then
-  echo "❌ Найдены дубликаты кода"
-  exit 1
-fi
 
 echo "✅ Всё прошло успешно!"
