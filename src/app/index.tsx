@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 
 import { CombinedProviders } from 'app/lib/CombinedProviders'
 
-// import "shared/styles/global.scss"
+import 'shared/styles/global.scss'
 
 const root = document.getElementById('root')
 
