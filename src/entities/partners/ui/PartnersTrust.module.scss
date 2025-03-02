@@ -1,98 +1,97 @@
-.partnersTrustSection {
+.partnersTrust {
     width: 100%;
     overflow: hidden;
     background: #fff;
-    padding: 40px 0;
-  }
-  
-  .partnersTrustSection__title {
+    padding: 20px 0;
+}
+
+.title {
     font-weight: 600;
     font-size: 32px;
     color: #1A1E29;
     line-height: 48px;
     text-align: center;
     margin-bottom: 30px;
-  }
-  
-  .partnersTrustSection__container {
+}
+
+.container {
     margin: 0 auto;
     width: 90%;
-  }
-  
-  .partnersTrustSection__divider {
+}
+
+.divider {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     width: 100%;
-  }
-  
-  .partnersTrustSection__marquee {
+}
+
+.marquee {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
     width: 100%;
     padding: 50px 0;
-  }
-  
-  .partnersTrustSection__marqueeContent {
+}
+
+.marqueeContent {
     display: flex;
     align-items: center;
     gap: 80px;
     width: max-content;
     animation: marqueeScroll 15s linear infinite;
     will-change: transform;
-  }
-  
-  .partnersTrustSection__marqueeContent img {
+}
+
+.marqueeContent img {
     height: 40.8px;
     flex-shrink: 0;
     object-fit: contain;
-  }
-  
-  @keyframes marqueeScroll {
+}
+
+@keyframes marqueeScroll {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  
+
     to {
-      transform: translateX(-50%);
+        transform: translateX(-50%);
     }
-  }
-  
-  /* Мобильная версия */
-  @media (max-width: 768px) {
-    .partnersTrustSection__title {
-      font-size: 20px;
-      line-height: 30px;
-      margin-bottom: 20px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .title {
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 20px;
     }
-  
-    .partnersTrustSection__divider {
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      width: 100%;
+
+    .divider {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
     }
-  
-    .partnersTrustSection__marquee {
-      overflow: visible;
-      white-space: normal;
+
+    .marquee {
+        overflow: visible;
+        white-space: normal;
     }
-  
-    .partnersTrustSection__marqueeContent {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      justify-content: center;
-      animation: none;
-      margin: 0 auto;
+
+    .marqueeContent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        justify-content: center;
+        animation: none;
+        margin: 0 auto;
     }
-  
-    .partnersTrustSection__marqueeContent img {
-      width: 120px;
-      height: auto;
+
+    .marqueeContent img {
+        width: 120px;
+        height: auto;
     }
-  
-    .partnersTrustSection__brand {
-      display: none;
+
+    .logoDesktopV {
+        display: none;
     }
-  }
-  
+}
