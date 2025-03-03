@@ -1,0 +1,24 @@
+.promotion {
+    display: grid;
+  
+    .promotionSpan {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 600;
+      padding-bottom: 50px;
+      padding-top: 20px;
+    }
+  
+    .promotionContainer {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  
+  @media screen and ((max-width: 480px)) {
+    .promotionContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  }
