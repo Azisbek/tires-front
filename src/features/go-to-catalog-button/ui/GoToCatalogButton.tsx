@@ -1,10 +1,14 @@
-import React from 'react'
-import { Button } from 'shared/ui/button'
-import styles from './GoToCatalogButton.module.scss'
+import { AppButton } from 'shared/ui/AppButton/AppButton'
+
+import s from './GoToCatalogButton.module.scss'
 
 export const GoToCatalogButton = () => {
   return (
-    <Button link='/Catalog' className={styles.button}>Посмотреть все шины</Button>
+    <AppButton
+      variant={'borderWhite'}
+      className={s.button}
+    >
+      Посмотреть все шины
+    </AppButton>
   )
 }
-

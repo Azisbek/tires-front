@@ -1,20 +1,22 @@
 import FavoriteIcon from 'shared/assets/icon/favorite-icon.svg'
-import { Button } from 'shared/ui/button'
+import { AppButton } from 'shared/ui/AppButton/AppButton'
 
-import styles from './FavoriteButton.module.scss'
+import s from './FavoriteButton.module.scss'
 
 export const FavoriteButton = ({ size }: { size: string }) => {
   console.log(size)
 
   return (
-    <Button
-      style={{ width: '40px' }}
-      className={styles.favorite}
+    <div
+      style={{ width: size }}
+      className={s.favorite}
     >
-      <img
-        src={FavoriteIcon}
-        alt="favorite"
-      />
-    </Button>
+      <AppButton variant="borderWhite">
+        <img
+          src={FavoriteIcon}
+          alt="favorite"
+        />
+      </AppButton>
+    </div>
   )
 }

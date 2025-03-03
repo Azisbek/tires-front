@@ -21,8 +21,6 @@ export const ProductSeason: React.FC<{
       src={seasonIcons[season]}
       alt={season}
       className={className}
-      // width={20}
-      // height={20}
     />
   )
 }

@@ -2,11 +2,11 @@ import React from 'react'
 
 import commentIcon from 'shared/assets/icon/comment-icon.svg'
 
-import styles from './CommentCounter.module.scss'
+import s from './CommentCounter.module.scss'
 
-const CommentCounter = ({ commentQuantity }: { commentQuantity: number }) => {
+export const CommentCounter = ({ commentQuantity }: { commentQuantity: number }) => {
   return (
-    <div className={styles.comment}>
+    <div className={s.comment}>
       <img
         src={commentIcon}
         alt="comment"
@@ -16,4 +16,4 @@ const CommentCounter = ({ commentQuantity }: { commentQuantity: number }) => {
   )
 }
 
-export default CommentCounter
+
