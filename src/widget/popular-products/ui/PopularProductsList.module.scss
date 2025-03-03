@@ -1,0 +1,20 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  align-items: center;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 86px 0 34px;
+}
+.title {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 600;
+  color: #1A1E29;
+}
