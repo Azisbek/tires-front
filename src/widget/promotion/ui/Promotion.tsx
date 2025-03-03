@@ -1,6 +1,8 @@
-import foto from '../../../shared/assets/img/Rectangle.png'
-import s from './Promotion.module.scss'
 import { PromotionCard } from 'entities/promotionCard/ui/PromotionCard'
+
+import foto from '../../../shared/assets/img/Rectangle.png'
+
+import s from './Promotion.module.scss'
 
 // Временно пока нет бека
 const PromitionData = [
