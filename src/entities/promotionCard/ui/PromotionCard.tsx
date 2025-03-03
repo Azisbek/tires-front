@@ -1,36 +1,46 @@
 import iconca from '../../../shared/assets/icon/Union.png'
-import s from '../ui/PrimitionCard.module.scss'
 
-interface Product {
-  id: number
+import s from './PromotionCard.module.scss'
+
+interface Props {
   title: string
   tags: string[]
   expiryDate: string
   imageUrl: string
 }
 
-interface ProductStocksListProps {
-  product: Product
-}
-
-export const PromotionCard: React.FC<ProductStocksListProps> = ({
-  product,
-}) => {
+export function PromotionCard({ title, tags, expiryDate, imageUrl }: Props) {
   return (
-    <div className={s.stocks}>
+    <div className={s.promotion}>
       <img
-        src={product.imageUrl}
-        alt={product.title}
+        className={s.promotionImage}
+        src={imageUrl}
+        alt={title}
       />
-      <p>{product.title}</p>
-      <button className={s.stocksBtn}>{product.tags[0]}</button>
-      <button className={s.stocksBtn}>{product.tags[1]}</button>
-      <div>
-        <img
-          src={iconca}
-          alt="Union iconca"
-        />
-        Действует до: <b>{product.expiryDate}</b>
+
+      <div className={s.promotionContent}>
+        <p className={s.title}>{title}</p>
+
+        <div className={s.promotionTags}>
+          {tags.map((tag, index) => (
+            <p
+              key={index}
+              className={s.tag}
+            >
+              {tag}
+            </p>
+          ))}
+        </div>
+
+        <div className={s.promotionDate}>
+          <img
+            src={iconca}
+            alt="Union iconca"
+          />
+          <p>
+            Действует до: <span>{expiryDate}</span>
+          </p>
+        </div>
       </div>
     </div>
   )

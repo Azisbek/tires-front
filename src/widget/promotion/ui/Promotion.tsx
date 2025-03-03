@@ -1,6 +1,8 @@
 import { PromotionCard } from 'entities/promotionCard/ui/PromotionCard'
 
-import s from './Stocks.module.scss'
+import { AppButton } from 'shared/ui/AppButton/AppButton'
+
+import s from './Promotion.module.scss'
 
 // Временно пока нет бека
 const StockData = [
@@ -9,37 +11,42 @@ const StockData = [
     title: 'Тормозные колодки со скидкой 10%',
     tags: ['Диски', 'Шины'],
     expiryDate: '30.09.2021',
-    imageUrl: '',
+    imageUrl: 'src/shared/assets/imgs/noneImage.png',
   },
   {
     id: 2,
     title: 'Тормозные колодки со скидкой 10%',
     tags: ['Диски', 'Шины'],
     expiryDate: '30.09.2021',
-    imageUrl: '',
+    imageUrl: 'src/shared/assets/imgs/noneImage.png',
   },
   {
     id: 3,
     title: 'Тормозные колодки со скидкой 10%',
     tags: ['Диски', 'Шины'],
     expiryDate: '30.09.2021',
-    imageUrl: '',
+    imageUrl: 'src/shared/assets/imgs/noneImage.png',
   },
 ]
 
 export const Promotion = () => {
   return (
-    <div className={s.stocks}>
-      <p className={s.stocksSpan}>Акции</p>
+    <div className={s.promotion}>
+      <p className={s.title}>Акции</p>
 
-      <div className={s.stocksContainer}>
+      <div className={s.promotionContainer}>
         {StockData.map((product) => (
           <PromotionCard
             key={product.id}
-            product={{ ...product }}
+            title={product.title}
+            tags={product.tags}
+            expiryDate={product.expiryDate}
+            imageUrl={product.imageUrl}
           />
         ))}
       </div>
+
+      <AppButton className={s.btn} variant="borderWhite">Посмотреть все шины</AppButton>
     </div>
   )
 }

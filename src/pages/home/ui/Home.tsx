@@ -8,8 +8,8 @@ export function Home() {
       <MainBanner />
 
       <HomeFilter />
-        
-        <Promotion />
+
+      <Promotion />
     </>
   )
 }
