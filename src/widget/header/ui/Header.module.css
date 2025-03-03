@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #111;
+  height: 85px;
+  font-family: "IBM Plex Sans", serif;
+}
+
+/* .nav {
+ 
+} */
+
+.logo {
+  
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}

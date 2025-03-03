@@ -1,0 +1,156 @@
+.menu {
+  display: flex;
+  position: relative;
+  gap: 60px;
+  list-style: none;
+}
+
+
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.menuContent {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  background-color: #2B3143;
+  width: 100vw;
+}
+
+hr {
+  border: none; 
+  border-top: 1px solid #3E465F;
+}
+
+
+.menuContent a:hover {
+  background-color: #f1f1f1;
+}
+
+.tiresItem {
+  display: flex;
+  gap: 24px;
+}
+
+.tireInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptionTires {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  text-decoration: none;
+  color: #FF850E;
+  margin: 16px 0;
+}
+
+.tireTypes {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #E5E5E5;
+  margin: 8px 0;
+}
+
+.tireSizes {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #E5E5E5;
+}
+
+.accessoriesList  a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.accessoriesList li {
+  list-style: none;
+  margin: 11px 0;
+}
+
+
+.servicesButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.servicesContent {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  background-color: #2B3143;
+  width: 100vw;
+}
+
+.servicesContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.servicesContent a:hover {
+  background-color: #f1f1f1;
+}
+
+.servicesListLeft {
+  display: flex;
+  gap: 24px;
+}
+
+.servicesInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptionServices {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #FF850E !important;
+}
+
+.serviceTime {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #E5E5E5;
+}
+
+.servicePrice {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #E5E5E5;
+}
+
+.servicesListRight  a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.servicesListRight li {
+  list-style: none;
+}
