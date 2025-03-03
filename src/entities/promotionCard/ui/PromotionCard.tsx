@@ -1,4 +1,5 @@
 import iconca from '../../../shared/assets/icon/Icon.png'
+
 import s from './PromotionCard.module.scss'
 
 interface Product {
@@ -8,16 +9,22 @@ interface Product {
   imageUrl: string
 }
 
-export function PromotionCard({title, tags, expiryDate, imageUrl}: Product) {
+export function PromotionCard({ title, tags, expiryDate, imageUrl }: Product) {
   return (
     <div className={s.promotion}>
-      <img 
+      <img
         src={imageUrl}
         alt={title}
       />
       <p>{title}</p>
-        {tags.length > 0 && <button className={s.promotionBtn}>{tags[0]}</button>}
-        {tags.length > 1 && <button className={s.promotionBtn}>{tags[1]}</button>}
+      {tags.map((tag, index) => (
+        <button
+          key={index}
+          className={s.promotionBtn}
+        >
+          {tag}
+        </button>
+      ))}
       <div>
         <img
           src={iconca}
