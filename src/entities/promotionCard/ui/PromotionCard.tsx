@@ -17,7 +17,7 @@ export function PromotionCard({ title, tags, expiryDate, imageUrl }: Product) {
         alt={title}
       />
       <p>{title}</p>
-      {tags.map((tag, index) => (
+      {tags.map((tag, index) =>  (
         <button
           key={index}
           className={s.promotionBtn}
