@@ -10,13 +10,15 @@ interface Product {
 }
 
 interface ProductStocksListProps {
-  product: Product 
+  product: Product
 }
 
-export const PromitionCard: React.FC<ProductStocksListProps> = ({ product }) => {
+export const PromotionCard: React.FC<ProductStocksListProps> = ({
+  product,
+}) => {
   return (
     <div className={s.stocks}>
-      <img 
+      <img
         src={product.imageUrl}
         alt={product.title}
       />

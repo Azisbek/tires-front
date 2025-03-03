@@ -1,9 +1,9 @@
-import { Stocks } from '../../../widget/promotion/ui/Stocks'
+import { Promotion } from '../../../widget/promotion/ui/Promotion'
 
 export function Home() {
   return (
-    <div>
-      <Stocks />
-    </div>
+    <>
+      <Promotion />
+    </>
   )
 }
