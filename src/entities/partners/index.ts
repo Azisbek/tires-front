@@ -1,1 +1,2 @@
-export { PartnersTrust } from './ui/PartnersTrust';
+export { PartnersTrust } from './ui/partnersTrust/PartnersTrust'
+export { OurPartners } from './ui/ourPartners/OurPartners'
