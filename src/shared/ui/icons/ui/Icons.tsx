@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Icons.module.scss";
-import HeartIcon from "../../shared/assets/icon/icons/heart.svg";
-import CartIcon from "../../shared/assets/icon/icons/cart.svg";
+import HeartIcon from "../../../assets/icon/icons/heart.svg";
+import CartIcon from "../../../assets/icon/icons/cart.svg";
 
 export const Icons: React.FC = () => {
   return (
