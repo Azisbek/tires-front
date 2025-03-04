@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export type SeasonType = 'winter' | 'summer' | 'allSeason'
 
 
@@ -10,7 +12,7 @@ export interface ProductCardProps {
   productTitle: string
   inStock: number
   price: number
-  isFavorite: boolean
+  children: ReactNode
 }
 export interface ProductInfoType {
   inStock: number

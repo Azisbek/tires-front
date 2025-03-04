@@ -1,1 +1,0 @@
-export { GoToCatalogButton } from './ui/GoToCatalogButton.tsx';

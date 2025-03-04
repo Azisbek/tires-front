@@ -1,8 +1,8 @@
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
-import s from './GoToCatalogButton.module.scss'
+import s from './CatalogButton.module.scss'
 
-export const GoToCatalogButton = () => {
+export const CatalogBtn = () => {
   return (
     <AppButton
       variant={'borderWhite'}

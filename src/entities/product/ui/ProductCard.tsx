@@ -1,60 +1,57 @@
 import React from 'react'
 import { Rating } from 'react-simple-star-rating'
 
+import { formatPrice } from 'shared/lib/utils'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
-import { ProductCardProps } from '../model/types'
-
-import { CommentCounter } from './CommentCounter'
-import { ProductInfo } from './ProductInfo'
-import { ProductSeason } from './ProductSeason'
+import { ProductCardProps } from '../types/types'
 
 import s from './ProductCard.module.scss'
+import { CommentCounter } from './comment-counter'
+import { ProductSeason } from './product-season'
 
-interface ProductCardComponentProps {
-  product: ProductCardProps
-  FavoriteButton: React.FC<{ size: string }>
-}
-export const ProductCard: React.FC<ProductCardComponentProps> = ({
-  product,
-  FavoriteButton,
+const stockMessages = ['Нет в наличии', 'В наличии']
+
+export const ProductCard: React.FC<ProductCardProps> = ({
+  season,
+  productImg,
+  rating,
+  commentQuantity,
+  productTitle,
+  inStock,
+  price,
+  children,
 }) => {
-  const formattedPrice = product.price.toLocaleString('ru-RU')
   return (
     <div className={s.card}>
       <img
-        src={product.productImg}
-        alt={product.productTitle}
-        className={s.image}
+        src={productImg}
+        alt={productTitle}
       />
       <ProductSeason
         className={s.season}
-        season={product.season}
+        season={season}
       />
       <div className={s.info}>
-        <div className={s.metaInfo}>
-          <CommentCounter commentQuantity={product.commentQuantity} />
+        <div className={s.meta}>
+          <CommentCounter commentQuantity={commentQuantity} />
           <Rating
-            initialValue={product.rating}
+            initialValue={rating}
             readonly
             allowFraction
             size={20}
-            emptyColor="#fff"
-            fillColor="#EFD8C3"
-            SVGstorkeWidth={2}
-            SVGstrokeColor="#EFD8C3"
           />
         </div>
-        <h3 className={s.title}>{product.productTitle}</h3>
-        <ProductInfo inStock={product.inStock} />
+        <h3>{productTitle}</h3>
+        <p className={s.stock}>{stockMessages[inStock > 0 ? 1 : 0]}</p>
         <div className={s.buttonWrapper}>
           <AppButton
             variant="accent"
             className={s.button}
           >
-            {formattedPrice} С
+            {formatPrice(price)}
           </AppButton>
-          <FavoriteButton size={'40px'} />
+          <div className={s.fav}>{children}</div>
         </div>
       </div>
     </div>

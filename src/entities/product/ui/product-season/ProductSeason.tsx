@@ -4,7 +4,7 @@ import allSeason from 'shared/assets/icon/all-season.svg'
 import brightness from 'shared/assets/icon/brightness.svg'
 import snow from 'shared/assets/icon/snow.svg'
 
-import { SeasonType } from '../model/types'
+import { SeasonType } from '../../types/types'
 
 const seasonIcons = {
   winter: snow,

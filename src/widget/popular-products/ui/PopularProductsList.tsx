@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { FavoriteButton } from 'features/add-to-favorites'
-import { GoToCatalogButton } from 'features/go-to-catalog-button'
+import { FavBtn } from 'features/add-to-fav'
+import { CatalogBtn } from 'features/catalog-button'
 
 import { ProductCard } from 'entities/product'
 import { popularProductsMock } from 'entities/product/mocks/popularProducts.mock'
+import { SeasonType } from 'entities/product/types/types'
 
 import s from './PopularProductsList.module.scss'
 
@@ -17,17 +18,24 @@ export const PopularProductsList: React.FC = () => {
       <div className={s.list}>
         {products.map((product) => (
           <ProductCard
-            FavoriteButton={FavoriteButton}
             key={product.productId}
-            product={{
-              ...product,
-              season: product.season as 'winter' | 'summer' | 'allSeason',
-            }}
-          />
+            season={product.season as SeasonType}
+            productId={product.productId}
+            productImg={product.productImg}
+            rating={product.rating}
+            commentQuantity={product.commentQuantity}
+            productTitle={product.productTitle}
+            inStock={product.inStock}
+            price={product.price}
+          >
+            <FavBtn
+              isFavorite={product.isFavorite}
+            />
+          </ProductCard>
         ))}
       </div>
 
-      <GoToCatalogButton />
+      <CatalogBtn />
     </section>
   )
 }
