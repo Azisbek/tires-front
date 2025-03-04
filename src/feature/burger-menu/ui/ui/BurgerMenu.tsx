@@ -1,31 +1,28 @@
 import React, { useState } from "react";
-import styles from "./BurgerMenu.module.css";
-import { Link } from "react-router-dom";
+import s from "./BurgerMenu.module.scss";
 
 export const BurgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div className={styles.burgerMenu}>
-      <button className={`${styles.burgerButton} ${isOpen ? styles.open : ""}`} onClick={toggleMenu}>
-        <div className={styles.burgerIcon}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+    <div className={s.burgerMenu}>
+      <button 
+        className={`${s.burgerIcon} ${isOpen ? s.open : ""}`} 
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <svg width="40" height="40" viewBox="0 0 100 100">
+          <rect width="80" height="8" x="10" y="25" fill="white" />
+          <rect width="70" height="8" x="10" y="45" fill="white" />
+          <rect width="80" height="8" x="10" y="65" fill="white" />
+        </svg> Меню
       </button>
-      <nav className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
-        <ul>
-          <li><Link to="/" onClick={toggleMenu}>Главная</Link></li>
-          <li><Link to="/about" onClick={toggleMenu}>Товары</Link></li>
-          <li><Link to="/services" onClick={toggleMenu}>Услуги</Link></li>
-          <li><Link to="/contact" onClick={toggleMenu}>Компания</Link></li>
-        </ul>
-      </nav>
+      {isOpen && (
+        <div className={s.menu}>
+          <ul>
+            
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

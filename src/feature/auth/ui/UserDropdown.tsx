@@ -1,25 +1,13 @@
-import { useState } from 'react';
-import styles from './UserDropdown.module.css';
+import s from './UserDropdown.module.scss';
 
 export const UserDropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
+  
   return (
-    <div className={styles.dropdown}>
-      <button onClick={toggleDropdown} className={styles.dropdownButton}>
+    <div className={s.dropdown}>
+      <button className={s.dropdownButton}>
         Личный кабинет 
       </button>
-      {isOpen && (
-        <div className={styles.dropdownContent}>
-          <a href="/profile">Профиль</a>
-          <a href="/settings">Настройки</a>
-          <a href="/logout">Выйти</a>
-        </div>
-      )}
+      
     </div>
   );
 };
