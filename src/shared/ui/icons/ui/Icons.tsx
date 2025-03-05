@@ -1,13 +1,16 @@
-import React from "react";
-import s from "./Icons.module.scss";
-import HeartIcon from "../../../assets/icon/icons/heart.svg";
-import CartIcon from "../../../assets/icon/icons/cart.svg";
+import s from './Icons.module.scss'
 
-export const Icons: React.FC = () => {
+export function Icons() {
   return (
     <div className={s.icons}>
-      <img src={HeartIcon} alt="Heart" />
-      <img src={CartIcon} alt="Cart" />
+      <img
+        src="src/shared/assets/icons/like_normal.png"
+        alt="Heart"
+      />
+      <img
+        src="src/shared/assets/icons/basket.png"
+        alt="Cart"
+      />
     </div>
-  );
-};
+  )
+}

@@ -1,3 +1,1 @@
-import { NavMenu } from "./ui/NavMenu";
-
-export default NavMenu
+export { NavMenu } from './ui/NavMenu'
