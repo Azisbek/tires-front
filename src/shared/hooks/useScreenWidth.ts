@@ -4,7 +4,7 @@ import { setWidth } from 'app/model/screen.slice'
 
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks'
 
-export const useScreenWidth = (): { width: number; isMobile: boolean } => {
+export const useScreenWidth = () => {
   const dispatch = useAppDispatch()
   const width = useAppSelector((state) => state.screen.width)
 

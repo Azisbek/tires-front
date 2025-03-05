@@ -1,0 +1,57 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+
+  .bannerImg {
+    position: absolute;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
+
+  .bannerContent {
+    max-width: 1208px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 54px 10px;
+    position: relative;
+    display: grid;
+    gap: 40px;
+    z-index: 1;
+
+    .title {
+      width: 601px;
+      color: rgb(255, 255, 255);
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 48px;
+    }
+
+    .btn {
+      max-width: 187px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bannerContent {
+      justify-content: center;
+
+      .title {
+        max-width: 300px;
+        line-height: 38px;
+        font-size: 35px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .btn {
+        margin: 0 auto;
+      }
+
+      .slider {
+        margin: 0 auto;
+      }
+    }
+  }
+}
