@@ -1,4 +1,6 @@
-export const popularProductsMock = [
+import { ProductCardProps } from "../model/types";
+
+export const popularProductsMock: ProductCardProps[] = [
   {
     productId: 30,
     productImg: '/tire.jpeg',
@@ -17,7 +19,7 @@ export const popularProductsMock = [
     season: 'summer',
     rating: 4.2,
     commentQuantity: 5,
-    productTitle: 'Michelin Pilot',
+    productTitle: 'Goodyear Vector 4Seasons',
     inStock: 5,
     price: 4500,
     isFavorite: false,
