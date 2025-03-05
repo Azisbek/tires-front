@@ -1,9 +1,13 @@
-import React from "react";
-import s from "./User.module.scss";
 import UserMan from '../../../assets/icon/user/user.svg'
 
-export const User: React.FC = () => {
+import s from './User.module.scss'
+
+export function User() {
   return (
-    <img src={UserMan} alt="User" className={s.userMan} />
-  );
-};
+    <img
+      src={UserMan}
+      alt="User"
+      className={s.userMan}
+    />
+  )
+}

@@ -9,7 +9,7 @@ interface Props {
   images?: string[]
   currentPoint?: number
   onPointClick: (value: any) => void
-  delay: number
+  interval: number
 }
 
 export function SliderBanner({
@@ -17,14 +17,14 @@ export function SliderBanner({
   images = [],
   currentPoint = 1,
   onPointClick,
-  delay = 1000,
+  interval,
 }: Props) {
   useEffect(() => {
-    const interval = setInterval(() => {
+    const intervalPoint = setInterval(() => {
       onPointClick((prev: number) => (prev + 1) % images.length)
-    }, delay)
+    }, interval)
 
-    return () => clearInterval(interval)
+    return () => clearInterval(intervalPoint)
   }, [onPointClick, images.length])
 
   return (

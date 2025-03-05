@@ -2,19 +2,20 @@
   position: relative;
   overflow: hidden;
 
-  .bannerImg {
+  .bannerCarousel {
     position: absolute;
-    object-fit: cover;
-    left: 0;
     top: 0;
-    z-index: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 1440px;
+    overflow: hidden;
   }
 
   .bannerContent {
     max-width: 1208px;
     width: 100%;
     margin: 0 auto;
-    padding: 54px 10px;
+    padding: 54px 30px;
     position: relative;
     display: grid;
     gap: 40px;
@@ -34,6 +35,10 @@
   }
 
   @media (max-width: 768px) {
+    .bannerCarousel {
+      width: 1440px;
+    }
+
     .bannerContent {
       justify-content: center;
 
