@@ -2,13 +2,13 @@ import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import s from './CatalogButton.module.scss'
 
-export const CatalogBtn = () => {
+export const NavigateBtn = ({children} : {children: string}) => {
   return (
     <AppButton
       variant={'borderWhite'}
       className={s.button}
     >
-      Посмотреть все шины
+      {children}
     </AppButton>
   )
 }

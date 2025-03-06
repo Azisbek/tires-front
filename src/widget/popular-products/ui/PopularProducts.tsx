@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CatalogBtn } from 'features/catalog-button'
+import { NavigateBtn } from 'features/navigate-button'
 
 import { popularProductsMock } from 'entities/product/mocks/popularProducts.mock'
 
@@ -25,7 +25,7 @@ export const PopularProducts: React.FC = () => {
           />
         ))}
       </div>
-      {!isMobile && <CatalogBtn />}
+      {!isMobile && <NavigateBtn>Посмотреть все шины</NavigateBtn>}
     </section>
   )
 }
