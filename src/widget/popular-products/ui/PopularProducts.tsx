@@ -6,11 +6,11 @@ import { popularProductsMock } from 'entities/product/mocks/popularProducts.mock
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 
-import { ProductCard } from '../../../widget/product-card'
+import { ProductCard } from '../../product-card'
 
-import s from './PopularProductsList.module.scss'
+import s from './PopularProducts.module.scss'
 
-export const PopularProductsList: React.FC = () => {
+export const PopularProducts: React.FC = () => {
   const products = popularProductsMock
   const { isMobile } = useScreenWidth()
 

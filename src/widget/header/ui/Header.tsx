@@ -12,7 +12,6 @@ import { useScreenWidth } from "../../../shared/hooks/useScreenWidth";
 
 export function Header(): React.ReactElement {
   const { isMobile } = useScreenWidth();
-
   return (
     <header className={s.header}>
       <nav className={s.nav}>
