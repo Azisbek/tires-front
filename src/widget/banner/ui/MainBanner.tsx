@@ -2,12 +2,14 @@ import { useState } from 'react'
 
 import { SliderBanner } from 'features/slider'
 
+import { BannerCarousel } from 'entities/bannerCarousel'
+
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import s from './MainBanner.module.scss'
 
 // Временно пока не будет база данных !
-const dataImage = [
+const banners = [
   'src/shared/assets/imgs/banner-1.png',
   'src/shared/assets/imgs/banner-2.png',
   'src/shared/assets/imgs/banner-3.png',
@@ -16,14 +18,16 @@ const dataImage = [
 
 export function MainBanner() {
   const [currentSlide, setCurrentSlide] = useState<number>(0)
+  const [bannerInterval, setBannerInterval] = useState<number>(5000)
 
   return (
     <div className={s.banner}>
-      <img
-        src={dataImage[currentSlide]}
-        alt="banner"
-        className={s.bannerImg}
-      />
+      <div className={s.bannerCarousel}>
+        <BannerCarousel
+          images={banners}
+          currentSlide={currentSlide}
+        />
+      </div>
 
       <div className={s.bannerContent}>
         <h1 className={s.title}>Шиномонтаж и доставка бесплатно</h1>
@@ -37,10 +41,10 @@ export function MainBanner() {
 
         <SliderBanner
           className={s.slider}
-          images={dataImage}
+          images={banners}
           currentPoint={currentSlide}
           onPointClick={setCurrentSlide}
-          delay={5000}
+          interval={bannerInterval}
         />
       </div>
     </div>

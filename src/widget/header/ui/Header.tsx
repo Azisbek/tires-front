@@ -1,22 +1,24 @@
-import React from "react";
-import s from "./Header.module.scss";
-import { Logo } from "../../../shared/ui/logo/ui/Logo";
-import { NavMenu } from "../../../shared/ui/navMenu/ui/NavMenu";
-import { Search } from "../../../feature/search/ui/Search";
-import { Icons } from "../../../shared/ui/icons/ui/Icons";
-import { UserDropdown } from "../../../feature/auth/ui/UserDropdown";
-import { BurgerMenu } from "../../../feature/burger-menu/ui/BurgerMenu";
-import { User } from "shared/ui/user/ui/User";
-import { useScreenWidth } from "../../../shared/hooks/useScreenWidth";
+import React from 'react'
 
+import { BurgerMenu } from 'features/burger-menu'
+import { UserDropdown } from 'features/personal-profile'
+import { Search } from 'features/search'
+
+import { User } from 'shared/ui/user/ui/User'
+
+import { useScreenWidth } from '../../../shared/hooks/useScreenWidth'
+import { Icons } from '../../../shared/ui/icons/ui/Icons'
+import { Logo } from '../../../shared/ui/logo/ui/Logo'
+import { NavMenu } from '../../../shared/ui/navMenu/ui/NavMenu'
+
+import s from './Header.module.scss'
 
 export function Header(): React.ReactElement {
-  const { isMobile } = useScreenWidth();
+  const { isMobile } = useScreenWidth()
+
   return (
     <header className={s.header}>
-      <nav className={s.nav}>
-        {isMobile ? <BurgerMenu /> : <NavMenu />}
-      </nav>
+      <nav className={s.nav}>{isMobile ? <BurgerMenu /> : <NavMenu />}</nav>
       <div className={s.logo}>
         <Logo />
       </div>
@@ -26,5 +28,5 @@ export function Header(): React.ReactElement {
         {isMobile ? <User /> : <Icons />}
       </div>
     </header>
-  );
+  )
 }

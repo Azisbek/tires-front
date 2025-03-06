@@ -1,3 +1,1 @@
-import { Icons } from "./ui/Icons";
-
-export default Icons
+export { Icons } from './ui/Icons'

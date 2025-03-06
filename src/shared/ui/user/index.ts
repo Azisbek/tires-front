@@ -1,3 +1,1 @@
-import { User } from "./ui/User";
-
-export default User
+export { User } from './ui/User'
