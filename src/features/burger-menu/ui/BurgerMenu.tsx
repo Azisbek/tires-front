@@ -1,8 +1,7 @@
 import clsx from 'clsx'
-
 import { useState } from 'react'
-
 import s from './BurgerMenu.module.scss'
+import BuregerIcon from '../../../shared/assets/icon/burgerMenu/burger-icon.svg'
 
 export function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,33 +14,7 @@ export function BurgerMenu() {
         className={clsx(s.burgerButton, { [s.open]: isOpen })}
         onClick={toggleMenu}
       >
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 100 100"
-        >
-          <rect
-            width="80"
-            height="8"
-            x="10"
-            y="25"
-            fill="white"
-          />
-          <rect
-            width="70"
-            height="8"
-            x="10"
-            y="45"
-            fill="white"
-          />
-          <rect
-            width="80"
-            height="8"
-            x="10"
-            y="65"
-            fill="white"
-          />
-        </svg>
+        <img src={BuregerIcon} alt="BurgerIcon " />
         Меню
       </button>
       {isOpen && (
