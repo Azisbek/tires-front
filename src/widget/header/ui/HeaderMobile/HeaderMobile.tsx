@@ -1,8 +1,8 @@
 import React from 'react';
 import { BurgerMenu } from 'features/burger-menu';
-import { User } from 'shared/ui/user/ui/User';
-import { Logo } from '../../../../shared/ui/logo/ui/Logo';
-import s from '../Header/Header.module.scss';
+import { User } from '../../../../entities/user/ui/User';
+import { Logo } from '../../../../entities/logo/ui/Logo';
+import s from './HeaderMobile.module.scss';
 import { Search } from 'features/search';
 
 export function HeaderMobile(): React.ReactElement {
