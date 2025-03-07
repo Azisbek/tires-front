@@ -1,0 +1,18 @@
+.pointContainer {
+  display: flex;
+  gap: 5px;
+
+  .point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .active {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(255, 126, 0);
+  }
+}

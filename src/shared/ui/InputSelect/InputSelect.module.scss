@@ -1,0 +1,24 @@
+.select {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(210, 210, 209);
+  background-color: rgb(245, 245, 245);
+  outline: none;
+  height: 40px;
+
+  &:hover,
+  &:focus {
+    background-color: rgb(255, 255, 255);
+  }
+
+  @media (max-width: 768px) {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 12px;
+    padding: 10px;
+  }
+}
