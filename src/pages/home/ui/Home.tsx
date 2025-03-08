@@ -1,15 +1,18 @@
-import { MainBanner } from '../../../widget/banner'
-import { HomeFilter } from '../../../widget/home-filter/ui/HomeFilter'
-import { Partners } from '../../../widget/partners'
-import { PopularProducts } from '../../../widget/popular-products'
-import { Promotion } from '../../../widget/promotion/ui/Promotion'
+import { Promotion } from 'widgets/promotion/ui/Promotion'
+import { MainBanner } from 'widgets/banner'
+import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
+import { Partners } from 'widgets/partners'
+import { PopularProducts } from 'widgets/popular-products'
 
 export function Home() {
   return (
     <>
       <MainBanner />
+
       <HomeFilter />
+
       <PopularProducts />
+
       <Promotion />
 
       <Partners />

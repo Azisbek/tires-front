@@ -32,7 +32,7 @@ export function SnowIcon() {
         width="34.000000"
         height="34.000000"
         fill="url(#pattern_95_147680)"
-        fill-opacity="1.000000"
+        fillOpacity="1.000000"
       />
     </svg>
   )

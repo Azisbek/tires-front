@@ -1,8 +1,8 @@
-import { popularProductsMock } from '../api/data'
+import { popularProductsMock } from 'widgets/popular-products/api/data'
 
 import { NavigateBtn } from 'features/navigate-button'
 
-import { ProductList } from '../../product-list'
+import { ProductList } from 'widgets/product-list'
 
 import s from './PopularProducts.module.scss'
 

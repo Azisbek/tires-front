@@ -29,38 +29,35 @@ export function FilterTypes() {
     }))
   }
 
+  console.log(filter)
+
   return (
     <form className={s.form}>
       <div className={s.selectContainer}>
         <InputSelect
           options={filtersOptions.manufacturer}
-          value={filter.manufacturer}
+          defaulValue="Производитель"
           onChange={(value) => handleChange('manufacturer', value)}
-          placeholder="Производителность"
         />
         <InputSelect
           options={filtersOptions.model}
-          value={filter.model}
+          defaulValue="Модель"
           onChange={(value) => handleChange('model', value)}
-          placeholder="Модель"
         />
         <InputSelect
           options={filtersOptions.generation}
-          value={filter.generation}
+          defaulValue="Поколение"
           onChange={(value) => handleChange('generation', value)}
-          placeholder="Поколение"
         />
         <InputSelect
           options={filtersOptions.modification}
-          value={filter.modification}
+          defaulValue="Модификация"
           onChange={(value) => handleChange('modification', value)}
-          placeholder="Модификация"
         />
         <InputSelect
           options={filtersOptions.bodyType}
-          value={filter.bodyType}
+          defaulValue="Кузов"
           onChange={(value) => handleChange('bodyType', value)}
-          placeholder="Кузов"
         />
       </div>
 

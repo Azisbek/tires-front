@@ -47,18 +47,18 @@ export function AllSeasonIcon() {
       <path
         id="Subtract"
         d="M34 1L4 1L4 31L17 31L17 2L34 2L34 1Z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
         fill="url(#pattern_95_147710)"
-        fill-opacity="1.000000"
-        fill-rule="evenodd"
+        fillOpacity="1.000000"
+        fillRule="evenodd"
       />
       <path
         id="Subtract"
         d="M0 29L0 30L30 30L30 0L17 0L17 29L0 29L0 29Z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
         fill="url(#pattern_95_147740)"
-        fill-opacity="1.000000"
-        fill-rule="evenodd"
+        fillOpacity="1.000000"
+        fillRule="evenodd"
       />
     </svg>
   )

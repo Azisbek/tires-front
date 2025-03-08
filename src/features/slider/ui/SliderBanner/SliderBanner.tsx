@@ -25,7 +25,7 @@ export function SliderBanner({
     }, interval)
 
     return () => clearInterval(intervalPoint)
-  }, [onPointClick, images.length])
+  }, [onPointClick, images.length, interval])
 
   return (
     <div className={clsx(s.pointContainer, className)}>

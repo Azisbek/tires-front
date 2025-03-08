@@ -1,12 +1,8 @@
-import { FilterTypesMobile } from 'features/filter-types'
 import { FilterTypes } from 'features/filter-types'
-
-import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 
 import s from './HomeFilter.module.scss'
 
 export function HomeFilter() {
-  const { isMobile } = useScreenWidth()
 
   return (
     <div className={s.container}>
@@ -15,7 +11,7 @@ export function HomeFilter() {
         <a href="#">параметрам товара</a>
       </p>
 
-      {isMobile ? <FilterTypesMobile /> : <FilterTypes />}
+      <FilterTypes />
     </div>
   )
 }

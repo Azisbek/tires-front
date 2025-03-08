@@ -1,12 +1,23 @@
 .form {
+  max-width: 975px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
   .selectContainer {
     display: flex;
-    align-items: center;
-    gap: 55px;
+    gap: 15px;
   }
 
   .btn {
     text-align: center;
     margin-top: 29px;
+  }
+
+  @media (max-width: 768px) {
+    .selectContainer {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 }

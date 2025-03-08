@@ -6,15 +6,9 @@ import { BannerCarousel } from 'entities/bannerCarousel'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
-import s from './MainBanner.module.scss'
+import { banners } from '../api/data'
 
-// Временно пока не будет база данных !
-const banners = [
-  'src/shared/assets/imgs/banner-1.png',
-  'src/shared/assets/imgs/banner-2.png',
-  'src/shared/assets/imgs/banner-3.png',
-  'src/shared/assets/imgs/banner-1.png',
-]
+import s from './MainBanner.module.scss'
 
 export function MainBanner() {
   const [currentSlide, setCurrentSlide] = useState<number>(0)
