@@ -3,7 +3,7 @@ import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import { ProductPriceProps } from '../model/types'
 
-export const ProductPrice = ({ children, className }: ProductPriceProps) => {
+export function ProductPrice({ children, className }: ProductPriceProps) {
   return (
     <AppButton
       className={className}

@@ -1,8 +1,8 @@
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
-import s from './CatalogButton.module.scss'
+import s from './NavigateButton.module.scss'
 
-export const NavigateBtn = ({children} : {children: string}) => {
+export function NavigateBtn({ children }: { children: string }) {
   return (
     <AppButton
       variant={'borderWhite'}
