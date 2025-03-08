@@ -1,4 +1,4 @@
-import { formatPrice } from 'shared/lib/utils'
+import { formatPrice } from 'shared/lib/formatPrice'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import { ProductPriceProps } from '../model/types'
