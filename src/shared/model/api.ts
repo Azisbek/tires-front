@@ -1,4 +1,4 @@
 export const apiMap = {
-  base: '/api/v2',
-  refresh: '/auth/refresh/',
+  base: 'https://tires-shop-test.onrender.com/',
+  refresh: '/api/token/refresh/',
 }
