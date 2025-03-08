@@ -1,1 +1,1 @@
-export { SliderBanner } from './SliderBanner/SliderBanner'
+export { SliderBanner } from './ui/SliderBanner/SliderBanner'

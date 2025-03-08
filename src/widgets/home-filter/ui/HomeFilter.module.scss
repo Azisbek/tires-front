@@ -4,7 +4,7 @@
   max-width: 1192px;
   width: 100%;
   margin: 0 auto;
-  padding: 23px 108px;
+  padding: 23px 0;
   background-color: white;
   border-radius: 10px;
   display: grid;
@@ -26,6 +26,10 @@
   }
 
   @media (max-width: 768px) {
-    padding: 22px 30px;
+    padding: 22px 0;
+
+    .title {
+      padding: 0 30px;
+    }
   }
 }
