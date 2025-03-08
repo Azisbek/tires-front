@@ -1,1 +1,1 @@
-export { PopularProducts } from './ui/PopularProducts'
+export { PopularProducts } from "./ui/PopularProducts";

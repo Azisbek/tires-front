@@ -1,14 +1,18 @@
+import { ReactNode } from 'react'
 import { Rating } from 'react-simple-star-rating'
-
-import { FavoriteBtn } from 'features/toggle-favorite'
 
 import { ProductImage, ProductPrice, ProductSeason } from 'entities/product'
 import { ProductCardProps } from 'entities/product/model/types'
-import { CommentCounter } from 'entities/product/ui/сomment-сount'
+import { CommentCounter } from 'entities/product/ui/CommentCount'
 
 import s from './ProductCard.module.scss'
 
-export const ProductCard = ({ product }: { product: ProductCardProps }) => {
+interface ProductCardItemProps {
+  product: ProductCardProps
+  FavoriteBtn: ReactNode
+}
+
+export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
   const {
     productImg,
     productTitle,
@@ -17,21 +21,24 @@ export const ProductCard = ({ product }: { product: ProductCardProps }) => {
     rating,
     inStock,
     price,
-    isFavorite,
   } = product
+
   return (
     <div className={s.card}>
       <ProductImage
         src={productImg}
         alt={productTitle}
       />
+
       <ProductSeason
         className={s.season}
         season={season}
       />
+
       <div className={s.info}>
         <div className={s.meta}>
           <CommentCounter commentQuantity={commentQuantity} />
+
           <Rating
             initialValue={rating}
             readonly
@@ -39,14 +46,13 @@ export const ProductCard = ({ product }: { product: ProductCardProps }) => {
             size={20}
           />
         </div>
-        <h3>{productTitle}</h3>
+
+        <p className={s.title}>{productTitle}</p>
         <p className={s.stock}>{inStock > 0 ? 'В наличии' : 'Нет в наличии'}</p>
+
         <div className={s.buttonWrapper}>
           <ProductPrice>{price}</ProductPrice>
-          <div className={s.fav}>
-          <FavoriteBtn isFavorite={isFavorite} />
-
-          </div>
+          <div className={s.fav}>{FavoriteBtn}</div>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { ProductCardProps } from "../model/types";
+import { ProductCardProps } from '../../../entities/product/model/types'
 
 export const popularProductsMock: ProductCardProps[] = [
   {
