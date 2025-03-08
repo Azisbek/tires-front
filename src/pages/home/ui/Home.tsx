@@ -8,8 +8,11 @@ export function Home() {
   return (
     <>
       <MainBanner />
+
       <HomeFilter />
+
       <PopularProducts />
+
       <Promotion />
 
       <Partners />
