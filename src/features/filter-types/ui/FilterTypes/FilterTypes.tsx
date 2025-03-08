@@ -5,15 +5,17 @@ import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 
 import s from './FilterTypes.module.scss'
 
-const filtersOptions = {
-  manufacturer: ['Toyota', 'BMW', 'Mercedes'],
-  model: ['Camry', 'X5', 'C-Class'],
-  generation: ['2020+', '2015-2019', '2010-2014'],
-  modification: ['2.0 AT', '3.0 MT', 'Electric'],
-  bodyType: ['Sedan', 'SUV', 'Hatchback'],
+interface Props {
+  data: {
+    manufacturer: string[]
+    model: string[]
+    generation: string[]
+    modification: string[]
+    bodyType: string[]
+  }
 }
 
-export function FilterTypes() {
+export function FilterTypes({ data }: Props) {
   const [filter, setFilter] = useState({
     manufacturer: '',
     model: '',
@@ -29,33 +31,31 @@ export function FilterTypes() {
     }))
   }
 
-  console.log(filter)
-
   return (
     <form className={s.form}>
       <div className={s.selectContainer}>
         <InputSelect
-          options={filtersOptions.manufacturer}
+          options={data.manufacturer}
           defaulValue="Производитель"
           onChange={(value) => handleChange('manufacturer', value)}
         />
         <InputSelect
-          options={filtersOptions.model}
+          options={data.model}
           defaulValue="Модель"
           onChange={(value) => handleChange('model', value)}
         />
         <InputSelect
-          options={filtersOptions.generation}
+          options={data.generation}
           defaulValue="Поколение"
           onChange={(value) => handleChange('generation', value)}
         />
         <InputSelect
-          options={filtersOptions.modification}
+          options={data.modification}
           defaulValue="Модификация"
           onChange={(value) => handleChange('modification', value)}
         />
         <InputSelect
-          options={filtersOptions.bodyType}
+          options={data.bodyType}
           defaulValue="Кузов"
           onChange={(value) => handleChange('bodyType', value)}
         />
