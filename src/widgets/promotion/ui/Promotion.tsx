@@ -46,7 +46,12 @@ export const Promotion = () => {
         ))}
       </div>
 
-      <AppButton className={s.btn} variant="borderWhite">Посмотреть все шины</AppButton>
+      <AppButton
+        className={s.btn}
+        variant="border"
+      >
+        Посмотреть все шины
+      </AppButton>
     </div>
   )
 }

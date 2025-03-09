@@ -1,7 +1,7 @@
 import { FavoriteBtn } from 'features/toggle-favorite'
 
 import { ProductCard } from 'entities/product'
-import { ProductCardProps } from 'entities/product/model/types'
+import { ProductCardProps } from 'entities/product/types/types'
 
 import s from './ProductList.module.scss'
 
