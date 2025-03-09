@@ -7,7 +7,7 @@ import s from './AppButton.module.scss'
 interface Props {
   children: React.ReactNode
   onClick?: () => void
-  variant: 'accent' | 'white' | 'borderWhite'
+  variant: 'accent' | 'white' | 'border'
   className?: string
 }
 

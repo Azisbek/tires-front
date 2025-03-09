@@ -1,4 +1,4 @@
-import { SeasonType } from 'entities/product/model/types'
+import { SeasonType } from 'entities/product/types/types'
 
 import { AllSeasonIcon } from 'shared/assets/icon/season/AllSeason'
 import { BrightnessIcon } from 'shared/assets/icon/season/BrightnessIcon'

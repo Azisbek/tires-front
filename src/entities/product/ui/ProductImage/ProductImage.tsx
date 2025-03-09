@@ -1,4 +1,4 @@
-import { ProductImageProps } from '../../model/types'
+import { ProductImageProps } from '../../types/types'
 
 export function ProductImage({ src, alt, className }: ProductImageProps) {
   return (

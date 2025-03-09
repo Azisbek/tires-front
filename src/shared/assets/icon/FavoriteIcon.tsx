@@ -1,4 +1,4 @@
-import { isFavoriteType } from 'entities/product/model/types'
+import { isFavoriteType } from 'entities/product/types/types'
 
 interface FavoriteIconProps {
   isFavorite: isFavoriteType

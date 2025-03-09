@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { Rating } from 'react-simple-star-rating'
 
 import { ProductImage, ProductPrice, ProductSeason } from 'entities/product'
-import { ProductCardProps } from 'entities/product/model/types'
+import { ProductCardProps } from 'entities/product/types/types'
 import { CommentCounter } from 'entities/product/ui/CommentCount'
 
 import s from './ProductCard.module.scss'
