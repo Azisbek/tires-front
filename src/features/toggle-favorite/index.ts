@@ -1,1 +1,1 @@
-export { FavoriteBtn } from "./ui/FavoriteBtn";
+export { FavoriteBtn } from './ui/FavoriteBtn'
