@@ -12,7 +12,7 @@ import s from './MainBanner.module.scss'
 
 export function MainBanner() {
   const [currentSlide, setCurrentSlide] = useState<number>(0)
-  const [bannerInterval, setBannerInterval] = useState<number>(5000)
+  const [bannerInterval] = useState<number>(5000)
 
   return (
     <div className={s.banner}>

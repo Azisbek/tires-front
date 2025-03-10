@@ -1,1 +1,1 @@
-export { CommentCounter } from './CommentCount';
+export { CommentCounter } from './CommentCount'
