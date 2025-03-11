@@ -1,1 +1,1 @@
-export { NavigateBtn } from './ui/NavigateButton.tsx';
+export { NavigateBtn } from './ui/NavigateButton.tsx'

@@ -4,9 +4,12 @@ import { MainBanner } from 'widgets/banner'
 import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
 import { Partners } from 'widgets/partners'
 import { ProductList } from 'widgets/product-list'
-import { Promotion } from 'widgets/promotion/ui/Promotion'
+// import { PopularProducts } from 'widgets/popular-products'
+import { Promotion } from 'widgets/promotion'
 
 import { NavigateBtn } from 'features/navigate-button'
+
+import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import { useGetHomeProductQuery } from '../api'
 
@@ -33,7 +36,16 @@ export function Home() {
         <NavigateBtn>Посмотреть все шины</NavigateBtn>
       </section>
 
-      <Promotion />
+      <div className={s.promotion}>
+        <Promotion title="Акции" />
+
+        <AppButton
+          className={s.btn}
+          variant="border"
+        >
+          Посмотреть все шины
+        </AppButton>
+      </div>
 
       <Partners />
     </>
