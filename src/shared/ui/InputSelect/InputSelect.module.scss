@@ -23,7 +23,8 @@
     }
   }
 
-  .input {
+  
+  .grey {
     background-color: rgb(245, 245, 245);
 
     .defaultTitle {
@@ -32,7 +33,15 @@
       font-weight: 400;
     }
   }
+  .white {
+    background-color: #FFF;
 
+    .defaultTitle {
+      color: #1A1E29;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
   .options {
     position: absolute;
     top: 110%;
