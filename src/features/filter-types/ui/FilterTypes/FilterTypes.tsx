@@ -35,28 +35,33 @@ export function FilterTypes({ data }: Props) {
     <form className={s.form}>
       <div className={s.selectContainer}>
         <InputSelect
+          color="grey"
           options={data.manufacturer}
-          defaulValue="Производитель"
+          defaultValue="Производитель"
           onChange={(value) => handleChange('manufacturer', value)}
         />
         <InputSelect
+          color="grey"
           options={data.model}
-          defaulValue="Модель"
+          defaultValue="Модель"
           onChange={(value) => handleChange('model', value)}
         />
         <InputSelect
+          color="grey"
           options={data.generation}
-          defaulValue="Поколение"
+          defaultValue="Поколение"
           onChange={(value) => handleChange('generation', value)}
         />
         <InputSelect
+          color="grey"
           options={data.modification}
-          defaulValue="Модификация"
+          defaultValue="Модификация"
           onChange={(value) => handleChange('modification', value)}
         />
         <InputSelect
+          color="grey"
           options={data.bodyType}
-          defaulValue="Кузов"
+          defaultValue="Кузов"
           onChange={(value) => handleChange('bodyType', value)}
         />
       </div>

@@ -29,7 +29,10 @@ export function Home() {
 
       <section className={s.section}>
         <h2 className={s.title}>Популярные шины</h2>
-        <ProductList products={products} />
+        <ProductList
+          className={s.popularProducts}
+          products={products}
+        />
         <NavigateBtn>Посмотреть все шины</NavigateBtn>
       </section>
 

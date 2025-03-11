@@ -5,16 +5,17 @@ import s from './InputSelect.module.scss'
 interface Props {
   options: string[]
   onChange?: (value: string) => void
-  defaulValue?: string
+  defaultValue?: string
+  color: 'grey' | 'white'
 }
 
-export function InputSelect({ options, onChange, defaulValue }: Props) {
-  const [isOpen, setISOpen] = useState(false)
-  const [value, setValue] = useState(defaulValue || 'default')
+export function InputSelect({ options, onChange, defaultValue, color }: Props) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [value, setValue] = useState(defaultValue || 'default')
 
   const selectRef = useRef<HTMLDivElement>(null)
 
-  const toggleOpen = () => setISOpen((prev: boolean) => !prev)
+  const toggleOpen = () => setIsOpen((prev: boolean) => !prev)
 
   const setValueChange = (value: string) => {
     setValue(value)
@@ -27,7 +28,7 @@ export function InputSelect({ options, onChange, defaulValue }: Props) {
       selectRef.current &&
       !selectRef.current.contains(event.target as Node)
     ) {
-      setISOpen(false)
+      setIsOpen(false)
     }
   }
 
@@ -50,7 +51,7 @@ export function InputSelect({ options, onChange, defaulValue }: Props) {
     >
       <div
         onClick={toggleOpen}
-        className={isOpen ? s.inputActive : s.input}
+        className={isOpen ? `${s.inputActive} ${s[color]}` : `${s.input} ${s[color]}`}
       >
         <p className={s.defaultTitle}>{value}</p>
         <img

@@ -16,4 +16,13 @@
     font-weight: 600;
     color: #1a1e29;
   }
+  .popularProducts {
+    margin: 86px 0 34px;
+    @media (max-width: 1300px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 }

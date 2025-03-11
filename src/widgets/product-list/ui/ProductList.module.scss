@@ -1,14 +1,13 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-  margin: 86px 0 34px;
-  @media (max-width: 1295px) {
-    grid-template-columns: repeat(2, 2fr);
-  }
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 21px;
+  place-items: center;
+  width: 100%;
   @media (max-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
+    gap: 18px;
+  }
+  .container > * {
+    margin: 0 auto;
   }
 }
