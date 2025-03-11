@@ -1,0 +1,47 @@
+.burgerMenu {
+  position: relative;
+
+  .burgerButton {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &.open {
+      color: #ff9800;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 10px 15px;
+
+        a {
+          color: white;
+          text-decoration: none;
+
+          &:hover {
+            color: #ff9800;
+          }
+        }
+      }
+    }
+  }
+}

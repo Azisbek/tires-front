@@ -1,0 +1,74 @@
+.select {
+  width: 100%;
+  position: relative;
+  user-select: none;
+
+  .input,
+  .inputActive {
+    border: 1px solid rgb(229, 229, 229);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 12px 16px;
+    cursor: pointer;
+  }
+
+  .inputActive {
+    background-color: rgb(255, 255, 255);
+
+    .defaultTitle {
+      color: rgb(26, 30, 41);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  
+  .grey {
+    background-color: rgb(245, 245, 245);
+
+    .defaultTitle {
+      color: rgb(106, 106, 106);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  .white {
+    background-color: #FFF;
+
+    .defaultTitle {
+      color: #1A1E29;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  .options {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 5px;
+    z-index: 99;
+    box-shadow: 0 4px 6px rgba(255, 126, 0, 0.2);
+    overflow: hidden;
+
+    .option {
+      cursor: pointer;
+      padding: 12px 16px;
+      color: rgb(26, 30, 41);
+      font-size: 14px;
+      font-weight: 400;
+
+      &:hover {
+        background-color: rgb(255, 126, 0);
+        color: rgb(255, 255, 255);
+      }
+    }
+
+    .option:not(:last-child) {
+      border-bottom: 1px solid rgb(229, 229, 229);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.container {
+  max-width: 966px;
+  width: 100%;
+  padding: 27px 27px 0 ;
+
+  @media (max-width: 400px) {
+    padding: 27px 5px 0 0;
+  }
+  .topContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 45px;
+    
+    :first-child {
+      max-width: 288px;
+    }
+    .text {
+      font-size: 14px;
+      line-height: 16px;
+      margin-right: 18px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 400px) {
+      flex-direction: column-reverse;
+    }
+  }
+}
