@@ -1,0 +1,85 @@
+.tireInfoImgContainer {
+  max-width: 912px;
+  width: 100%;
+
+  .backgroundImg {
+    border-radius: 5px;
+    background-image: url('../../../../shared/assets/imgs/MaskGroup\(men\).svg');
+    background-repeat: no-repeat;
+
+    .backgroundColor {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border-radius: 5px;
+      background: linear-gradient(
+        270deg,
+        rgb(90, 32, 184) 0%,
+        rgb(76, 101, 189) 45.418%,
+        rgba(76, 101, 189, 0) 100%
+      );
+
+      .container {
+        max-width: 590px;
+
+        .title {
+          color: rgb(255, 255, 255);
+          margin: 8px 0;
+        }
+        .text {
+          color: rgb(255, 255, 255);
+          margin: 8px 0;
+        }
+
+        .btn {
+          font-size: 14px;
+          font-weight: 500;
+          padding: 12px 24px 12px 24px;
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tireInfoImgContainer {
+    max-width: 391px;
+    border-radius: 10px;
+    width: 100%;
+
+    .backgroundImg {
+      background-image: url('../../../../shared/assets/imgs/MaskGroup\(men\)Mobile.svg');
+      background-repeat: no-repeat;
+
+      .backgroundColor {
+        max-width: 391px;
+        width: 100%;
+        border-radius: 10px;
+        background: linear-gradient(
+          270deg,
+          rgb(90, 32, 184),
+          rgb(76, 101, 189) 45.418%,
+          rgba(76, 101, 189, 0) 100%
+        );
+
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          .title {
+            width: 235.6px;
+            font-size: 25px;
+          }
+
+          .text {
+            width: 306px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
