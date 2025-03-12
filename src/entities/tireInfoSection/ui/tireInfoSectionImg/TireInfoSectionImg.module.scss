@@ -48,14 +48,17 @@
     max-width: 391px;
     border-radius: 10px;
     width: 100%;
+    
 
     .backgroundImg {
       background-image: url('../../../../shared/assets/imgs/MaskGroup\(men\)Mobile.svg');
       background-repeat: no-repeat;
+      height: 287px;
 
       .backgroundColor {
         max-width: 391px;
         width: 100%;
+        height: 287px;
         border-radius: 10px;
         background: linear-gradient(
           270deg,
@@ -70,7 +73,8 @@
           justify-content: center;
 
           .title {
-            width: 235.6px;
+            width: 235px;
+            line-height: 28px;
             font-size: 25px;
           }
 

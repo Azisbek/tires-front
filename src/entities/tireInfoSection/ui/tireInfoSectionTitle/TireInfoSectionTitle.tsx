@@ -6,7 +6,7 @@ import s from './TireInfoSectionTitle.module.scss'
 export function TireInfoSectionTitle() {
   return (
     <div className={s.container}>
-      <Title size="lg-32">
+      <Title size="lg-32" className={s.title}>
         Что нужно знать, чтобы купить шины в Бишкеке недорого
       </Title>
 
