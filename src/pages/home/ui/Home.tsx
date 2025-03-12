@@ -9,7 +9,11 @@ import { Promotion } from 'widgets/promotion'
 
 import { NavigateBtn } from 'features/navigate-button'
 
+
 import { AppButton } from 'shared/ui/AppButton/AppButton'
+
+import { TireInfoSection } from 'widgets/tireInfoSection'
+
 
 import { useGetHomeProductQuery } from '../api'
 
@@ -48,6 +52,8 @@ export function Home() {
       </div>
 
       <Partners />
+
+      <TireInfoSection/>
     </>
   )
 }

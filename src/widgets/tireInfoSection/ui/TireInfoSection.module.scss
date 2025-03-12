@@ -1,0 +1,15 @@
+.sectionContainer{
+    max-width: 1252px;
+    width: 100%;
+    margin: 20px auto;
+    display: grid;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+
+}
+@media (max-width: 768px) {
+    .sectionContainer{
+        text-align: center;
+    }
+}

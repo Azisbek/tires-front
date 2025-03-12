@@ -1,0 +1,27 @@
+.container {
+  max-width: 890px;
+  width: 100%;
+  padding: 32px 32px 40px 32px;
+  background: rgb(248, 248, 248);
+
+  .text {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0 auto;
+    width: 398px;
+    border-radius: 10px;
+    background: rgba(255, 126, 0, 0.25);
+    
+    .title{
+      width: 374px;
+      font-size: 25px;
+      line-height: 30px;
+      margin-left: -20px;
+      padding-bottom: 20px;
+    }
+  }
+}
