@@ -1,0 +1,98 @@
+.footer {
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+  position: relative;
+  margin: 90px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoContainer {
+    background: #e5e5e5;
+    width: 99px;
+    height: 80px;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    top: 0;
+
+    img {
+      width: 80px;
+      height: auto;
+    }
+  }
+
+  .phone {
+    color: rgb(26, 30, 41);
+    font-family: IBM Plex Sans;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-top: 120px;
+  }
+
+  .phoneTitle {
+    color: rgb(106, 106, 106);
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    margin: 4px 0 16px 0;
+  }
+
+  .callButton {
+    box-sizing: border-box;
+    border: 1px solid rgb(239, 216, 195);
+    border-radius: 2px;
+    background: rgb(255, 255, 255);
+    padding: 12px 24px;
+    color: rgb(255, 126, 0);
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+
+    &:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+  }
+
+  .socialsTitle {
+    color: rgb(106, 106, 106);
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    margin: 32px 0 16px 0;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .iconContainer {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgb(239, 216, 195);
+      border-radius: 2px;
+      margin: 0 5px;
+
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}

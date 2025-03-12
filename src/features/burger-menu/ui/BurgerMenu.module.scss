@@ -1,6 +1,6 @@
 .burgerMenu {
   position: relative;
-  
+
   .burgerButton {
     background: none;
     border: none;
@@ -29,14 +29,14 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      
+
       li {
         padding: 10px 15px;
 
         a {
           color: white;
           text-decoration: none;
-          
+
           &:hover {
             color: #ff9800;
           }

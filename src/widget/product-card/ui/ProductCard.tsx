@@ -44,8 +44,7 @@ export const ProductCard = ({ product }: { product: ProductCardProps }) => {
         <div className={s.buttonWrapper}>
           <ProductPrice>{price}</ProductPrice>
           <div className={s.fav}>
-          <FavoriteBtn isFavorite={isFavorite} />
-
+            <FavoriteBtn isFavorite={isFavorite} />
           </div>
         </div>
       </div>

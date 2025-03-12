@@ -1,8 +1,7 @@
-import { ReactNode } from "react"
+// import { ReactNode } from 'react'
 
 export type SeasonType = 'winter' | 'summer' | 'allSeason'
 export type isFavoriteType = boolean
-
 
 export interface ProductCardProps {
   productId?: number
@@ -24,5 +23,3 @@ export interface ProductImageProps {
   alt: string
   className?: string
 }
-
-
