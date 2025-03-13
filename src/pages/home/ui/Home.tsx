@@ -4,7 +4,6 @@ import { MainBanner } from 'widgets/banner'
 import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
 import { Partners } from 'widgets/partners'
 import { ProductList } from 'widgets/product-list'
-// import { PopularProducts } from 'widgets/popular-products'
 import { Promotion } from 'widgets/promotion'
 
 import { NavigateBtn } from 'features/navigate-button'

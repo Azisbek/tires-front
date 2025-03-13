@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 
+import arrowBottomIcon from 'shared/assets/icons/ArrowBottom.svg'
+import arrowTopIcon from 'shared/assets/icons/ArrowTop.svg'
+
 import s from './InputSelect.module.scss'
 
 interface Props {
@@ -51,12 +54,14 @@ export function InputSelect({ options, onChange, defaultValue, color }: Props) {
     >
       <div
         onClick={toggleOpen}
-        className={isOpen ? `${s.inputActive} ${s[color]}` : `${s.input} ${s[color]}`}
+        className={
+          isOpen ? `${s.inputActive}` : `${s.input} ${s[color]}`
+        }
       >
         <p className={s.defaultTitle}>{value}</p>
         <img
-          src={`src/shared/assets/icons/${isOpen ? 'ArrowTop' : 'ArrowBottom'}.svg`}
-          alt="src/shared/assets/icons/ArrowBottom.svg"
+          src={isOpen ? arrowTopIcon : arrowBottomIcon}
+          alt={isOpen ? arrowTopIcon : arrowBottomIcon}
         />
       </div>
 
