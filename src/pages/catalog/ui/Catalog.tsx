@@ -2,6 +2,7 @@ import { CatalogProducts } from 'widgets/catalog-products'
 
 import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 import { Text, Title } from 'shared/ui/Text'
+import { TireInfoSection } from 'widgets/tireInfoSection'
 
 export function Catalog() {
   return (
@@ -9,6 +10,8 @@ export function Catalog() {
       <Title size="xl-40">Шины в Бишкеке</Title>
       <Text>Hello World</Text>
       <CatalogProducts />
+
+      <TireInfoSection/>
     </div>
   )
 }
