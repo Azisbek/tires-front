@@ -1,4 +1,4 @@
-import s from './Space.module.css'
+import s from './Space.module.scss'
 
 interface SpaceProps {
   w?: number

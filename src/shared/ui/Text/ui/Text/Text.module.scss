@@ -1,6 +1,14 @@
 .text {
   font-family: 'IBM Plex Sans';
+  color: #6A6A6A;
+}
+
+.black {
   color: #1A1E29;
+}
+
+.gray {
+  color: #6A6A6A;
 }
 
 .regular {
@@ -9,6 +17,10 @@
 
 .medium {
   font-weight: 500;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .md-16 {

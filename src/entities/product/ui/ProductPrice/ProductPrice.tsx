@@ -1,7 +1,7 @@
+import { ProductPriceProps } from 'entities/product/types/types'
+
 import { formatPrice } from 'shared/lib/formatPrice'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
-
-import { ProductPriceProps } from '../model/types'
 
 export function ProductPrice({ children, className }: ProductPriceProps) {
   return (
