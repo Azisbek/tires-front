@@ -1,0 +1,59 @@
+.OurPartners {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+
+  .title {
+    font-weight: 600;
+    font-size: 32px;
+    color: #1a1e29;
+    line-height: 48px;
+    margin-bottom: 30px;
+  }
+
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, auto);
+    max-width: 1212px;
+    margin: 0 auto;
+    gap: 15px;
+  }
+
+  .logo {
+    height: 40.8px;
+    flex-shrink: 0;
+    object-fit: contain;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      filter: brightness(1.5) contrast(1.5);
+      transform: scale(1.1);
+    }
+  }
+
+  /* Мобильная версия */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 22px;
+      line-height: 30px;
+      margin: 30px;
+    }
+
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(15, auto);
+      gap: 10px;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      padding: 20px 0;
+      place-items: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+  }
+}
