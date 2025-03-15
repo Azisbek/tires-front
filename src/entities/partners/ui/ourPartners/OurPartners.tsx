@@ -1,163 +1,164 @@
 import s from './OurPartners.module.scss'
+import { Title } from 'shared/ui/Text'
 
 export function OurPartners() {
   return (
     <>
       <section className={s.OurPartners}>
-        <h2 className={s.title}>Наши партнеры</h2>
+        <Title size='lg-32' className={s.title}>Наши партнеры</Title>
         <div className={s.logos}>
           <img
-            src="/src/shared/assets/icons/sitec-2-logo.png"
+            src="/src/shared/assets/icons/partners/ситек(1).svg"
             alt="sitec"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/turvana-2-logo.png"
+            src="/src/shared/assets/icons/partners/turvana(2).svg"
             alt="turvana"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/gerat-2-logo.png"
+            src="/src/shared/assets/icons/partners/gerat(3).svg"
             alt="gerat"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/liquiMoly-2-logo.png"
+            src="/src/shared/assets/icons/partners/liquimoly(4).svg"
             alt="liquiMoly"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/arb-2-logo.png"
+            src="/src/shared/assets/icons/partners/arb(5).svg"
             alt="arb"
             className={s.logo}
           />
 
           <img
-            src="/src/shared/assets/icons/bushRanger-2-logo.png"
+            src="/src/shared/assets/icons/partners/bushRanegr(6).svg"
             alt="bushRanger"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/michelin-2-logo.png"
+            src="/src/shared/assets/icons/partners/michelin(7).svg"
             alt="michelin"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/barum-2-logo.png"
+            src="/src/shared/assets/icons/partners/barum(8).svg"
             alt="barum"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/bfGoodrich-2-logo.png"
+            src="/src/shared/assets/icons/partners/BFGoodrich(9).svg"
             alt="bfGoodrich"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/bridgestone-2-logo.png"
+            src="/src/shared/assets/icons/partners/ridegstome(10).svg"
             alt="bridgestone"
             className={s.logo}
           />
 
           <img
-            src="/src/shared/assets/icons/delta-2-logo.png"
+            src="/src/shared/assets/icons/partners/delta(11).svg"
             alt="delta"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/ntinental-2-logo.png"
+            src="/src/shared/assets/icons/partners/continetal(12).svg"
             alt="continental"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/dunlop-2-logo.png"
+            src="/src/shared/assets/icons/partners/dunlop(13).svg"
             alt="dunlop"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/generalTire-2-logo.png"
+            src="/src/shared/assets/icons/partners/generalTire(14).svg"
             alt="generalTire"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/gislaved-2-logo.png"
+            src="/src/shared/assets/icons/partners/gislaved(15).svg"
             alt="gislaved"
             className={s.logo}
           />
 
           <img
-            src="/src/shared/assets/icons/goform-2-logo.png"
+            src="/src/shared/assets/icons/partners/goform(16).svg"
             alt="goform"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/goodride-2-logo.png"
+            src="/src/shared/assets/icons/partners/goodride(17).svg"
             alt="goodride"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/goodYear-2-logo.png"
+            src="/src/shared/assets/icons/partners/goodyear(18).svg"
             alt="goodYear"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/kumhoTyre-2-logo.png"
+            src="/src/shared/assets/icons/partners/kumhoTyre(19).svg"
             alt="kumhoTyre"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/matador-2-logo.png"
+            src="/src/shared/assets/icons/partners/motador(20).svg"
             alt="matador"
             className={s.logo}
           />
 
           <img
-            src="/src/shared/assets/icons/nitto-2-logo.png"
+            src="/src/shared/assets/icons/partners/nitto(21).svg"
             alt="nitto"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/noking-2-logos.png"
+            src="/src/shared/assets/icons/partners/nokianTyres(22).svg"
             alt="noking"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/nokignTyres-2-logo.png"
+            src="/src/shared/assets/icons/partners/nokianTyres(22).svg"
             alt="nokignTyres"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/firelli-2-logo.png"
+            src="/src/shared/assets/icons/partners/pirelli(24).svg"
             alt="firelli"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/roadCruza-2-logo.png"
+            src="/src/shared/assets/icons/partners/roadcruza(25).svg"
             alt="roadCruza"
             className={s.logo}
           />
 
           <img
-            src="/src/shared/assets/icons/tigar-2-logo.png"
+            src="/src/shared/assets/icons/partners/tigar(26).svg"
             alt="tigar"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/toyoTires-2-logo.png"
+            src="/src/shared/assets/icons/partners/toyotires(27).svg"
             alt="toyoTires"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/triangle-2-logo.png"
+            src="/src/shared/assets/icons/partners/triangle(28).svg"
             alt="triangle"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/uniroyal-2-logo.png"
+            src="/src/shared/assets/icons/partners/uniroyal(29).svg"
             alt="uniroyal"
             className={s.logo}
           />
           <img
-            src="/src/shared/assets/icons/yokohama-2-logo.png"
+            src="/src/shared/assets/icons/partners/yokohama(30).svg"
             alt="yokohama"
             className={s.logo}
           />
