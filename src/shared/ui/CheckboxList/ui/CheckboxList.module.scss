@@ -1,0 +1,17 @@
+.wrapper {
+  max-height: 117px;
+  overflow: hidden;
+}
+.open { 
+  max-height: none;
+}
+.show {
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  color: #c4c4c4;
+  span {
+    color: #4c65bd;
+  }
+}

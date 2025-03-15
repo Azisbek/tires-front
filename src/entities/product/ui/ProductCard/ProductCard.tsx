@@ -5,6 +5,8 @@ import { ProductImage, ProductPrice, ProductSeason } from 'entities/product'
 import { ProductCardProps } from 'entities/product/types/types'
 import { CommentCounter } from 'entities/product/ui/CommentCount'
 
+import { Text, Title } from 'shared/ui/Text'
+
 import s from './ProductCard.module.scss'
 
 interface ProductCardItemProps {
@@ -47,8 +49,13 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
           />
         </div>
 
-        <p className={s.title}>{productTitle}</p>
-        <p className={s.stock}>{inStock > 0 ? 'В наличии' : 'Нет в наличии'}</p>
+        <Title size='md-24' className={s.title}>{productTitle}</Title>
+        <Text
+          size="sm-14"
+          className={s.stock}
+        >
+          {inStock > 0 ? 'В наличии' : 'Нет в наличии'}
+        </Text>
 
         <div className={s.buttonWrapper}>
           <ProductPrice>{price}</ProductPrice>
