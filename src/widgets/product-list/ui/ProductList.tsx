@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import { FavoriteBtn } from 'features/toggle-favorite'
 
 import { ProductCard } from 'entities/product'
@@ -7,11 +9,12 @@ import s from './ProductList.module.scss'
 
 interface ProductListProps {
   products: ProductCardProps[]
+  className?: string
 }
 
-export function ProductList({ products }: ProductListProps) {
+export function ProductList({ products, className }: ProductListProps) {
   return (
-    <div className={s.list}>
+    <div className={clsx(s.list, className)}>
       {products.map((product) => (
         <ProductCard
           key={product.productId}

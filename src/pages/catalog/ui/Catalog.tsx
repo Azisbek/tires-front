@@ -1,10 +1,17 @@
+import { CatalogProducts } from 'widgets/catalog-products'
+
+import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 import { Text, Title } from 'shared/ui/Text'
+import { TireInfoSection } from 'widgets/tireInfoSection'
 
 export function Catalog() {
   return (
     <div>
-      <Title size="sm-18">Hellow</Title>
+      <Title size="xl-40">Шины в Бишкеке</Title>
       <Text>Hello World</Text>
+      <CatalogProducts />
+
+      <TireInfoSection/>
     </div>
   )
 }

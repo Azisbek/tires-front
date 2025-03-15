@@ -1,15 +1,22 @@
-import iconca from '../../../shared/assets/icon/Union.png'
+import { PromotionCategory } from 'shared/ui/promotionCategory'
+
+import iconca from '../../../shared/assets/icons/Icon_time.svg'
 
 import s from './PromotionCard.module.scss'
 
 interface Props {
   title: string
-  tags: string[]
+  category: string[]
   expiryDate: string
   imageUrl: string
 }
 
-export function PromotionCard({ title, tags, expiryDate, imageUrl }: Props) {
+export function PromotionCard({
+  title,
+  category,
+  expiryDate,
+  imageUrl,
+}: Props) {
   return (
     <div className={s.promotion}>
       <img
@@ -21,24 +28,15 @@ export function PromotionCard({ title, tags, expiryDate, imageUrl }: Props) {
       <div className={s.promotionContent}>
         <p className={s.title}>{title}</p>
 
-        <div className={s.promotionTags}>
-          {tags.map((tag, index) => (
-            <p
-              key={index}
-              className={s.tag}
-            >
-              {tag}
-            </p>
-          ))}
-        </div>
+        <PromotionCategory category={category} />
 
         <div className={s.promotionDate}>
           <img
             src={iconca}
-            alt="Union iconca"
+            alt="Union-time iconca"
           />
-          <p>
-            Действует до: <span>{expiryDate}</span>
+          <p className={s.dataText}>
+            Действует до: <span className={s.date}>{expiryDate}</span>
           </p>
         </div>
       </div>

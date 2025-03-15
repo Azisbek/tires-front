@@ -4,9 +4,11 @@ import { MainBanner } from 'widgets/banner'
 import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
 import { Partners } from 'widgets/partners'
 import { ProductList } from 'widgets/product-list'
-import { Promotion } from 'widgets/promotion/ui/Promotion'
+import { Promotion } from 'widgets/promotion'
 
 import { NavigateBtn } from 'features/navigate-button'
+
+import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import { useGetHomeProductQuery } from '../api'
 
@@ -26,11 +28,23 @@ export function Home() {
 
       <section className={s.section}>
         <h2 className={s.title}>Популярные шины</h2>
-        <ProductList products={products} />
+        <ProductList
+          className={s.popularProducts}
+          products={products}
+        />
         <NavigateBtn>Посмотреть все шины</NavigateBtn>
       </section>
 
-      <Promotion />
+      <div className={s.promotion}>
+        <Promotion title="Акции" />
+
+        <AppButton
+          className={s.btn}
+          variant="border"
+        >
+          Посмотреть все шины
+        </AppButton>
+      </div>
 
       <Partners />
     </>
