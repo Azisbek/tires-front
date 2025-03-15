@@ -7,6 +7,7 @@ import { navigationMap } from 'shared/model/navigation'
 
 const Home = lazy(() => import('pages/home'))
 const Catalog = lazy(() => import('pages/catalog'))
+const ProductPage = lazy(() => import('pages/product-page'))
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: navigationMap.Home,
         element: <Home />,
+      },
+      {
+        path: navigationMap.CatalogItem,
+        element: <ProductPage />,
       },
       {
         element: <Redirect />,
