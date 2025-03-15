@@ -1,10 +1,10 @@
 import React from 'react'
-import { UserDropdown } from 'features/personal-profile'
 import { Search } from 'features/search'
 import { Icons } from '../../../../shared/ui/icons/ui/Icons'
 import { Logo } from '../../../../entities/logo/ui/Logo'
 import { NavMenu } from '../../../../shared/ui/navMenu/ui/NavMenu'
 import s from './Header.module.scss'
+import { PersonalAccount } from '../PersonalAccount/PersonalAccount'
 
 export function Header(): React.ReactElement {
   
@@ -17,7 +17,7 @@ export function Header(): React.ReactElement {
       </div>
       <div className={s.actions}>
         {<Search />}
-        {<UserDropdown />}
+        {<PersonalAccount/>}
         {<Icons />}
       </div>
     </header>

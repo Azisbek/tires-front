@@ -1,9 +1,9 @@
 import React from 'react';
 import { BurgerMenu } from 'features/burger-menu';
-import { User } from '../../../../entities/user/ui/User';
 import { Logo } from '../../../../entities/logo/ui/Logo';
 import s from './HeaderMobile.module.scss';
 import { Search } from 'features/search';
+import { UserIcon } from 'entities/userIcon';
 
 export function HeaderMobile(): React.ReactElement {
   return (
@@ -16,7 +16,7 @@ export function HeaderMobile(): React.ReactElement {
       </div>
       <div className={s.actions}>
         <Search/>
-        <User />
+        <UserIcon />
       </div>
     </header>
   );

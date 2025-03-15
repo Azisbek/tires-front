@@ -1,3 +1,17 @@
+.searchContainer {
+  position: relative;
+}
+
+
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
 .icon {
   font-size: 20px;
   cursor: pointer;
@@ -6,6 +20,58 @@
 @media (max-width: 768px) {
   .icon {
     width: 20px;
-    margin-right: 55px;
+    margin-right: 50px;
   }
+}
+
+
+.searchPanel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  background: #2B3143;
+  padding: 10px;
+  border-radius: 5px;
+  transition: right 0.4s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  right: 50px;
+}
+
+
+.searchPanel.open {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.searchPanel input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  flex-grow: 1;
+  background: transparent;
+  color: #FFFFFF;
+}
+
+
+.searchSubmit {
+  background: #2B3143;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #FF7E00;
+  font-weight: bold;
+  
+}
+
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }

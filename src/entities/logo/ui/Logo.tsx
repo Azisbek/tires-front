@@ -1,4 +1,4 @@
-import Logotype from '../../../shared/assets/icon/logo/logo.svg'
+import Logotype from '../../../shared/assets/icons/logo/logo.svg'
 
 import s from './Logo.module.scss'
 
