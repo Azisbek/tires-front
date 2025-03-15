@@ -1,65 +1,56 @@
 import clsx from 'clsx'
-
 import s from './PartnersTrust.module.scss'
+import { Title } from 'shared/ui/Text'
 
 export function PartnersTrust() {
   return (
     <section className={s.partnersTrust}>
-      <h2 className={s.title}>Нам доверяют</h2>
-      <div className={s.border}></div>
+      <Title size='lg-32' className={s.title} >Нам доверяют</Title>
+      <hr />
       <div className={clsx(s.marquee, s.marqueeAnimation)}>
         <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/sitec-logo.png"
+          src="/src/shared/assets/icons/partners/ситек(1).svg"
           alt="sitec-logo"
         />
         <img
           className={s.marqueeImage}
-          src="/src/shared/assets/icons/Turvana-logo.png"
+          src="/src/shared/assets/icons/partners/turvana(2).svg"
           alt="Turvana-logo"
         />
-        <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/Gerat-logo.png"
+        <img 
+          src="/src/shared/assets/icons/partners/gerat(3).svg"
           alt="Gerat-logo"
         />
         <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/LiquiMoly-logo.png"
+          src="/src/shared/assets/icons/partners/liquimoly(4).svg"
           alt="LiquiMoly-logo"
         />
         <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/ARB-logo.png"
+          src="/src/shared/assets/icons/partners/arb(5).svg"
           alt="ARB-logo"
         />
-        <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/BushRanger-logo.png"
+        <img 
+          src="/src/shared/assets/icons/partners/bushRanegr(6).svg"
           alt="BushRanger-logo"
         />
-        <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/Michelin.png"
+        <img 
+          src="/src/shared/assets/icons/partners/michelin(7).svg"
           alt="Michelin-logo"
         />
-        <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/Barum-logo.png"
+        <img 
+          src="/src/shared/assets/icons/partners/barum(8).svg"
           alt="Barum-logo"
         />
-        <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/BFGoodrich-logo.png"
+        <img 
+          src="/src/shared/assets/icons/partners/BFGoodrich(9).svg"
           alt="BFGoodrich-logo"
         />
-        <img
-          className={s.marqueeImage}
-          src="/src/shared/assets/icons/Bridgestone-logo.png"
+        <img 
+          src="/src/shared/assets/icons/partners/ridegstome(10).svg"
           alt="Bridgestone-logo"
         />
       </div>
-      <div className={s.border}></div>
+      <hr />
     </section>
   )
 }
