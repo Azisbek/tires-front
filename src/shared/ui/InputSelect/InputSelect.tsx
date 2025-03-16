@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 import arrowBottomIcon from 'shared/assets/icons/ArrowBottom.svg'
 import arrowTopIcon from 'shared/assets/icons/ArrowTop.svg'
+import { useClickOutside } from 'shared/hooks/useClickOutside'
 
 import s from './InputSelect.module.scss'
 
@@ -17,6 +18,7 @@ export function InputSelect({ options, onChange, defaultValue, color }: Props) {
   const [value, setValue] = useState(defaultValue || 'default')
 
   const selectRef = useRef<HTMLDivElement>(null)
+  useClickOutside(selectRef, () => setIsOpen(false), isOpen)
 
   const toggleOpen = () => setIsOpen((prev: boolean) => !prev)
 
@@ -26,27 +28,6 @@ export function InputSelect({ options, onChange, defaultValue, color }: Props) {
     toggleOpen()
   }
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      selectRef.current &&
-      !selectRef.current.contains(event.target as Node)
-    ) {
-      setIsOpen(false)
-    }
-  }
-
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside) // Используем mousedown, чтобы быстрее закрыть
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside) // Очищаем при размонтировании
-    }
-  }, [isOpen])
-
   return (
     <div
       ref={selectRef}
@@ -54,9 +35,7 @@ export function InputSelect({ options, onChange, defaultValue, color }: Props) {
     >
       <div
         onClick={toggleOpen}
-        className={
-          isOpen ? `${s.inputActive}` : `${s.input} ${s[color]}`
-        }
+        className={isOpen ? `${s.inputActive}` : `${s.input} ${s[color]}`}
       >
         <p className={s.defaultTitle}>{value}</p>
         <img
