@@ -17,3 +17,9 @@ ul {
 a {
   text-decoration: none;
 }
+
+.headerWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
