@@ -1,4 +1,4 @@
-import UserMan from '../../../assets/icon/user/user.svg'
+import UserMan from 'shared/assets/icons/user/user.svg'
 
 import s from './User.module.scss'
 

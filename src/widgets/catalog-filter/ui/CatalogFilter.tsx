@@ -104,7 +104,7 @@ export function CatalogFilter() {
         <CheckboxList
           dataTexts={tireFilters.type}
           data={filters.type}
-          setData={(value, index) => handleChangeCheckbox('type', value, index)}
+          setData={(index, value) => handleChangeCheckbox('type', index, value)}
         />
       </FilterLabel>
       <FilterLabel label="Сезонность">

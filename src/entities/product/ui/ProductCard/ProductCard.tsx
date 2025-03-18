@@ -49,7 +49,12 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
           />
         </div>
 
-        <Title size='md-24' className={s.title}>{productTitle}</Title>
+        <Title
+          size="md-24"
+          className={s.title}
+        >
+          {productTitle}
+        </Title>
         <Text
           size="sm-14"
           className={s.stock}

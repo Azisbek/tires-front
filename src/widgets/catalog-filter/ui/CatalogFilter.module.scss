@@ -2,7 +2,6 @@
   max-width: 290px;
   min-width: 250px;
   padding: 0 15px;
-  // padding-left: 20px;
   border-right: #e5e5e5 solid 1px;
 
   .priceFlex {
@@ -11,6 +10,11 @@
   .applyButton {
     width: 100%;
     padding: 9px 46px;
-    margin-bottom:8px;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 768px) {
+    border-right: none;
+    max-width: 100%;
   }
 }

@@ -1,8 +1,11 @@
 import { useMemo, useState } from 'react'
 
+import { CatalogFilter } from 'widgets/catalog-filter'
 import { ProductList } from 'widgets/product-list'
 
+import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
+import { Modal } from 'shared/ui/Modal'
 import { Text } from 'shared/ui/Text'
 
 import { catalogProductsMock } from '../api/data'
@@ -16,6 +19,7 @@ const sortOptions = [
   // { id: 'price_asc', label: 'С большими скидками' },
 ]
 export function CatalogProducts() {
+  const { isMobile } = useScreenWidth()
   const [sort, setSort] = useState<string>('')
 
   const filteredProducts = useMemo(() => {
@@ -36,6 +40,7 @@ export function CatalogProducts() {
   return (
     <section className={s.container}>
       <div className={s.topContainer}>
+        
         <InputSelect
           color="white"
           options={sortOptions.map((option) => option.label)}
@@ -45,6 +50,11 @@ export function CatalogProducts() {
             setSort(selected ? selected.id : '')
           }}
         />
+        {isMobile && (
+          <Modal variant="white" openText='Фильтр'>
+            <CatalogFilter />
+          </Modal>
+        )}
         <Text
           size="sm-14"
           className={s.text}

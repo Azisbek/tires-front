@@ -1,6 +1,6 @@
 import { isFavoriteType } from 'entities/product/types/types'
 
-import { FavoriteIcon } from 'shared/assets/icon/FavoriteIcon'
+import { FavoriteIcon } from 'shared/assets/icons/FavoriteIcon'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 export function FavoriteBtn({ isFavorite }: { isFavorite: isFavoriteType }) {

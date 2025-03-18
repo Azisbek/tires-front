@@ -1,0 +1,38 @@
+.container {
+  z-index: 10;
+}
+
+.white {
+  background: #fff;
+}
+.opacity {
+  background: rgba(0, 0, 0, 0.5);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modalButton {
+  border: 1px solid rgb(229, 229, 229);
+  color: #1A1E29;
+  font-size: 16px;
+  font-weight: 400;
+}
+.modal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.modalContent {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 5px;
+}
