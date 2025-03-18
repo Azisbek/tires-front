@@ -5,6 +5,7 @@ import 'shared/styles/global.scss'
 import { PropsWithChildren } from 'shared/types/PropsWithChildren'
 import { ErrorBoundary, ErrorScreen } from 'shared/ui/error-boundary'
 import { Layout } from 'shared/ui/layout'
+import { Footer } from 'widgets/footer'
 
 export function RouterLayout({ children }: PropsWithChildren) {
   const { isMobile } = useScreenWidth()
@@ -14,8 +15,10 @@ export function RouterLayout({ children }: PropsWithChildren) {
       <div className='headerWrapper'>
         {isMobile ? <HeaderMobile /> : <Header />}
       </div>
-
+    
       <Layout>{children}</Layout>
+
+      <Footer/>
     </ErrorBoundary>
   )
 }

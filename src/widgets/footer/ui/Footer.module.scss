@@ -1,0 +1,48 @@
+.footer {
+  border-top: 1px solid #3E3E3E;
+  background: #fff;
+  position: relative;
+  margin: 40px 0;
+
+  .logoContainer {
+    position: absolute;
+    top: 0;
+    background: #3E3E3E;
+    width: 100px;
+    height: 87px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+
+    .logo {
+      text-align: center;
+      width: 75px;
+      height: auto;
+    }
+  }
+
+  .footerCenter {
+    margin-top: 135px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 43px;
+    gap: 50px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .footerCenter {
+    margin: 120px auto;
+    width: 100%;
+  }
+
+  .leftLinks,
+  .rightLinks {
+    display: none;
+  }
+}

@@ -1,0 +1,34 @@
+.footerLinks {
+  display: flex;
+  gap: 90px;
+}
+
+.footerColumn {
+  width: 184px;
+  margin-top: 56px;
+
+
+  .columnTitle {
+    color: #ff9900;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 16px;
+  }
+
+  .footerItem {
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff7f00;
+    }
+  }
+}
