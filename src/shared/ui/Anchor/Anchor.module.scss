@@ -1,0 +1,54 @@
+.anchor {
+  position: fixed;
+  top: 15vh; 
+  right: 20vw; 
+  z-index: 1000; 
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+li {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #4C65BD;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+  position: relative; 
+  padding-left: 10px; 
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #4C65BD;
+  transform: scaleY(0); 
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  color: #1A1E29;
+}
+
+li:hover::before {
+  transform: scaleY(1); 
+}
+
+
+
+@media (max-width: 768px) {
+  .anchor {
+    display: none;
+    
+    
+  }
+}
