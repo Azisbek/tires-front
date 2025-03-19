@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { ReactNode, useState } from 'react'
+import { JSX, ReactNode, useState } from 'react'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
@@ -8,7 +8,7 @@ import s from './Modal.module.scss'
 
 interface ModalProps {
   children: ReactNode
-  openText: string
+  openText: string | JSX.Element
   variant: 'opacity' | 'white'
 }
 export function Modal({ children, variant, openText }: ModalProps) {
@@ -29,11 +29,11 @@ export function Modal({ children, variant, openText }: ModalProps) {
           <div className={s.modal}>
             <div className={s.modalContent}>
               <AppButton
-                className={s.modalButton}
+                className={`${s.closeButton} ${s.modalButton}`}
                 variant="border"
                 onClick={() => setIsOpen(false)}
               >
-                Закрыть
+                <div className={s.closeСross}></div>
               </AppButton>
               {children}
             </div>

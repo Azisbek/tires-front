@@ -8,7 +8,7 @@
     padding: 27px 0 0 0;
   }
   @media (max-width: 400px) {
-    padding: 27px 5px 0 0;
+    padding: 27px 0 0;
   }
   .topContainer {
     width: 100%;
@@ -18,7 +18,12 @@
     gap: 30px;
     margin-bottom: 45px;
 
-    > :first-child {
+    .filterBtn {
+      display: flex;
+      gap: 8px;
+    }
+
+    .select {
       max-width: 288px;
     }
 
@@ -28,7 +33,7 @@
       white-space: nowrap;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 530px) {
       flex-direction: column-reverse;
     }
   }

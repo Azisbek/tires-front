@@ -10,9 +10,16 @@ interface Props {
   onChange?: (value: string) => void
   defaultValue?: string
   color: 'grey' | 'white'
+  className?: string
 }
 
-export function InputSelect({ options, onChange, defaultValue, color }: Props) {
+export function InputSelect({
+  options,
+  onChange,
+  defaultValue,
+  color,
+  className,
+}: Props) {
   const [isOpen, setIsOpen] = useState(false)
   const [value, setValue] = useState(defaultValue || 'default')
 
@@ -50,13 +57,11 @@ export function InputSelect({ options, onChange, defaultValue, color }: Props) {
   return (
     <div
       ref={selectRef}
-      className={s.select}
+      className={`${s.select} ${className}`}
     >
       <div
         onClick={toggleOpen}
-        className={
-          isOpen ? `${s.inputActive}` : `${s.input} ${s[color]}`
-        }
+        className={isOpen ? `${s.inputActive}` : `${s.input} ${s[color]}`}
       >
         <p className={s.defaultTitle}>{value}</p>
         <img

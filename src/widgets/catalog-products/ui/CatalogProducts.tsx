@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react'
 import { CatalogFilter } from 'widgets/catalog-filter'
 import { ProductList } from 'widgets/product-list'
 
+import { FilterIcon } from 'shared/assets/icons/FilterIcon'
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 import { Modal } from 'shared/ui/Modal'
@@ -40,8 +41,20 @@ export function CatalogProducts() {
   return (
     <section className={s.container}>
       <div className={s.topContainer}>
-        
+        {isMobile && (
+          <Modal
+            variant="white"
+            openText={
+              <span className={s.filterBtn}>
+                <FilterIcon /> Фильтр
+              </span>
+            }
+          >
+            <CatalogFilter />
+          </Modal>
+        )}
         <InputSelect
+          className={s.select}
           color="white"
           options={sortOptions.map((option) => option.label)}
           defaultValue="Выберите сортировку"
@@ -50,11 +63,7 @@ export function CatalogProducts() {
             setSort(selected ? selected.id : '')
           }}
         />
-        {isMobile && (
-          <Modal variant="white" openText='Фильтр'>
-            <CatalogFilter />
-          </Modal>
-        )}
+
         <Text
           size="sm-14"
           className={s.text}
@@ -63,7 +72,10 @@ export function CatalogProducts() {
         </Text>
       </div>
 
-      <ProductList products={filteredProducts} />
+      <ProductList
+        className={s.rowGap88}
+        products={filteredProducts}
+      />
     </section>
   )
 }

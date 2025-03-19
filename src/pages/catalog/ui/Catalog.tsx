@@ -11,12 +11,12 @@ export function Catalog() {
   const { isMobile } = useScreenWidth()
 
   return (
-    <div>
+    <div className={s.wrapper}>
       <Title size="xl-40">Шины в Бишкеке</Title>
       <Text>Hello World</Text>
       <div className={s.container}>
         {!isMobile && <CatalogFilter />}
-        <CatalogProducts />
+          <CatalogProducts />
       </div>
       <TireInfoSection />
     </div>
