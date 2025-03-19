@@ -17,7 +17,10 @@ export function BriefDescription({ data }: descriptionTypesProps) {
         Краткое описание
       </Title>
 
-      <ProductSpecs specs={data} />
+      <ProductSpecs
+        color="dark"
+        specs={data}
+      />
 
       <Link
         className={s.link}

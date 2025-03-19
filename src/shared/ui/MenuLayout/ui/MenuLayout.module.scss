@@ -2,11 +2,12 @@
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 2;
+  z-index: 10;
   width: 100%;
   background-color: #2b3143;
   color: white;
   padding: 40px 20px;
+  pointer-events: auto;
   animation: slideRight .3s ease-in-out;
 
   .container {
@@ -14,6 +15,10 @@
     max-width: 1224px;
     margin: 0 auto;
   }
+}
+
+.fadeAnimate {
+  animation: slideOut .3s ease-in-out forwards;
 }
 
 @keyframes slideRight {
@@ -25,5 +30,17 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
   }
 }

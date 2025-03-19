@@ -35,7 +35,7 @@ export function ViewProduct() {
       <div className={s.container}>
         <TiresImage
           image={tireImg}
-          season='summer'
+          season="summer"
         />
 
         {isMobile ? (

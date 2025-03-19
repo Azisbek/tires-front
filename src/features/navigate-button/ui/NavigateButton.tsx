@@ -1,12 +1,15 @@
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
-import s from './NavigateButton.module.scss'
+interface Props {
+  children: React.ReactNode
+  className?: string
+}
 
-export function NavigateBtn({ children }: { children: string }) {
+export function NavigateBtn({ children, className }: Props) {
   return (
     <AppButton
       variant="border"
-      className={s.button}
+      className={className}
     >
       {children}
     </AppButton>

@@ -1,8 +1,6 @@
 import clsx from 'clsx'
 
-import { useRef, useState } from 'react'
-
-import { useClickOutside } from 'shared/hooks/useClickOutside'
+import { useState } from 'react'
 import { MenuLayout } from 'shared/ui/MenuLayout/ui/MenuLayout'
 
 import s from './MenuNavMobile.module.scss'
