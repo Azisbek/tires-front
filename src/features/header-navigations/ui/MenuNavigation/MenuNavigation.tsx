@@ -1,8 +1,8 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 import { MenuButton } from 'entities/header-components'
 
-import { useClickOutside } from 'shared/hooks/useClickOutside'
+import { useMenuAnimation } from 'shared/hooks/useMenuAnimation'
 import { MenuLayout } from 'shared/ui/MenuLayout/ui/MenuLayout'
 
 import s from './MenuNavigation.module.scss'
@@ -13,42 +13,35 @@ export function MenuNavigation() {
     company: false,
   })
 
-  const menuRef = useRef<HTMLDivElement>(null)
-
-  const toggleNavList = (key: keyof typeof nav, value: boolean) => {
+  const { openMenu, closeMenu } = useMenuAnimation<keyof typeof nav>((key) => {
     setNav(() => ({
       services: false,
       company: false,
-      [key]: value,
+      [key as string]: true,
     }))
-  }
-
-  const isAnyMenuOpen = Object.values(nav).some((isOpen) => isOpen)
-  useClickOutside(
-    menuRef,
-    () => setNav({ services: false, company: false }),
-    isAnyMenuOpen,
-  )
+  })
 
   return (
     <div className={s.menuNavigation}>
       <button className={s.navBtn}>
-        <a href={'#'}>Товары</a>
+        <a href={'/catalog'}>Товары</a>
       </button>
 
       <MenuButton
         title="Услуги"
         value={nav.services}
-        onClick={() => toggleNavList('services', !nav.services)}
+        onMouseEnter={() => openMenu('services')}
+        onMouseLeave={closeMenu}
       />
       <MenuButton
         title="Компания"
         value={nav.company}
-        onClick={() => toggleNavList('company', !nav.company)}
+        onMouseEnter={() => openMenu('company')}
+        onMouseLeave={closeMenu}
       />
 
-      {nav.services && <MenuLayout ref={menuRef}>nav-services</MenuLayout>}
-      {nav.company && <MenuLayout ref={menuRef}>nav-company</MenuLayout>}
+      {nav.services && <MenuLayout>nav-services</MenuLayout>}
+      {nav.company && <MenuLayout>nav-company</MenuLayout>}
     </div>
   )
 }

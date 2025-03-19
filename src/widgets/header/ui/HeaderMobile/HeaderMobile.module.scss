@@ -1,6 +1,7 @@
 .header {
   background-color: rgb(26, 30, 41);
   position: relative;
+  padding: 28px 0;
 
   .headerContent {
     display: flex;
@@ -9,10 +10,14 @@
     padding: 0 20px;
 
     .logo {
-      text-align: center;
-      width: 65px;
-      height: auto;
-      margin-right: 30px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      img {
+        width: 65px;
+        height: auto;
+      }
     }
   }
 

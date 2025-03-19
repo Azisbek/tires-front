@@ -1,0 +1,34 @@
+.review {
+  display: flex;
+  gap: 72px;
+  border: 1px solid #E5E5E5;
+  padding: 16px 24px;
+  width: 100%;
+
+  .comment {
+    display: grid;
+    gap: 16px;
+  }
+
+  .reviewUser {
+    display: grid;
+    gap: 16px;
+
+    .generalGrade {
+      display: grid;
+      gap: 5px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: grid;
+    gap: 16px;
+
+    .reviewUser {
+      .generalGrade {
+        display: flex;
+        gap: 16px;
+      }
+    }
+  }
+}

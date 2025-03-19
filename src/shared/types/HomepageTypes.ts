@@ -19,7 +19,20 @@ export interface PromotionTypes {
   promotionCategory: string[]
 }
 
+interface FilterTypes {
+  manufacturers: string[]
+  models: string[]
+  generations: string[]
+  modifications: string[]
+  body_type: string[]
+}
+
+export interface HomeFilterTypes {
+  filters?: FilterTypes
+}
+
 export interface HomepageTypes {
+  filters: FilterTypes
   popularProducts: PopularProductsTypes[]
   promotion: PromotionTypes[]
 }
