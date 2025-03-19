@@ -1,0 +1,31 @@
+.imageContainer {
+  position: relative;
+  width: 100%;
+  min-width: 390px;
+  height: auto;
+  border: 1px solid rgb(229, 229, 229);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .seasonIcon {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 26px 18px;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 300px;
+
+    .image {
+      transform: scale(0.7);
+    }
+
+    .seasonIcon {
+      display: block;
+    }
+  }
+}

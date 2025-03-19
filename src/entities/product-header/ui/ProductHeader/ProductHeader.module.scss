@@ -1,0 +1,27 @@
+.productHeader {
+  display: grid;
+  gap: 2px;
+
+  .title {
+    font-size: 40px;
+  }
+
+  .metaContent {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+    padding: 0 20px;
+
+    .title {
+      font-size: 24px;
+    }
+
+    .metaContent {
+      display: none;
+    }
+  }
+}

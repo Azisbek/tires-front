@@ -1,0 +1,28 @@
+.menuNavigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .navBtn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    padding: 28px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all .3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    a {
+      color: inherit;
+    }
+
+    &:hover {
+      color: #FF7E00;
+    }
+  }
+}
