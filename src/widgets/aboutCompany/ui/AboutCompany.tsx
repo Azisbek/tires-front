@@ -1,5 +1,6 @@
-import { CompanyDescription, CompanyNews } from "entities/aboutCompany"
+import { CompanyDescription } from "entities/aboutCompany"
 import s from './AboutCompany.module.scss'
+import { PromotionList } from "widgets/promotionList/ui/PromotionList"
 
 
 export const AboutCompany = () => {
@@ -10,7 +11,7 @@ export const AboutCompany = () => {
        
       </div>
       
-      <CompanyNews/>
+      <PromotionList/>
     </div>
   )
 }
