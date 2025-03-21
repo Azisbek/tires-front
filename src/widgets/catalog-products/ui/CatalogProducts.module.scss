@@ -19,9 +19,7 @@
     .grid {
       display: grid;
     }
-    .select {
-      max-width: 288px;
-    }
+
 
     .text {
       line-height: 16px;
@@ -31,13 +29,9 @@
     }
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr 1fr minmax(0, 100px);
-      gap: 20px;
-    }
-
-    @media (max-width: 530px) {
       grid-template: repeat(2, 1fr) / 1fr;
-      max-width: 288px;
+      gap: 20px;
+      // max-width: 288px;
       margin: 0 auto 45px;
       .text {
         text-align: center;
