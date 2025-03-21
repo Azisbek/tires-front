@@ -12,7 +12,6 @@ export const Footer = () => {
   return (
     <footer className={s.footer}>
       <div className={s.container}>
-
         <FooterProduct />
         <FooterServices />
 
@@ -20,7 +19,6 @@ export const Footer = () => {
 
         <FooterCompany />
         <FooterAccount />
-
       </div>
     </footer>
   )

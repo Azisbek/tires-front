@@ -1,7 +1,7 @@
 .footerService {
-    display: grid;
-
-    @media (max-width: 768px) {
-        display: none;
-    }
+  display: grid;
+  gap: 20px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

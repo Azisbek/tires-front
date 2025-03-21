@@ -1,7 +1,8 @@
 .footerCompany {
-    display: grid;
+  display: grid;
+  gap: 20px;
 
-    @media (max-width: 768px) {
-        display: none;
-    }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
