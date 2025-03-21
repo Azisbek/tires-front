@@ -9,10 +9,14 @@
     padding: 0 10px;
 
     .logo {
-      text-align: center;
-      width: 75px;
-      height: auto;
-      margin-left: 80px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      img {
+        width: 75px;
+        height: auto;
+      }
     }
   }
 

@@ -15,7 +15,6 @@ import { useGetHomeProductQuery } from '../api'
 import s from './Home.module.scss'
 
 export function Home() {
-  const products = popularProductsMock
   const { data } = useGetHomeProductQuery()
 
   console.log(data)
@@ -24,16 +23,16 @@ export function Home() {
     <>
       <MainBanner />
 
-      <HomeFilter />
+      <HomeFilter filters={data?.filters} />
 
-      <section className={s.section}>
+      <div className={s.section}>
         <h2 className={s.title}>Популярные шины</h2>
         <ProductList
           className={s.popularProducts}
-          products={products}
+          products={popularProductsMock}
         />
         <NavigateBtn>Посмотреть все шины</NavigateBtn>
-      </section>
+      </div>
 
       <div className={s.promotion}>
         <Promotion title="Акции" />

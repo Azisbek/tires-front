@@ -1,0 +1,37 @@
+.characteristics {
+  padding: 0 10px;
+  
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+
+    .navBtn {
+      color: rgb(76, 101, 189);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgb(229, 229, 229);
+      transition: all .3s linear;
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(60, 100, 241);
+        background: rgb(255, 233, 213);
+      }
+    }
+
+    .active {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 10px 16px;
+      cursor: pointer;
+      color: rgb(255, 126, 0);
+      border-bottom: 1px solid rgb(255, 126, 0);
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 10px;
+  }
+}

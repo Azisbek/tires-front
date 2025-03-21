@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 import { Search } from 'features/search'
 
@@ -8,7 +8,7 @@ import {
   MenuButton,
 } from 'entities/header-components'
 
-import { useClickOutside } from 'shared/hooks/useClickOutside'
+import { useMenuAnimation } from 'shared/hooks/useMenuAnimation'
 import { MenuLayout } from 'shared/ui/MenuLayout/ui/MenuLayout'
 
 import s from './PersonalNavigation.module.scss'
@@ -19,9 +19,7 @@ export function PersonalNavigation() {
 
   const toggleSearch = () => setIsSearch((prev) => !prev)
 
-  const personalRef = useRef<HTMLDivElement>(null)
-
-  useClickOutside(personalRef, () => setPersonalMemu(false), personalMenu)
+  const { openMenu, closeMenu } = useMenuAnimation<boolean>(setPersonalMemu)
 
   return (
     <div className={s.personalNavigation}>
@@ -30,22 +28,19 @@ export function PersonalNavigation() {
         onClick={toggleSearch}
       />
 
-      {/* <div className={s.navContainer}> */}
       <MenuButton
         title="Личный кабинет"
         to="/profile"
         value={personalMenu}
-        onClick={() => setPersonalMemu((prev) => !prev)}
+        onMouseEnter={() => openMenu(true)}
+        onMouseLeave={closeMenu}
       />
 
       <FavoriteNavigate to="/favorites" />
 
       <CartNavigate to="/cart" />
 
-      {personalMenu && (
-        <MenuLayout ref={personalRef}>personal-account</MenuLayout>
-      )}
+      {personalMenu && <MenuLayout>personal-account</MenuLayout>}
     </div>
-    // </div>
   )
 }
