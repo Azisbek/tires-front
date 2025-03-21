@@ -1,0 +1,40 @@
+<<<<<<< HEAD
+.purchaseCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 13px 24px;
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .purchaseCard {
+    gap: 8px;
+  }
+}
+=======
+.purchaseCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  padding: 13px 24px;
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .purchaseCard {
+    gap: 8px;
+  }
+}
+>>>>>>> dev

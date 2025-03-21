@@ -1,0 +1,37 @@
+.purchaseCard {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  padding: 24px 32px;
+  box-shadow:
+    0px 8px 32px 0px rgba(255, 126, 0, 0.16),
+    0px 2px 4px 0px rgba(172, 85, 0, 0.08);
+  background: rgb(255, 255, 255);
+
+  .priceContainer {
+    display: flex;
+    flex-direction: column;
+
+    .promotion {
+      color: #ff7e00;
+      text-decoration: line-through;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        margin-top: 20px;
+        color: rgb(196, 196, 196);
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 16px;
+  }
+}

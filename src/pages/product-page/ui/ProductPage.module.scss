@@ -1,0 +1,43 @@
+.productPage {
+  max-width: 1224px;
+  width: 100%;
+  margin: 0 auto;
+
+  .productContainer {
+    display: grid;
+
+    .title {
+      text-align: center;
+    }
+
+    .productList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 32px;
+      margin-bottom: 87px;
+    }
+
+    .btn {
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .productContainer {
+
+      .title {
+        font-size: 24px;
+      }
+
+      .productList {
+        margin-top: 26px;
+        margin-bottom: 37px;
+      }
+
+      .btn {
+        margin: 0 auto;
+      }
+    }
+  }
+}

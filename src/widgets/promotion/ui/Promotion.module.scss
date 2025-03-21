@@ -1,0 +1,30 @@
+.promotion {
+  max-width: 1252px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  padding: 0 20px;
+
+  .title {
+    color: rgb(26, 30, 41);
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 81px;
+  }
+
+  .promotionContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .promotion {
+    .promotionContainer {
+      display: grid;
+      margin: 0 auto;
+      gap: 20px;
+    }
+  }
+}
