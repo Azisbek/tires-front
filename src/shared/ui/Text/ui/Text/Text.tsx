@@ -15,6 +15,7 @@ export function Text({
   color = 'gray',
   size = 'md-16',
   type = 'regular',
+
   className,
 }: Props) {
   return (

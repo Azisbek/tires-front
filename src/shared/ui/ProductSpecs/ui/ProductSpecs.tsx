@@ -7,9 +7,10 @@ interface Spec {
 
 interface Props {
   specs: Spec[]
+  color: 'white' | 'dark'
 }
 
-export function ProductSpecs({ specs }: Props) {
+export function ProductSpecs({ specs, color }: Props) {
   return (
     <div className={s.productSpecs}>
       {specs.map((spec, index) => (
@@ -17,8 +18,12 @@ export function ProductSpecs({ specs }: Props) {
           key={index}
           className={s.specItem}
         >
-          <span className={s.label}>{spec.label}</span>
-          <span className={s.value}>{spec.value}</span>
+          <span className={color === 'dark' ? s.label : s.labelWhite}>
+            {spec.label}
+          </span>
+          <span className={color === 'dark' ? s.value : s.valueWhite}>
+            {spec.value}
+          </span>
         </div>
       ))}
     </div>

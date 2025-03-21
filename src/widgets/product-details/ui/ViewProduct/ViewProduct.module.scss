@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .viewProduct {
   margin-top: 40px;
   padding: 0 44px;
@@ -19,3 +20,26 @@
     padding: 0 10px;
   }
 }
+=======
+.viewProduct {
+  margin-top: 40px;
+  padding: 0 10px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 10px;
+  }
+}
+>>>>>>> dev

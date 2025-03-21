@@ -7,11 +7,6 @@
 .xl-40 {
   font-size: 40px;
   line-height: 48px;
-
-  @media (max-width: 480px) {
-    font-size: 32px;
-    text-align: center;
-  }
 }
 
 .lg-32 {
@@ -29,3 +24,14 @@
   line-height: 24px;
 }
 
+.black {
+  color: #1a1e29;
+}
+
+.gray {
+  color: #6a6a6a;
+}
+
+.orange {
+  color: #ff7e00;
+}

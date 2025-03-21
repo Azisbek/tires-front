@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .menuLayout {
   position: absolute;
   top: 100%;
@@ -7,7 +8,7 @@
   background-color: #2b3143;
   color: white;
   padding: 40px 20px;
-  animation: slideRight .3s ease-in-out;
+  animation: slideRight 0.3s ease-in-out;
 
   .container {
     width: 100%;
@@ -27,3 +28,51 @@
     opacity: 1;
   }
 }
+=======
+.menuLayout {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: #2b3143;
+  color: white;
+  padding: 40px 20px;
+  pointer-events: auto;
+  animation: slideRight .3s ease-in-out;
+
+  .container {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto;
+  }
+}
+
+.fadeAnimate {
+  animation: slideOut .3s ease-in-out forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+>>>>>>> dev

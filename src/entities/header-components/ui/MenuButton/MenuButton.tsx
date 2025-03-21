@@ -9,25 +9,29 @@ interface Props {
   title: string
   to?: string
   value?: boolean
-  onClick?: (value: boolean) => void
+  onMouseEnter?: (value: boolean) => void
+  onMouseLeave?: (value: boolean) => void
 }
 
-export function MenuButton({ title, to, value, onClick }: Props) {
+export function MenuButton({
+  title,
+  to,
+  value,
+  onMouseEnter,
+  onMouseLeave,
+}: Props) {
   return (
     <button
-      onClick={() => onClick?.(!value)}
+      onMouseEnter={() => onMouseEnter?.(true)}
+      onMouseLeave={() => onMouseLeave?.(false)}
       className={clsx(s.menuButton, value && s.active)}
     >
-      {value ? (
-        <a
-          href={to}
-          className={s.link}
-        >
-          {title}
-        </a>
-      ) : (
-        title
-      )}
+      <a
+        href={to}
+        className={s.link}
+      >
+        {title}
+      </a>
 
       <img
         className={s.image}

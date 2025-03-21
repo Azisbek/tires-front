@@ -7,19 +7,22 @@
   @media (max-width: 768px) {
     padding: 27px 0 0 0;
   }
+  
   @media (max-width: 480px) {
     padding: 0;
   }
+  
   .topContainer {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     margin-bottom: 45px;
+    
     .grid {
       display: grid;
-    }
 
+    }
 
     .text {
       line-height: 16px;

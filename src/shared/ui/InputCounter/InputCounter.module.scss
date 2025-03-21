@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .counter {
   user-select: none;
   display: flex;
@@ -34,3 +35,42 @@
     }
   }
 }
+=======
+.counter {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 2px;
+  background: rgb(255, 255, 255);
+  padding: 6px 8px 6px 16px;
+  width: 100%;
+
+  .btnsContainer {
+    display: grid;
+    gap: 2px;
+
+    .btnIncrement {
+      border: none;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 3px 7px 3px;
+      cursor: pointer;
+    }
+
+    .btnDecrement {
+      border: none;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 7px 3px 5px 3px;
+      cursor: pointer;
+    }
+  }
+}
+>>>>>>> dev

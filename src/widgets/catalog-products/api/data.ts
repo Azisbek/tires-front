@@ -1,4 +1,4 @@
-import { ProductCardProps } from '../../../entities/product/types/types';
+import { ProductCardProps } from '../../../entities/product/types/types'
 
 export const catalogProductsMock: ProductCardProps[] = [
   {
@@ -133,5 +133,4 @@ export const catalogProductsMock: ProductCardProps[] = [
     price: 4600,
     isFavorite: false,
   },
-];
-
+]
