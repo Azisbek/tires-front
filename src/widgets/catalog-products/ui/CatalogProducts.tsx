@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { CatalogFilter } from 'widgets/catalog-filter'
 import { ProductList } from 'widgets/product-list'
 
-import { FilterIcon } from 'shared/assets/icons/FilterIcon'
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
@@ -27,14 +26,19 @@ export function CatalogProducts() {
   return (
     <section className={s.container}>
       <div className={s.topContainer}>
+        <InputSelect
+          className={s.select}
+          color="white"
+          options={sortOptions.map((option) => option.label)}
+          defaultValue="Выберите сортировку"
+        />
         {isMobile && (
-          <>
+          <div className={s.grid}>
             <AppButton
-              className={s.modalButton}
               variant="accent"
               onClick={() => setIsOpen(true)}
             >
-              <FilterIcon /> Фильтр
+              Фильтр
             </AppButton>
             <Modal
               variant="opacity"
@@ -44,15 +48,8 @@ export function CatalogProducts() {
             >
               <CatalogFilter />
             </Modal>
-          </>
+          </div>
         )}
-        <InputSelect
-          className={s.select}
-          color="white"
-          options={sortOptions.map((option) => option.label)}
-          defaultValue="Выберите сортировку"
-        />
-
         <Text
           size="sm-14"
           className={s.text}

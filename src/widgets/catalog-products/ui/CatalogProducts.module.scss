@@ -12,25 +12,13 @@
   }
   .topContainer {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    gap: 30px;
     margin-bottom: 45px;
-
-    .modalButton {
-      color: #1a1e29;
-      background: none;
-      font-weight: 500;
-      padding: 0 8px;
-      border: none;
-      display: flex;
-      gap: 8px;
+    .grid {
+      display: grid;
     }
-    .modal {
-      width: 100%;
-    }
-
     .select {
       max-width: 288px;
     }
@@ -39,11 +27,22 @@
       line-height: 16px;
       margin-right: 18px;
       white-space: nowrap;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr minmax(0, 100px);
+      gap: 20px;
     }
 
     @media (max-width: 530px) {
-      flex-direction: column-reverse;
-      gap: 10px;
+      grid-template: repeat(2, 1fr) / 1fr;
+      max-width: 288px;
+      margin: 0 auto 45px;
+      .text {
+        text-align: center;
+        margin: 0;
+      }
     }
   }
 
@@ -54,4 +53,7 @@
       row-gap: 18px;
     }
   }
+}
+.modal {
+  width: 100%;
 }
