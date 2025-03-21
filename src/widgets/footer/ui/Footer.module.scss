@@ -2,6 +2,11 @@
   border-top: 1px solid #202020;
   padding: 56px 0 204px 0;
 
+  .footerContent {
+    display: flex;
+    gap: 20px;
+  }
+
   .container {
     max-width: 1298px;
     width: 100%;
