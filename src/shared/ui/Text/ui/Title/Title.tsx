@@ -14,7 +14,7 @@ interface Props {
 export function Title({
   children,
   size = 'md-24',
-  color = 'gray',
+  color = 'black',
   className,
 }: Props) {
   return (
