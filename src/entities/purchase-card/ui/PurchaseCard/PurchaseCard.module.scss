@@ -3,7 +3,9 @@
   gap: 20px;
   width: 100%;
   padding: 24px 32px;
-  box-shadow: 0px 8px 32px 0px rgba(255, 126, 0, 0.16), 0px 2px 4px 0px rgba(172, 85, 0, 0.08);
+  box-shadow:
+    0px 8px 32px 0px rgba(255, 126, 0, 0.16),
+    0px 2px 4px 0px rgba(172, 85, 0, 0.08);
   background: rgb(255, 255, 255);
 
   .priceContainer {
@@ -11,7 +13,7 @@
     flex-direction: column;
 
     .promotion {
-      color: #FF7E00;
+      color: #ff7e00;
       text-decoration: line-through;
     }
 

@@ -1,5 +1,5 @@
-export { FooterProduct } from "./ui/FooterProduct";
-export { FooterServices } from "./ui/FooterServices";
-export { FooterCompany } from "./ui/FooterCompany";
-export { FooterAccount } from "./ui/FooterAccount";
-export {FooterContact} from './ui/FooterCenter/FooterContact'
+export { FooterProduct } from './ui/FooterProduct/FooterProduct'
+export { FooterServices } from './ui/FooterService/FooterServices'
+export { FooterCompany } from './ui/FooterCompany/FooterCompany'
+export { FooterAccount } from './ui/FooterAccount/FooterAccount'
+export { FooterContact } from './ui/FooterContact/FooterContact'

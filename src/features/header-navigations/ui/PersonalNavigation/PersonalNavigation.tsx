@@ -31,21 +31,21 @@ export function PersonalNavigation() {
       />
 
       {/* <div className={s.navContainer}> */}
-        <MenuButton
-          title="Личный кабинет"
-          to="/profile"
-          value={personalMenu}
-          onClick={() => setPersonalMemu((prev) => !prev)}
-        />
+      <MenuButton
+        title="Личный кабинет"
+        to="/profile"
+        value={personalMenu}
+        onClick={() => setPersonalMemu((prev) => !prev)}
+      />
 
-        <FavoriteNavigate to="/favorites" />
+      <FavoriteNavigate to="/favorites" />
 
-        <CartNavigate to="/cart" />
+      <CartNavigate to="/cart" />
 
-        {personalMenu && (
-          <MenuLayout ref={personalRef}>personal-account</MenuLayout>
-        )}
-      </div>
+      {personalMenu && (
+        <MenuLayout ref={personalRef}>personal-account</MenuLayout>
+      )}
+    </div>
     // </div>
   )
 }
