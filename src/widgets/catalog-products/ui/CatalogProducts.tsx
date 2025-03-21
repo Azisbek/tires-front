@@ -31,7 +31,7 @@ export function CatalogProducts() {
           <>
             <AppButton
               className={s.modalButton}
-              variant="border"
+              variant="accent"
               onClick={() => setIsOpen(true)}
             >
               <FilterIcon /> Фильтр

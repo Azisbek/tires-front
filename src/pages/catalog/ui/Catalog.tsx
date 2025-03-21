@@ -12,12 +12,19 @@ export function Catalog() {
 
   return (
     <div className={s.wrapper}>
-      <Title className={s.title} size="xl-40">Шины в Бишкеке</Title>
+      <Title
+        className={s.title}
+        size="xl-40"
+      >
+        Шины в Бишкеке
+      </Title>
       <div className={s.container}>
         {!isMobile && <CatalogFilter />}
+        <div className={s.content}>
           <CatalogProducts />
+          <TireInfoSection />
+        </div>
       </div>
-      <TireInfoSection />
     </div>
   )
 }

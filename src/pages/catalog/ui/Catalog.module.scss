@@ -11,5 +11,8 @@
   }
   .container {
     display: flex;
+    .content {
+      min-width: 0;
+    }
   }
 }

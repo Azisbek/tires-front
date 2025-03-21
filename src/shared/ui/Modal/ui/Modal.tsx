@@ -34,7 +34,7 @@ export function Modal({
             <div className={s.modalContent}>
               <AppButton
                 className={`${s.closeButton} ${s.modalButton}`}
-                variant="border"
+                variant="accent"
                 onClick={() => onClick(false)}
               >
                 <div className={s.closeСross}></div>

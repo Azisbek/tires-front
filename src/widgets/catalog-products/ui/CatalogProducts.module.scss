@@ -20,6 +20,7 @@
 
     .modalButton {
       color: #1a1e29;
+      background: none;
       font-weight: 500;
       padding: 0 8px;
       border: none;
@@ -42,6 +43,7 @@
 
     @media (max-width: 530px) {
       flex-direction: column-reverse;
+      gap: 10px;
     }
   }
 
