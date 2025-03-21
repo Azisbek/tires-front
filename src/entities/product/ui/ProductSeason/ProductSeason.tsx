@@ -1,8 +1,8 @@
 import { SeasonType } from 'entities/product/types/types'
 
-import { AllSeasonIcon } from 'shared/assets/icon/season/AllSeason'
-import { BrightnessIcon } from 'shared/assets/icon/season/BrightnessIcon'
-import { SnowIcon } from 'shared/assets/icon/season/SnowIcon'
+import { AllSeasonIcon } from 'shared/assets/icons/season/AllSeason'
+import { BrightnessIcon } from 'shared/assets/icons/season/BrightnessIcon'
+import { SnowIcon } from 'shared/assets/icons/season/SnowIcon'
 
 const seasonIcons = {
   summer: <SnowIcon />,

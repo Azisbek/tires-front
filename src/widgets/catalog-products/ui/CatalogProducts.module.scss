@@ -1,31 +1,56 @@
 .container {
   max-width: 966px;
   width: 100%;
-  padding: 27px 27px 0;
+  padding: 27px 0 0 27px;
+  min-width: 0;
 
-  @media (max-width: 400px) {
-    padding: 27px 5px 0 0;
+  @media (max-width: 768px) {
+    padding: 27px 0 0 0;
   }
+  
+  @media (max-width: 480px) {
+    padding: 0;
+  }
+  
   .topContainer {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    gap: 30px;
     margin-bottom: 45px;
+    
+    .grid {
+      display: grid;
 
-    :first-child {
-      max-width: 288px;
     }
+
     .text {
-      font-size: 14px;
       line-height: 16px;
       margin-right: 18px;
       white-space: nowrap;
+      text-align: right;
     }
 
-    @media (max-width: 400px) {
-      flex-direction: column-reverse;
+    @media (max-width: 768px) {
+      grid-template: repeat(2, 1fr) / 1fr;
+      gap: 20px;
+      // max-width: 288px;
+      margin: 0 auto 45px;
+      .text {
+        text-align: center;
+        margin: 0;
+      }
     }
   }
+
+  .rowGap88 {
+    row-gap: 88px;
+
+    @media (max-width: 675px) {
+      row-gap: 18px;
+    }
+  }
+}
+.modal {
+  width: 100%;
 }

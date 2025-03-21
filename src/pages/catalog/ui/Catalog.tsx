@@ -1,17 +1,30 @@
+import { CatalogFilter } from 'widgets/catalog-filter'
 import { CatalogProducts } from 'widgets/catalog-products'
 import { TireInfoSection } from 'widgets/tireInfoSection'
 
-import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
-import { Text, Title } from 'shared/ui/Text'
+import { useScreenWidth } from 'shared/hooks/useScreenWidth'
+import { Title } from 'shared/ui/Text'
+
+import s from './Catalog.module.scss'
 
 export function Catalog() {
-  return (
-    <div>
-      <Title size="xl-40">Шины в Бишкеке</Title>
-      <Text>Hello World</Text>
-      <CatalogProducts />
+  const { isMobile } = useScreenWidth()
 
-      <TireInfoSection />
+  return (
+    <div className={s.wrapper}>
+      <Title
+        className={s.title}
+        size="xl-40"
+      >
+        Шины в Бишкеке
+      </Title>
+      <div className={s.container}>
+        {!isMobile && <CatalogFilter />}
+        <div className={s.content}>
+          <CatalogProducts />
+          <TireInfoSection />
+        </div>
+      </div>
     </div>
   )
 }
