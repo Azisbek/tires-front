@@ -1,90 +1,68 @@
 .container {
-  z-index: 10;
+  z-index: 901;
+
+  .white {
+    background: #fff;
+  }
+  .opacity {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .modal {
+      position: relative;
+      padding: 50px 30px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      background: white;
+      max-height: 100vh;
+    
+      .modalContent {
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+        overflow-y: auto;
+        flex: 1;
+        padding: 5px;
+      }
+      .closeButton {
+        border: none;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding: 20px;
+      }
+      .closeСross {
+        position: relative;
+        cursor: pointer;
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 20px;
+          height: 3px;
+          background: #e5e5e5;
+          transition: all 0.2s;
+        }
+        &::before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &::after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+    }
+    
+  }
+  
 }
 
-.white {
-  background: #fff;
-}
-.opacity {
-  background: rgba(0, 0, 0, 0.5);
-}
-.modalButton {
-  color: #1a1e29;
-  font-weight: 500;
-  padding: 0 8px;
-  border: none;
-  &:hover .closeСross::before,
-  &:hover .closeСross::after {
-    background: rgb(255, 126, 0);
-  }
 
-  &:active .closeСross::before,
-  &:active .closeСross::after {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-}
-.overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal {
-  position: relative;
-  padding: 50px 0 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  max-height: 100vh;
-  overflow: hidden;
-
-  .modalContent {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 5px;
-  }
-  .closeButton {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    padding: 20px;
-  }
-  .closeСross {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 20px;
-      height: 3px;
-      background: #e5e5e5;
-      transition: all 0.2s;
-    }
-    &::before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-    &::after {
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-  }
-
-  @keyframes modalFadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-}

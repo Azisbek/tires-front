@@ -7,8 +7,8 @@
   @media (max-width: 768px) {
     padding: 27px 0 0 0;
   }
-  @media (max-width: 400px) {
-    padding: 27px 0 0;
+  @media (max-width: 480px) {
+    padding: 0;
   }
   .topContainer {
     width: 100%;
@@ -18,9 +18,16 @@
     gap: 30px;
     margin-bottom: 45px;
 
-    .filterBtn {
+    .modalButton {
+      color: #1a1e29;
+      font-weight: 500;
+      padding: 0 8px;
+      border: none;
       display: flex;
       gap: 8px;
+    }
+    .modal {
+      width: 100%;
     }
 
     .select {

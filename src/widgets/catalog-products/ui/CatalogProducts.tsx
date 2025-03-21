@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
 import { CatalogFilter } from 'widgets/catalog-filter'
 import { ProductList } from 'widgets/product-list'
 
 import { FilterIcon } from 'shared/assets/icons/FilterIcon'
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
+import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 import { Modal } from 'shared/ui/Modal'
 import { Text } from 'shared/ui/Text'
@@ -20,61 +21,49 @@ const sortOptions = [
   // { id: 'price_asc', label: 'С большими скидками' },
 ]
 export function CatalogProducts() {
+  const [isOpen, setIsOpen] = useState(false)
   const { isMobile } = useScreenWidth()
-  const [sort, setSort] = useState<string>('')
-
-  const filteredProducts = useMemo(() => {
-    return catalogProductsMock.sort((a, b) => {
-      switch (sort) {
-        case 'price_desc':
-          return b.price - a.price
-        case 'price_asc':
-          return a.price - b.price
-        case 'popular_asc':
-          return b.rating - a.rating
-        default:
-          return 0
-      }
-    })
-  }, [sort])
 
   return (
     <section className={s.container}>
       <div className={s.topContainer}>
         {isMobile && (
-          <Modal
-            variant="white"
-            openText={
-              <span className={s.filterBtn}>
-                <FilterIcon /> Фильтр
-              </span>
-            }
-          >
-            <CatalogFilter />
-          </Modal>
+          <>
+            <AppButton
+              className={s.modalButton}
+              variant="border"
+              onClick={() => setIsOpen(true)}
+            >
+              <FilterIcon /> Фильтр
+            </AppButton>
+            <Modal
+              variant="opacity"
+              className={s.modal}
+              isOpen={isOpen}
+              onClick={setIsOpen}
+            >
+              <CatalogFilter />
+            </Modal>
+          </>
         )}
         <InputSelect
           className={s.select}
           color="white"
           options={sortOptions.map((option) => option.label)}
           defaultValue="Выберите сортировку"
-          onChange={(value) => {
-            const selected = sortOptions.find((opt) => opt.label === value)
-            setSort(selected ? selected.id : '')
-          }}
         />
 
         <Text
           size="sm-14"
           className={s.text}
         >
-          Товаров: {filteredProducts.length}
+          Товаров: 263
         </Text>
       </div>
 
       <ProductList
         className={s.rowGap88}
-        products={filteredProducts}
+        products={catalogProductsMock}
       />
     </section>
   )

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { JSX, ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
@@ -8,30 +8,34 @@ import s from './Modal.module.scss'
 
 interface ModalProps {
   children: ReactNode
-  openText: string | JSX.Element
+  className?: string
+  isOpen: boolean
+  onClick: (isOpen: boolean) => void
   variant: 'opacity' | 'white'
 }
-export function Modal({ children, variant, openText }: ModalProps) {
-  const [isOpen, setIsOpen] = useState(false)
-
+export function Modal({
+  children,
+  variant,
+  isOpen,
+  onClick,
+  className,
+}: ModalProps) {
   return (
     <div className={s.container}>
-      <AppButton
-        className={s.modalButton}
-        variant="border"
-        onClick={() => setIsOpen(true)}
-      >
-        {openText}
-      </AppButton>
-
       {isOpen && (
-        <div className={clsx(s[variant], s.overlay)}>
-          <div className={s.modal}>
+        <div
+          className={clsx(s[variant], s.overlay)}
+          onClick={() => onClick(false)}
+        >
+          <div
+            className={`${s.modal} ${className}`}
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className={s.modalContent}>
               <AppButton
                 className={`${s.closeButton} ${s.modalButton}`}
                 variant="border"
-                onClick={() => setIsOpen(false)}
+                onClick={() => onClick(false)}
               >
                 <div className={s.closeСross}></div>
               </AppButton>
