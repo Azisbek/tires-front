@@ -1,11 +1,17 @@
-import s from './OurPartners.module.scss'
 import { Title } from 'shared/ui/Text'
+
+import s from './OurPartners.module.scss'
 
 export function OurPartners() {
   return (
     <>
       <section className={s.OurPartners}>
-        <Title size='lg-32' className={s.title}>Наши партнеры</Title>
+        <Title
+          size="lg-32"
+          className={s.title}
+        >
+          Наши партнеры
+        </Title>
         <div className={s.logos}>
           <img
             src="/src/shared/assets/icons/partners/ситек(1).svg"

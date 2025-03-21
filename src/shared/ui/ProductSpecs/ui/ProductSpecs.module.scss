@@ -1,3 +1,34 @@
+<<<<<<< HEAD
+.productSpecs {
+  width: 100%;
+
+  .specItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      color: #757575;
+      font-size: 14px;
+    }
+
+    .value {
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+=======
 .productSpecs {
   width: 100%;
 
@@ -34,3 +65,4 @@
     }
   }
 }
+>>>>>>> dev

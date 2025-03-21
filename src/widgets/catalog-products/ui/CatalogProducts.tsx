@@ -18,19 +18,18 @@ export function CatalogProducts() {
   const [sort, setSort] = useState<string>('')
 
   const filteredProducts = useMemo(() => {
-    return catalogProductsMock
-      .sort((a, b) => {
-        switch (sort) {
-          case 'price_desc':
-            return b.price - a.price
-          case 'price_asc':
-            return a.price - b.price
-          case 'popular_asc':
-            return b.rating - a.rating
-          default:
-            return 0
-        }
-      })
+    return catalogProductsMock.sort((a, b) => {
+      switch (sort) {
+        case 'price_desc':
+          return b.price - a.price
+        case 'price_asc':
+          return a.price - b.price
+        case 'popular_asc':
+          return b.rating - a.rating
+        default:
+          return 0
+      }
+    })
   }, [sort])
 
   return (
