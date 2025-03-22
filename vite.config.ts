@@ -15,7 +15,7 @@ export default defineConfig({
     open: false,
     proxy: {
       '/api': {
-        target: '',
+        target: 'https://tires-shop-test.onrender.com/api/',
         changeOrigin: true,
         rewrite: (p) => p.replace(/^\/api/, ''),
       },

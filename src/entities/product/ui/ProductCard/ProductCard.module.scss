@@ -1,0 +1,58 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  box-sizing: border-box;
+
+  padding: 0 21px 0 20px;
+  max-width: 290px;
+  border: #e5e5e5 solid 1px;
+
+  background: #fff;
+  image {
+    max-width: 241px;
+  }
+  .season {
+    position: absolute;
+    top: 30px;
+    right: 11px;
+  }
+
+  .info {
+    margin: 35px 0;
+    width: 100%;
+    .meta {
+      display: flex;
+      gap: 16px;
+    }
+    .title {
+      min-height: 64px;
+      margin: 17px 0 41px;
+    }
+    .stock {
+      color: #6a6a6a;
+      line-height: 16px;
+      margin: 0 0 8px 0;
+    }
+  }
+
+  .buttonWrapper {
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box;
+    height: 40px;
+    button {
+      width: 100%;
+    }
+
+    .fav {
+      display: flex;
+      flex-shrink: 0;
+      button {
+        padding: 0 12px;
+      }
+    }
+  }
+}

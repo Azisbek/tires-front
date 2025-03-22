@@ -1,0 +1,14 @@
+.promotionCategory {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+
+  .category {
+    color: rgb(255, 126, 0);
+    font-size: 10px;
+    font-weight: 400;
+    border-radius: 2px;
+    background: rgb(255, 233, 213);
+    padding: 4px;
+  }
+}
