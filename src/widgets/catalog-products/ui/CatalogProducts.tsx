@@ -1,8 +1,13 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
+import { CatalogFilter } from 'widgets/catalog-filter'
 import { ProductList } from 'widgets/product-list'
 
+import { useScreenWidth } from 'shared/hooks/useScreenWidth'
+import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
+import { Modal } from 'shared/ui/Modal'
+import { Text } from 'shared/ui/Text'
 
 import { catalogProductsMock } from '../api/data'
 
@@ -15,41 +20,48 @@ const sortOptions = [
   // { id: 'price_asc', label: 'С большими скидками' },
 ]
 export function CatalogProducts() {
-  const [sort, setSort] = useState<string>('')
-
-  const filteredProducts = useMemo(() => {
-    return catalogProductsMock
-      .sort((a, b) => {
-        switch (sort) {
-          case 'price_desc':
-            return b.price - a.price
-          case 'price_asc':
-            return a.price - b.price
-          case 'popular_asc':
-            return b.rating - a.rating
-          default:
-            return 0
-        }
-      })
-  }, [sort])
+  const [isOpen, setIsOpen] = useState(false)
+  const { isMobile } = useScreenWidth()
 
   return (
     <section className={s.container}>
       <div className={s.topContainer}>
         <InputSelect
+          className={s.select}
           color="white"
           options={sortOptions.map((option) => option.label)}
           defaultValue="Выберите сортировку"
-          onChange={(value) => {
-            const selected = sortOptions.find((opt) => opt.label === value)
-            setSort(selected ? selected.id : '')
-          }}
         />
-
-        <p className={s.text}>Товаров: {filteredProducts.length}</p>
+        {isMobile && (
+          <div className={s.grid}>
+            <AppButton
+              variant="accent"
+              onClick={() => setIsOpen(true)}
+            >
+              Фильтр
+            </AppButton>
+            <Modal
+              variant="opacity"
+              className={s.modal}
+              isOpen={isOpen}
+              onClick={setIsOpen}
+            >
+              <CatalogFilter />
+            </Modal>
+          </div>
+        )}
+        <Text
+          size="sm-14"
+          className={s.text}
+        >
+          Товаров: 263
+        </Text>
       </div>
 
-      <ProductList products={filteredProducts} />
+      <ProductList
+        className={s.rowGap88}
+        products={catalogProductsMock}
+      />
     </section>
   )
 }

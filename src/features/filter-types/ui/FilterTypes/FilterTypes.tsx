@@ -1,21 +1,12 @@
 import { useState } from 'react'
 
+import { HomeFilterTypes } from 'shared/types/HomepageTypes'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 
 import s from './FilterTypes.module.scss'
 
-interface Props {
-  data: {
-    manufacturer: string[]
-    model: string[]
-    generation: string[]
-    modification: string[]
-    bodyType: string[]
-  }
-}
-
-export function FilterTypes({ data }: Props) {
+export function FilterTypes({ filters }: HomeFilterTypes) {
   const [filter, setFilter] = useState({
     manufacturer: '',
     model: '',
@@ -36,31 +27,31 @@ export function FilterTypes({ data }: Props) {
       <div className={s.selectContainer}>
         <InputSelect
           color="grey"
-          options={data.manufacturer}
+          options={filters?.manufacturers}
           defaultValue="Производитель"
           onChange={(value) => handleChange('manufacturer', value)}
         />
         <InputSelect
           color="grey"
-          options={data.model}
+          options={filters?.models}
           defaultValue="Модель"
           onChange={(value) => handleChange('model', value)}
         />
         <InputSelect
           color="grey"
-          options={data.generation}
+          options={filters?.generations}
           defaultValue="Поколение"
           onChange={(value) => handleChange('generation', value)}
         />
         <InputSelect
           color="grey"
-          options={data.modification}
+          options={filters?.modifications}
           defaultValue="Модификация"
           onChange={(value) => handleChange('modification', value)}
         />
         <InputSelect
           color="grey"
-          options={data.bodyType}
+          options={filters?.body_type}
           defaultValue="Кузов"
           onChange={(value) => handleChange('bodyType', value)}
         />

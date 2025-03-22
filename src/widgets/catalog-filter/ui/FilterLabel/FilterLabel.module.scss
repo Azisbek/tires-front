@@ -1,0 +1,13 @@
+.filterGroup {
+  margin-bottom: 24px;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .filterLabel {
+    color: #6a6a6a;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

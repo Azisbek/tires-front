@@ -8,8 +8,16 @@ interface Props {
   children: React.ReactNode
   size?: 'xl-40' | 'lg-32' | 'md-24' | 'sm-18'
   className?: string
+  color?: 'black' | 'gray' | 'orange'
 }
 
-export function Title({ children, size = 'md-24', className }: Props) {
-  return <p className={clsx(s.title, s[size], className)}>{children}</p>
+export function Title({
+  children,
+  size = 'md-24',
+  color = 'black',
+  className,
+}: Props) {
+  return (
+    <p className={clsx(s.title, s[size], s[color], className)}>{children}</p>
+  )
 }

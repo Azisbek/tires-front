@@ -1,1 +1,1 @@
-export { PurchaseCard } from "./ui/PurchaseCard/PurchaseCard";
+export { PurchaseCard } from './ui/PurchaseCard/PurchaseCard'

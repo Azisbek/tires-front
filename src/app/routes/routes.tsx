@@ -1,7 +1,15 @@
 import { lazy } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { Navigate, createBrowserRouter } from 'react-router-dom'
 
 import { Redirect } from 'app/lib/Redirect'
+
+import { Reviews } from 'features/reviews'
+
+import {
+  GeneralInformation,
+  Payment,
+  Specs,
+} from 'entities/characteristics-components'
 
 import { navigationMap } from 'shared/model/navigation'
 
@@ -21,6 +29,21 @@ export const router = createBrowserRouter([
       {
         path: navigationMap.CatalogItem,
         element: <ProductPage />,
+        children: [
+          {
+            index: true, // <-- если зашли на /catalog/:id, срабатывает этот редирект
+            element: (
+              <Navigate
+                to="info"
+                replace
+              />
+            ),
+          },
+          { path: `info`, element: <GeneralInformation /> },
+          { path: `specs`, element: <Specs /> },
+          { path: `payment`, element: <Payment /> },
+          { path: `reviews`, element: <Reviews /> },
+        ],
       },
       {
         element: <Redirect />,
