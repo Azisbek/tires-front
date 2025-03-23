@@ -36,7 +36,7 @@ export function Characteristics() {
         </Link>
       </nav>
 
-      <Outlet/>
+      <Outlet />
     </div>
   )
 }

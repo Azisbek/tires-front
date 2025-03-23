@@ -5,7 +5,6 @@ import { ProductImage, ProductPrice, ProductSeason } from 'entities/product'
 import { ProductCardProps } from 'entities/product/types/types'
 
 import { CommentCounter } from 'shared/ui/CommentCount/CommentCount'
-
 import { Text, Title } from 'shared/ui/Text'
 
 import s from './ProductCard.module.scss'

@@ -16,7 +16,7 @@ export function GeneralInformation() {
           также помогает не впитывать лишнюю влагу.
         </Text>
       </div>
-      
+
       <div className={s.descriptionContainer}>
         <Title>Характеристики модели</Title>
         <Text>

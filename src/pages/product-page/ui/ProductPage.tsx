@@ -31,7 +31,12 @@ export function ProductPage() {
       <Space h={72} />
 
       <div className={s.productContainer}>
-        <Title className={s.title} size="lg-32">Похожие товары</Title>
+        <Title
+          className={s.title}
+          size="lg-32"
+        >
+          Похожие товары
+        </Title>
 
         <ProductList
           className={s.productList}

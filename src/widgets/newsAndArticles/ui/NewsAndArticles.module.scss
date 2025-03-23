@@ -1,0 +1,40 @@
+.newsSection {
+  padding: 0 20px;
+
+  .title {
+    margin: 16px 0 16px 124px;
+    font-weight: 500;
+    line-height: 48px;
+  }
+
+  .newsGrid {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .loadMore {
+    cursor: pointer;
+    font-size: 14px;
+    margin: 32px auto 86px auto;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 48px;
+      margin-left: 20px;
+    }
+
+    .loadMore {
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+  }
+}

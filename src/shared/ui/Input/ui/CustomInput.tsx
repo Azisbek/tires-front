@@ -15,10 +15,10 @@ export function CustomInput({
   ...props
 }: CustomInputProps) {
   return (
-      <input
-        className={s.input}
-        type={type}
-        {...props}
-      />
+    <input
+      className={s.input}
+      type={type}
+      {...props}
+    />
   )
 }
