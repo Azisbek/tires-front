@@ -1,6 +1,6 @@
 import { CatalogFilter } from 'widgets/catalog-filter'
 import { CatalogProducts } from 'widgets/catalog-products'
-import { TireInfoSection } from 'widgets/tireInfoSection'
+import { InfoBanner } from 'widgets/infoBanner'
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { Title } from 'shared/ui/Text'
@@ -22,7 +22,7 @@ export function Catalog() {
         {!isMobile && <CatalogFilter />}
         <div className={s.content}>
           <CatalogProducts />
-          <TireInfoSection />
+          <InfoBanner />
         </div>
       </div>
     </div>
