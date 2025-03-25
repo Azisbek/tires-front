@@ -4,7 +4,7 @@ import { MainBanner } from 'widgets/banner'
 import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
 import { Partners } from 'widgets/partners'
 import { ProductList } from 'widgets/product-list'
-import { Promotion } from 'widgets/promotion'
+import { PromotionList } from 'widgets/promotion-listt'
 
 import { NavigateBtn } from 'features/navigate-button'
 
@@ -35,7 +35,7 @@ export function Home() {
       </div>
 
       <div className={s.promotion}>
-        <Promotion title="Акции" />
+        <PromotionList title="Акции" />
 
         <AppButton
           className={s.btn}

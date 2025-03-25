@@ -1,39 +1,60 @@
 .promotion {
   border: 1px solid rgb(229, 229, 229);
   border-radius: 2px;
+  max-width: 392px;
 
   .promotionImage {
     width: 100%;
-    max-width: 392px;
     height: auto;
   }
 
   .promotionContent {
-    margin-left: 10px;
+    margin: 8px 0 0 5%;
+    padding-bottom: 40px;
 
-    .title {
-      color: rgb(26, 30, 41);
-      font-size: 24px;
-      font-weight: 500;
-      width: 232px;
-      text-align: start;
+    .content {
+      height: 118px;
+      margin-bottom: 16px;
+
+      .title {
+        max-width: 328px;
+        color: rgb(26, 30, 41);
+        font-size: 24px;
+        font-weight: 500;
+        text-align: start;
+        margin-bottom: 8px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    max-width: 289px;
+
+    .promotionImage {
+      max-width: 289px;
+      width: 100%;
     }
 
-    .promotionDate {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 14px;
-      margin: 30px 0 40px 0;
+    .promotionContent {
+      margin: 10px 0px 0px 20px;
 
-      .dateText {
-        color: rgb(106, 106, 106);
-        font-weight: 400;
-      }
+      .content {
+        height: 124px;
+        margin-bottom: 12px;
 
-      .date {
-        color: rgb(26, 30, 41);
-        font-weight: 500;
+        .title {
+          max-width: 225px;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 24px;
+
+          -webkit-line-clamp: 4;
+        }
       }
     }
   }

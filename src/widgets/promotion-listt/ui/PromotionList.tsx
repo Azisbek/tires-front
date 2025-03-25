@@ -1,14 +1,14 @@
 import { PromotionCard } from 'entities/promotionCard'
 
-import { PromotionData } from '../api'
+import { PromotionData } from './api'
 
-import s from './Promotion.module.scss'
+import s from './PromotionList.module.scss'
 
 interface Props {
   title?: string
 }
 
-export function Promotion({ title }: Props) {
+export function PromotionList({ title }: Props) {
   return (
     <div className={s.promotion}>
       <p className={s.title}>{title}</p>
@@ -19,8 +19,9 @@ export function Promotion({ title }: Props) {
             key={product.id}
             title={product.title}
             category={product.category}
-            expiryDate={product.expiryDate}
+            date={product.date}
             imageUrl={product.imageUrl}
+            expiryDate={true}
           />
         ))}
       </div>

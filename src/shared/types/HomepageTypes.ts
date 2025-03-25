@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 export interface PopularProductsTypes {
   productId: number
   productImg: string
@@ -24,7 +24,7 @@ export interface HomepageTypes {
   popularProducts: PopularProductsTypes[]
   promotion: PromotionTypes[]
 }
-=======
+
 export interface PopularProductsTypes {
   productId: number
   productImg: string
@@ -63,4 +63,4 @@ export interface HomepageTypes {
   popularProducts: PopularProductsTypes[]
   promotion: PromotionTypes[]
 }
->>>>>>> dev
+
