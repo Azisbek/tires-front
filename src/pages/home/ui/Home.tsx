@@ -1,5 +1,3 @@
-import { popularProductsMock } from 'pages/home/api/data'
-
 import { MainBanner } from 'widgets/banner'
 import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
 import { Partners } from 'widgets/partners'
@@ -11,6 +9,7 @@ import { NavigateBtn } from 'features/navigate-button'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import { useGetHomeProductQuery } from '../api'
+import { popularProductsMock } from '../api/data'
 
 import s from './Home.module.scss'
 

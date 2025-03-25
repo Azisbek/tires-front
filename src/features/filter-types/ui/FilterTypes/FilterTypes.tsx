@@ -33,7 +33,7 @@ export function FilterTypes({ filters }: HomeFilterTypes) {
         />
         <InputSelect
           color="grey"
-          options={filters?.models}
+          options={filters?.models ?? []}
           defaultValue="Модель"
           onChange={(value) => handleChange('model', value)}
         />

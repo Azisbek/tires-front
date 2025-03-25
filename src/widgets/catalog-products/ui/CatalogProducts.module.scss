@@ -7,21 +7,20 @@
   @media (max-width: 768px) {
     padding: 27px 0 0 0;
   }
-  
+
   @media (max-width: 480px) {
     padding: 0;
   }
-  
+
   .topContainer {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     margin-bottom: 45px;
-    
+
     .grid {
       display: grid;
-
     }
 
     .text {
@@ -34,7 +33,6 @@
     @media (max-width: 768px) {
       grid-template: repeat(2, 1fr) / 1fr;
       gap: 20px;
-      // max-width: 288px;
       margin: 0 auto 45px;
       .text {
         text-align: center;
@@ -49,6 +47,10 @@
     @media (max-width: 675px) {
       row-gap: 18px;
     }
+  }
+
+  .mgTop22 {
+    margin-top: 22px;
   }
 }
 .modal {

@@ -18,8 +18,6 @@ export function ProductPage() {
   const { id } = useParams()
   const { data } = useGetProductIdQuery({ id })
 
-  console.log(data)
-
   return (
     <div className={s.productPage}>
       <ViewProduct />
@@ -31,7 +29,12 @@ export function ProductPage() {
       <Space h={72} />
 
       <div className={s.productContainer}>
-        <Title className={s.title} size="lg-32">Похожие товары</Title>
+        <Title
+          className={s.title}
+          size="lg-32"
+        >
+          Похожие товары
+        </Title>
 
         <ProductList
           className={s.productList}

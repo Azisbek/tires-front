@@ -2,35 +2,34 @@ import { ReactNode } from 'react'
 import { Rating } from 'react-simple-star-rating'
 
 import { ProductImage, ProductPrice, ProductSeason } from 'entities/product'
-import { ProductCardProps } from 'entities/product/types/types'
 
+import { ProductType } from 'shared/types/CatalogpageTypes'
 import { CommentCounter } from 'shared/ui/CommentCount/CommentCount'
-
 import { Text, Title } from 'shared/ui/Text'
 
 import s from './ProductCard.module.scss'
 
 interface ProductCardItemProps {
-  product: ProductCardProps
+  product: ProductType
   FavoriteBtn: ReactNode
 }
 
 export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
   const {
-    productImg,
-    productTitle,
-    season,
-    commentQuantity,
-    rating,
-    inStock,
+    image,
+    average_rating,
+    comments_count,
+    title,
+    in_stock,
     price,
+    season,
   } = product
 
   return (
     <div className={s.card}>
       <ProductImage
-        src={productImg}
-        alt={productTitle}
+        src={image}
+        alt={title}
       />
 
       <ProductSeason
@@ -40,10 +39,10 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
 
       <div className={s.info}>
         <div className={s.meta}>
-          <CommentCounter commentQuantity={commentQuantity} />
+          <CommentCounter commentQuantity={comments_count} />
 
           <Rating
-            initialValue={rating}
+            initialValue={average_rating}
             readonly
             allowFraction
             size={20}
@@ -54,13 +53,13 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
           size="md-24"
           className={s.title}
         >
-          {productTitle}
+          {title}
         </Title>
         <Text
           size="sm-14"
           className={s.stock}
         >
-          {inStock > 0 ? 'В наличии' : 'Нет в наличии'}
+          {in_stock > 0 ? 'В наличии' : 'Нет в наличии'}
         </Text>
 
         <div className={s.buttonWrapper}>

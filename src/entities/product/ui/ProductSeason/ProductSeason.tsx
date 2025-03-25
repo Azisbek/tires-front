@@ -1,8 +1,7 @@
-import { SeasonType } from 'entities/product/types/types'
-
 import { AllSeasonIcon } from 'shared/assets/icons/season/AllSeason'
 import { BrightnessIcon } from 'shared/assets/icons/season/BrightnessIcon'
 import { SnowIcon } from 'shared/assets/icons/season/SnowIcon'
+import { SeasonType } from 'shared/types/CatalogpageTypes'
 
 const seasonIcons = {
   summer: <SnowIcon />,
@@ -17,9 +16,4 @@ interface ProductSeasonProps {
 
 export function ProductSeason({ season, className }: ProductSeasonProps) {
   return <span className={className}>{seasonIcons[season]}</span>
-  // <img
-  //   src={seasonIcons[season]}
-  //   alt={`${season} season icon`}
-  //   className={className}
-  // />
 }

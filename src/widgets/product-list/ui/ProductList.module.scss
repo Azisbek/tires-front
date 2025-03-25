@@ -5,11 +5,16 @@
   place-items: center;
   width: 100%;
   max-width: 1250px;
+
+  .skeleton {
+    width: 290px;
+    height: 500px;
+    background: #222;
+  }
   @media (max-width: 768px) {
     gap: 18px;
   }
   .container > * {
     margin: 0 auto;
   }
-  
 }
