@@ -15,9 +15,12 @@ export const AboutCompany = () => {
   ];
   return (
     <div className={s.container}>
-      <div>
+      <div className={s.main}>
         <CompanyDescription/>
-        <Anchor sections={sections} />
+        <div className={s.anchor}>
+          <Anchor sections={sections} />
+        </div>
+        
       </div>
       <div className={s.promotionList}>
          <PromotionList title="Новости и статьи"/>
