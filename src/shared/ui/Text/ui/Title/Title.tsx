@@ -8,7 +8,7 @@ interface Props {
   children: React.ReactNode
   size?: 'xl-40' | 'lg-32' | 'md-24' | 'sm-18'
   className?: string
-  color?: 'black' | 'gray' | 'orange'
+  color? : 'black' | 'gray' | 'orange'
 }
 
 export function Title({
