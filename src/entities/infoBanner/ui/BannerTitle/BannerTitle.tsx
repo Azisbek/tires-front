@@ -1,8 +1,8 @@
 import { Text, Title } from 'shared/ui/Text'
 
-import s from './TireInfoSectionTitle.module.scss'
+import s from './BannerTitle.module.scss'
 
-export function TireInfoSectionTitle() {
+export function BannerTitle() {
   return (
     <div className={s.container}>
       <Title
