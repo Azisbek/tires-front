@@ -62,25 +62,4 @@ export const PromotionData = [
     expiryDate: '30.09.2021',
     imageUrl: 'src/shared/assets/imgs/noneImage.png',
   },
-  {
-    id: 10,
-    title: 'Тормозные колодки со скидкой 10%',
-    category: ['Диски', 'Шины'],
-    expiryDate: '30.09.2021',
-    imageUrl: 'src/shared/assets/imgs/noneImage.png',
-  },
-  {
-    id: 11,
-    title: 'Тормозные колодки со скидкой 10%',
-    category: ['Диски', 'Шины'],
-    expiryDate: '30.09.2021',
-    imageUrl: 'src/shared/assets/imgs/noneImage.png',
-  },
-  {
-    id: 12,
-    title: 'Тормозные колодки со скидкой 10%',
-    category: ['Диски', 'Шины'],
-    expiryDate: '30.09.2021',
-    imageUrl: 'src/shared/assets/imgs/noneImage.png',
-  },
-];
+]
