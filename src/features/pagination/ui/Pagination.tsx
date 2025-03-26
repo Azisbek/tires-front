@@ -27,6 +27,10 @@ export const Pagination: React.FC<PaginationProps> = ({
     has_previous,
   } = meta
 
+  if (total_pages === 1) {
+    return <></>
+  }
+
   const getPaginationButtons = () => {
     let pages: (number | string)[] = []
 

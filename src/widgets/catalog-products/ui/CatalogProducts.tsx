@@ -1,13 +1,12 @@
 import { useState } from 'react'
 
-import { useGetProductsQuery } from 'pages/catalog/api'
-
 import { CatalogFilter } from 'widgets/catalog-filter'
 import { ProductList } from 'widgets/product-list'
 
 import { Pagination } from 'features/pagination'
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
+import { ProductListResponse } from 'shared/types/CatalogpageTypes'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 import { Modal } from 'shared/ui/Modal'
@@ -16,26 +15,34 @@ import { Text } from 'shared/ui/Text'
 import s from './CatalogProducts.module.scss'
 
 const sortOptions = [
-  { id: 'price_desc', label: 'Сначала дорогие' },
-  { id: 'price_asc', label: 'Сначала дешевые' },
-  { id: 'popular_asc', label: 'Сначала с высоким рейтингом' },
+  { id: '-price', label: 'Сначала дорогие' },
+  { id: 'price', label: 'Сначала дешевые' },
 ]
-
-export function CatalogProducts() {
+interface CatalogProductsProps {
+  data?: ProductListResponse
+  onChangePage: (page: number) => void
+  onSortChange: (sort: string) => void
+}
+export function CatalogProducts({
+  data,
+  onChangePage,
+  onSortChange,
+}: CatalogProductsProps) {
   const [isOpen, setIsOpen] = useState(false)
   const { isMobile } = useScreenWidth()
-  const [currentPage, setCurrentPage] = useState(1)
 
-  const { data } = useGetProductsQuery({ page: currentPage, page_size: 12 })
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page)
+  const onInputSelectChange = (value: string) => {
+    const selectedSort = sortOptions.find((opt) => opt.label === value)?.id
+    if (selectedSort) {
+      onSortChange(selectedSort)
+    }
   }
 
   return (
     <section className={s.container}>
       <div className={s.topContainer}>
         <InputSelect
+          onChange={onInputSelectChange}
           className={s.select}
           color="white"
           options={sortOptions.map((option) => option.label)}
@@ -74,7 +81,7 @@ export function CatalogProducts() {
         <Pagination
           meta={data}
           className={s.mgTop22}
-          onPageChange={handlePageChange}
+          onPageChange={onChangePage}
         />
       )}
     </section>

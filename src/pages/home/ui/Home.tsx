@@ -16,8 +16,6 @@ import s from './Home.module.scss'
 export function Home() {
   const { data } = useGetHomeProductQuery()
 
-  console.log(data)
-
   return (
     <>
       <MainBanner />
