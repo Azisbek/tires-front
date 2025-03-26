@@ -1,8 +1,9 @@
 import { CompanyDescription } from "entities/aboutCompany"
+import { Title } from "shared/ui/Text"
 import s from './AboutCompany.module.scss'
-import { PromotionList } from "widgets/promotionList/ui/PromotionList"
 import { Anchor } from "shared/ui/Anchor/Anchor"
-import { AppButton } from "shared/ui/AppButton/AppButton"
+import img from '../../../shared/assets/imgs/noneImage.png'
+
 
 
 
@@ -16,18 +17,15 @@ export const AboutCompany = () => {
   return (
     <div className={s.container}>
       <div className={s.main}>
-        <CompanyDescription/>
+        <div>
+          <Title size='xl-40' className={s.description}>О Компании</Title>
+          <img className={s.img} src={img} alt="" />
+        </div>
         <div className={s.anchor}>
           <Anchor sections={sections} />
         </div>
-        
       </div>
-      <div className={s.promotionList}>
-         <PromotionList title="Новости и статьи"/>
-      <AppButton
-      className={s.btn}
-      variant="border">Посмотреть все новости и статьи</AppButton>
-      </div>
+      <CompanyDescription/>
     </div>
   )
 }
