@@ -16,6 +16,8 @@ import { navigationMap } from 'shared/model/navigation'
 const Home = lazy(() => import('pages/home'))
 const Catalog = lazy(() => import('pages/catalog'))
 const ProductPage = lazy(() => import('pages/product-page'))
+const News = lazy(() => import('pages/news'))
+
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +51,7 @@ export const router = createBrowserRouter([
         children: [
           { path: navigationMap.Home, element: <Home /> },
           { path: navigationMap.Catalog, element: <Catalog /> },
+          { path: navigationMap.News, element: <News title="Новости и статьи" /> },
         ],
       },
     ],
