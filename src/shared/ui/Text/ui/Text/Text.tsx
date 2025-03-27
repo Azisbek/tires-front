@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode
   size?: 'md-16' | 'sm-14'
   type?: 'regular' | 'medium' | 'bold'
-  color?: 'black' | 'gray'
+  color?: 'black' | 'gray' | 'red'
   className?: string
 }
 

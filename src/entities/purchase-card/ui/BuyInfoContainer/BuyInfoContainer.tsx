@@ -8,13 +8,15 @@ import { Text } from 'shared/ui/Text'
 import s from './BuyInfoContainer.module.scss'
 
 interface Props {
-  guarantee: string
+  warranty: string
+  inStock: number
 }
 
-export function BuyInfoContainer({ guarantee }: Props) {
+export function BuyInfoContainer({ warranty, inStock }: Props) {
   return (
     <div className={s.buyInfoContainer}>
-      <p className={s.title}>В наличии</p>
+      <p className={s.title}>В наличии {inStock}</p>
+
       <Text
         className={s.infoTitle}
         size="sm-14"
@@ -22,10 +24,10 @@ export function BuyInfoContainer({ guarantee }: Props) {
       >
         <img
           src={guaranteeIcon}
-          alt="guarantee"
+          alt="warranty"
         />
         Гарантия:
-        <p>{guarantee}</p>
+        <p>{warranty.trim().length > 0 ? warranty : 'нет'}</p>
       </Text>
 
       <Text

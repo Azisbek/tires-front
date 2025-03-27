@@ -15,7 +15,7 @@ export function MainBanner() {
   const [bannerInterval] = useState<number>(5000)
 
   return (
-    <div className={s.banner}>
+    <section className={s.banner}>
       <div className={s.bannerCarousel}>
         <BannerCarousel
           images={banners}
@@ -41,6 +41,6 @@ export function MainBanner() {
           interval={bannerInterval}
         />
       </div>
-    </div>
+    </section>
   )
 }

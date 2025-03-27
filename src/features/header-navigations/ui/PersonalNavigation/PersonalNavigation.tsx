@@ -1,46 +1,40 @@
 import { useState } from 'react'
 
-import { Search } from 'features/search'
+import { CartNavigate, FavoriteNavigate } from 'entities/header-components'
+import { Search } from 'entities/search'
 
-import {
-  CartNavigate,
-  FavoriteNavigate,
-  MenuButton,
-} from 'entities/header-components'
-
-import { useMenuAnimation } from 'shared/hooks/useMenuAnimation'
+import { SearchIcon } from 'shared/assets/icons/SearchIcon/SearchIcon'
 import { MenuLayout } from 'shared/ui/MenuLayout/ui/MenuLayout'
 
 import s from './PersonalNavigation.module.scss'
 
 export function PersonalNavigation() {
-  const [personalMenu, setPersonalMemu] = useState(false)
   const [isSearch, setIsSearch] = useState(false)
 
   const toggleSearch = () => setIsSearch((prev) => !prev)
 
-  const { openMenu, closeMenu } = useMenuAnimation<boolean>(setPersonalMemu)
-
   return (
     <div className={s.personalNavigation}>
-      <Search
-        value={isSearch}
+      <button
+        className={s.navBtn}
         onClick={toggleSearch}
-      />
+      >
+        <SearchIcon variant="white" />
+      </button>
 
-      <MenuButton
-        title="Личный кабинет"
-        to="/profile"
-        value={personalMenu}
-        onMouseEnter={() => openMenu(true)}
-        onMouseLeave={closeMenu}
-      />
+      {isSearch && (
+        <MenuLayout paddingVertical={10}>
+          <Search />
+        </MenuLayout>
+      )}
+
+      <button className={s.navBtn}>
+        <a href={'/catalog'}>Личный кабинет</a>
+      </button>
 
       <FavoriteNavigate to="/favorites" />
 
       <CartNavigate to="/cart" />
-
-      {personalMenu && <MenuLayout>personal-account</MenuLayout>}
     </div>
   )
 }
