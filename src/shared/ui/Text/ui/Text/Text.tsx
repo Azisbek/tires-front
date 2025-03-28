@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode
   size?: 'md-16' | 'sm-14'
   type?: 'regular' | 'medium' | 'bold'
-  color?: 'black' | 'gray'
+  color?: 'black' | 'gray' | 'red'
   className?: string
 }
 
@@ -15,7 +15,6 @@ export function Text({
   color = 'gray',
   size = 'md-16',
   type = 'regular',
-
   className,
 }: Props) {
   return (

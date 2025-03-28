@@ -1,22 +1,27 @@
-import summerIcon from 'shared/assets/icons/summer-tires.svg'
-import winterIcon from 'shared/assets/icons/winter-tires.svg'
+import allSeasonIcon from 'shared/assets/icons/season/allSeason.webp'
+import summerIcon from 'shared/assets/icons/season/brightness.webp'
+import winterIcon from 'shared/assets/icons/season/snow.webp'
+import { Season } from 'shared/types/ProductDetailsTypes'
 
 interface Props {
-  tiresType?: 'summer' | 'winter'
+  season: Season
 }
 
-export function TiresIcon({ tiresType }: Props) {
-  const tireIcons = {
+export function TiresIcon({ season }: Props) {
+  const seasonIcons: Record<Season, string | null> = {
     summer: summerIcon,
     winter: winterIcon,
+    all_seasons: allSeasonIcon,
   }
 
-  const tireIcon = tireIcons[tiresType || 'summer']
+  const variant = season ? seasonIcons[season] : null
 
   return (
     <img
-      src={tireIcon}
-      alt={tiresType}
+      src={variant || undefined}
+      alt={season || 'Tire icon'}
+      width={20}
+      height={20}
     />
   )
 }

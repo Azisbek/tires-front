@@ -1,8 +1,7 @@
 import { Rating } from 'react-simple-star-rating'
 
-import { ProductHeaderProps } from 'entities/product-header/types/types'
-
 import guaranteeIcon from 'shared/assets/icons/guarantee.svg'
+import { ProductHeaderTypes } from 'shared/types/ProductDetailsTypes'
 import { CommentCounter } from 'shared/ui/CommentCount/CommentCount'
 import { Text, Title } from 'shared/ui/Text'
 
@@ -12,36 +11,36 @@ import s from './ProductHeader.module.scss'
 
 export function ProductHeader({
   title,
-  tiresType,
-  hasGuarantee = false,
-  productCode,
-  commentQuantity,
-  productRating,
-}: ProductHeaderProps) {
+  season,
+  warranty,
+  id,
+  comments = [],
+  average_rating,
+}: ProductHeaderTypes) {
   return (
     <div className={s.productHeader}>
       <Title className={s.title}>{title}</Title>
 
       <div className={s.metaContent}>
-        <TiresIcon tiresType={tiresType} />
+        <TiresIcon season={season} />
 
-        {hasGuarantee && (
+        {warranty.trim().length > 0 && (
           <img
             src={guaranteeIcon}
             alt="guartantee"
           />
         )}
 
-        <CommentCounter commentQuantity={commentQuantity} />
+        <CommentCounter commentQuantity={comments.length} />
 
         <Rating
-          initialValue={productRating}
+          initialValue={average_rating}
           size={18}
           allowFraction={true}
           readonly={true}
         />
 
-        <Text size="sm-14">Код товара: {productCode}</Text>
+        <Text size="sm-14">Код товара: {id}</Text>
       </div>
     </div>
   )
