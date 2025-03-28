@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { AddComment, Comment } from 'features/comment'
@@ -5,6 +6,7 @@ import { AddComment, Comment } from 'features/comment'
 import { ReviewsBanner } from 'entities/characteristics-components'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
+import { LoaderComment } from 'shared/ui/loader-components'
 import { SkeletonComment } from 'shared/ui/skeleton-components'
 
 import { useGetProductCommentsQuery } from '../api'
@@ -13,15 +15,18 @@ import s from './Reviews.module.scss'
 
 export function Reviews() {
   const { id } = useParams()
-
-  const { data, isLoading, refetch } = useGetProductCommentsQuery(
-    { id },
-    { refetchOnMountOrArgChange: false },
-  )
+  const [limit, setLimit] = useState(3)
 
   if (!id) return <p>Product ID is missing</p>
 
-  // console.log(data)
+  const { data, isLoading, isFetching, refetch } = useGetProductCommentsQuery(
+    { id: Number(id), limit },
+    { refetchOnMountOrArgChange: false },
+  )
+
+  const handleLoadMore = () => data?.next && setLimit((prev) => prev + limit)
+
+  console.log(data)
 
   return (
     <section className={s.reviews}>
@@ -33,7 +38,7 @@ export function Reviews() {
       <ReviewsBanner />
 
       <div className={s.reviewsList}>
-        {data?.map((item: any) => (
+        {data?.results?.map((item) => (
           <Comment
             key={item.id}
             username="Termos"
@@ -42,6 +47,8 @@ export function Reviews() {
             comment={item.comment}
           />
         ))}
+
+        {isFetching && !isLoading && <LoaderComment />}
 
         {isLoading && (
           <>
@@ -52,9 +59,16 @@ export function Reviews() {
         )}
       </div>
 
-      <div>
-        <AppButton variant="border">Показать ещё 3 из 5</AppButton>
-      </div>
+      {data?.next && (
+        <div>
+          <AppButton
+            variant="border"
+            onClick={handleLoadMore}
+          >
+            Показать ещё
+          </AppButton>
+        </div>
+      )}
     </section>
   )
 }

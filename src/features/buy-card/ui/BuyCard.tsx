@@ -49,5 +49,3 @@ export function BuyCard({ data }: Props) {
     </PurchaseCard>
   )
 }
-
-// Протестировать purchase вместо buyCard переместив в feature

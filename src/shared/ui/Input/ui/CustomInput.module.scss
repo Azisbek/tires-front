@@ -1,0 +1,26 @@
+.input {
+  padding: 12px 16px;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  transition: border 0.2s;
+  color: #1a1e29;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  &:hover {
+    border-color: #ff7e00;
+    color: #ff7e00;
+  }
+
+  &:focus {
+    // border-color: #ff7e00;
+    outline: none;
+  }
+
+  &[type='checkbox'],
+  &[type='radio'] {
+    width: 16px;
+    height: 16px;
+  }
+}

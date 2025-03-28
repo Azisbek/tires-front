@@ -3,5 +3,12 @@ export interface CommentTypes {
   productId: number
   comment: string
   rating: number
-  createdAt: string
+  created_at: string
+}
+
+export interface ProductCommentsResponse {
+  count: number
+  next: string | null
+  previous: string | null
+  results: CommentTypes[]
 }

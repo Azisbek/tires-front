@@ -1,1 +1,1 @@
-export { TireInfoSection } from "./ui/TireInfoSection";
+export { TireInfoSection } from './ui/TireInfoSection'

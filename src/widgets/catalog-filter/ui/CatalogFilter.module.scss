@@ -1,0 +1,22 @@
+.filterContainer {
+  max-width: 290px;
+  min-width: 250px;
+  padding-right: 15px;
+  border-right: #e5e5e5 solid 1px;
+  height: max-content;
+
+  .priceFlex {
+    display: flex;
+  }
+  .applyButton {
+    width: 100%;
+    padding: 9px 46px;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 768px) {
+    border-right: none;
+    max-width: 100%;
+    padding: 0;
+  }
+}

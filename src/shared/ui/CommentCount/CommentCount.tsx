@@ -1,4 +1,4 @@
-import { CommentIcon } from 'shared/assets/icon/CommentIcon'
+import { CommentIcon } from 'shared/assets/icons/CommentIcon'
 
 import s from './CommentCount.module.scss'
 

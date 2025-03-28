@@ -1,4 +1,4 @@
-import { FavoriteIcon } from 'shared/assets/icon/FavoriteIcon'
+import { FavoriteIcon } from 'shared/assets/icons/FavoriteIcon'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import s from './FavoriteBtn.module.scss'

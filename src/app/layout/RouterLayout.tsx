@@ -1,3 +1,4 @@
+import { Footer } from 'widgets/footer'
 import { Header, HeaderMobile } from 'widgets/header'
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
@@ -11,11 +12,13 @@ export function RouterLayout({ children }: PropsWithChildren) {
 
   return (
     <ErrorBoundary fallback={<ErrorScreen />}>
-      <div className='headerWrapper'>
+      <div className="headerWrapper">
         {isMobile ? <HeaderMobile /> : <Header />}
       </div>
 
       <Layout>{children}</Layout>
+
+      <Footer />
     </ErrorBoundary>
   )
 }

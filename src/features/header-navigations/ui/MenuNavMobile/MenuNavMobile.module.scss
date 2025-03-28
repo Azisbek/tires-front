@@ -8,7 +8,7 @@
     color: rgb(255, 255, 255);
     font-size: 14px;
     font-weight: 500;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .burger {
@@ -19,27 +19,27 @@
       width: 24px;
       height: 2px;
       background-color: white;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
 
     .middle {
       width: 20px;
       height: 2px;
       background-color: white;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
   }
 
   .active {
-    color: #FF7E00;
+    color: #ff7e00;
 
     .line:first-child {
-      background-color: #FF7E00;
+      background-color: #ff7e00;
       transform: translateY(6px) rotate(45deg);
     }
 
     .line:last-child {
-      background-color: #FF7E00;
+      background-color: #ff7e00;
       transform: translateY(-6px) rotate(-45deg);
     }
 

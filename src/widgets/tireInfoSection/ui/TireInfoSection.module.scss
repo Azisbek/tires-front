@@ -4,6 +4,7 @@
   padding: 30px 0;
   display: grid;
   gap: 40px;
+  justify-content: right;
 }
 @media (max-width: 768px) {
   .sectionContainer {

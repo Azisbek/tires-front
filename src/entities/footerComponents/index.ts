@@ -1,0 +1,5 @@
+export { FooterProduct } from './ui/FooterProduct/FooterProduct'
+export { FooterServices } from './ui/FooterService/FooterServices'
+export { FooterCompany } from './ui/FooterCompany/FooterCompany'
+export { FooterAccount } from './ui/FooterAccount/FooterAccount'
+export { FooterContact } from './ui/FooterContact/FooterContact'

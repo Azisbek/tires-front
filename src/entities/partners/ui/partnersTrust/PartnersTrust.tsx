@@ -1,11 +1,18 @@
 import clsx from 'clsx'
-import s from './PartnersTrust.module.scss'
+
 import { Title } from 'shared/ui/Text'
+
+import s from './PartnersTrust.module.scss'
 
 export function PartnersTrust() {
   return (
     <section className={s.partnersTrust}>
-      <Title size='lg-32' className={s.title} >Нам доверяют</Title>
+      <Title
+        size="lg-32"
+        className={s.title}
+      >
+        Нам доверяют
+      </Title>
       <hr />
       <div className={clsx(s.marquee, s.marqueeAnimation)}>
         <img
@@ -17,7 +24,7 @@ export function PartnersTrust() {
           src="/src/shared/assets/icons/partners/turvana(2).svg"
           alt="Turvana-logo"
         />
-        <img 
+        <img
           src="/src/shared/assets/icons/partners/gerat(3).svg"
           alt="Gerat-logo"
         />
@@ -29,23 +36,23 @@ export function PartnersTrust() {
           src="/src/shared/assets/icons/partners/arb(5).svg"
           alt="ARB-logo"
         />
-        <img 
+        <img
           src="/src/shared/assets/icons/partners/bushRanegr(6).svg"
           alt="BushRanger-logo"
         />
-        <img 
+        <img
           src="/src/shared/assets/icons/partners/michelin(7).svg"
           alt="Michelin-logo"
         />
-        <img 
+        <img
           src="/src/shared/assets/icons/partners/barum(8).svg"
           alt="Barum-logo"
         />
-        <img 
+        <img
           src="/src/shared/assets/icons/partners/BFGoodrich(9).svg"
           alt="BFGoodrich-logo"
         />
-        <img 
+        <img
           src="/src/shared/assets/icons/partners/ridegstome(10).svg"
           alt="Bridgestone-logo"
         />

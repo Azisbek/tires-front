@@ -1,12 +1,15 @@
 import { $api } from 'shared/api/api'
 
-import { CommentTypes } from '../types/types'
+import { ProductCommentsResponse } from '../types/types'
 
 export const productCommentsApi = $api.injectEndpoints({
   endpoints: (build) => ({
-    getProductComments: build.query<CommentTypes[], { id: any }>({
-      query: ({ id }) => ({
-        url: `/product/${id}/comments/`,
+    getProductComments: build.query<
+      ProductCommentsResponse,
+      { id: number; limit?: number }
+    >({
+      query: ({ id, limit = 3 }) => ({
+        url: `/product/${id}/comments/?limit=${limit}&offset=0`,
         method: 'GET',
       }),
     }),

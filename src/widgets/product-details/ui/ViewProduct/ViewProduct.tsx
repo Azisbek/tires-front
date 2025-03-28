@@ -1,5 +1,3 @@
-import { descriptionContainer } from 'widgets/product-details/api/data'
-
 import { BuyCard } from 'features/buy-card'
 
 import { BriefDescription } from 'entities/brief-description/ui/BriefDescription/BriefDescription'
@@ -12,7 +10,6 @@ import { Space } from 'shared/ui/Space/Space'
 import { TiresImage } from 'shared/ui/TiresImage'
 
 import s from './ViewProduct.module.scss'
-import { Loader } from 'shared/ui/loader-components'
 
 interface Props {
   data: ProductDetailsTypes
