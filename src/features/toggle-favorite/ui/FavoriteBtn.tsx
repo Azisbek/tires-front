@@ -1,12 +1,10 @@
-import { isFavoriteType } from 'entities/product/types/types'
-
 import { FavoriteIcon } from 'shared/assets/icons/FavoriteIcon'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import s from './FavoriteBtn.module.scss'
 
 interface Props {
-  isFavorite: isFavoriteType
+  isFavorite: boolean | undefined
 }
 
 export function FavoriteBtn({ isFavorite }: Props) {

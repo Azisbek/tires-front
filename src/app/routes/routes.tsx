@@ -3,7 +3,7 @@ import { Navigate, createBrowserRouter } from 'react-router-dom'
 
 import { Redirect } from 'app/lib/Redirect'
 
-import { Reviews } from 'features/reviews'
+import { Reviews } from 'widgets/reviews'
 
 import {
   GeneralInformation,

@@ -1,11 +1,14 @@
-import { descriptionTypesProps } from 'entities/brief-description/types/types'
-
+import { Characteristic } from 'shared/types/ProductDetailsTypes'
 import { ProductSpecs } from 'shared/ui/ProductSpecs'
 import { Title } from 'shared/ui/Text'
 
 import s from './BriefDescriptionMobile.module.scss'
 
-export function BriefDescriptionMobile({ data }: descriptionTypesProps) {
+interface Props {
+  data: Characteristic
+}
+
+export function BriefDescriptionMobile({ data }: Props) {
   return (
     <div className={s.container}>
       <Title

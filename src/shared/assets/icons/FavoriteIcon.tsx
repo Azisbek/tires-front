@@ -1,10 +1,8 @@
-import { isFavoriteType } from 'entities/product/types/types'
-
-interface FavoriteIconProps {
-  isFavorite: isFavoriteType
+interface Props {
+  isFavorite: boolean | undefined
 }
 
-export function FavoriteIcon({ isFavorite }: FavoriteIconProps) {
+export function FavoriteIcon({ isFavorite }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

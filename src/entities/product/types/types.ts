@@ -1,5 +1,4 @@
 export type SeasonType = 'winter' | 'summer' | 'allSeason'
-export type isFavoriteType = boolean
 
 export interface ProductCardProps {
   productId?: number
@@ -10,7 +9,7 @@ export interface ProductCardProps {
   productTitle: string
   inStock: number
   price: number
-  isFavorite: isFavoriteType
+  isFavorite: boolean
 }
 
 export interface ProductPriceProps {

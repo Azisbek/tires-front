@@ -2,7 +2,7 @@ import clsx from 'clsx'
 
 import { MenuNavigation, PersonalNavigation } from 'features/header-navigations'
 
-import logoIcon from 'shared/assets/icons/logo/logo.svg'
+import logoIcon from 'shared/assets/icons/logo/logo.webp'
 
 import s from './Header.module.scss'
 
@@ -13,13 +13,14 @@ export function Header() {
         <MenuNavigation />
 
         <div className={s.logo}>
-          <img
-            src={logoIcon}
-            alt="logo"
-          />
+          <a href="/">
+            <img
+              src={logoIcon}
+              alt="logo"
+            />
+          </a>
         </div>
 
-        {/* тестовый Search временно ! */}
         <PersonalNavigation />
       </div>
     </header>
