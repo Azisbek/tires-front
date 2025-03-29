@@ -4,22 +4,23 @@ import { FavoriteBtn } from 'features/toggle-favorite'
 
 import { PurchaseCard } from 'entities/purchase-card'
 
-import { PurchaseCardProps } from 'shared/types/PurchaseCardTypes'
+import { BuyCardTypes } from 'shared/types/ProductDetailsTypes'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { InputCounter } from 'shared/ui/InputCounter/InputCounter'
 
 import s from './BuyCard.module.scss'
 
 interface Props {
-  data: PurchaseCardProps
+  data: BuyCardTypes
 }
 
 export function BuyCard({ data }: Props) {
-  const [value, setValue] = useState(1)
+  const [value, setValue] = useState<number | undefined>(data.count)
 
-  const incrementFunc = () => setValue((prev) => prev + 1)
+  const incrementFunc = () => setValue((prev) => (prev ?? 0) + 1)
 
-  const decrementFunc = () => setValue((prev) => (prev > 1 ? prev - 1 : prev))
+  const decrementFunc = () =>
+    setValue((prev) => (prev && prev > 1 ? prev - 1 : prev))
 
   return (
     <PurchaseCard
@@ -27,8 +28,9 @@ export function BuyCard({ data }: Props) {
       id={data.id}
       price={data.price}
       promotion={data.promotion}
-      quantity={data.quantity}
-      guarantee={data.guarantee}
+      warranty={data.warranty}
+      in_stock={data.in_stock}
+      count={value} // временно, может быть
     >
       <InputCounter
         value={value}
@@ -43,9 +45,7 @@ export function BuyCard({ data }: Props) {
         В корзину
       </AppButton>
 
-      <FavoriteBtn isFavorite={false} />
+      <FavoriteBtn isFavorite={data.favorite} />
     </PurchaseCard>
   )
 }
-
-// Протестировать purchase вместо buyCard переместив в feature

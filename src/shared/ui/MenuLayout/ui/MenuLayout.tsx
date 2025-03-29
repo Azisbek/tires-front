@@ -7,6 +7,8 @@ interface Props {
   className?: string
   onMouseEnter?: () => void
   onMouseLeave?: () => void
+  paddingVertical?: number
+  ref?: React.Ref<HTMLDivElement>
 }
 
 export function MenuLayout({
@@ -14,14 +16,22 @@ export function MenuLayout({
   className,
   onMouseEnter,
   onMouseLeave,
+  paddingVertical = 40,
+  ref,
 }: Props) {
   return (
     <div
       className={clsx(s.menuLayout, className)}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      style={{ padding: `${paddingVertical}px 20px` }}
     >
-      <div className={s.container}>{children}</div>
+      <div
+        className={s.container}
+        ref={ref}
+      >
+        {children}
+      </div>
     </div>
   )
 }

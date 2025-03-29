@@ -9,11 +9,19 @@ interface Props {
   onClick?: () => void
   variant: 'accent' | 'white' | 'border'
   className?: string
+  type?: 'submit' | 'reset' | 'button' | undefined
 }
 
-export function AppButton({ onClick, children, variant, className }: Props) {
+export function AppButton({
+  onClick,
+  children,
+  variant,
+  className,
+  type,
+}: Props) {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={clsx(s[variant], className)}
     >

@@ -9,12 +9,14 @@ interface Props {
 }
 
 export function Promotion({ title }: Props) {
+  const limitedData = PromotionData.slice(0, 3);
+
   return (
     <div className={s.promotion}>
       <p className={s.title}>{title}</p>
 
       <div className={s.promotionContainer}>
-        {PromotionData.map((product) => (
+        {limitedData.map((product) => (
           <PromotionCard
             key={product.id}
             title={product.title}

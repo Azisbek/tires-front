@@ -9,22 +9,27 @@ import { NavigateBtn } from 'features/navigate-button'
 
 import { Space } from 'shared/ui/Space/Space'
 import { Title } from 'shared/ui/Text'
+import { SkeletonPage } from 'shared/ui/skeleton-components'
 
 import { useGetProductIdQuery } from '../api'
 
 import s from './ProductPage.module.scss'
 
 export function ProductPage() {
-  const { id } = useParams()
-  const { data } = useGetProductIdQuery({ id })
+  const { id } = useParams<string>()
+  const { data } = useGetProductIdQuery({ id: id || '' })
+
+  console.log(data) // Вренно консоль, чтобы проверять данные с бэка
+
+  if (!data) return <SkeletonPage />
 
   return (
     <div className={s.productPage}>
-      <ViewProduct />
+      <ViewProduct data={data} />
 
       <Space h={24} />
 
-      <Characteristics />
+      <Characteristics data={data} />
 
       <Space h={72} />
 

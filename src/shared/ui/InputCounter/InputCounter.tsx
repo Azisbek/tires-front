@@ -4,7 +4,7 @@ import arrowTopIcon from 'shared/assets/icons/ArrowTop.svg'
 import s from './InputCounter.module.scss'
 
 interface Props {
-  value: number
+  value: number | undefined
   increment?: () => void
   decrement?: () => void
 }

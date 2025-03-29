@@ -1,14 +1,20 @@
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
+import { ProductDetailsTypes } from 'shared/types/ProductDetailsTypes'
+
 import s from './Characteristics.module.scss'
 
-export function Characteristics() {
+interface Props {
+  data: ProductDetailsTypes
+}
+
+export function Characteristics({ data }: Props) {
   const locate = useLocation()
 
   const isActive = (link: string) => locate.pathname.includes(link)
 
   return (
-    <div className={s.characteristics}>
+    <section className={s.characteristics}>
       <nav className={s.navigation}>
         <Link
           to={`./info`}
@@ -36,7 +42,7 @@ export function Characteristics() {
         </Link>
       </nav>
 
-      <Outlet />
-    </div>
+      <Outlet context={data} />
+    </section>
   )
 }

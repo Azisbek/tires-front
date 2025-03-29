@@ -1,65 +1,33 @@
-.container {
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
+}
 
-  .white {
-    background: #fff;
-  }
-  .opacity {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  .overlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
 
-    .modal {
-      position: relative;
-      padding: 50px 30px;
-      max-width: 100%;
-      display: flex;
-      flex-direction: column;
-      background: white;
-      max-height: 100vh;
-
-      .modalContent {
-        &::-webkit-scrollbar {
-          width: 0;
-        }
-        overflow-y: auto;
-        flex: 1;
-        padding: 5px;
-      }
-      .closeButton {
-        border: none;
-        position: absolute;
-        background: none;
-        right: 0px;
-        top: 0px;
-        padding: 20px;
-      }
-      .closeСross {
-        position: relative;
-        cursor: pointer;
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 20px;
-          height: 3px;
-          background: #e5e5e5;
-          transition: all 0.2s;
-        }
-        &::before {
-          transform: translate(-50%, -50%) rotate(45deg);
-        }
-        &::after {
-          transform: translate(-50%, -50%) rotate(-45deg);
-        }
-      }
-    }
-  }
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
 }

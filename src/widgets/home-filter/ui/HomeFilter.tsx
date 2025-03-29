@@ -8,13 +8,13 @@ import s from './HomeFilter.module.scss'
 
 export function HomeFilter({ filters }: HomeFilterTypes) {
   return (
-    <div className={s.container}>
+    <section className={s.container}>
       <p className={s.title}>
         Подберём <span>шины по марке автомобиля</span> или{' '}
         <Link to={`#`}>параметрам товара</Link>
       </p>
 
       <FilterTypes filters={filters} />
-    </div>
+    </section>
   )
 }
