@@ -4,16 +4,12 @@ import s from './News.module.scss';
 import { AppButton } from 'shared/ui/AppButton/AppButton';
 import { Title } from 'shared/ui/Text';
 
-interface Props {
-  title?: string;
-}
-
-export function News({ title }: Props) {
+export function News() {
 
   return (
     <div className={s.container}>
       <Title size="xl-40" color="black" className={s.title}>
-        {title}
+        Новости и статьи
       </Title>
 
       <div className={s.promotionContainer}>
@@ -27,10 +23,11 @@ export function News({ title }: Props) {
           />
         ))}
       </div>
+
       <AppButton
         className={s.btn}
         variant="border" >
-        Показать ещё 10 из 32
+        Показать ещё
       </AppButton>
     </div>
   );
