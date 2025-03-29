@@ -7,6 +7,7 @@ export interface ProductListResponse {
   previous_page?: number | null
   pages: number[]
   products: ProductType[]
+  total_count: number
 }
 
 export interface ProductType {

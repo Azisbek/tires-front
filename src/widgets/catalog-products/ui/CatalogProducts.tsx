@@ -70,7 +70,7 @@ export function CatalogProducts({
           size="sm-14"
           className={s.text}
         >
-          Товаров: 2025
+          Товаров: {data?.total_count}
         </Text>
       </div>
       <ProductList
