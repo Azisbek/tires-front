@@ -1,3 +1,3 @@
 import { News } from "./ui/News";
 
-export default News
+export default News ;

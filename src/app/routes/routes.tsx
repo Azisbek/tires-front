@@ -18,6 +18,7 @@ const Catalog = lazy(() => import('pages/catalog'))
 const ProductPage = lazy(() => import('pages/product-page'))
 const News = lazy(() => import('pages/news'))
 const About = lazy(() => import('pages/about'))
+const Favorite = lazy(() => import('pages/favorite'))
 
 export const router = createBrowserRouter([
   {
@@ -52,7 +53,8 @@ export const router = createBrowserRouter([
           { path: navigationMap.Home, element: <Home /> },
           { path: navigationMap.Catalog, element: <Catalog /> },
           { path: navigationMap.News, element: <News /> },
-          { path: navigationMap.About, element: <About /> }
+          { path: navigationMap.About, element: <About /> } ,
+          { path: navigationMap.Favorite, element:<Favorite/> },
         ],
       },
     ],

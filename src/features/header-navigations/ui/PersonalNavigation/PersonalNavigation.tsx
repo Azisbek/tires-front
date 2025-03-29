@@ -32,7 +32,7 @@ export function PersonalNavigation() {
         <a href={'/catalog'}>Личный кабинет</a>
       </button>
 
-      <FavoriteNavigate to="/favorites" />
+      <FavoriteNavigate to="/favorite" />
 
       <CartNavigate to="/cart" />
     </div>

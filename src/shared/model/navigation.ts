@@ -3,8 +3,9 @@ export const navigationMap = {
   Home: '/',
   Catalog: '/catalog',
   CatalogItem: '/catalog/:id',
-  News:'/news',
+  News: '/news',
   About: '/about',
+  Favorite: '/favorite',
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]
