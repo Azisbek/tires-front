@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 import { CatalogFilter } from 'widgets/catalog-filter'
@@ -14,11 +14,12 @@ import s from './Catalog.module.scss'
 
 export function Catalog() {
   const [currentPage, setCurrentPage] = useState(1)
-  const [ordering, setOrdering] = useState<string | undefined>(undefined)
   const [searchParams, setSearchParams] = useSearchParams()
-  const [category, setCategory] = useState(searchParams.get('sorting') || '')
+  const category = searchParams.get('sorting') || ''
 
   const { isMobile } = useScreenWidth()
+
+  const ordering = useMemo(() => category, [category])
 
   const { data } = useGetProductsQuery({
     page: currentPage,
@@ -30,18 +31,18 @@ export function Catalog() {
     const params = new URLSearchParams(searchParams)
     if (category) {
       params.set('sorting', category)
-      setOrdering(category)
     } else {
       params.delete('sorting')
     }
-    setSearchParams(params)
+    setSearchParams(params, { replace: true }) 
   }, [category, setSearchParams])
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page)
   }
+  
   const handleSortChange = (sort: string) => {
-    setCategory(sort)
+    setSearchParams({ sorting: sort }) 
     setCurrentPage(1)
   }
 
