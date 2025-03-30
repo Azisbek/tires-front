@@ -18,7 +18,7 @@ export function News() {
             key={product.id}
             title={product.title}
             category={product.category}
-            expiryDate={product.expiryDate}
+            date={product.date}
             imageUrl={product.imageUrl}
           />
         ))}

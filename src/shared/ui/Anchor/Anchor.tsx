@@ -19,7 +19,7 @@ export function Anchor({ sections }: Props) {
     <nav className={s.anchor}>
       <ul>
         {sections.map((section) => (
-          <li key={section.id} onClick={() => handleScroll(section.id)}>
+          <li className={s.li} key={section.id} onClick={() => handleScroll(section.id)}>
             {section.title}
           </li>
         ))}
