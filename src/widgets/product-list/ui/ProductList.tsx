@@ -28,7 +28,12 @@ export function ProductList({ products, className }: ProductListProps) {
             <ProductCard
               key={product.product_Id}
               product={product}
-              FavoriteBtn={<FavoriteBtn isFavorite={product.is_favorite} />}
+              FavoriteBtn={
+                <FavoriteBtn
+                  product_Id={product.product_Id}
+                  is_favorite={product.is_favorite}
+                />
+              }
             />
           ))}
     </div>

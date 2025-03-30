@@ -57,10 +57,8 @@ export function CatalogProducts({
               Фильтр
             </AppButton>
             <Modal
-              variant="opacity"
-              className={s.modal}
               isOpen={isOpen}
-              onClick={setIsOpen}
+              onClose={() => setIsOpen(false)}
             >
               <CatalogFilter />
             </Modal>

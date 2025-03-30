@@ -1,8 +1,8 @@
 interface Props {
-  isFavorite: boolean | undefined
+  isActive: boolean | undefined
 }
 
-export function FavoriteIcon({ isFavorite }: Props) {
+export function FavoriteIcon({ isActive }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@ export function FavoriteIcon({ isFavorite }: Props) {
     >
       <path
         d="M0 4C0 7 1.5 10 7 14C12.5 10 14 7 14 4C14 1 12 0 10 0C8 0 7 2 7 2C7 2 6 0 4 0C2 0 0 1 0 4Z"
-        fill={isFavorite ? '#FF7E00' : 'none'}
+        fill={isActive ? '#FF7E00' : 'none'}
         fillOpacity="1"
         fillRule="evenodd"
       />

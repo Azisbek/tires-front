@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 import { Rating } from 'react-simple-star-rating'
 
 import { ProductImage, ProductPrice, ProductSeason } from 'entities/product'
@@ -23,14 +24,17 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
     in_stock,
     price,
     season,
+    product_Id,
   } = product
 
   return (
     <div className={s.card}>
-      <ProductImage
-        src={image}
-        alt={title}
-      />
+      <Link to={`/catalog/${product_Id}`}>
+        <ProductImage
+          src={image}
+          alt={title}
+        />
+      </Link>
 
       <ProductSeason
         className={s.season}
@@ -53,7 +57,12 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
           size="md-24"
           className={s.title}
         >
-          {title}
+          <Link
+            to={`/catalog/${product_Id}`}
+            className={s.color}
+          >
+            {title}
+          </Link>
         </Title>
         <Text
           size="sm-14"
