@@ -16,6 +16,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.6.0",
     "@rollup/rollup-win32-x64-msvc": "^4.36.0",
     "@vitejs/plugin-react-swc": "^3.8.0",

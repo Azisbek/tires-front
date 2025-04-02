@@ -24,7 +24,7 @@ export function InputSelect({
   className,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false)
-  const [value, setValue] = useState<string>(defaultValue ?? '')
+  const [value, setValue] = useState(defaultValue ?? '')
 
   const selectRef = useRef<HTMLDivElement>(null)
   useClickOutside(selectRef, () => setIsOpen(false), isOpen)
@@ -36,7 +36,7 @@ export function InputSelect({
     if (onChange) {
       onChange(value)
     }
-    setIsOpen(false)
+    toggleOpen()
   }
 
   return (

@@ -6,7 +6,7 @@ import { PurchaseCard } from 'entities/purchase-card'
 
 import { BuyCardTypes } from 'shared/types/ProductDetailsTypes'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
-import { InputCounter } from 'shared/ui/InputCounter/InputCounter'
+import { InputCounter } from 'shared/ui/input-components'
 
 import s from './BuyCard.module.scss'
 

@@ -6,10 +6,10 @@ export const productCommentsApi = $api.injectEndpoints({
   endpoints: (build) => ({
     getProductComments: build.query<
       ProductCommentsResponse,
-      { id: number; limit?: number }
+      { id: number; limit?: number; offset?: number }
     >({
-      query: ({ id, limit = 3 }) => ({
-        url: `/product/${id}/comments/?limit=${limit}&offset=0`,
+      query: ({ id, limit = 3, offset }) => ({
+        url: `/product/${id}/comments/?limit=${limit}&offset=${offset}`,
         method: 'GET',
       }),
     }),

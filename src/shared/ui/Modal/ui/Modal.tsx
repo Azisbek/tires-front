@@ -2,17 +2,17 @@ import s from './Modal.module.scss'
 
 interface Props {
   isOpen: boolean
-  onClose: () => void
+  onClose?: (value: boolean) => void
   children: React.ReactNode
 }
 
-export function Modal({ isOpen, onClose, children }: Props) {
+export function Modal({ isOpen = false, onClose, children }: Props) {
   if (!isOpen) return null
 
   return (
     <div
       className={s.modal}
-      onClick={onClose}
+      onClick={() => onClose}
     >
       <div
         className={s.modalContent}
@@ -20,7 +20,7 @@ export function Modal({ isOpen, onClose, children }: Props) {
       >
         <button
           className={s.close}
-          onClick={onClose}
+          onClick={() => onClose?.(false)}
         >
           &times;
         </button>

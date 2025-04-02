@@ -5,9 +5,9 @@ import { ProductList } from 'widgets/product-list'
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
-import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 import { Modal } from 'shared/ui/Modal'
 import { Text } from 'shared/ui/Text'
+import { InputSelect } from 'shared/ui/input-components'
 
 import { catalogProductsMock } from '../api/data'
 

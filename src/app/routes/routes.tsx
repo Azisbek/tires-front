@@ -19,6 +19,8 @@ const ProductPage = lazy(() => import('pages/product-page'))
 const News = lazy(() => import('pages/news'))
 const About = lazy(() => import('pages/about'))
 const NewsPage = lazy(() => import('pages/news-page'))
+const SignInPage = lazy(() => import('pages/sign-in'))
+const SignUpPage = lazy(() => import('pages/sign-up'))
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +59,18 @@ export const router = createBrowserRouter([
           { path: navigationMap.About, element: <About /> },
           { path: navigationMap.NewsItem, element: <NewsPage /> },
         ],
+        // .map((config) => ({
+        //   ...config,
+        //   loader: ''
+        // })),
+      },
+      {
+        path: navigationMap.SingIn,
+        element: <SignInPage />,
+      },
+      {
+        path: navigationMap.SingUp,
+        element: <SignUpPage />,
       },
     ],
   },
