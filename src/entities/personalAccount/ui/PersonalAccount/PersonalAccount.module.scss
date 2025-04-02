@@ -1,0 +1,21 @@
+.description {
+  margin: 40px 0;
+}
+.title {
+  margin: 20px 0;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+input {
+  width: 35rem;
+  height: 2rem;
+}
+input::placeholder {
+  color: #1A1E29;
+  font-style: italic;
+  padding: 5px;
+}

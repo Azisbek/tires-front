@@ -5,6 +5,7 @@ export const navigationMap = {
   CatalogItem: '/catalog/:id',
   News:'/news',
   About: '/about',
+  ProfilePage: '/profile'
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]

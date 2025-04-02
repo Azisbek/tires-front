@@ -4,11 +4,14 @@ import { PromotionList } from 'widgets/promotionList/ui/PromotionList'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import s from './About.module.scss'
+import { Space } from 'shared/ui/Space/Space'
 
 export const About = () => {
   return (
     <div className={s.container}>
       <AboutCompany />
+
+      <Space h={40}/>
 
       <div className={s.promotionList}>
         <PromotionList title="Новости и статьи" />
