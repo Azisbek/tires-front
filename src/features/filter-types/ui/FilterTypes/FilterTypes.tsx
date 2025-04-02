@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { FilterType, HomeFilterTypes } from 'shared/types/HomepageTypes'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
-import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
+import { InputSelect } from 'shared/ui/input-components'
 
 import s from './FilterTypes.module.scss'
 

@@ -35,3 +35,4 @@ if ! bunx jscpd ./src; then
 fi
 
 echo "✅ Всё прошло успешно!"
+

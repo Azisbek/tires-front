@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { CheckboxList } from 'shared/ui/CheckboxList'
 import { CustomInput } from 'shared/ui/Input'
-import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
+import { InputSelect } from 'shared/ui/input-components'
 
 import { tireFilters } from '../api/data'
 

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { useAddProductCommentMutation } from 'widgets/reviews/api'
 
@@ -18,6 +19,7 @@ export function AddComment({ productId, refetch }: Props) {
   const [required, setRequired] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
+  const navigate = useNavigate()
   const [addComment, { isLoading }] = useAddProductCommentMutation()
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -37,6 +39,7 @@ export function AddComment({ productId, refetch }: Props) {
         setRequired(false)
       } catch (err) {
         console.log(err)
+        navigate('/sign-in')
       }
     } else {
       setRequired(true)

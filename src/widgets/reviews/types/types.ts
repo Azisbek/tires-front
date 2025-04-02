@@ -1,6 +1,7 @@
 export interface CommentTypes {
   id: number
   productId: number
+  username: string
   comment: string
   rating: number
   created_at: string

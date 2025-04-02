@@ -4,6 +4,7 @@ import { Header, HeaderMobile } from 'widgets/header'
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import 'shared/styles/global.scss'
 import { PropsWithChildren } from 'shared/types/PropsWithChildren'
+import { Space } from 'shared/ui/Space/Space'
 import { ErrorBoundary, ErrorScreen } from 'shared/ui/error-boundary'
 import { Layout } from 'shared/ui/layout'
 
@@ -18,6 +19,7 @@ export function RouterLayout({ children }: PropsWithChildren) {
 
       <Layout>{children}</Layout>
 
+      <Space h={83} />
       <Footer />
     </ErrorBoundary>
   )
