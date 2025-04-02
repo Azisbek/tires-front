@@ -37,7 +37,7 @@ export function Home() {
           className={s.popularProducts}
           products={popularProductsMock}
         />
-        
+
         <NavigateBtn>Посмотреть все шины</NavigateBtn>
       </div>
 

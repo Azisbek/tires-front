@@ -1,13 +1,11 @@
-
 export const navigationMap = {
   Base: '/',
   Home: '/',
   Catalog: '/catalog',
   CatalogItem: '/catalog/:id',
-  News:'/news',
+  News: '/news',
   NewsItem: '/news/:id',
-  About: '/about', 
-
+  About: '/about',
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]

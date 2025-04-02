@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function Promotion({ title }: Props) {
-  const limitedData = PromotionData.slice(0, 3);
+  const limitedData = PromotionData.slice(0, 3)
 
   return (
     <div className={s.promotion}>

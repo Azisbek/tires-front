@@ -1,4 +1,5 @@
 import time from '/src/shared/assets/icons/Icon_time.svg'
+
 import s from './Date.module.scss'
 
 interface Props {
@@ -10,7 +11,10 @@ interface Props {
 export function Date({ className, date, expiryDate }: Props) {
   return (
     <div className={s.container}>
-      <img src={time} alt="time" />
+      <img
+        src={time}
+        alt="time"
+      />
       {expiryDate ? (
         <>
           <span>Действует до:</span> <span className={s.title}>{date}</span>

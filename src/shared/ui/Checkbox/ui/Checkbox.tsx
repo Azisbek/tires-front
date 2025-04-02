@@ -10,11 +10,7 @@ interface CheckboxProps {
   checked: boolean
 }
 
-export function Checkbox({
-  children,
-  onChange,
-  checked,
-}: CheckboxProps) {
+export function Checkbox({ children, onChange, checked }: CheckboxProps) {
   return (
     <label className={s.wrapper}>
       <input

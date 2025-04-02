@@ -1,2 +1,1 @@
-export { CompanyDescription } from './ui/CompanyDescription/CompanyDescription';
-
+export { CompanyDescription } from './ui/CompanyDescription/CompanyDescription'

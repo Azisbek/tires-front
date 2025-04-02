@@ -20,7 +20,6 @@ const News = lazy(() => import('pages/news'))
 const About = lazy(() => import('pages/about'))
 const NewsPage = lazy(() => import('pages/news-page'))
 
-
 export const router = createBrowserRouter([
   {
     path: navigationMap.Base,
@@ -48,7 +47,7 @@ export const router = createBrowserRouter([
           { path: `reviews`, element: <Reviews /> },
         ],
       },
-      
+
       {
         element: <Redirect />,
         children: [

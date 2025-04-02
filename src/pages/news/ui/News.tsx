@@ -1,14 +1,20 @@
-import { PromotionCard } from 'entities/promotionCard';
-import { PromotionData } from '../../../widgets/promotion/api';
-import s from './News.module.scss';
-import { AppButton } from 'shared/ui/AppButton/AppButton';
-import { Title } from 'shared/ui/Text';
+import { PromotionCard } from 'entities/promotionCard'
+
+import { AppButton } from 'shared/ui/AppButton/AppButton'
+import { Title } from 'shared/ui/Text'
+
+import { PromotionData } from '../../../widgets/promotion/api'
+
+import s from './News.module.scss'
 
 export function News() {
-
   return (
     <div className={s.container}>
-      <Title size="xl-40" color="black" className={s.title}>
+      <Title
+        size="xl-40"
+        color="black"
+        className={s.title}
+      >
         Новости и статьи
       </Title>
 
@@ -26,9 +32,10 @@ export function News() {
 
       <AppButton
         className={s.btn}
-        variant="border" >
+        variant="border"
+      >
         Показать ещё
       </AppButton>
     </div>
-  );
+  )
 }

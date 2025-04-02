@@ -17,16 +17,15 @@ export function Reviews() {
   const { id } = useParams()
   const [limit, setLimit] = useState(3)
 
-  if (!id) return <p>Product ID is missing</p>
-
   const { data, isLoading, isFetching, refetch } = useGetProductCommentsQuery(
     { id: Number(id), limit },
     { refetchOnMountOrArgChange: false },
   )
 
-  const handleLoadMore = () => data?.next && setLimit((prev) => prev + limit)
+  const handleLoadMore = () => setLimit((prev) => prev + 3)
 
   console.log(data)
+  if (!id) return <p>Product ID is missing</p>
 
   return (
     <section className={s.reviews}>

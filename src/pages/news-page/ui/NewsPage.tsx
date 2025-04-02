@@ -14,7 +14,10 @@ export function NewsPage() {
         <PromotionList title="Похожие новости" />
 
         <div>
-          <AppButton className={s.btn} variant="border">
+          <AppButton
+            className={s.btn}
+            variant="border"
+          >
             Посмотреть все новости и статьи
           </AppButton>
         </div>

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+
 import { Loader } from '../Loader/Loader'
 
 import s from './LoaderFullScreen.module.scss'
@@ -11,7 +12,7 @@ export function LoaderFullScreen({ size }: Props) {
   useEffect(() => {
     document.body.style.overflow = 'hidden'
     return () => {
-      document.body.style.overflow = '' 
+      document.body.style.overflow = ''
     }
   }, [])
 
