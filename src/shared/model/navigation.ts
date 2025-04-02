@@ -8,6 +8,7 @@ export const navigationMap = {
   About: '/about',
   SingIn: '/sign-in',
   SingUp: '/sign-up',
+  Favorite: '/favorites',
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]
