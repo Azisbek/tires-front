@@ -3,6 +3,7 @@ import { ProductList } from 'widgets/product-list'
 import { Text, Title } from 'shared/ui/Text'
 import { SkeletonPage } from 'shared/ui/skeleton-components'
 
+import { mapProductToCardProps } from '../FavoriteTypes'
 import { useGetFavoritesQuery } from '../api'
 
 import s from './FavoritePage.module.scss'
@@ -11,6 +12,9 @@ export function FavoritePage() {
   const { data } = useGetFavoritesQuery()
 
   if (!data) return <SkeletonPage />
+
+  // Преобразуем данные с помощью mapProductToCardProps !!!!!!!!!!
+  const transformedProducts = data.favorites.map(mapProductToCardProps)
 
   return (
     <div className={s.container}>
@@ -31,7 +35,7 @@ export function FavoritePage() {
 
       <ProductList
         className={s.productList}
-        products={data.favorites}
+        products={transformedProducts}
       />
     </div>
   )

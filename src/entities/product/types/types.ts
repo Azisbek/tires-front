@@ -1,17 +1,16 @@
 export type SeasonType = 'winter' | 'summer' | 'allSeason'
 
 export interface ProductCardProps {
-  product_Id: number
-  image: string
+  productId?: number
+  season: SeasonType
+  productImg: string
+  rating: number
+  commentQuantity: number
+  productTitle: string
+  inStock: number
   price: number
-  is_favorite: boolean
-  title: string
-  in_stock: number
-  rating?: number
-  comment_quantity?: number
-  season?: number
+  isFavorite: boolean
 }
-
 export interface ProductPriceProps {
   children: number
   className?: string
