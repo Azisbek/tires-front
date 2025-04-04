@@ -15,32 +15,26 @@ interface ProductCardItemProps {
 }
 
 export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
-  const {
-    productImg,
-    productTitle,
-    season,
-    commentQuantity,
-    rating,
-    inStock,
-    price,
-  } = product
+  const { image, title, season, comment_quantity, rating, in_stock, price } =
+    product
+  const seasonLabel =
+    season === 1 ? 'winter' : season === 2 ? 'summer' : 'allSeason'
 
   return (
     <div className={s.card}>
       <ProductImage
-        src={productImg}
-        alt={productTitle}
+        src={image}
+        alt={title}
       />
 
       <ProductSeason
         className={s.season}
-        season={season}
+        season={seasonLabel}
       />
 
       <div className={s.info}>
         <div className={s.meta}>
-          <CommentCounter commentQuantity={commentQuantity} />
-
+          <CommentCounter commentQuantity={comment_quantity || 0} />
           <Rating
             initialValue={rating}
             readonly
@@ -53,13 +47,13 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
           size="md-24"
           className={s.title}
         >
-          {productTitle}
+          {title}
         </Title>
         <Text
           size="sm-14"
           className={s.stock}
         >
-          {inStock > 0 ? 'В наличии' : 'Нет в наличии'}
+          {in_stock > 0 ? 'В наличии' : 'Нет в наличии'}
         </Text>
 
         <div className={s.buttonWrapper}>

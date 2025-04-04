@@ -17,9 +17,9 @@ export function ProductList({ products, className }: ProductListProps) {
     <div className={clsx(s.list, className)}>
       {products.map((product) => (
         <ProductCard
-          key={product.productId}
+          key={product.product_Id}
           product={product}
-          FavoriteBtn={<FavoriteBtn isFavorite={product.isFavorite} />}
+          FavoriteBtn={<FavoriteBtn isFavorite={product.is_favorite} />}
         />
       ))}
     </div>
