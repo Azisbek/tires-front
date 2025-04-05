@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
-import { HomeFilterTypes } from 'shared/types/HomepageTypes'
+import { FilterType, HomeFilterTypes } from 'shared/types/HomepageTypes'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
-import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
+import { InputSelect } from 'shared/ui/input-components'
 
 import s from './FilterTypes.module.scss'
 
 export function FilterTypes({ filters }: HomeFilterTypes) {
-  const [filter, setFilter] = useState({
-    manufacturer: '',
-    model: '',
-    generation: '',
-    modification: '',
-    bodyType: '',
+  const [filter, setFilter] = useState<FilterType>({
+    manufacturers: filters?.manufacturers || [],
+    models: filters?.models || [],
+    generations: filters?.generations || [],
+    modifications: filters?.modifications || [],
+    body_type: filters?.body_type || [],
   })
 
   const handleChange = (key: keyof typeof filter, value: string) => {
@@ -27,33 +27,33 @@ export function FilterTypes({ filters }: HomeFilterTypes) {
       <div className={s.selectContainer}>
         <InputSelect
           color="grey"
-          options={filters?.manufacturers}
+          options={filter?.manufacturers}
           defaultValue="Производитель"
-          onChange={(value) => handleChange('manufacturer', value)}
+          onChange={(value) => handleChange('manufacturers', value)}
         />
         <InputSelect
           color="grey"
-          options={filters?.models ?? []}
+          options={filter?.models}
           defaultValue="Модель"
-          onChange={(value) => handleChange('model', value)}
+          onChange={(value) => handleChange('models', value)}
         />
         <InputSelect
           color="grey"
-          options={filters?.generations}
+          options={filter?.generations}
           defaultValue="Поколение"
-          onChange={(value) => handleChange('generation', value)}
+          onChange={(value) => handleChange('generations', value)}
         />
         <InputSelect
           color="grey"
-          options={filters?.modifications}
+          options={filter?.modifications}
           defaultValue="Модификация"
-          onChange={(value) => handleChange('modification', value)}
+          onChange={(value) => handleChange('modifications', value)}
         />
         <InputSelect
           color="grey"
-          options={filters?.body_type}
+          options={filter?.body_type}
           defaultValue="Кузов"
-          onChange={(value) => handleChange('bodyType', value)}
+          onChange={(value) => handleChange('body_type', value)}
         />
       </div>
 

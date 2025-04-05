@@ -6,7 +6,7 @@ import { PurchaseCard } from 'entities/purchase-card'
 
 import { BuyCardTypes } from 'shared/types/ProductDetailsTypes'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
-import { InputCounter } from 'shared/ui/InputCounter/InputCounter'
+import { InputCounter } from 'shared/ui/input-components'
 
 import s from './BuyCard.module.scss'
 
@@ -45,7 +45,10 @@ export function BuyCard({ data }: Props) {
         В корзину
       </AppButton>
 
-      <FavoriteBtn isFavorite={data.favorite} />
+      <FavoriteBtn
+        is_favorite={data?.favorite ?? false}
+        product_Id={data.id}
+      />
     </PurchaseCard>
   )
 }

@@ -1,7 +1,10 @@
 import { useState } from 'react'
+
+import { CatalogFilter } from 'widgets/catalog-filter'
+
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Modal } from 'shared/ui/Modal'
-import { CatalogFilter } from 'widgets/catalog-filter'
+
 import s from './FilterModal.module.scss'
 
 interface FilterModalProps {}

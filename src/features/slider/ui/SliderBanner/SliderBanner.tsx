@@ -8,18 +8,20 @@ interface Props {
   className?: string
   images?: string[]
   currentPoint?: number
-  onPointClick: (value: any) => void
+  onPointClick: (value: number | ((prev: number) => number)) => void
   interval: number
 }
 
 export function SliderBanner({
   className,
   images = [],
-  currentPoint = 1,
+  currentPoint = 0,
   onPointClick,
   interval,
 }: Props) {
   useEffect(() => {
+    if (images.length === 0) return
+
     const intervalPoint = setInterval(() => {
       onPointClick((prev: number) => (prev + 1) % images.length)
     }, interval)

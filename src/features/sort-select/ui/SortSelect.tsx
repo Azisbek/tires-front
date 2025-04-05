@@ -1,4 +1,4 @@
-import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
+import { InputSelect } from 'shared/ui/input-components'
 
 interface SortSelectProps {
   onChange: (sort: string) => void

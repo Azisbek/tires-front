@@ -2,22 +2,16 @@ import { CatalogFilter } from 'widgets/catalog-filter'
 import { CatalogProducts } from 'widgets/catalog-products'
 import { TireInfoSection } from 'widgets/tireInfoSection'
 
+import { useCatalogProducts } from 'shared/hooks/useCatalogProducts'
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { Title } from 'shared/ui/Text'
-
-import { useCatalogProducts } from 'shared/hooks/useCatalogProducts'
 
 import s from './Catalog.module.scss'
 
 export function Catalog() {
   const { isMobile } = useScreenWidth()
-  const {
-    data,
-    isLoading,
-    handlePageChange,
-    handleSortChange,
-    currentSort,
-  } = useCatalogProducts()
+  const { data, isLoading, handlePageChange, handleSortChange, currentSort } =
+    useCatalogProducts()
 
   return (
     <div className={s.wrapper}>

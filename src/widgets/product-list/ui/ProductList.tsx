@@ -5,7 +5,7 @@ import { FavoriteBtn } from 'features/toggle-favorite'
 import { ProductCard } from 'entities/product'
 
 import { ProductType } from 'shared/types/CatalogpageTypes'
-import {  SkeletonProduct } from 'shared/ui/skeleton-components'
+import { SkeletonProduct } from 'shared/ui/skeleton-components'
 
 import s from './ProductList.module.scss'
 
@@ -20,7 +20,7 @@ export function ProductList({
   className,
   isLoading,
 }: ProductListProps) {
-  const skeletons = [...new Array(6)].map((_, i) => <SkeletonProduct key={i}/>)
+  const skeletons = [...new Array(6)].map((_, i) => <SkeletonProduct key={i} />)
   return (
     <div className={clsx(s.list, className)}>
       {isLoading

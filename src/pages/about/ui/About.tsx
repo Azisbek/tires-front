@@ -12,7 +12,7 @@ export const About = () => {
 
       <div className={s.promotionList}>
         <PromotionList title="Новости и статьи" />
-        
+
         <AppButton
           className={s.btn}
           variant="border"

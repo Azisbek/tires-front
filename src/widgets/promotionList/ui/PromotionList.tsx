@@ -19,7 +19,7 @@ export function PromotionList({ title }: Props) {
             key={product.id}
             title={product.title}
             category={product.category}
-            expiryDate={product.expiryDate}
+            date={product.date}
             imageUrl={product.imageUrl}
           />
         ))}

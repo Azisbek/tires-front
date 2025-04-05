@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import { useRef, useState } from 'react'
 
 import arrowBottomIcon from 'shared/assets/icons/ArrowBottom.svg'
@@ -7,7 +9,7 @@ import { useClickOutside } from 'shared/hooks/useClickOutside'
 import s from './InputSelect.module.scss'
 
 interface Props {
-  options: string[]
+  options: string[] | undefined
   onChange?: (value: string) => void
   defaultValue?: string
   color: 'grey' | 'white'
@@ -22,7 +24,7 @@ export function InputSelect({
   className,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false)
-  const [value, setValue] = useState(defaultValue || 'default')
+  const [value, setValue] = useState(defaultValue ?? '')
 
   const selectRef = useRef<HTMLDivElement>(null)
   useClickOutside(selectRef, () => setIsOpen(false), isOpen)
@@ -31,14 +33,16 @@ export function InputSelect({
 
   const setValueChange = (value: string) => {
     setValue(value)
-    onChange && onChange(value)
+    if (onChange) {
+      onChange(value)
+    }
     toggleOpen()
   }
 
   return (
     <div
       ref={selectRef}
-      className={`${s.select} ${className}`}
+      className={clsx(s.select, className)}
     >
       <div
         onClick={toggleOpen}
@@ -53,7 +57,7 @@ export function InputSelect({
 
       {isOpen && (
         <ul className={s.options}>
-          {options.map((option, index) => (
+          {options?.map((option, index) => (
             <li
               key={index}
               className={s.option}
