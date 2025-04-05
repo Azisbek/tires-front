@@ -1,0 +1,51 @@
+.card {
+  padding:16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 290px;
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 10px;
+    margin: 20px 0 35px 0;
+    .top {
+      display: flex;
+      gap: 8px;
+      .reviews {
+        width: 30px;
+      }
+      .rating {
+        width: 100px;
+      }
+    }
+    
+    
+    .name {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+    
+    .availability {
+      width: 30%;
+    }
+    
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      .price {
+        width: 100%;
+      }
+      
+      .favorite {
+        width: 40px;
+        border-radius: 20%;
+      }
+    }
+  }
+  
+  
+}
