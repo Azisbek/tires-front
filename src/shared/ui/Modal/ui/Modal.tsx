@@ -4,9 +4,10 @@ interface Props {
   isOpen: boolean
   onClose: () => void
   children: React.ReactNode
+  className?: string
 }
 
-export function Modal({ isOpen, onClose, children }: Props) {
+export function Modal({ isOpen, onClose, children, className }: Props) {
   if (!isOpen) return null
 
   return (
@@ -15,7 +16,7 @@ export function Modal({ isOpen, onClose, children }: Props) {
       onClick={onClose}
     >
       <div
-        className={s.modalContent}
+        className={`${s.modalContent} ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
         <button
