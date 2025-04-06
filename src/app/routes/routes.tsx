@@ -21,6 +21,7 @@ const About = lazy(() => import('pages/about'))
 const NewsPage = lazy(() => import('pages/news-page'))
 const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
+const FavoritePage = lazy(() => import('pages/favorite-page'))
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
         path: navigationMap.Home,
         element: <Home />,
       },
+
       {
         path: navigationMap.CatalogItem,
         element: <ProductPage />,
@@ -58,6 +60,7 @@ export const router = createBrowserRouter([
           { path: navigationMap.News, element: <News /> },
           { path: navigationMap.About, element: <About /> },
           { path: navigationMap.NewsItem, element: <NewsPage /> },
+          { path: navigationMap.Favorite, element: <FavoritePage /> },
         ],
         // .map((config) => ({
         //   ...config,
