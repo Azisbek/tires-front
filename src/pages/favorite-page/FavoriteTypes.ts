@@ -14,4 +14,3 @@ export interface FavoritesResponse {
   favorites: FavoriteProductFromAPI[]
   total_favorites: number
 }
-
