@@ -1,6 +1,4 @@
-import { FormEvent, useState } from 'react'
-
-import { FeedbackFormTypes, FeedbackResponse } from 'pages/contacts/types'
+// import { FeedbackFormTypes } from 'pages/contacts/types'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Text, Title } from 'shared/ui/Text'
@@ -8,46 +6,28 @@ import { Input } from 'shared/ui/input-components'
 
 import s from './FeedbackForm.module.scss'
 
-interface Props {
-  onSubmit: (data: FeedbackFormTypes) => Promise<FeedbackResponse>
+export interface FeedbackFormTypes {
+  name: string
+  phone: string
+  email: string
+  message: string
 }
 
-export function FeedbackForm({ onSubmit }: Props) {
-  const [formData, setFormData] = useState<FeedbackFormTypes>({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
-  })
+interface Props {
+  formData: FeedbackFormTypes
+  onChange: (name: keyof FeedbackFormTypes, value: string) => void
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
+  errors?: Partial<Record<keyof FeedbackFormTypes, string>>
+  successMessage?: string
+}
 
-  const [errors, setErrors] = useState<
-    Partial<Record<keyof FeedbackFormTypes, string>>
-  >({})
-
-  const [successMessage, setSuccessMessage] = useState('')
-
-  const handleChange = (name: keyof FeedbackFormTypes, value: string) => {
-    setFormData((prev) => ({ ...prev, [name]: value }))
-    setErrors((prev) => ({ ...prev, [name]: '' }))
-    setSuccessMessage('')
-  }
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setSuccessMessage('')
-
-    try {
-      const result = await onSubmit(formData)
-      setFormData({ name: '', phone: '', email: '', message: '' })
-      setErrors({})
-      setSuccessMessage(result.message)
-    } catch (err: any) {
-      if (err?.data) {
-        setErrors(err.data)
-      }
-    }
-  }
-
+export function FeedbackForm({
+  formData,
+  onChange,
+  onSubmit,
+  errors = {},
+  successMessage,
+}: Props) {
   return (
     <section className={s.feedbackContainer}>
       <Title
@@ -58,12 +38,12 @@ export function FeedbackForm({ onSubmit }: Props) {
       </Title>
 
       <form
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
         className={s.form}
       >
         <Input
           value={formData.name}
-          onChange={(e) => handleChange('name', e.target.value)}
+          onChange={(e) => onChange('name', e.target.value)}
           placeholder="Ваше имя"
         />
         {errors.name && (
@@ -78,7 +58,7 @@ export function FeedbackForm({ onSubmit }: Props) {
         <Input
           type="tel"
           value={formData.phone}
-          onChange={(e) => handleChange('phone', e.target.value)}
+          onChange={(e) => onChange('phone', e.target.value)}
           placeholder="Телефон для связи"
         />
         {errors.phone && (
@@ -93,7 +73,7 @@ export function FeedbackForm({ onSubmit }: Props) {
         <Input
           type="email"
           value={formData.email}
-          onChange={(e) => handleChange('email', e.target.value)}
+          onChange={(e) => onChange('email', e.target.value)}
           placeholder="Электронная почта для ответа"
         />
         {errors.email && (
@@ -108,7 +88,7 @@ export function FeedbackForm({ onSubmit }: Props) {
         <textarea
           className={s.textarea}
           value={formData.message}
-          onChange={(e) => handleChange('message', e.target.value)}
+          onChange={(e) => onChange('message', e.target.value)}
           placeholder="Ваше сообщение"
         />
         {errors.message && (
