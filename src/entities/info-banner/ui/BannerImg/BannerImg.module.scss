@@ -1,19 +1,19 @@
-.tireInfoImgContainer {
+.container {
   max-width: 912px;
-  height: 240px;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  padding: 35px 0 35px 0;
   border-radius: 5px;
   background:
     linear-gradient(
       270deg,
       rgb(90, 32, 184) 0%,
-      rgb(76, 101, 189) 45.418%,
+      rgb(76, 101, 189) 42%,
       rgba(76, 101, 189, 0) 100%
     ),
-    url('../../../../shared/assets/imgs/MaskGroup\(men\).svg') no-repeat;
+    url('../../../../shared/assets/imgs/catalogBanner.webp') no-repeat;
+  background-size: cover;
 
-  .container {
+  .content {
     padding-left: 35%;
 
     .title {
@@ -33,12 +33,28 @@
       margin-top: 22px;
     }
   }
-}
+  @media (max-width: 1030px) {
+    width: 100%;
+    background:
+      linear-gradient(
+        270deg,
+        rgb(90, 32, 184) 0%,
+        rgb(76, 101, 189) 63%,
+        rgba(76, 101, 189, 0) 100%
+      ),
+      url('../../../../shared/assets/imgs/catalogBanner\(mobile\).webp')
+        no-repeat;
+    background-size: contain;
+    padding: 20px 0 30px 0;
+    .content {
+      padding: 10px 0 10px 25%;
+    }
+  }
 
-@media (max-width: 768px) {
-  .tireInfoImgContainer {
+  @media (max-width: 768px) {
     max-width: 391px;
-    height: 287px;
+    width: 100%;
+    padding: 36px 0 83px 0;  
     border-radius: 10px;
     background:
       linear-gradient(
@@ -47,10 +63,11 @@
         rgb(76, 101, 189) 45.418%,
         rgba(76, 101, 189, 0) 100%
       ),
-      url('../../../../shared/assets/imgs/MaskGroup\(men.modile\).svg')
+      url('../../../../shared/assets/imgs/catalogBanner\(mobile\).webp')
         no-repeat;
+    background-size: cover;
 
-    .container {
+    .content {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;

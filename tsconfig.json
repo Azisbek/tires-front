@@ -31,5 +31,5 @@
       "shared/*": ["shared/*"]
     }
   },
-  "include": ["src", "types"]
+  "include": ["src", "types", "src/entities/info-banner/ui/BannerImg/BannerImg.tsx"]
 }
