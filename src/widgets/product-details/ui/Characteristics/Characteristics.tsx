@@ -38,7 +38,7 @@ export function Characteristics({ data }: Props) {
           to={`./reviews`}
           className={isActive('reviews') ? s.active : s.navBtn}
         >
-          Отзывы (2)
+          Отзывы ({data.comments_count})
         </Link>
       </nav>
 

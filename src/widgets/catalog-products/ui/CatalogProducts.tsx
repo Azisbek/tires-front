@@ -5,9 +5,9 @@ import { ProductList } from 'widgets/product-list'
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
-import { InputSelect } from 'shared/ui/InputSelect/InputSelect'
 import { Modal } from 'shared/ui/Modal'
 import { Text } from 'shared/ui/Text'
+import { InputSelect } from 'shared/ui/input-components'
 
 import { catalogProductsMock } from '../api/data'
 
@@ -41,10 +41,8 @@ export function CatalogProducts() {
               Фильтр
             </AppButton>
             <Modal
-              variant="opacity"
-              className={s.modal}
               isOpen={isOpen}
-              onClick={setIsOpen}
+              onClose={() => setIsOpen}
             >
               <CatalogFilter />
             </Modal>

@@ -19,6 +19,10 @@ const ProductPage = lazy(() => import('pages/product-page'))
 const News = lazy(() => import('pages/news'))
 const About = lazy(() => import('pages/about'))
 const ProfilePage = lazy(() => import('pages/profilePage'))
+const NewsPage = lazy(() => import('pages/news-page'))
+const SignInPage = lazy(() => import('pages/sign-in'))
+const SignUpPage = lazy(() => import('pages/sign-up'))
+const FavoritePage = lazy(() => import('pages/favorite-page'))
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +32,7 @@ export const router = createBrowserRouter([
         path: navigationMap.Home,
         element: <Home />,
       },
+
       {
         path: navigationMap.CatalogItem,
         element: <ProductPage />,
@@ -47,15 +52,30 @@ export const router = createBrowserRouter([
           { path: `reviews`, element: <Reviews /> },
         ],
       },
+
       {
         element: <Redirect />,
         children: [
           { path: navigationMap.Home, element: <Home /> },
           { path: navigationMap.Catalog, element: <Catalog /> },
-          { path: navigationMap.News, element: <News title="Новости и статьи" /> },
-          { path: navigationMap.About, element: <About/>},
-          { path: navigationMap.ProfilePage, element: <ProfilePage/>}
+          { path: navigationMap.ProfilePage, element: <ProfilePage/>},
+          { path: navigationMap.News, element: <News /> },
+          { path: navigationMap.About, element: <About /> },
+          { path: navigationMap.NewsItem, element: <NewsPage /> },
+          { path: navigationMap.Favorite, element: <FavoritePage /> },
         ],
+        // .map((config) => ({
+        //   ...config,
+        //   loader: ''
+        // })),
+      },
+      {
+        path: navigationMap.SingIn,
+        element: <SignInPage />,
+      },
+      {
+        path: navigationMap.SingUp,
+        element: <SignUpPage />,
       },
     ],
   },

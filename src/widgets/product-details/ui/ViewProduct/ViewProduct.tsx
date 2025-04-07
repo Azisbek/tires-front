@@ -22,10 +22,10 @@ export function ViewProduct({ data }: Props) {
     <section className={s.viewProduct}>
       <ProductHeader
         title={data.title}
-        season={data.characteristics.season} // временное решение, без этого не как не работает
+        season={data.characteristics.season}
         warranty={data.warranty}
         id={data.id}
-        comments={data.comments}
+        comments_count={data.comments_count}
         average_rating={data.average_rating}
       />
 

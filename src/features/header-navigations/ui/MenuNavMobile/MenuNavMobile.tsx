@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 
 import { useState } from 'react'
+
 import { MenuLayout } from 'shared/ui/MenuLayout/ui/MenuLayout'
 
 import s from './MenuNavMobile.module.scss'

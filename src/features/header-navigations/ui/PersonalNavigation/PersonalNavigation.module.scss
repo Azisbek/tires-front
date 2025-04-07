@@ -15,7 +15,7 @@
     padding: 28px 12px;
     font-size: 16px;
     font-weight: 500;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
     box-sizing: border-box;
 
@@ -24,7 +24,7 @@
     }
 
     &:hover {
-      color: #FF7E00;
+      color: #ff7e00;
     }
   }
 }

@@ -1,11 +1,3 @@
-interface Comment {
-  id: string // предполагается, что id — это строка
-  productId: string // предполагается, что product_id — это строка
-  comment: string // предполагается, что comment — это строка
-  rating: string // предполагается, что rating — это строка
-  createdAt: string // предполагается, что created_at — это строка (например, дата в формате ISO)
-}
-
 export type Season = 'summer' | 'winter' | 'all_seasons'
 
 export interface Characteristic {
@@ -20,6 +12,18 @@ export interface Characteristic {
   load_index_for_double: string
 }
 
+export interface SimilarProductTypes {
+  comments_count: number
+  favorite: boolean
+  id: number
+  image_url: string
+  in_stock: number
+  price: string
+  rating: number
+  season: string
+  title: string
+}
+
 export interface ProductDetailsTypes {
   id: number
   title: string
@@ -30,11 +34,12 @@ export interface ProductDetailsTypes {
   season: string
   favorite: boolean
   image_url: string
-  comments: Comment[]
   average_rating: number
+  comments_count: number
   model_description: string
   warranty: string
   characteristics: Characteristic
+  similar_products: SimilarProductTypes[]
 }
 
 export interface ProductHeaderTypes {
@@ -43,7 +48,7 @@ export interface ProductHeaderTypes {
   season: Season
   average_rating: number
   warranty: string
-  comments: Comment[]
+  comments_count: number
 }
 
 export interface BuyCardTypes {

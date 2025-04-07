@@ -14,7 +14,7 @@ export function ProductHeader({
   season,
   warranty,
   id,
-  comments = [],
+  comments_count,
   average_rating,
 }: ProductHeaderTypes) {
   return (
@@ -31,7 +31,7 @@ export function ProductHeader({
           />
         )}
 
-        <CommentCounter commentQuantity={comments.length} />
+        <CommentCounter commentQuantity={comments_count} />
 
         <Rating
           initialValue={average_rating}

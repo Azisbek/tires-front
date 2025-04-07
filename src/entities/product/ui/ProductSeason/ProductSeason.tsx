@@ -5,8 +5,8 @@ import { BrightnessIcon } from 'shared/assets/icons/season/BrightnessIcon'
 import { SnowIcon } from 'shared/assets/icons/season/SnowIcon'
 
 const seasonIcons = {
-  summer: <SnowIcon />,
-  winter: <BrightnessIcon />,
+  summer: <BrightnessIcon />,
+  winter: <SnowIcon />,
   allSeason: <AllSeasonIcon />,
 }
 

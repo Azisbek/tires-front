@@ -11,7 +11,6 @@ export interface ProductCardProps {
   price: number
   isFavorite: boolean
 }
-
 export interface ProductPriceProps {
   children: number
   className?: string
