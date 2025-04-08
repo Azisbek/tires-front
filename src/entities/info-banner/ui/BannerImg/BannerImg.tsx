@@ -1,12 +1,12 @@
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Text, Title } from 'shared/ui/Text'
 
-import s from './TireInfoSectionImg.module.scss'
+import s from './BannerImg.module.scss'
 
-export function TireInfoSectionImg() {
+export function BannerImg() {
   return (
-    <div className={s.tireInfoImgContainer}>
-      <div className={s.container}>
+    <div className={s.container}>
+      <div className={s.content}>
         <Title
           className={s.title}
           size="lg-32"
