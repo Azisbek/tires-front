@@ -1,7 +1,9 @@
 import { useState } from 'react'
 
+import { AutoComplete } from 'features/autocomplete'
+import { Search } from 'features/search'
+
 import { CartNavigate, FavoriteNavigate } from 'entities/header-components'
-import { Search } from 'entities/search'
 
 import { SearchIcon } from 'shared/assets/icons/SearchIcon/SearchIcon'
 import { MenuLayout } from 'shared/ui/MenuLayout/ui/MenuLayout'
@@ -25,6 +27,7 @@ export function PersonalNavigation() {
       {isSearch && (
         <MenuLayout paddingVertical={10}>
           <Search />
+          <AutoComplete />
         </MenuLayout>
       )}
 
