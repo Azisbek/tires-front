@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
         children: [
           { path: navigationMap.Home, element: <Home /> },
           { path: navigationMap.Catalog, element: <Catalog /> },
-          { path: navigationMap.ProfilePage, element: <ProfilePage/>},
+          { path: navigationMap.ProfilePage, element: <ProfilePage /> },
           { path: navigationMap.News, element: <News /> },
           { path: navigationMap.About, element: <About /> },
           { path: navigationMap.NewsItem, element: <NewsPage /> },

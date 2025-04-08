@@ -16,7 +16,6 @@ interface FeedbackFormTypes {
   message: string
 }
 
-
 export function Contact() {
   const [formData, setFormData] = useState<FeedbackFormTypes>({
     name: '',
