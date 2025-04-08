@@ -6,6 +6,7 @@ export const navigationMap = {
   News: '/news',
   NewsItem: '/news/:id',
   About: '/about',
+  ProfilePage: '/profile',
   SingIn: '/sign-in',
   SingUp: '/sign-up',
   Favorite: '/favorites',

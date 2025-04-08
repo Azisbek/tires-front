@@ -6,10 +6,7 @@ export function CompanyDescription() {
   return (
     <div className={s.companyDescriotion}>
       <div className={s.content}>
-        <div
-          id="history"
-          className={s.section}
-        >
+        <div className={s.section}>
           <Title
             className={s.title}
             size="md-24"
@@ -28,10 +25,7 @@ export function CompanyDescription() {
             грязь под шину, что также помогает не впитывать лишнюю влагу.
           </Text>
         </div>
-        <div
-          id="values"
-          className={s.section}
-        >
+        <div className={s.section}>
           <Title
             className={s.title}
             size="md-24"
@@ -52,10 +46,7 @@ export function CompanyDescription() {
             хорошую управляемость при маневрировании.
           </Text>
         </div>
-        <div
-          id="clients"
-          className={s.section}
-        >
+        <div className={s.section}>
           <Title
             className={s.title}
             size="md-24"

@@ -1,0 +1,26 @@
+.title {
+  margin: 40px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+thead {
+  background-color: #FFE9D5;
+  font-weight: bold;
+}
+.status_paid {
+  color: #12BB9D;
+}
+.status_cancelled {
+  color: #DF3C18;
+}
+.arrow {
+  text-align: right;
+  color: #4C65BD;
+}
