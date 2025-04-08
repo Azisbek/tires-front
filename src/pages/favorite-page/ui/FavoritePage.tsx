@@ -1,3 +1,5 @@
+import { ProductList } from 'widgets/product-list'
+
 import { Text, Title } from 'shared/ui/Text'
 import { SkeletonPage } from 'shared/ui/skeleton-components'
 
@@ -9,6 +11,7 @@ export function FavoritePage() {
   const { data } = useGetFavoritesQuery()
 
   if (!data) return <SkeletonPage />
+  console.log(data)
 
   return (
     <div className={s.container}>
@@ -27,10 +30,10 @@ export function FavoritePage() {
         Товаров: {data.total_favorites}
       </Text>
 
-      {/* <ProductList
+      <ProductList
         className={s.productList}
         products={data.favorites}
-      /> */}
+      />
     </div>
   )
 }
