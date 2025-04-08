@@ -72,7 +72,7 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
         </Text>
 
         <div className={s.buttonWrapper}>
-          <ProductPrice>{price}</ProductPrice>
+          <ProductPrice id={product_Id}>{price}</ProductPrice>
           <div className={s.fav}>{FavoriteBtn}</div>
         </div>
       </div>

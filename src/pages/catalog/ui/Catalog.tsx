@@ -7,6 +7,7 @@ import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { Title } from 'shared/ui/Text'
 
 import s from './Catalog.module.scss'
+import { Pagination } from 'features/pagination'
 
 export function Catalog() {
   const { isMobile } = useScreenWidth()
@@ -27,10 +28,16 @@ export function Catalog() {
           <CatalogProducts
             data={data}
             isLoading={isLoading}
-            onChangePage={handlePageChange}
             onSortChange={handleSortChange}
             currentSort={currentSort}
           />
+          {data && (
+            <Pagination
+              meta={data}
+              className={s.mgTop22}
+              onPageChange={handlePageChange}
+            />
+          )}
           <TireInfoSection />
         </div>
       </div>

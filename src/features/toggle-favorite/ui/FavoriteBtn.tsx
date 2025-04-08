@@ -16,14 +16,17 @@ export function FavoriteBtn({ is_favorite, product_Id }: FavoriteBtnProps) {
   const [isActive, setIsActive] = useState(is_favorite)
   const [updateFavoriteStatus] = useUpdateFavoriteStatusMutation()
 
+  console.log(isActive)
   const toggleFavorite = async () => {
-    const newFavoriteStatus = !is_favorite
+    const newFavoriteStatus = !isActive
+    setIsActive(newFavoriteStatus)
+    console.log(newFavoriteStatus)
+
     try {
       await updateFavoriteStatus({
         product_id: product_Id,
         is_favorite: newFavoriteStatus,
       })
-      setIsActive(newFavoriteStatus)
     } catch (error) {
       console.error('Ошибка при изменении статуса избранного', error)
     }

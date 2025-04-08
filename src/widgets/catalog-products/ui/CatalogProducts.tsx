@@ -1,38 +1,52 @@
 import { ProductList } from 'widgets/product-list'
 
 import { FilterModal } from 'features/filter-modal'
-import { Pagination } from 'features/pagination'
-import { SortSelect } from 'features/sort-select'
+
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { ProductListResponse } from 'shared/types/CatalogpageTypes'
 import { Text } from 'shared/ui/Text'
+import { InputSelect } from 'shared/ui/input-components'
 
 import s from './CatalogProducts.module.scss'
 
 interface CatalogProductsProps {
   data?: ProductListResponse
-  onChangePage: (page: number) => void
   onSortChange: (sort: string) => void
   isLoading: boolean
   currentSort: string
 }
 
+const sortOptions = [
+  { id: 'price', label: 'Сначала дорогие' },
+  { id: '-price', label: 'Сначала дешевые' },
+]
+
 export function CatalogProducts({
   data,
-  onChangePage,
   onSortChange,
   isLoading,
   currentSort,
 }: CatalogProductsProps) {
   const { isMobile } = useScreenWidth()
+  const selectedOption = sortOptions.find((opt) => opt.id === currentSort)
+
+  const handleChange = (label: string) => {
+    const selected = sortOptions.find((opt) => opt.label === label)
+    if (selected) {
+      onSortChange(selected.id)
+    }
+  }
 
   return (
     <section className={s.container}>
       <div className={s.topContainer}>
-        <SortSelect
-          onChange={onSortChange}
-          currentSort={currentSort}
+        <InputSelect
+          onChange={handleChange}
+          className="select"
+          color="white"
+          options={sortOptions.map((opt) => opt.label)}
+          defaultValue={selectedOption?.label}
         />
         {isMobile && (
           <div className={s.grid}>
@@ -52,14 +66,6 @@ export function CatalogProducts({
         products={data?.products ?? []}
         isLoading={isLoading}
       />
-
-      {data && (
-        <Pagination
-          meta={data}
-          className={s.mgTop22}
-          onPageChange={onChangePage}
-        />
-      )}
     </section>
   )
 }

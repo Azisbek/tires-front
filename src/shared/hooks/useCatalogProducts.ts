@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 import { useGetProductsQuery } from 'pages/catalog/api'
@@ -6,32 +5,31 @@ import { useGetProductsQuery } from 'pages/catalog/api'
 const DEFAULT_SORTING = '-price'
 
 export function useCatalogProducts() {
-  const [currentPage, setCurrentPage] = useState(1)
   const [searchParams, setSearchParams] = useSearchParams()
 
-  useEffect(() => {
-    const currentSorting = searchParams.get('sorting')
-    if (!currentSorting) {
-      searchParams.set('sorting', DEFAULT_SORTING)
-      setSearchParams(searchParams, { replace: true })
-    }
-  }, [searchParams, setSearchParams])
-
+  const page = Number(searchParams.get('page')) || 1
   const ordering = searchParams.get('sorting') || DEFAULT_SORTING
 
   const { data, isFetching } = useGetProductsQuery({
-    page: currentPage,
+    page,
     page_size: 12,
     ordering,
   })
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page)
+  const updateParams = (newParams: Record<string, string>) => {
+    const updated = new URLSearchParams(searchParams)
+    Object.entries(newParams).forEach(([key, value]) => {
+      updated.set(key, value)
+    })
+    setSearchParams(updated)
   }
 
-  const handleSortChange = (sort: string) => {
-    setSearchParams({ sorting: sort })
-    setCurrentPage(1)
+  const handlePageChange = (newPage: number) => {
+    updateParams({ page: String(newPage) })
+  }
+
+  const handleSortChange = (newSort: string) => {
+    updateParams({ sorting: newSort, page: '1' })
   }
 
   return {
