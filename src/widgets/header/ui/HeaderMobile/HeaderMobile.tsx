@@ -2,9 +2,9 @@ import clsx from 'clsx'
 
 import { useState } from 'react'
 
+import { AutoComplete } from 'features/autocomplete'
 import { MenuNavMobile } from 'features/header-navigations'
-
-import { Search } from 'entities/search'
+import { Search } from 'features/search'
 
 import { SearchIcon } from 'shared/assets/icons/SearchIcon/SearchIcon'
 import logoIcon from 'shared/assets/icons/logo/logo.webp'
@@ -41,6 +41,7 @@ export function HeaderMobile() {
         {isSearch && (
           <MenuLayout paddingVertical={10}>
             <Search />
+            <AutoComplete />
           </MenuLayout>
         )}
       </div>

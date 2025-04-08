@@ -18,9 +18,12 @@ const Catalog = lazy(() => import('pages/catalog'))
 const ProductPage = lazy(() => import('pages/product-page'))
 const News = lazy(() => import('pages/news'))
 const About = lazy(() => import('pages/about'))
+const ProfilePage = lazy(() => import('pages/profilePage'))
 const NewsPage = lazy(() => import('pages/news-page'))
 const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
+const FavoritePage = lazy(() => import('pages/favorite-page'))
+const Contacts = lazy(() => import('pages/contacts'))
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +33,7 @@ export const router = createBrowserRouter([
         path: navigationMap.Home,
         element: <Home />,
       },
+
       {
         path: navigationMap.CatalogItem,
         element: <ProductPage />,
@@ -55,9 +59,12 @@ export const router = createBrowserRouter([
         children: [
           { path: navigationMap.Home, element: <Home /> },
           { path: navigationMap.Catalog, element: <Catalog /> },
+          { path: navigationMap.ProfilePage, element: <ProfilePage /> },
           { path: navigationMap.News, element: <News /> },
           { path: navigationMap.About, element: <About /> },
           { path: navigationMap.NewsItem, element: <NewsPage /> },
+          { path: navigationMap.Favorite, element: <FavoritePage /> },
+          { path: navigationMap.Contacts, element: <Contacts /> },
         ],
         // .map((config) => ({
         //   ...config,

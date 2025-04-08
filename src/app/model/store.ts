@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 
+import { searchSlice } from 'features/search/model/search.slice'
+
 import { signInSlice } from 'entities/account/model/auth.slice'
 
 import { $api } from 'shared/api/api'
@@ -11,6 +13,7 @@ export const store = configureStore({
     [$api.reducerPath]: $api.reducer,
     [screenSlice.name]: screenSlice.reducer,
     [signInSlice.name]: signInSlice.reducer,
+    [searchSlice.name]: searchSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

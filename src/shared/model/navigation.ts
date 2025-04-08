@@ -6,8 +6,11 @@ export const navigationMap = {
   News: '/news',
   NewsItem: '/news/:id',
   About: '/about',
+  ProfilePage: '/profile',
   SingIn: '/sign-in',
   SingUp: '/sign-up',
+  Favorite: '/favorites',
+  Contacts: '/contacts',
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]

@@ -4,8 +4,8 @@ import { SnowIcon } from 'shared/assets/icons/season/SnowIcon'
 import { SeasonType } from 'shared/types/CatalogpageTypes'
 
 const seasonIcons = {
-  summer: <SnowIcon />,
-  winter: <BrightnessIcon />,
+  summer: <BrightnessIcon />,
+  winter: <SnowIcon />,
   allSeason: <AllSeasonIcon />,
 }
 
