@@ -38,9 +38,14 @@ export function Contact() {
       const res = await sendFeedback(formData).unwrap()
       setSuccessMessage(res.message)
       setFormData({ name: '', phone: '', email: '', message: '' }) // Очищаем после успеха
-    } catch (err: any) {
-      if (err?.data) {
-        setErrors(err.data)
+    } catch (err: unknown) {
+      if (
+        err &&
+        typeof err === 'object' &&
+        'data' in err &&
+        typeof err.data === 'object'
+      ) {
+        setErrors(err.data as Partial<Record<keyof FeedbackFormTypes, string>>)
       }
     }
   }

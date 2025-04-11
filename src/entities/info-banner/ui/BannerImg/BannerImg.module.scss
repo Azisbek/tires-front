@@ -15,6 +15,7 @@
 
   .content {
     padding-left: 35%;
+    padding-right: 10px;
 
     .title {
       color: rgb(255, 255, 255);
@@ -45,23 +46,12 @@
     background-size: contain;
     padding: 20px 0 30px 0;
     .content {
-      padding: 10px 0 10px 25%;
+      padding: 10px 10px 10px 25%;
     }
   }
 
-  @media (max-width: 768px) {
-    max-width: 391px;
-    width: 100%;
-    padding: 36px 0 83px 0;
-    border-radius: 10px;
-    background:
-      linear-gradient(
-        270deg,
-        rgb(90, 32, 184),
-        rgb(76, 101, 189) 45.418%,
-        rgba(76, 101, 189, 0) 100%
-      ),
-      url('/src/shared/assets/imgs/catalogBanner\(mobile\).webp') no-repeat;
+  @media (max-width: 500px) {
+    padding: 36px 10px 83px 10px;
     background-size: cover;
 
     .content {
