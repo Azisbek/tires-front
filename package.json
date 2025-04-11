@@ -21,6 +21,7 @@
     "@rollup/rollup-win32-x64-msvc": "^4.36.0",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "clsx": "^2.1.1",
+    "jscpd": "^4.0.5",
     "nanoid": "^5.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

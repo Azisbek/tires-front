@@ -1,69 +1,73 @@
-.tireInfoImgContainer {
+.container {
   max-width: 912px;
-  height: 240px;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  padding: 35px 0 35px 0;
   border-radius: 5px;
   background:
     linear-gradient(
       270deg,
       rgb(90, 32, 184) 0%,
-      rgb(76, 101, 189) 45.418%,
+      rgb(76, 101, 189) 45%,
       rgba(76, 101, 189, 0) 100%
     ),
-    url('../../../../shared/assets/imgs/MaskGroup\(men\).svg') no-repeat;
+    url('/src/shared/assets/imgs/catalogBanner.webp') no-repeat;
+  background-size: cover;
 
-  .container {
+  .content {
     padding-left: 35%;
+    padding-right: 10px;
 
     .title {
       color: rgb(255, 255, 255);
-      margin: 8px 0;
+      padding: 8px 0;
       line-height: 34px;
     }
     .text {
       color: rgb(255, 255, 255);
-      margin: 8px 0;
+      padding: 8px 0 24px 0;
     }
 
     .btn {
       font-size: 14px;
       font-weight: 500;
       padding: 12px 24px 12px 24px;
-      margin-top: 22px;
     }
   }
-}
-
-@media (max-width: 768px) {
-  .tireInfoImgContainer {
-    max-width: 391px;
-    height: 287px;
-    border-radius: 10px;
+  @media (max-width: 1030px) {
+    width: 100%;
     background:
       linear-gradient(
         270deg,
-        rgb(90, 32, 184),
-        rgb(76, 101, 189) 45.418%,
+        rgb(90, 32, 184) 0%,
+        rgb(76, 101, 189) 64%,
         rgba(76, 101, 189, 0) 100%
       ),
-      url('../../../../shared/assets/imgs/MaskGroup\(men.modile\).svg')
-        no-repeat;
+      url('/src/shared/assets/imgs/catalogBanner\(mobile\).webp') no-repeat;
+    background-size: contain;
+    padding: 20px 0 30px 0;
+    .content {
+      padding: 10px 10px 10px 25%;
+    }
+  }
 
-    .container {
+  @media (max-width: 500px) {
+    padding: 36px 10px 83px 10px;
+    background-size: cover;
+
+    .content {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 0;
 
       .title {
-        width: 235px;
+        max-width: 235px;
         line-height: 28px;
         font-size: 25px;
       }
 
       .text {
-        width: 306px;
+        max-width: 306px;
         font-size: 14px;
       }
     }
