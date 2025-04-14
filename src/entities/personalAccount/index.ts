@@ -1,3 +1,2 @@
-export { PersonalAccount } from './ui/PersonalAccount/PersonalAccount';
-export { OrderHistory } from './ui/OrderHistory/OrderHistory';
-
+export { PersonalAccount } from './ui/PersonalAccount/PersonalAccount'
+export { OrderHistory } from './ui/OrderHistory/OrderHistory'

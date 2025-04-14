@@ -11,6 +11,7 @@ export const OrderHistory = () => {
       >
         История заказов
       </Title>
+
       <table>
         <thead>
           <tr>
