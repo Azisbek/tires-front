@@ -17,3 +17,8 @@
     border-radius: 2px;
   }
 }
+input::placeholder {
+  color: #1a1e29;
+  font-style: italic;
+  padding: 5px;
+}
