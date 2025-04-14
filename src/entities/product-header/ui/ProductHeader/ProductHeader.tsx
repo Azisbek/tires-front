@@ -31,7 +31,7 @@ export function ProductHeader({
           />
         )}
 
-        <CommentCounter commentQuantity={comments_count} />
+        <CommentCounter comments_count={comments_count} />
 
         <Rating
           initialValue={average_rating}

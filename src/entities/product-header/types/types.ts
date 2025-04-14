@@ -3,6 +3,6 @@ export interface ProductHeaderProps {
   tiresType?: 'summer' | 'winter'
   hasGuarantee?: boolean
   productCode: string
-  commentQuantity: number
+  comments_count: number
   productRating: number
 }
