@@ -15,12 +15,20 @@ interface ProductCardItemProps {
 }
 
 export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
-  const { image, title, season, price, in_stock, comments_count, rating } =
-    product
+  const {
+    image,
+    title,
+    season,
+    price,
+    in_stock,
+    comments_count,
+    average_rating,
+  } = product
 
   return (
     <div className={s.card}>
       <ProductImage
+        className={s.image}
         src={image}
         alt={title}
       />
@@ -35,7 +43,7 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
           <CommentCounter comments_count={comments_count} />
 
           <Rating
-            initialValue={rating}
+            initialValue={average_rating}
             readonly
             allowFraction
             size={20}

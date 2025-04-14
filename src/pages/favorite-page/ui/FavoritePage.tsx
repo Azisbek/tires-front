@@ -11,7 +11,6 @@ export function FavoritePage() {
   const { data } = useGetFavoritesQuery()
 
   if (!data) return <SkeletonPage />
-  console.log(data)
 
   return (
     <div className={s.container}>

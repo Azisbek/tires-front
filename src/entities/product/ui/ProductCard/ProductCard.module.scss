@@ -11,10 +11,14 @@
   border: #e5e5e5 solid 1px;
 
   background: #fff;
-  image {
+
+  .image {
     width: 100%;
     max-width: 241px;
+    margin-top: 28px;
+    object-fit: cover;
   }
+
   .season {
     position: absolute;
     top: 30px;
@@ -24,14 +28,17 @@
   .info {
     margin: 35px 0;
     width: 100%;
+
     .meta {
       display: flex;
       gap: 16px;
     }
+
     .title {
       min-height: 64px;
       margin: 17px 0 41px;
     }
+
     .stock {
       color: #6a6a6a;
       line-height: 16px;
@@ -44,6 +51,7 @@
     gap: 10px;
     box-sizing: border-box;
     height: 40px;
+
     button {
       width: 100%;
     }
@@ -51,6 +59,7 @@
     .fav {
       display: flex;
       flex-shrink: 0;
+
       button {
         padding: 0 12px;
       }

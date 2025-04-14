@@ -12,12 +12,8 @@ export interface ProductCardProps {
   }
   title: string
   comments_count: number
-  rating: number
-}
 
-export interface FavoritesResponse {
-  favorites: ProductCardProps[]
-  total_favorites: number
+  average_rating: number
 }
 
 export interface ProductPriceProps {

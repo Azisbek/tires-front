@@ -12,17 +12,12 @@ const seasonIcons = {
 
 interface ProductSeasonProps {
   season: {
-    label: string
+    // label: string
     value: SeasonValue
   }
   className?: string
 }
 
 export function ProductSeason({ season, className }: ProductSeasonProps) {
-  return (
-    <span className={className}>
-      {seasonIcons[season.value]}
-      {season.label}
-    </span>
-  )
+  return <span className={className}>{seasonIcons[season.value]}</span>
 }
