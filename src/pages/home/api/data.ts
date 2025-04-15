@@ -4,7 +4,7 @@ export const popularProductsMock: ProductType[] = [
   {
     product_Id: 30,
     image: '/tire.jpeg',
-    season: { label: 'winter', value: 'winter' },
+    season: 'winter',
     average_rating: 4.5,
     comments_count: 3,
     title: 'Vector',
@@ -15,7 +15,7 @@ export const popularProductsMock: ProductType[] = [
   {
     product_Id: 31,
     image: '/tire.jpeg',
-    season: { label: 'summer', value: 'summer' },
+    season: 'summer',
     average_rating: 4.2,
     comments_count: 5,
     title: 'Goodyear Vector 4Seasons',
@@ -26,7 +26,7 @@ export const popularProductsMock: ProductType[] = [
   {
     product_Id: 32,
     image: '/tire.jpeg',
-    season: { label: 'allSeason', value: 'all_season' },
+    season: 'all_season',
     average_rating: 4.8,
     comments_count: 8,
     title: 'Continental AllSeason',
@@ -37,7 +37,7 @@ export const popularProductsMock: ProductType[] = [
   {
     product_Id: 33,
     image: '/tire.jpeg',
-    season: { label: 'winter', value: 'winter' },
+    season: 'winter',
     average_rating: 4.6,
     comments_count: 4,
     title: 'Goodyear UltraGrip',
