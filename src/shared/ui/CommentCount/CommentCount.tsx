@@ -3,14 +3,14 @@ import { CommentIcon } from 'shared/assets/icons/CommentIcon'
 import s from './CommentCount.module.scss'
 
 interface Props {
-  commentQuantity: number
+  comments_count: number
 }
 
-export function CommentCounter({ commentQuantity }: Props) {
+export function CommentCounter({ comments_count }: Props) {
   return (
     <div className={s.comment}>
       <CommentIcon />
-      {commentQuantity}
+      {comments_count}
     </div>
   )
 }

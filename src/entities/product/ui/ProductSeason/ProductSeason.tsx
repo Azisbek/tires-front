@@ -6,14 +6,17 @@ import { SeasonType } from 'shared/types/CatalogpageTypes'
 const seasonIcons = {
   summer: <BrightnessIcon />,
   winter: <SnowIcon />,
-  allSeason: <AllSeasonIcon />,
+  all_season: <AllSeasonIcon />,
 }
 
 interface ProductSeasonProps {
-  season: SeasonType
+  season: {
+    // label: string
+    value: SeasonType
+  }
   className?: string
 }
 
 export function ProductSeason({ season, className }: ProductSeasonProps) {
-  return <span className={className}>{seasonIcons[season]}</span>
+  return <span className={className}>{seasonIcons[season.value]}</span>
 }

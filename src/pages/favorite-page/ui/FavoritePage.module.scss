@@ -3,6 +3,7 @@
   width: 100%;
   margin: 0 auto;
   display: grid;
+  padding: 0 20px;
 
   .title {
     margin: 24px;
@@ -15,7 +16,8 @@
   .productList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 16px;
+    justify-content: flex-start;
     margin-bottom: 110px;
   }
 
@@ -25,8 +27,13 @@
     .title {
       text-align: center;
     }
+
     .text {
       display: none;
+    }
+
+    .productList {
+      justify-content: center;
     }
   }
 }

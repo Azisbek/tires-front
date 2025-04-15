@@ -19,7 +19,10 @@ export interface ProductType {
   in_stock: number
   price: number
   is_favorite: boolean
-  season: SeasonType
+  season: {
+    label: string
+    value: SeasonType
+  }
 }
 
-export type SeasonType = 'winter' | 'summer' | 'allSeason'
+export type SeasonType = 'winter' | 'summer' | 'all_season'

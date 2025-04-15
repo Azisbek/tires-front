@@ -18,12 +18,12 @@ interface ProductCardItemProps {
 export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
   const {
     image,
-    average_rating,
-    comments_count,
     title,
-    in_stock,
-    price,
     season,
+    price,
+    in_stock,
+    comments_count,
+    average_rating,
     product_Id,
   } = product
 
@@ -38,12 +38,12 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
 
       <ProductSeason
         className={s.season}
-        season={season}
+        season={ season }
       />
 
       <div className={s.info}>
         <div className={s.meta}>
-          <CommentCounter commentQuantity={comments_count} />
+          <CommentCounter comments_count={comments_count} />
 
           <Rating
             initialValue={average_rating}

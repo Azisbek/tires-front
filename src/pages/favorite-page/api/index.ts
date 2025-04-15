@@ -1,6 +1,6 @@
 import { $api } from 'shared/api/api'
 
-import { FavoritesResponse } from '../FavoriteTypes'
+import { FavoritesResponse } from '../types/types'
 
 export const favoriteApi = $api.injectEndpoints({
   endpoints: (build) => ({
