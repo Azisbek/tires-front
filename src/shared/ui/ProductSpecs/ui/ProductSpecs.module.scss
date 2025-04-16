@@ -1,0 +1,36 @@
+.productSpecs {
+  width: 100%;
+
+  .specItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      color: #757575;
+      font-size: 14px;
+    }
+
+    .labelWhite {
+      color: white;
+      font-size: 14px;
+    }
+
+    .value {
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .valueWhite {
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+}

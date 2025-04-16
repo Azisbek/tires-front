@@ -45,7 +45,10 @@ export function BuyCard({ data }: Props) {
         В корзину
       </AppButton>
 
-      <FavoriteBtn isFavorite={data.favorite} />
+      <FavoriteBtn
+        is_favorite={data?.favorite ?? false}
+        product_Id={data.id}
+      />
     </PurchaseCard>
   )
 }

@@ -1,64 +1,70 @@
-import { useState } from 'react'
-
-import { CatalogFilter } from 'widgets/catalog-filter'
 import { ProductList } from 'widgets/product-list'
 
+import { FilterModal } from 'features/filter-modal'
+
+
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
-import { AppButton } from 'shared/ui/AppButton/AppButton'
-import { Modal } from 'shared/ui/Modal'
+import { ProductListResponse } from 'shared/types/CatalogpageTypes'
 import { Text } from 'shared/ui/Text'
 import { InputSelect } from 'shared/ui/input-components'
 
-import { catalogProductsMock } from '../api/data'
-
 import s from './CatalogProducts.module.scss'
 
+interface CatalogProductsProps {
+  data?: ProductListResponse
+  onSortChange: (sort: string) => void
+  isLoading: boolean
+  currentSort: string
+}
+
 const sortOptions = [
-  { id: 'price_desc', label: 'Сначала дорогие' },
-  { id: 'price_asc', label: 'Сначала дешевые' },
-  { id: 'popular_asc', label: 'Сначала с высоким рейтингом' },
-  // { id: 'price_asc', label: 'С большими скидками' },
+  { id: 'price', label: 'Сначала дорогие' },
+  { id: '-price', label: 'Сначала дешевые' },
 ]
-export function CatalogProducts() {
-  const [isOpen, setIsOpen] = useState(false)
+
+export function CatalogProducts({
+  data,
+  onSortChange,
+  isLoading,
+  currentSort,
+}: CatalogProductsProps) {
   const { isMobile } = useScreenWidth()
+  const selectedOption = sortOptions.find((opt) => opt.id === currentSort)
+
+  const handleChange = (label: string) => {
+    const selected = sortOptions.find((opt) => opt.label === label)
+    if (selected) {
+      onSortChange(selected.id)
+    }
+  }
 
   return (
     <section className={s.container}>
       <div className={s.topContainer}>
         <InputSelect
-          className={s.select}
+          onChange={handleChange}
+          className="select"
           color="white"
-          options={sortOptions.map((option) => option.label)}
-          defaultValue="Выберите сортировку"
+          options={sortOptions.map((opt) => opt.label)}
+          defaultValue={selectedOption?.label}
         />
         {isMobile && (
           <div className={s.grid}>
-            <AppButton
-              variant="accent"
-              onClick={() => setIsOpen(true)}
-            >
-              Фильтр
-            </AppButton>
-            <Modal
-              isOpen={isOpen}
-              onClose={() => setIsOpen}
-            >
-              <CatalogFilter />
-            </Modal>
+            <FilterModal />
           </div>
         )}
         <Text
           size="sm-14"
           className={s.text}
         >
-          Товаров: 263
+          Товаров: {data?.total_count}
         </Text>
       </div>
 
       <ProductList
         className={s.rowGap88}
-        products={catalogProductsMock}
+        products={data?.products ?? []}
+        isLoading={isLoading}
       />
     </section>
   )
