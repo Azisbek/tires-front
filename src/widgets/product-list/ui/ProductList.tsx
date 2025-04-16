@@ -10,7 +10,7 @@ import { SkeletonProduct } from 'shared/ui/skeleton-components'
 import s from './ProductList.module.scss'
 
 interface ProductListProps {
-  products: ProductType[]
+  products?: ProductType[]
   className?: string
   isLoading?: boolean
 }
@@ -25,7 +25,7 @@ export function ProductList({
     <div className={clsx(s.list, className)}>
       {isLoading
         ? skeletons
-        : products.map((product) => (
+        : products?.map((product) => (
             <ProductCard
               key={product.product_Id}
               product={product}

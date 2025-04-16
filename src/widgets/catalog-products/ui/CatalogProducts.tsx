@@ -2,7 +2,6 @@ import { ProductList } from 'widgets/product-list'
 
 import { FilterModal } from 'features/filter-modal'
 
-
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { ProductListResponse } from 'shared/types/CatalogpageTypes'
 import { Text } from 'shared/ui/Text'
