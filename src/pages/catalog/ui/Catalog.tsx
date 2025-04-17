@@ -2,12 +2,13 @@ import { CatalogFilter } from 'widgets/catalog-filter'
 import { CatalogProducts } from 'widgets/catalog-products'
 import { TireInfoSection } from 'widgets/tireInfoSection'
 
+import { Pagination } from 'features/pagination'
+
 import { useCatalogProducts } from 'shared/hooks/useCatalogProducts'
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { Title } from 'shared/ui/Text'
 
 import s from './Catalog.module.scss'
-import { Pagination } from 'features/pagination'
 
 export function Catalog() {
   const { isMobile } = useScreenWidth()

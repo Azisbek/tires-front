@@ -7,9 +7,7 @@ import { Modal } from 'shared/ui/Modal'
 
 import s from './FilterModal.module.scss'
 
-interface FilterModalProps {}
-
-export function FilterModal({}: FilterModalProps) {
+export function FilterModal() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
