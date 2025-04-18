@@ -1,4 +1,4 @@
-export type SeasonValue = 'summer' | 'winter' | 'all_season'
+export type SeasonValue = 'summer' | 'winter' | 'all_seasons'
 
 export interface ProductCardProps {
   image: string

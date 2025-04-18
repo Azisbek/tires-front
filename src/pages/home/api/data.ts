@@ -26,7 +26,7 @@ export const popularProductsMock: ProductType[] = [
   {
     product_Id: 32,
     image: '/tire.jpeg',
-    season: 'all_season',
+    season: 'all_seasons',
     average_rating: 4.8,
     comments_count: 8,
     title: 'Continental AllSeason',

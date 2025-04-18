@@ -26,7 +26,7 @@ export const catalogProductsMock: ProductCardProps[] = [
   {
     product_Id: 32,
     image: '/tire.jpeg',
-    season: { label: 'allSeason', value: 'all_season' },
+    season: { label: 'allSeason', value: 'all_seasons' },
     average_rating: 4.8,
     comments_count: 8,
     title: 'Continental AllSeason',
@@ -59,7 +59,7 @@ export const catalogProductsMock: ProductCardProps[] = [
   {
     product_Id: 35,
     image: '/tire.jpeg',
-    season: { label: 'allSeason', value: 'all_season' },
+    season: { label: 'allSeason', value: 'all_seasons' },
     average_rating: 4.9,
     comments_count: 12,
     title: 'Bridgestone Weather Control',
@@ -92,7 +92,7 @@ export const catalogProductsMock: ProductCardProps[] = [
   {
     product_Id: 38,
     image: '/tire.jpeg',
-    season: { label: 'allSeason', value: 'all_season' },
+    season: { label: 'allSeason', value: 'all_seasons' },
     average_rating: 4.6,
     comments_count: 9,
     title: 'Yokohama BluEarth',
@@ -125,7 +125,7 @@ export const catalogProductsMock: ProductCardProps[] = [
   {
     product_Id: 41,
     image: '/tire.jpeg',
-    season: { label: 'allSeason', value: 'all_season' },
+    season: { label: 'allSeason', value: 'all_seasons' },
     average_rating: 4.5,
     comments_count: 6,
     title: 'Firestone Destination',
