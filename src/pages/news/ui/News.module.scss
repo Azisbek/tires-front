@@ -1,8 +1,8 @@
 .container {
   width: 100%;
   margin: 0 auto;
-  max-width: 1224px; // 1252px
-  padding: 0 10px; // 0 20px
+  max-width: 1252px;
+  padding: 0 20px;
 
   .title {
     margin: 24px 0;
@@ -20,14 +20,14 @@
     margin: 32px auto 86px auto;
     display: block;
   }
-}
-
-@media (max-width: 768px) {
-  .container {
+  @media (max-width: 768px) {
     margin: 0 auto;
 
     .title {
       text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 25px;
     }
 
     .promotionContainer {

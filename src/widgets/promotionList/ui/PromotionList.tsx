@@ -16,9 +16,9 @@ export function PromotionList({ title }: Props) {
       <div className={s.promotionContainer}>
         {PromotionData.map((product) => (
           <PromotionCard
+            id={product.id}
             key={product.id}
             title={product.title}
-            category={product.category}
             date={product.date}
             imageUrl={product.imageUrl}
           />
