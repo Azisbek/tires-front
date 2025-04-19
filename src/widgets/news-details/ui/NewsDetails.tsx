@@ -1,23 +1,42 @@
-import { NewsSubTitle, NewsTitle } from 'entities/news-components'
+import { Date } from 'entities/promotionCard'
 
-import { newsDate } from '../api'
+import { formatNewsDate } from 'shared/lib/formatDate'
+import { Text, Title } from 'shared/ui/Text'
 
 import s from './NewsDetails.module.scss'
 
-export function NewsDetails() {
+interface Props {
+  data?: {
+    id: string
+    news_image: string
+    news_title: string
+    news_time: string
+    news_description: string
+    related_news: string[]
+  }
+}
+
+export function NewsDetails({ data }: Props) {
+  const date = formatNewsDate(data?.news_time ?? '')
+
   return (
     <div className={s.container}>
-      <NewsTitle
-        title={newsDate.title}
-        date={newsDate.date}
-        categories={newsDate.category}
-        imgUrl={newsDate.imageUrl}
+      <Title
+        className={s.title}
+        size="xl-40"
+      >
+        {data?.news_title}
+      </Title>
+
+      <Date date={date} />
+
+      <img
+        className={s.img}
+        src={data?.news_image}
+        alt={data?.news_title}
       />
 
-      <NewsSubTitle
-        subTitle={newsDate.subTitle}
-        content={newsDate.description}
-      />
+      <Text className={s.text}>{data?.news_description}</Text>
     </div>
   )
 }

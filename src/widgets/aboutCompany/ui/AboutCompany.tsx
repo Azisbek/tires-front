@@ -2,7 +2,7 @@ import { CompanyDescription } from 'entities/aboutCompany'
 
 import { Title } from 'shared/ui/Text'
 
-import img from '../../../shared/assets/imgs/noneImage.png'
+import img from '../../../shared/assets/imgs/nonePhoto.webp'
 
 import s from './AboutCompany.module.scss'
 

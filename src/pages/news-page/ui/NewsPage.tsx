@@ -1,17 +1,32 @@
+import { useParams } from 'react-router-dom'
+
 import { NewsDetails } from 'widgets/news-details'
-import { PromotionList } from 'widgets/promotionList/ui/PromotionList'
+import { NewsListWithSkeleton } from 'widgets/promotionList'
+import { PromotionData } from 'widgets/promotionList/api'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
+import { SkeletonNewsDetail } from 'shared/ui/skeleton-components'
+
+import { useGetNewsByIdQuery } from '../api'
 
 import s from './NewsPage.module.scss'
 
 export function NewsPage() {
+  const { id } = useParams<string>()
+  const { data } = useGetNewsByIdQuery({ id: id || '' })
+
+  if (!data) return <SkeletonNewsDetail />
+
   return (
-    <section>
-      <NewsDetails />
+    <>
+      <NewsDetails data={data} />
 
       <div className={s.container}>
-        <PromotionList title="Похожие новости" />
+        <NewsListWithSkeleton
+          title="Похожие новости"
+          data={PromotionData}
+          isLoading={false}
+        />
 
         <div>
           <AppButton
@@ -22,6 +37,6 @@ export function NewsPage() {
           </AppButton>
         </div>
       </div>
-    </section>
+    </>
   )
 }

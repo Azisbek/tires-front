@@ -1,29 +1,40 @@
+import { NewsItemTypes } from 'pages/news/types/types'
+
 import { PromotionCard } from 'entities/promotionCard'
 
-import { PromotionData } from '../api'
+import withSkeleton from 'shared/hocs/withSkeleton'
+import { Title } from 'shared/ui/Text'
 
 import s from './PromotionList.module.scss'
 
 interface Props {
+  data?: NewsItemTypes[]
   title?: string
 }
 
-export function PromotionList({ title }: Props) {
+function NewsList({ data, title }: Props) {
   return (
-    <div className={s.promotion}>
-      <p className={s.title}>{title}</p>
+    <div className={s.container}>
+      <Title
+        size="xl-40"
+        className={s.title}
+      >
+        {title}
+      </Title>
 
-      <div className={s.promotionContainer}>
-        {PromotionData.map((product) => (
+      <div className={s.content}>
+        {data?.map((product) => (
           <PromotionCard
+            id={product.id}
             key={product.id}
-            title={product.title}
-            category={product.category}
-            date={product.date}
-            imageUrl={product.imageUrl}
+            title={product.news_title}
+            date={product.news_time}
+            imageUrl={product.news_image}
           />
         ))}
       </div>
     </div>
   )
 }
+
+export const NewsListWithSkeleton = withSkeleton(NewsList, 'news')
