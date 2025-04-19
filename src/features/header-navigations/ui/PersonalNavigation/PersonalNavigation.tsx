@@ -6,6 +6,7 @@ import { Search } from 'features/search'
 import { CartNavigate, FavoriteNavigate } from 'entities/header-components'
 
 import { SearchIcon } from 'shared/assets/icons/SearchIcon/SearchIcon'
+import { navigationMap } from 'shared/model/navigation'
 import { MenuLayout } from 'shared/ui/MenuLayout/ui/MenuLayout'
 
 import s from './PersonalNavigation.module.scss'
@@ -32,10 +33,10 @@ export function PersonalNavigation() {
       )}
 
       <button className={s.navBtn}>
-        <a href={'/catalog'}>Личный кабинет</a>
+        <a href={navigationMap.ProfilePage}>Личный кабинет</a>
       </button>
 
-      <FavoriteNavigate to="/favorites" />
+      <FavoriteNavigate to={navigationMap.Favorite} />
 
       <CartNavigate to="/cart" />
     </div>

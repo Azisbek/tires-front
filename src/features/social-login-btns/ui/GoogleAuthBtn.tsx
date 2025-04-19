@@ -1,8 +1,6 @@
-import s from './GoogleAuthBtn.module.scss'
-
 export function GoogleAuthBtn() {
   return (
-    <button className={s.btn}>
+    <button style={{ cursor: 'pointer' }}>
       <img
         src="src/shared/assets/icons/auth/google.webp"
         alt="google"

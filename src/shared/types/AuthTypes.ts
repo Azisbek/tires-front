@@ -17,3 +17,8 @@ export interface GetMeResponse {
   username: string
   phone: string
 }
+
+export interface SignInErrorTypes {
+  error: string
+  detail: string
+}

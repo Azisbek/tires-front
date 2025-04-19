@@ -7,8 +7,8 @@ export const navigationMap = {
   NewsItem: '/news/:id',
   About: '/about',
   ProfilePage: '/profile',
-  SingIn: '/sign-in',
-  SingUp: '/sign-up',
+  SignIn: '/sign-in',
+  SignUp: '/sign-up',
   Favorite: '/favorites',
   Contacts: '/contacts',
 } as const
