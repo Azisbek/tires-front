@@ -54,9 +54,9 @@ export const router = createBrowserRouter([
         ],
       },
 
-      {
-        element: <Redirect />,
-        children: [
+      // {
+        // element: <Redirect />,
+        // children: [
           { path: navigationMap.Home, element: <Home /> },
           { path: navigationMap.Catalog, element: <Catalog /> },
           { path: navigationMap.ProfilePage, element: <ProfilePage /> },
@@ -65,12 +65,12 @@ export const router = createBrowserRouter([
           { path: navigationMap.NewsItem, element: <NewsPage /> },
           { path: navigationMap.Favorite, element: <FavoritePage /> },
           { path: navigationMap.Contacts, element: <Contacts /> },
-        ],
+        // ],
         // .map((config) => ({
         //   ...config,
         //   loader: ''
         // })),
-      },
+      // },
       {
         path: navigationMap.SingIn,
         element: <SignInPage />,
