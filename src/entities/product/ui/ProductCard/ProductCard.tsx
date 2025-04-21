@@ -38,7 +38,7 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
 
       <ProductSeason
         className={s.season}
-        season={ season }
+        season={season}
       />
 
       <div className={s.info}>

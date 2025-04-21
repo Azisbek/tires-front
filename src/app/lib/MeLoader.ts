@@ -11,7 +11,7 @@ export async function meLoader() {
   const token = TokenService.getToken()
 
   if (!token) {
-    return redirect(navigationMap.SingIn)
+    return redirect(navigationMap.SignIn)
   }
 
   try {

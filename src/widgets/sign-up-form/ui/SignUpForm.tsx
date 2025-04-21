@@ -10,9 +10,10 @@ import s from './SignUpForm.module.scss'
 
 interface Props {
   onSubmit: (data: SignUpFormTypes) => void
+  errors?: Partial<SignUpFormTypes>
 }
 
-export function SignUpForm({ onSubmit }: Props) {
+export function SignUpForm({ onSubmit, errors }: Props) {
   const [formData, setFormData] = useState<SignUpFormTypes>({
     username: '',
     email: '',
@@ -37,37 +38,54 @@ export function SignUpForm({ onSubmit }: Props) {
     >
       <SignUpHeader />
 
-      <Input
-        placeholder="Имя пользователя"
-        value={formData.username}
-        onChange={(e) => handleChange('username', e.target.value)}
-      />
+      <div>
+        {errors?.username && <p className={s.error}>{errors.username}</p>}
+        <Input
+          placeholder="Имя пользователя"
+          value={formData.username}
+          onChange={(e) => handleChange('username', e.target.value)}
+        />
+      </div>
 
-      <Input
-        placeholder="Адрес электронной почты"
-        type="email"
-        value={formData.email}
-        onChange={(e) => handleChange('email', e.target.value)}
-      />
+      <div>
+        {errors?.email && <p className={s.error}>{errors.email}</p>}
+        <Input
+          placeholder="Адрес электронной почты"
+          type="email"
+          value={formData.email}
+          onChange={(e) => handleChange('email', e.target.value)}
+        />
+      </div>
 
-      <Input
-        placeholder="Введите номер телефона"
-        type="tel"
-        value={formData.phone}
-        onChange={(e) => handleChange('phone', e.target.value)}
-      />
+      <div>
+        {errors?.phone && <p className={s.error}>{errors.phone}</p>}
+        <Input
+          placeholder="Введите номер телефона"
+          type="tel"
+          value={formData.phone}
+          onChange={(e) => handleChange('phone', e.target.value)}
+        />
+      </div>
 
-      <PasswordInput
-        placeholder="Пароль"
-        value={formData.password}
-        onChange={(e) => handleChange('password', e.target.value)}
-      />
+      <div>
+        {errors?.password && <p className={s.error}>{errors.password}</p>}
+        <PasswordInput
+          placeholder="Пароль"
+          value={formData.password}
+          onChange={(e) => handleChange('password', e.target.value)}
+        />
+      </div>
 
-      <PasswordInput
-        placeholder="Подтвердите пароль"
-        value={formData.confirm_password}
-        onChange={(e) => handleChange('confirm_password', e.target.value)}
-      />
+      <div>
+        {errors?.confirm_password && (
+          <p className={s.error}>{errors.confirm_password}</p>
+        )}
+        <PasswordInput
+          placeholder="Подтвердите пароль"
+          value={formData.confirm_password}
+          onChange={(e) => handleChange('confirm_password', e.target.value)}
+        />
+      </div>
 
       <AppButton
         type="submit"

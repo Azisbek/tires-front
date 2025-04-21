@@ -9,7 +9,7 @@ export function Redirect() {
   if (!access)
     return (
       <Navigate
-        to={navigationMap.SingIn}
+        to={navigationMap.SignIn}
         replace
       />
     )
