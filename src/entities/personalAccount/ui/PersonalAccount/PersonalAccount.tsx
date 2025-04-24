@@ -5,9 +5,13 @@ import { useGetProfileQuery } from '../../api/index'
 import s from './PersonalAccount.module.scss'
 
 export const PersonalAccount = () => {
-  const { data: userData, isLoading } = useGetProfileQuery()
+  const { data, isLoading } = useGetProfileQuery({})
 
-  if (isLoading || !userData) return <p>Загрузка...</p>
+  console.log('Полученные данные:', data)
+
+  if (isLoading) return <p>Загрузка...</p>
+
+  const { email, username, phone } = data!.UserMe!.user
 
   return (
     <div className={s.container}>
@@ -19,10 +23,15 @@ export const PersonalAccount = () => {
       </Title>
 
       <section className={s.personalDetails}>
-        <p>ID: {userData.id}</p>
-        <p>Email: {userData.email}</p>
-        <p>Username: {userData.username}</p>
-        <p>Phone: {userData.phone || 'Не указан'}</p>
+        <p>
+          <span className={s.label}>Email:</span> {email}
+        </p>
+        <p>
+          <span className={s.label}>Username:</span> {username}
+        </p>
+        <p>
+          <span className={s.label}>Phone:</span> {phone}
+        </p>
       </section>
     </div>
   )

@@ -4,21 +4,18 @@
 
 .personalDetails {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: 5px;
 
   p {
     display: flex;
     align-items: center;
-    padding: 5px;
-    width: 450px;
-    height: 40px;
-    border: 1px solid gray;
-    border-radius: 2px;
+    font-size: 28px;
   }
 }
-input::placeholder {
-  color: #1a1e29;
-  font-style: italic;
-  padding: 5px;
+
+.label {
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 28px;
 }

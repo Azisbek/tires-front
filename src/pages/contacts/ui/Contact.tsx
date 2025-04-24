@@ -38,7 +38,8 @@ export function Contact() {
       const res = await sendFeedback(formData).unwrap()
       setSuccessMessage(res.message)
       setFormData({ name: '', phone: '', email: '', message: '' }) // Очищаем после успеха
-    } catch (err: any) {
+    } 
+    catch (err: any) {
       if (err?.data) {
         setErrors(err.data)
       }
