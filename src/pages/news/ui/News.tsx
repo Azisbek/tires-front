@@ -1,13 +1,26 @@
-import { PromotionCard } from 'entities/promotionCard'
+import { useState } from 'react'
+
+import { NewsListWithSkeleton } from 'widgets/promotionList'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Title } from 'shared/ui/Text'
 
-import { PromotionData } from '../../../widgets/promotion/api'
+import { useGetNewsQuery } from '../api'
 
 import s from './News.module.scss'
 
 export function News() {
+  const [limit, setLimit] = useState(9)
+
+  const { data, isLoading } = useGetNewsQuery(
+    { limit },
+    { refetchOnMountOrArgChange: false },
+  )
+
+  const handleShowMore = () => {
+    setLimit((prev) => prev + 6)
+  }
+
   return (
     <div className={s.container}>
       <Title
@@ -18,24 +31,20 @@ export function News() {
         Новости и статьи
       </Title>
 
-      <div className={s.promotionContainer}>
-        {PromotionData.map((product) => (
-          <PromotionCard
-            key={product.id}
-            title={product.title}
-            category={product.category}
-            date={product.date}
-            imageUrl={product.imageUrl}
-          />
-        ))}
-      </div>
+      <NewsListWithSkeleton
+        data={data?.results || []}
+        isLoading={isLoading}
+      />
 
-      <AppButton
-        className={s.btn}
-        variant="border"
-      >
-        Показать ещё
-      </AppButton>
+      {data?.next && (
+        <AppButton
+          className={s.btn}
+          variant="border"
+          onClick={handleShowMore}
+        >
+          Показать ещё
+        </AppButton>
+      )}
     </div>
   )
 }

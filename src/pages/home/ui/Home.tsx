@@ -6,7 +6,8 @@ import { MainBanner } from 'widgets/banner'
 import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
 import { Partners } from 'widgets/partners'
 import { ProductList } from 'widgets/product-list'
-import { Promotion } from 'widgets/promotion'
+import { NewsListWithSkeleton } from 'widgets/promotionList'
+import { PromotionData } from 'widgets/promotionList/api'
 
 import { NavigateBtn } from 'features/navigate-button'
 
@@ -42,7 +43,11 @@ export function Home() {
       </div>
 
       <div className={s.promotion}>
-        <Promotion title="Акции" />
+        <NewsListWithSkeleton
+          title="Акции"
+          data={PromotionData}
+          isLoading={false}
+        />
 
         <AppButton
           className={s.btn}

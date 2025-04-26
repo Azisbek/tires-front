@@ -1,39 +1,44 @@
-import { PromotionCategory } from 'shared/ui/promotionCategory'
+import { Link } from 'react-router-dom'
+
+import { formatPromotionDate } from 'shared/lib/formatDate'
 
 import { Date } from './Date/Date'
 import s from './PromotionCard.module.scss'
 
 interface Props {
+  id: string
   title: string
-  category: string[]
   expiryDate?: boolean
   imageUrl: string
   date: string
 }
 
 export function PromotionCard({
+  id,
   title,
-  category,
   expiryDate,
   imageUrl,
   date,
 }: Props) {
+  const newDate = formatPromotionDate(date)
+
   return (
     <div className={s.promotion}>
-      <img
-        className={s.promotionImage}
-        src={imageUrl}
-        alt={title}
-      />
+      <Link to={`${id}`}>
+        <img
+          className={s.promotionImage}
+          src={imageUrl}
+          alt={title}
+        />
+      </Link>
 
       <div className={s.promotionContent}>
-        <div className={s.content}>
+        <Link to={`${id}`}>
           <p className={s.title}>{title}</p>
-          <PromotionCategory category={category} />
-        </div>
+        </Link>
 
         <Date
-          date={date}
+          date={newDate}
           expiryDate={expiryDate}
         />
       </div>

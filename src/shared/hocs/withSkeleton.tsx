@@ -1,8 +1,12 @@
 import { JSX } from 'react'
 
-import { SkeletonComment, SkeletonProduct } from 'shared/ui/skeleton-components'
+import {
+  SkeletonComment,
+  SkeletonNews,
+  SkeletonProduct,
+} from 'shared/ui/skeleton-components'
 
-type SkeletonType = 'comments' | 'products'
+type SkeletonType = 'comments' | 'products' | 'news'
 
 interface Props {
   isLoading: boolean
@@ -25,6 +29,12 @@ function withSkeleton<P extends object>(
         {[...Array(6)].map((_, i) => (
           <SkeletonProduct key={i} />
         ))}
+      </>
+    ),
+    news: () => (
+      <>
+        <SkeletonNews />
+        <SkeletonNews />
       </>
     ),
   }
