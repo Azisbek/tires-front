@@ -16,6 +16,10 @@ interface FeedbackFormTypes {
   message: string
 }
 
+interface FeedbackError {
+  data: Record<string, string>
+}
+
 export function Contact() {
   const [formData, setFormData] = useState<FeedbackFormTypes>({
     name: '',
@@ -23,9 +27,7 @@ export function Contact() {
     email: '',
     message: '',
   })
-  const [errors, setErrors] = useState<
-    Partial<Record<keyof FeedbackFormTypes, string>>
-  >({})
+  const [errors, setErrors] = useState({})
   const [successMessage, setSuccessMessage] = useState('')
   const [sendFeedback, { isLoading }] = useSendFeedbackMutation()
 
@@ -38,10 +40,10 @@ export function Contact() {
       const res = await sendFeedback(formData).unwrap()
       setSuccessMessage(res.message)
       setFormData({ name: '', phone: '', email: '', message: '' }) // Очищаем после успеха
-    } 
-    catch (err: any) {
-      if (err?.data) {
-        setErrors(err.data)
+    } catch (err) {
+      const error = err as FeedbackError
+      if (error?.data) {
+        setErrors(error?.data)
       }
     }
   }
