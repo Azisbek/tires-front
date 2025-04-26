@@ -1,21 +1,21 @@
-.description {
-  margin: 40px 0;
-}
 .title {
   margin: 20px 0;
 }
-.form {
+
+.personalDetails {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: 5px;
+
+  p {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+  }
 }
 
-input {
-  width: 35rem;
-  height: 2rem;
-}
-input::placeholder {
-  color: #1a1e29;
-  font-style: italic;
-  padding: 5px;
+.label {
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 28px;
 }

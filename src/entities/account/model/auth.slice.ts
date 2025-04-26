@@ -49,7 +49,7 @@ export const signInSlice = createSlice({
           const accessToken = payload.access
           if (accessToken) {
             TokenService.setToken(accessToken)
-            signInApi.endpoints.getMe.initiate()
+            // signInApi.endpoints.getMe.initiate()
           } else {
             console.error('Access token is undefined')
           }
