@@ -25,6 +25,7 @@ const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
 const FavoritePage = lazy(() => import('pages/favorite-page'))
 const Contacts = lazy(() => import('pages/contacts'))
+const ApplicationsList = lazy(() => import('pages/admin/ApplicationsPage'))
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,7 @@ export const router = createBrowserRouter([
       { path: navigationMap.About, element: <About /> },
       { path: navigationMap.NewsItem, element: <NewsPage /> },
       { path: navigationMap.Contacts, element: <Contacts /> },
+      { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
       {
         path: navigationMap.SignIn,
         element: <SignInPage />,
@@ -80,6 +82,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {},
 ])
 
 export default router
