@@ -1,0 +1,55 @@
+.modalContent {
+  max-width: 600px;
+  margin-top: 20px;
+  width: 100%;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: rgb(255, 255, 255);
+  border-radius: 0px;
+
+  .title {
+    margin-bottom: 16px;
+    color: rgb(26, 30, 41);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+  }
+
+  section {
+    margin-bottom: 24px;
+
+    .subTitle {
+      margin-bottom: 16px;
+    }
+
+    .span {
+      margin-top: 24px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 8px 0;
+
+      li {
+        list-style-type: disc;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      li::marker {
+        color: #ff7e00;
+      }
+    }
+  }
+
+  .btnClose {
+    width: 106px;
+    height: 40px;
+    border: 1px solid rgb(239, 216, 195);
+    border-radius: 2px;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    color: #ff7e00;
+  }
+}

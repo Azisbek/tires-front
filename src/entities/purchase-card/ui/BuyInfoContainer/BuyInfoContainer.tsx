@@ -1,4 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
+import PaymentModalPopup from 'widgets/payment-info-popup'
 
 import boxIcon from 'shared/assets/icons/box.svg'
 import guaranteeIcon from 'shared/assets/icons/guarantee.svg'
@@ -13,6 +16,15 @@ interface Props {
 }
 
 export function BuyInfoContainer({ warranty, inStock }: Props) {
+  const [isModalOpen, setIsModalOpen] = useState(false) // Состояние для модалки
+
+  const handleModalClose = () => {
+    setIsModalOpen(false) // Закрытие модалки
+  }
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true) // Открытие модалки
+  }
   return (
     <div className={s.buyInfoContainer}>
       <p className={s.title}>В наличии {inStock}</p>
@@ -61,9 +73,14 @@ export function BuyInfoContainer({ warranty, inStock }: Props) {
         <Link
           className={s.link}
           to={''}
+          onClick={handleModalOpen}
         >
           Показать варианты
         </Link>
+        <PaymentModalPopup
+          isOpen={isModalOpen}
+          onClose={handleModalClose}
+        />
       </Text>
     </div>
   )
