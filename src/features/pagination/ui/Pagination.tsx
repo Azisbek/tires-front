@@ -10,7 +10,7 @@ import s from './Pagination.module.scss'
 interface PaginationProps {
   meta: ProductListResponse
   onPageChange: (page: number) => void
-  className: string
+  className?: string
 }
 
 export const Pagination: React.FC<PaginationProps> = ({

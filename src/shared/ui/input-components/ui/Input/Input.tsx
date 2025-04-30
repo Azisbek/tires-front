@@ -7,7 +7,8 @@ interface Props {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   placeholder?: string
   className?: string
-  type?: 'text' | 'email' | 'tel' | 'number'
+  type?: 'text' | 'email' | 'tel' | 'number' | 'date'
+  disabled?: boolean
 }
 
 export function Input({
@@ -16,6 +17,7 @@ export function Input({
   placeholder,
   className,
   type = 'text',
+  disabled = false,
 }: Props) {
   return (
     <div className={clsx(s.myInput, className)}>
@@ -25,6 +27,7 @@ export function Input({
         type={type}
         placeholder={placeholder}
         className={s.input}
+        disabled={disabled}
       />
     </div>
   )

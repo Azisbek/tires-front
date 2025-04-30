@@ -11,6 +11,9 @@ export const navigationMap = {
   SignUp: '/sign-up',
   Favorite: '/favorites',
   Contacts: '/contacts',
+
+  Admin: '/admin',
+  AddProducts: '/admin/add-products',
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]

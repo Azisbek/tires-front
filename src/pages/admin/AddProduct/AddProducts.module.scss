@@ -1,0 +1,100 @@
+.root {
+  background: #3e465f;
+  padding: 73px 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 16px;
+  max-width: 1440px;
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 83px;
+  margin-bottom: 72px;
+  text-align: center;
+}
+
+.formWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  .inputsGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 500px;
+    width: 100%;
+    .input {
+      padding: 0;
+      input {
+        background: #d9d9d9;
+        color: #000;
+        padding: 20px 25px;
+        border: none;
+        width: 100%;
+        outline: none;
+        border-radius: 6px;
+        font-size: 16px;
+        border-radius: 0;
+
+        &:disabled {
+          background: #969393;
+        }
+
+        &:focus {
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.flexGroup {
+  display: flex;
+  justify-content: space-between;
+
+  & > :first-child {
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+}
+
+.checkbox {
+  color: #ff7e00;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.formLabelPosition {
+  position: absolute;
+  left: -150px;
+  top: 45px;
+}
+
+.buttonSubmit {
+  max-width: 250px;
+  padding: 15px 80px;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 16px;
+}
+
+.error {
+  font-size: 14px;
+  font-weight: 400;
+  color: red;
+}
+
+.successModal {
+  color: #000;
+}

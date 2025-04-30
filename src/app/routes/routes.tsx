@@ -25,6 +25,7 @@ const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
 const FavoritePage = lazy(() => import('pages/favorite-page'))
 const Contacts = lazy(() => import('pages/contacts'))
+const AddProducts = lazy(() => import('pages/admin/AddProduct'))
 
 export const router = createBrowserRouter([
   {
@@ -77,6 +78,15 @@ export const router = createBrowserRouter([
           ...config,
           loader: meLoader,
         })),
+      },
+    ],
+  },
+  {
+    path: navigationMap.Admin,
+    children: [
+      {
+        path: navigationMap.AddProducts,
+        element: <AddProducts />,
       },
     ],
   },

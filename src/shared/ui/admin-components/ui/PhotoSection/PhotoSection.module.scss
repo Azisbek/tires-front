@@ -1,0 +1,27 @@
+.photosWrapper {
+  display: flex;
+  max-width: 250px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.photo {
+  background: #d9d9d9;
+}
+.w315 {
+  width: 315px;
+  height: 258px;
+}
+.w120 {
+  width: 120px;
+  height: 100px;
+}
+.addPhotoBtn {
+  background: none;
+  border: none;
+  color: #ff7e00;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 16px;
+  text-align: left;
+  cursor: pointer;
+}

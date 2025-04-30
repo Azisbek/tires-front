@@ -12,7 +12,7 @@ interface Props {
   options: string[] | undefined
   onChange?: (value: string) => void
   defaultValue?: string
-  color: 'grey' | 'white'
+  color: 'grey' | 'white' | 'darkGrey'
   className?: string
 }
 
@@ -46,7 +46,9 @@ export function InputSelect({
     >
       <div
         onClick={toggleOpen}
-        className={isOpen ? `${s.inputActive}` : `${s.input} ${s[color]}`}
+        className={
+          isOpen ? `${s.inputActive} ${s[color]}` : `${s.input} ${s[color]}`
+        }
       >
         <p className={s.defaultTitle}>{value}</p>
         <img

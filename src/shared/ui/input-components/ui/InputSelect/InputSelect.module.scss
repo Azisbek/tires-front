@@ -23,6 +23,25 @@
     }
   }
 
+  .darkGrey {
+    background: #d9d9d9;
+    padding: 20px 25px;
+    border-radius: 0;
+    .defaultTitle {
+      color: #000;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &:hover {
+      background: #e3e3e3;
+    }
+    &:active,
+    &:focus {
+      background: #fff;
+    }
+  }
+
   .grey {
     background-color: rgb(245, 245, 245);
 
