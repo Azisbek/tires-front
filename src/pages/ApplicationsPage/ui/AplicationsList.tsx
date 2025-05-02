@@ -1,26 +1,12 @@
-import { useEffect, useState } from 'react'
-
 import { Title } from 'shared/ui/Text'
+import { LoaderFullScreen } from 'shared/ui/loader-components'
 
-import { useLazyFetchApplicationsQuery } from '../api/aplicationsApi'
-import { ApplicationData } from '../types/types'
+import { useGetApplicationsQuery } from '../api/aplicationsApi'
 
-import s from './AplicationsList.module.css'
+import s from './AplicationsList.module.scss'
 
 export const ApplicationsList = () => {
-  const [applications, setApplications] = useState<ApplicationData[]>([])
-
-  const [triggerFetch, { data, isLoading }] = useLazyFetchApplicationsQuery()
-
-  useEffect(() => {
-    triggerFetch()
-  }, [triggerFetch])
-
-  useEffect(() => {
-    if (data) {
-      setApplications(data)
-    }
-  }, [data])
+  const { data: applications = [], isFetching } = useGetApplicationsQuery()
 
   return (
     <div className={s.container}>
@@ -31,7 +17,7 @@ export const ApplicationsList = () => {
         Заявки
       </Title>
 
-      {isLoading && <p>Загрузка заявок...</p>}
+      {isFetching && <p>Загрузка заявок...</p>}
 
       {applications.length > 0 ? (
         <table className={s.table}>
@@ -58,7 +44,7 @@ export const ApplicationsList = () => {
           </tbody>
         </table>
       ) : (
-        !isLoading && <p>Нет заявок.</p>
+        !isFetching && <LoaderFullScreen />
       )}
     </div>
   )

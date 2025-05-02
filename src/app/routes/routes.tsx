@@ -25,7 +25,7 @@ const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
 const FavoritePage = lazy(() => import('pages/favorite-page'))
 const Contacts = lazy(() => import('pages/contacts'))
-const ApplicationsList = lazy(() => import('pages/admin/ApplicationsPage'))
+const ApplicationsList = lazy(() => import('pages/ApplicationsPage'))
 
 export const router = createBrowserRouter([
   {
