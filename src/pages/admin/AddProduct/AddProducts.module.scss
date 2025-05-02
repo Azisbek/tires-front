@@ -26,58 +26,20 @@
     gap: 35px;
     max-width: 500px;
     width: 100%;
-    .input {
-      padding: 0;
-      input {
-        background: #d9d9d9;
-        color: #000;
-        padding: 20px 25px;
-        border: none;
-        width: 100%;
-        outline: none;
-        border-radius: 6px;
-        font-size: 16px;
-        border-radius: 0;
-
-        &:disabled {
-          background: #969393;
-        }
-
-        &:focus {
-          background: #fff;
-        }
-      }
-    }
   }
-}
-
-.inputBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: relative;
 }
 
 .flexGroup {
   display: flex;
   justify-content: space-between;
-
-  & > :first-child {
-    padding-right: 10px;
-    margin-right: 10px;
-  }
+  position: relative;
+  gap: 10px;
 }
 
-.checkbox {
-  color: #ff7e00;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
 .formLabelPosition {
   position: absolute;
   left: -150px;
-  top: 45px;
+  top: 43px;
 }
 
 .buttonSubmit {
@@ -87,12 +49,6 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 16px;
-}
-
-.error {
-  font-size: 14px;
-  font-weight: 400;
-  color: red;
 }
 
 .successModal {

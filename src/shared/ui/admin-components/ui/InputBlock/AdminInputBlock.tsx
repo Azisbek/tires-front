@@ -1,21 +1,23 @@
 import { Input } from 'shared/ui/input-components'
 
-import s from './InputBlock.module.scss'
+import s from './AdminInputBlock.module.scss'
 
 interface Props {
   label: string
-  value: string
+  value: string | number
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   type?: 'number' | 'text' | 'email' | 'tel' | 'date'
   disabled?: boolean
+  error?: string
 }
 
-export function InputBlock({
+export function AdminInputBlock({
   label,
   value,
   onChange,
   type = 'text',
   disabled = false,
+  error,
 }: Props) {
   return (
     <div className={s.inputBlock}>
@@ -27,6 +29,7 @@ export function InputBlock({
         disabled={disabled}
         onChange={onChange}
       />
+      {error && <p className={s.error}>{error}</p>}
     </div>
   )
 }

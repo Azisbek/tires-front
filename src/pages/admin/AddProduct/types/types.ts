@@ -1,4 +1,4 @@
-export interface AddProductsType {
+export interface ProductFormState {
   title: string
   price: string
   negotiable: boolean
@@ -20,7 +20,7 @@ export interface AddProductsType {
   fuel_efficiency: string
   wet_grip: string
   external_noise_level: number
-  condition: boolean
+  condition: number
   season: number | null
   tire_type: number | null
   body_type: number
