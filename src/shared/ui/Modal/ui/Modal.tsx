@@ -13,7 +13,7 @@ export function Modal({ isOpen = false, onClose, children, className }: Props) {
   return (
     <div
       className={s.modal}
-      onClick={() => onClose}
+      onClick={() => onClose?.(false)}
     >
       <div
         className={`${s.modalContent} ${className}`}
