@@ -1,7 +1,7 @@
 import { Title } from 'shared/ui/Text'
 import { SkeletonTable } from 'shared/ui/skeleton-components'
 
-import { useGetApplicationsQuery } from '../api/aplicationsApi'
+import { useGetApplicationsQuery } from '../api'
 
 import s from './AplicationsList.module.scss'
 
