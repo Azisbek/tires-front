@@ -1,0 +1,14 @@
+.skeletonTable {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  outline: 1px solid white;
+
+  .row {
+    display: flex;
+    gap: 8px;
+  }
+}
