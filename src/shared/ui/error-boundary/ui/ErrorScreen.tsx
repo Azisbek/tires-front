@@ -8,11 +8,12 @@ export function ErrorScreen() {
       <h1 className={s.title}>Пшш…Страница не найдена </h1>
       <img
         src="/src/shared/assets/icons/404.svg"
+        className={s.errImage}
         alt="error 404 image"
       />
       <Link
         to="/"
-        className={s.button}
+        className={s.link}
       >
         Перейти на главную страницу
       </Link>
