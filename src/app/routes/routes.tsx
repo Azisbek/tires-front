@@ -13,7 +13,6 @@ import {
 } from 'entities/characteristics-components'
 
 import { navigationMap } from 'shared/model/navigation'
-import { ErrorScreen } from 'shared/ui/error-boundary/index'
 
 const Home = lazy(() => import('pages/home'))
 const Catalog = lazy(() => import('pages/catalog'))
@@ -81,7 +80,6 @@ export const router = createBrowserRouter([
           loader: meLoader,
         })),
       },
-      { path: '*', element: <ErrorScreen /> },
     ],
   },
 ])

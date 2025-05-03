@@ -1,14 +1,14 @@
 import { Modal } from 'shared/ui/Modal'
 import { Text, Title } from 'shared/ui/Text'
 
-import s from './PaymentInfoPopup.module.scss'
+import s from './PaymentPopup.module.scss'
 
 interface Props {
   isOpen: boolean
   onClose: (value: boolean) => void
 }
 
-export function PaymentModalPopup({ isOpen, onClose }: Props) {
+export function PaymentPopup({ isOpen, onClose }: Props) {
   return (
     <Modal
       isOpen={isOpen}

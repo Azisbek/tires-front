@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import PaymentModalPopup from 'widgets/payment-info-popup'
-
 import boxIcon from 'shared/assets/icons/box.svg'
 import guaranteeIcon from 'shared/assets/icons/guarantee.svg'
 import moneyIcon from 'shared/assets/icons/money.svg'
+import PaymentPopup from 'shared/popups'
 import { Text } from 'shared/ui/Text'
 
 import s from './BuyInfoContainer.module.scss'
@@ -77,7 +76,7 @@ export function BuyInfoContainer({ warranty, inStock }: Props) {
         >
           Показать варианты
         </Link>
-        <PaymentModalPopup
+        <PaymentPopup
           isOpen={isModalOpen}
           onClose={handleModalClose}
         />
