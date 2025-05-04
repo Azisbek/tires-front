@@ -1,4 +1,5 @@
 export const navigationMap = {
+  // Cient routes
   Base: '/',
   Home: '/',
   Catalog: '/catalog',
@@ -12,10 +13,10 @@ export const navigationMap = {
   Favorite: '/favorites',
   Contacts: '/contacts',
 
+  // Admin routes
   Admin: '/admin',
-  AddProduct: '/admin/add-product',
-  AdminPage: '/admin',
-  ApplicationsList: '/applications',
+  AddProduct: 'add-product',
+  ApplicationsList: 'applications',
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]
