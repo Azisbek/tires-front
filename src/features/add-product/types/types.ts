@@ -21,9 +21,9 @@ export interface ProductFormState {
   wet_grip: string
   external_noise_level: number
   condition: number
-  season: number | null
-  tire_type: number | null
-  body_type: number
+  season: number
+  tire_type: string
+  body_type: string
   runflat: boolean
   off_road: boolean
   warranty: string

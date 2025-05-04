@@ -13,7 +13,9 @@ export const navigationMap = {
   Contacts: '/contacts',
 
   Admin: '/admin',
-  AddProducts: '/admin/add-products',
+  AddProduct: '/admin/add-product',
+  AdminPage: '/admin',
+  ApplicationsList: '/applications',
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]

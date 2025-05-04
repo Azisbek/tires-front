@@ -13,6 +13,7 @@ import {
 } from 'entities/characteristics-components'
 
 import { navigationMap } from 'shared/model/navigation'
+import { ErrorScreen } from 'shared/ui/error-boundary'
 
 const Home = lazy(() => import('pages/home'))
 const Catalog = lazy(() => import('pages/catalog'))
@@ -25,11 +26,14 @@ const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
 const FavoritePage = lazy(() => import('pages/favorite-page'))
 const Contacts = lazy(() => import('pages/contacts'))
-const AddProducts = lazy(() => import('pages/admin/AddProduct'))
+const AddProduct = lazy(() => import('pages/admin/AddProduct'))
+const AdminPage = lazy(() => import('pages/admin-page'))
+const ApplicationsList = lazy(() => import('pages/applications-page'))
 
 export const router = createBrowserRouter([
   {
     path: navigationMap.Base,
+    errorElement: <ErrorScreen />,
     children: [
       {
         path: navigationMap.Home,
@@ -40,6 +44,8 @@ export const router = createBrowserRouter([
       { path: navigationMap.About, element: <About /> },
       { path: navigationMap.NewsItem, element: <NewsPage /> },
       { path: navigationMap.Contacts, element: <Contacts /> },
+      { path: navigationMap.AdminPage, element: <AdminPage /> },
+      { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
       {
         path: navigationMap.SignIn,
         element: <SignInPage />,
@@ -85,8 +91,8 @@ export const router = createBrowserRouter([
     path: navigationMap.Admin,
     children: [
       {
-        path: navigationMap.AddProducts,
-        element: <AddProducts />,
+        path: navigationMap.AddProduct,
+        element: <AddProduct />,
       },
     ],
   },

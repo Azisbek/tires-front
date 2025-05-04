@@ -21,7 +21,7 @@ export function ProductPrice({ children, id, className }: ProductPriceProps) {
       variant="accent"
       onClick={handleClick}
     >
-      {formatPrice(children)} С
+      {typeof children === 'number' ? `${formatPrice(children)} С` : children}
     </AppButton>
   )
 }

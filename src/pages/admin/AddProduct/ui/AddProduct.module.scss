@@ -53,4 +53,10 @@
 
 .successModal {
   color: #000;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  h3 {
+    text-align: center;
+  }
 }

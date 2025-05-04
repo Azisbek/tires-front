@@ -1,0 +1,25 @@
+.container {
+  padding: 20px;
+  background-color: #262f56;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .table {
+    max-width: 700px;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+  }
+}

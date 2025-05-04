@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { useAddProductForm } from 'features/add-product/hook/useAddProductForm'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Modal } from 'shared/ui/Modal'
@@ -9,159 +11,27 @@ import {
   ImageUploader,
 } from 'shared/ui/admin-components'
 
-import s from './AddProducts.module.scss'
-import { useCreateProductMutation } from './api'
-import { validateProductForm } from './model/validateProductForm'
+import s from './AddProduct.module.scss'
 
-const selectValue = {
-  tire_type: ['Легковые', 'Легкогрузовой (LTR)', 'Внедорожник (SUV)'],
-  season: ['Зима', 'Лето', 'Всесезонные'],
-  speedIndex: ['Q', 'R', 'S', 'T', 'H', 'V', 'W', 'Y', 'Z'],
-  efficiency: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-  wetGrip: ['A', 'B', 'C', 'D', 'E', 'F'],
-  body_type: ['Седан', 'Купе'],
-}
-
-export function AddProducts() {
-  const [createProduct] = useCreateProductMutation()
-  const [isOpen, setIsOpen] = useState(false)
-
-  const [form, setForm] = useState({
-    title: '',
-    price: '',
-    negotiable: false,
-    promotion: '',
-    promotion_end_date: '',
-    model_description: '',
-    in_stock: 0,
-    profile: '',
-    diameter: '',
-    speed_index: '',
-    load_index: '',
-    load_index_for_double: '',
-    manufacturer: '',
-    model: '',
-    generation: '',
-    modification: '',
-    promotionCategory: '',
-    width: '',
-    fuel_efficiency: '',
-    wet_grip: '',
-    external_noise_level: 0,
-    condition: 0,
-    season: null,
-    tire_type: 0,
-    body_type: 0,
-    runflat: false,
-    off_road: false,
-    warranty: '',
-    image1: null as File | null,
-    image2: null as File | null,
-    image3: null as File | null,
-    image4: null as File | null,
-    image5: null as File | null,
-    image6: null as File | null,
-    image7: null as File | null,
-  })
-  const [error, setError] = useState<
-    Partial<Record<keyof typeof form, string>>
-  >({})
-
-  const handleAddImages = (files: File[]) => {
-    setForm((prev) => {
-      const updatedImages = { ...prev }
-      let fileIdx = 0
-
-      for (let i = 1; i <= 7 && fileIdx < files.length; i++) {
-        const key = `image${i}` as `image${1 | 2 | 3 | 4 | 5 | 6 | 7}`
-        if (updatedImages[key] === null) {
-          updatedImages[key] = files[fileIdx]
-          fileIdx++
-        }
-      }
-
-      return updatedImages
-    })
-  }
-
-  const handleRemoveImage = (index: number) => {
-    setForm((prev) => {
-      const updatedImages = { ...prev }
-      const key = `image${index + 1}` as `image${1 | 2 | 3 | 4 | 5 | 6 | 7}`
-
-      updatedImages[key] = null
-
-      return updatedImages
-    })
-  }
-  const handleReplaceImage = (index: number, file: File) => {
-    setForm((prev) => {
-      const updatedImages = { ...prev }
-      const key = `image${index + 1}` as `image${1 | 2 | 3 | 4 | 5 | 6 | 7}`
-      updatedImages[key] = file
-
-      return updatedImages
-    })
-  }
-
-  const selectChange = (filterKey: string, value: string) => {
-    if (
-      filterKey === 'tire_type' ||
-      filterKey === 'season' ||
-      filterKey === 'body_type'
-    ) {
-      const index = selectValue[filterKey].findIndex((el) => el === value)
-
-      if (index !== -1) {
-        setForm((prev) => ({ ...prev, [filterKey]: index + 1 }))
-      }
-    } else {
-      setForm((prev) => ({ ...prev, [filterKey]: value }))
-    }
-  }
-
-  const handleInputChange =
-    (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { value, type, checked } = e.target
-      setForm((prev) => ({
-        ...prev,
-        [key]: type === 'checkbox' ? checked : value,
-      }))
-    }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const errors = validateProductForm(form)
-
-    if (Object.keys(errors).length > 0) {
-      setError(errors)
-      return
-    }
-
-    setError({})
-
-    const formData = new FormData()
-    Object.keys(form).forEach((key) => {
-      const typedKey = key as keyof typeof form
-
-      const value = form[typedKey]
-
-      if (typedKey.startsWith('image') && value instanceof File) {
-        formData.append(typedKey, value)
-      } else if (typeof value === 'boolean' || typeof value === 'number') {
-        formData.append(typedKey, String(value))
-      } else if (value !== null && value !== undefined) {
-        formData.append(typedKey, String(value))
-      }
-    })
-
-    try {
-      await createProduct(formData)
-      setIsOpen(true)
-    } catch (error) {
-      console.error('Неизвестная ошибка:', error)
-    }
-  }
+export function AddProduct() {
+  const navigate = useNavigate()
+  const {
+    form,
+    setForm,
+    TireTypeData,
+    BodyTypeData,
+    selectValue,
+    error,
+    isOpen,
+    setIsOpen,
+    handleAddImages,
+    handleRemoveImage,
+    handleReplaceImage,
+    selectChange,
+    handleInputChange,
+    handleSubmit,
+    data,
+  } = useAddProductForm()
 
   return (
     <div className={s.root}>
@@ -170,7 +40,15 @@ export function AddProducts() {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
       >
-        Продукт успешно отправлено
+        {data?.message && <h3>{data.message}</h3>}
+        {data?.product_id && (
+          <AppButton
+            variant="accent"
+            onClick={() => navigate(`/catalog/${data.product_id}`)}
+          >
+            Посмотреть на товар
+          </AppButton>
+        )}
       </Modal>
       <h1 className={s.title}>Добавить товар</h1>
 
@@ -273,13 +151,13 @@ export function AddProducts() {
 
           <AdminSelectBlock
             label="Тип шины*"
-            options={selectValue.tire_type}
+            options={TireTypeData?.map((el) => el.label) || []}
             error={error.tire_type}
             onChange={(value) => selectChange('tire_type', value)}
           />
           <AdminSelectBlock
             label="Тип кузова*"
-            options={selectValue.body_type}
+            options={BodyTypeData?.map((el) => el.label) || []}
             error={error.body_type}
             onChange={(value) => selectChange('body_type', value)}
           />
@@ -327,11 +205,11 @@ export function AddProducts() {
             />
           </div>
 
-          <AdminSelectBlock
+          <AdminInputBlock
             label="Индекс скорости*"
-            options={selectValue.speedIndex}
+            value={form.speed_index}
             error={error.speed_index}
-            onChange={(value) => selectChange('speed_index', value)}
+            onChange={handleInputChange('speed_index')}
           />
           <div className={s.flexGroup}>
             <AdminInputBlock
@@ -373,6 +251,12 @@ export function AddProducts() {
             type="number"
             value={form.in_stock}
             onChange={handleInputChange('in_stock')}
+            error={error.in_stock}
+          />
+          <AdminInputBlock
+            label="Гарантия на шину"
+            value={form.warranty}
+            onChange={handleInputChange('warranty')}
             error={error.in_stock}
           />
         </div>

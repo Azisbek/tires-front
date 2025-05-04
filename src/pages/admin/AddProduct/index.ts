@@ -1,3 +1,3 @@
-import { AddProducts } from './AddProducts'
+import { AddProduct } from './ui/AddProduct'
 
-export default AddProducts
+export default AddProduct
