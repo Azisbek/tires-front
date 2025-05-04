@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import { ReactNode } from 'react'
 
 import { Text } from 'shared/ui/Text'
@@ -8,11 +10,17 @@ interface CheckboxProps {
   children: ReactNode
   onChange: (value: boolean) => void
   checked: boolean
+  className?: string
 }
 
-export function Checkbox({ children, onChange, checked }: CheckboxProps) {
+export function Checkbox({
+  children,
+  onChange,
+  checked,
+  className,
+}: CheckboxProps) {
   return (
-    <label className={s.wrapper}>
+    <label className={clsx(s.wrapper, className)}>
       <input
         type="checkbox"
         checked={checked}

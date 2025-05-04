@@ -11,5 +11,13 @@
     color: rgb(26, 30, 41);
     font-size: 14px;
     font-weight: 400;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    -moz-appearance: textfield;
   }
 }
