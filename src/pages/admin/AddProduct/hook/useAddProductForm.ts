@@ -41,7 +41,7 @@ export function useAddProductForm() {
     fuel_efficiency: '',
     wet_grip: '',
     external_noise_level: 0,
-    condition: 0,
+    condition: false,
     season: 0,
     tire_type: '',
     body_type: '',

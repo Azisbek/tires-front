@@ -20,7 +20,7 @@ export interface ProductFormState {
   fuel_efficiency: string
   wet_grip: string
   external_noise_level: number
-  condition: number
+  condition: boolean
   season: number
   tire_type: string
   body_type: string

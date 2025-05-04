@@ -1,4 +1,4 @@
-import { ProductFormState } from '../types/types'
+import { ProductFormState } from './types'
 
 export function validateProductForm(form: ProductFormState) {
   const errors: Partial<Record<keyof typeof form, string>> = {}
@@ -8,8 +8,7 @@ export function validateProductForm(form: ProductFormState) {
   if (form.season === null) errors.season = 'Выберите сезон'
   if (!form.tire_type) errors.tire_type = 'Выберите тип шины'
   if (!form.body_type) errors.body_type = 'Выберите тип кузова'
-  if (!form.condition && form.condition !== 0)
-    errors.condition = 'Выберите состояние'
+  errors.condition = 'Выберите состояние'
 
   const baseCharacteristics = [
     { key: 'width', label: 'Ширина' },

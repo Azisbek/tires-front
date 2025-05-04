@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-import { useAddProductForm } from 'features/add-product/hook/useAddProductForm'
+import { useAddProductForm } from 'pages/admin/AddProduct/hook/useAddProductForm'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Modal } from 'shared/ui/Modal'
@@ -175,20 +175,13 @@ export function AddProduct() {
           />
 
           <div className={s.flexGroup}>
-            <AdminInputBlock
-              label="Только новые"
-              value={form.condition}
-              type="number"
-              onChange={handleInputChange('condition')}
-              error={error.condition}
-            />
-            {/* <AdminCheckbox
+            <AdminCheckbox
               label="Только новые"
               checked={form.condition}
               onChange={(e) =>
                 setForm((prev) => ({ ...prev, condition: e.target.checked }))
               }
-            /> */}
+            />
             <AdminCheckbox
               label="Runflat"
               checked={form.runflat}
