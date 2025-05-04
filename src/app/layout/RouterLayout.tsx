@@ -1,14 +1,14 @@
+import { Outlet } from 'react-router-dom'
+
 import { Footer } from 'widgets/footer'
 import { Header, HeaderMobile } from 'widgets/header'
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import 'shared/styles/global.scss'
-import { PropsWithChildren } from 'shared/types/PropsWithChildren'
-import { Space } from 'shared/ui/Space/Space'
 import { ErrorBoundary, ErrorScreen } from 'shared/ui/error-boundary'
 import { Layout } from 'shared/ui/layout'
 
-export function RouterLayout({ children }: PropsWithChildren) {
+export function RouterLayout() {
   const { isMobile } = useScreenWidth()
 
   return (
@@ -17,9 +17,10 @@ export function RouterLayout({ children }: PropsWithChildren) {
         {isMobile ? <HeaderMobile /> : <Header />}
       </div>
 
-      <Layout>{children}</Layout>
+      <Layout>
+        <Outlet />
+      </Layout>
 
-      <Space h={83} />
       <Footer />
     </ErrorBoundary>
   )

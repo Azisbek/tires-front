@@ -1,6 +1,8 @@
 import { lazy } from 'react'
 import { Navigate, createBrowserRouter } from 'react-router-dom'
 
+import { AdminLayout } from 'app/layout/AdminLayout'
+import { RouterLayout } from 'app/layout/RouterLayout'
 import { meLoader } from 'app/lib/MeLoader'
 import { Redirect } from 'app/lib/Redirect'
 
@@ -31,8 +33,10 @@ const AdminPage = lazy(() => import('pages/admin-page'))
 const ApplicationsList = lazy(() => import('pages/applications-page'))
 
 export const router = createBrowserRouter([
+  // Client Routes
   {
     path: navigationMap.Base,
+    element: <RouterLayout />,
     errorElement: <ErrorScreen />,
     children: [
       {
@@ -44,8 +48,6 @@ export const router = createBrowserRouter([
       { path: navigationMap.About, element: <About /> },
       { path: navigationMap.NewsItem, element: <NewsPage /> },
       { path: navigationMap.Contacts, element: <Contacts /> },
-      { path: navigationMap.AdminPage, element: <AdminPage /> },
-      { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
       {
         path: navigationMap.SignIn,
         element: <SignInPage />,
@@ -87,13 +89,16 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
+  // Admin Routes
   {
     path: navigationMap.Admin,
+    element: <AdminLayout />,
+    errorElement: <ErrorScreen />,
     children: [
-      {
-        path: navigationMap.AddProduct,
-        element: <AddProduct />,
-      },
+      { path: navigationMap.Admin, element: <AdminPage /> },
+      { path: navigationMap.AddProduct, element: <AddProduct /> },
+      { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
     ],
   },
 ])
