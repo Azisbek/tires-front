@@ -28,6 +28,12 @@ export function AdminPage() {
         >
           Заявки
         </Link>
+        <Link
+          to="/admin/tire-type"
+          className={s.btn}
+        >
+          Добавить тип шины
+        </Link>
       </div>
     </div>
   )
