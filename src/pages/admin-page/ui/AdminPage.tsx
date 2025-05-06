@@ -29,7 +29,7 @@ export function AdminPage() {
           Заявки
         </Link>
         <Link
-          to="/admin/body-type"
+          to="/admin/add-body-type"
           className={s.btn}
         >
           Добавить тип кузова
