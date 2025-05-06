@@ -28,6 +28,12 @@ export function AdminPage() {
         >
           Заявки
         </Link>
+        <Link
+          to="/admin/body-type"
+          className={s.btn}
+        >
+          Добавить тип кузова
+        </Link>
       </div>
     </div>
   )

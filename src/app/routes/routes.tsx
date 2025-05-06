@@ -31,6 +31,7 @@ const Contacts = lazy(() => import('pages/contacts'))
 const AddProduct = lazy(() => import('pages/add-product-page'))
 const AdminPage = lazy(() => import('pages/admin-page'))
 const ApplicationsList = lazy(() => import('pages/applications-page'))
+const BodyTypeList = lazy(() => import('pages/body-type-page'))
 
 export const router = createBrowserRouter([
   // Client Routes
@@ -99,6 +100,7 @@ export const router = createBrowserRouter([
       { path: navigationMap.Admin, element: <AdminPage /> },
       { path: navigationMap.AddProduct, element: <AddProduct /> },
       { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
+      { path: navigationMap.BodyTypeList, element: <BodyTypeList /> },
     ],
   },
 ])

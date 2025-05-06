@@ -17,6 +17,7 @@ export const navigationMap = {
   Admin: '/admin',
   AddProduct: 'add-product',
   ApplicationsList: 'applications',
+  BodyTypeList: 'body-type',
 } as const
 
 export type NavigationMap = (typeof navigationMap)[keyof typeof navigationMap]
