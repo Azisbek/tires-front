@@ -3,13 +3,13 @@ import { useState } from 'react'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Title } from 'shared/ui/Text'
 
-import { useAddTireTypeMutation, useGetTireTypeQuery } from '../api'
+import { useAddTiresTypeMutation, useGetTiresTypeQuery } from '../api'
 
-import s from './TireType.module.scss'
+import s from './TiresTypeList.module.scss'
 
-export function TireType() {
-  const { data = [], isFetching, refetch } = useGetTireTypeQuery()
-  const [addTireType] = useAddTireTypeMutation()
+export function TiresTypeList() {
+  const { data = [], isFetching, refetch } = useGetTiresTypeQuery()
+  const [addTiresType] = useAddTiresTypeMutation()
   const [inputValue, setInputValue] = useState('')
 
   const handleAdd = async () => {
@@ -17,8 +17,8 @@ export function TireType() {
     if (!value) return
 
     try {
-      await addTireType({ value }).unwrap()
-      await refetch()
+      await addTiresType({ value }).unwrap()
+      refetch()
       setInputValue('')
     } catch (err) {
       console.error('Ошибка добавления типа шины:', err)

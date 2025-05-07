@@ -29,7 +29,7 @@ export function AdminPage() {
           Заявки
         </Link>
         <Link
-          to="/admin/tire-type"
+          to="/admin/add-tires-type"
           className={s.btn}
         >
           Добавить тип шины

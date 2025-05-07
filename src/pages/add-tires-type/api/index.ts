@@ -1,16 +1,16 @@
 import { $api } from 'shared/api/api'
 
-import { TireType } from '../types'
+import { TiresType } from '../types'
 
-export const tireTypeApi = $api.injectEndpoints({
+export const tiresTypeApi = $api.injectEndpoints({
   endpoints: (build) => ({
-    getTireType: build.query<TireType[], void>({
+    getTiresType: build.query<TiresType[], void>({
       query: () => ({
         url: '/product/tire_type/',
         method: 'GET',
       }),
     }),
-    addTireType: build.mutation<TireType, { value: string }>({
+    addTiresType: build.mutation<TiresType, { value: string }>({
       query: ({ value }) => ({
         url: '/product/tire_type/',
         method: 'POST',
@@ -23,4 +23,4 @@ export const tireTypeApi = $api.injectEndpoints({
   }),
 })
 
-export const { useGetTireTypeQuery, useAddTireTypeMutation } = tireTypeApi
+export const { useGetTiresTypeQuery, useAddTiresTypeMutation } = tiresTypeApi
