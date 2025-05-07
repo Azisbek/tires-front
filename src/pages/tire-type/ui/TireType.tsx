@@ -8,7 +8,7 @@ import { useAddTireTypeMutation, useGetTireTypeQuery } from '../api'
 import s from './TireType.module.scss'
 
 export function TireType() {
-  const { data = [], isFetching } = useGetTireTypeQuery()
+  const { data = [], isFetching, refetch } = useGetTireTypeQuery()
   const [addTireType] = useAddTireTypeMutation()
   const [inputValue, setInputValue] = useState('')
 
@@ -18,6 +18,7 @@ export function TireType() {
 
     try {
       await addTireType({ value }).unwrap()
+      await refetch()
       setInputValue('')
     } catch (err) {
       console.error('Ошибка добавления типа шины:', err)
