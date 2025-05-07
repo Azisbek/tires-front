@@ -1,7 +1,5 @@
 import { useMemo } from 'react'
 
-import { popularProductsMock } from 'pages/home/api/data'
-
 import { MainBanner } from 'widgets/banner'
 import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
 import { Partners } from 'widgets/partners'
@@ -22,8 +20,11 @@ export function Home() {
   const { data } = useGetHomeProductQuery()
 
   const filters = useMemo(() => data?.filters, [data])
+  const popularProducts = useMemo(() => data?.popular, [data])
 
   if (!data) return <SkeletonPage />
+
+  console.log(data)
 
   return (
     <>
@@ -36,7 +37,7 @@ export function Home() {
 
         <ProductList
           className={s.popularProducts}
-          products={popularProductsMock}
+          products={popularProducts}
         />
 
         <NavigateBtn>Посмотреть все шины</NavigateBtn>
