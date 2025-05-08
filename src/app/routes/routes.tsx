@@ -28,15 +28,12 @@ const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
 const FavoritePage = lazy(() => import('pages/favorite-page'))
 const Contacts = lazy(() => import('pages/contacts'))
-const AdminPage = lazy(() => import('pages/admin-page'))
 const AddProduct = lazy(() => import('pages/add-product-page'))
 const AddNews = lazy(() => import('pages/add-news'))
 const AdminPage = lazy(() => import('pages/admin-page'))
 const ApplicationsList = lazy(() => import('pages/applications-page'))
 const BodyTypeList = lazy(() => import('pages/add-body-type'))
 const TiresTypeList = lazy(() => import('pages/add-tires-type'))
-
-
 
 export const router = createBrowserRouter([
   // Client Routes

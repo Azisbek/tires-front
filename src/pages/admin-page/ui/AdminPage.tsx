@@ -39,7 +39,6 @@ export function AdminPage() {
           className={s.btn}
         >
           Добавить тип кузова
-
         </Link>
       </div>
     </div>
