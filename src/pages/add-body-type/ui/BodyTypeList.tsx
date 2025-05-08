@@ -18,8 +18,8 @@ export function BodyTypeList() {
 
     try {
       await addBodyType({ value }).unwrap()
+      refetch()
       setInputValue('')
-      await refetch()
     } catch (err) {
       console.error('Ошибка добавления типа кузова:', err)
     }
