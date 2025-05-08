@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-import { useAddProductForm } from 'pages/admin/AddProduct/hook/useAddProductForm'
+import { useAddProductForm } from 'pages/add-product-page/hook/useAddProductForm'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Modal } from 'shared/ui/Modal'

@@ -1,6 +1,8 @@
 import { lazy } from 'react'
 import { Navigate, createBrowserRouter } from 'react-router-dom'
 
+import { AdminLayout } from 'app/layout/AdminLayout'
+import { RouterLayout } from 'app/layout/RouterLayout'
 import { meLoader } from 'app/lib/MeLoader'
 import { Redirect } from 'app/lib/Redirect'
 
@@ -26,14 +28,17 @@ const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
 const FavoritePage = lazy(() => import('pages/favorite-page'))
 const Contacts = lazy(() => import('pages/contacts'))
-const AddProduct = lazy(() => import('pages/admin/AddProduct'))
+const AddProduct = lazy(() => import('pages/add-product-page'))
 const AdminPage = lazy(() => import('pages/admin-page'))
 const ApplicationsList = lazy(() => import('pages/applications-page'))
 const OrderPage = lazy(() => import('pages/order'))
+const AddNews = lazy(() => import('pages/add-news'))
 
 export const router = createBrowserRouter([
+  // Client Routes
   {
     path: navigationMap.Base,
+    element: <RouterLayout />,
     errorElement: <ErrorScreen />,
     children: [
       {
@@ -45,8 +50,6 @@ export const router = createBrowserRouter([
       { path: navigationMap.About, element: <About /> },
       { path: navigationMap.NewsItem, element: <NewsPage /> },
       { path: navigationMap.Contacts, element: <Contacts /> },
-      { path: navigationMap.AdminPage, element: <AdminPage /> },
-      { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
       { path: navigationMap.Order, element: <OrderPage /> },
       {
         path: navigationMap.SignIn,
@@ -89,13 +92,17 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
+  // Admin Routes
   {
     path: navigationMap.Admin,
+    element: <AdminLayout />,
+    errorElement: <ErrorScreen />,
     children: [
-      {
-        path: navigationMap.AddProduct,
-        element: <AddProduct />,
-      },
+      { path: navigationMap.Admin, element: <AdminPage /> },
+      { path: navigationMap.AddProduct, element: <AddProduct /> },
+      { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
+      { path: navigationMap.AddNews, element: <AddNews /> },
     ],
   },
 ])
