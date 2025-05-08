@@ -29,9 +29,11 @@ const SignUpPage = lazy(() => import('pages/sign-up'))
 const FavoritePage = lazy(() => import('pages/favorite-page'))
 const Contacts = lazy(() => import('pages/contacts'))
 const AddProduct = lazy(() => import('pages/add-product-page'))
+const AddNews = lazy(() => import('pages/add-news'))
 const AdminPage = lazy(() => import('pages/admin-page'))
 const ApplicationsList = lazy(() => import('pages/applications-page'))
 const BodyTypeList = lazy(() => import('pages/add-body-type'))
+
 
 export const router = createBrowserRouter([
   // Client Routes
@@ -101,6 +103,7 @@ export const router = createBrowserRouter([
       { path: navigationMap.AddProduct, element: <AddProduct /> },
       { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
       { path: navigationMap.BodyTypeList, element: <BodyTypeList /> },
+      { path: navigationMap.AddNews, element: <AddNews /> },
     ],
   },
 ])
