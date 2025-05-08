@@ -11,6 +11,7 @@ export const navigationMap = {
   SignUp: '/sign-up',
   Favorite: '/favorites',
   Contacts: '/contacts',
+  Order: '/basket/order',
 
   Admin: '/admin',
   AddProduct: '/admin/add-product',

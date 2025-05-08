@@ -29,6 +29,7 @@ const Contacts = lazy(() => import('pages/contacts'))
 const AddProduct = lazy(() => import('pages/admin/AddProduct'))
 const AdminPage = lazy(() => import('pages/admin-page'))
 const ApplicationsList = lazy(() => import('pages/applications-page'))
+const OrderPage = lazy(() => import('pages/order'))
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,7 @@ export const router = createBrowserRouter([
       { path: navigationMap.Contacts, element: <Contacts /> },
       { path: navigationMap.AdminPage, element: <AdminPage /> },
       { path: navigationMap.ApplicationsList, element: <ApplicationsList /> },
+      { path: navigationMap.Order, element: <OrderPage /> },
       {
         path: navigationMap.SignIn,
         element: <SignInPage />,
