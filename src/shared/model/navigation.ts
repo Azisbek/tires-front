@@ -18,6 +18,7 @@ export const navigationMap = {
   AddProduct: 'add-product',
   ApplicationsList: 'applications',
   TiresTypeList: 'add-tires-type',
+  BodyTypeList: 'add-body-type',
   AddNews: 'add-news',
 } as const
 
