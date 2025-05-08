@@ -17,6 +17,7 @@ export const navigationMap = {
   Admin: '/admin',
   AddProduct: 'add-product',
   ApplicationsList: 'applications',
+  BodyTypeList: 'add-body-type',
   AddNews: 'add-news',
 } as const
 
