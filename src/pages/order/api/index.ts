@@ -2,7 +2,7 @@ import { $api } from 'shared/api/api'
 
 export const profileApi = $api.injectEndpoints({
   endpoints: (build) => ({
-    createOrder: build.mutation<
+    PostOrder: build.mutation<
       void,
       {
         first_name: string
@@ -25,4 +25,4 @@ export const profileApi = $api.injectEndpoints({
   }),
 })
 
-export const { useCreateOrderMutation } = profileApi
+export const { usePostOrderMutation } = profileApi

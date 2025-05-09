@@ -50,7 +50,6 @@ export const router = createBrowserRouter([
       { path: navigationMap.About, element: <About /> },
       { path: navigationMap.NewsItem, element: <NewsPage /> },
       { path: navigationMap.Contacts, element: <Contacts /> },
-      { path: navigationMap.Order, element: <OrderPage /> },
       {
         path: navigationMap.SignIn,
         element: <SignInPage />,
@@ -85,6 +84,7 @@ export const router = createBrowserRouter([
         children: [
           { path: navigationMap.ProfilePage, element: <ProfilePage /> },
           { path: navigationMap.Favorite, element: <FavoritePage /> },
+          { path: navigationMap.Order, element: <OrderPage /> },
         ].map((config) => ({
           ...config,
           loader: meLoader,
