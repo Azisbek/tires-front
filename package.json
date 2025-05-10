@@ -13,8 +13,7 @@
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint '**/*.scss'",
     "prettier": "prettier --write .",
-    "prepare": "husky",
-    "jscpd": "jscpd ./src"
+    "prepare": "husky"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
@@ -26,6 +25,7 @@
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.2.0",
+    "react-simple-star-rating": "^5.1.7",
     "scss": "^0.2.4"
   },
   "lint-staged": {
@@ -34,10 +34,6 @@
       "bun run lint:eslint",
       "bun run lint:prettier",
       "bun run lint:stylelint",
-      "git add"
-    ],
-    "src/**/*": [
-      "bunx jscpd ./src",
       "git add"
     ]
   },

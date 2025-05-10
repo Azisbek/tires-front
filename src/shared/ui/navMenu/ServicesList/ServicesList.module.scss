@@ -1,0 +1,87 @@
+.servicesButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.servicesContent {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  background-color: #2B3143;
+  width: 100vw;
+  padding: 50px;
+}
+
+.servicesContent a {
+  color: #FF850E ;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.servicesContent a:hover {
+  color: #FFFFFF;
+}
+
+.servicesListLeft {
+  display: flex;
+  gap: 24px;
+}
+
+.servicesInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.descriptionServices {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.serviceTime {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #E5E5E5;
+  margin: 10px 0;
+}
+
+.servicePrice {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #E5E5E5;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.servicesListRight {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.servicesListRight  a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.servicesListRight a:hover {
+  color: #FF850E;
+}
+
+.servicesListRight li {
+  list-style: none;
+}
+

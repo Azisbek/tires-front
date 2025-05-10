@@ -1,0 +1,74 @@
+.partnersTrust {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  padding: 30px 0;
+
+  .title {
+    font-weight: 600;
+    font-size: 32px;
+    color: #1a1e29;
+    line-height: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .border {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+  }
+
+  .marquee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 40px 0;
+  }
+
+  .marqueeImage {
+    height: 40.8px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .marqueeAnimation {
+    animation: marqueeScroll 15s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes marqueeScroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Мобильная версия */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 22px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    .marquee {
+      overflow: visible;
+      white-space: normal;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      place-items: center;
+      animation: none;
+    }
+
+    .marqueeImage {
+      width: 120px;
+      height: auto;
+    }
+  }
+}

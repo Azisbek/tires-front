@@ -1,5 +1,18 @@
-import s from './Home.module.scss'
+import { MainBanner } from '../../../widget/banner'
+import { HomeFilter } from '../../../widget/home-filter/ui/HomeFilter'
+import { Partners } from '../../../widget/partners'
+import { PopularProductsList } from '../../../widget/popular-products'
+import { Promotion } from '../../../widget/promotion/ui/Promotion'
 
 export function Home() {
-  return <div className={s.container}>Home</div>
+  return (
+    <>
+      <MainBanner />
+      <HomeFilter />
+      <PopularProductsList />
+      <Promotion />
+
+      <Partners />
+    </>
+  )
 }
