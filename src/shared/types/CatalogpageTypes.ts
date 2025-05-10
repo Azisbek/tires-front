@@ -22,4 +22,4 @@ export interface ProductType {
   season: SeasonType
 }
 
-export type SeasonType = 'winter' | 'summer' | 'all_season'
+export type SeasonType = 'winter' | 'summer' | 'all_seasons'
