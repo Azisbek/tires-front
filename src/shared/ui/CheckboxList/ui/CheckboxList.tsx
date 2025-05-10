@@ -16,6 +16,10 @@ interface CheckboxListProps {
 export function CheckboxList({ dataTexts, data, setData }: CheckboxListProps) {
   const [isOpen, setIsOpen] = useState(dataTexts.length < 6)
 
+  if (!data || data.length !== dataTexts.length) {
+    return null // или <p>Ошибка данных</p>
+  }
+
   return (
     <>
       <div className={clsx(s.wrapper, isOpen && s.open)}>

@@ -5,14 +5,13 @@ export const productFavoriteApi = $api.injectEndpoints({
   endpoints: (build) => ({
     updateFavoriteStatus: build.mutation<
       ProductType,
-      { product_id: number; is_favorite?: boolean }
+      { product_id: number }
     >({
-      query: ({ product_id, is_favorite }) => ({
-        url: '/product/favorites/',
+      query: ({ product_id }) => ({
+        url: '/product/all/',
         method: 'POST',
         body: {
           product_id,
-          is_favorite,
         },
       }),
     }),
