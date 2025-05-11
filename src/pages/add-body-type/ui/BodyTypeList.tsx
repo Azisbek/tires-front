@@ -8,7 +8,7 @@ import { useAddBodyTypeMutation, useGetBodyTypeQuery } from '../api'
 import s from './BodyTypeList.module.scss'
 
 export function BodyTypeList() {
-  const { data = [], isFetching, refetch } = useGetBodyTypeQuery()
+  const { data = [], isFetching } = useGetBodyTypeQuery()
   const [addBodyType] = useAddBodyTypeMutation()
   const [inputValue, setInputValue] = useState('')
 
@@ -17,8 +17,7 @@ export function BodyTypeList() {
     if (!value) return
 
     try {
-      await addBodyType({ value }).unwrap()
-      refetch()
+      addBodyType({ value }).unwrap()
       setInputValue('')
     } catch (err) {
       console.error('Ошибка добавления типа кузова:', err)
