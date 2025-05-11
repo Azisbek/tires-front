@@ -8,7 +8,7 @@ import { useAddBodyTypeMutation, useGetBodyTypeQuery } from '../api'
 import s from './BodyTypeList.module.scss'
 
 export function BodyTypeList() {
-  const { data = [], isFetching, refetch } = useGetBodyTypeQuery()
+  const { data = [], isFetching } = useGetBodyTypeQuery()
   const [addBodyType] = useAddBodyTypeMutation()
   const [inputValue, setInputValue] = useState('')
 
