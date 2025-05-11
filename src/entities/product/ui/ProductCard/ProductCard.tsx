@@ -2,10 +2,11 @@ import { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { Rating } from 'react-simple-star-rating'
 
-import { ProductImage, ProductPrice, ProductSeason } from 'entities/product'
+import { ProductPrice, ProductSeason } from 'entities/product'
 
 import { ProductType } from 'shared/types/CatalogpageTypes'
 import { CommentCounter } from 'shared/ui/CommentCount/CommentCount'
+import { SwipingImage } from 'shared/ui/SwipingImage/ui/SwipingImage'
 import { Text, Title } from 'shared/ui/Text'
 
 import s from './ProductCard.module.scss'
@@ -30,9 +31,11 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
   return (
     <div className={s.card}>
       <Link to={`/catalog/${product_Id}`}>
-        <ProductImage
-          src={image}
-          alt={title}
+        <SwipingImage
+          width={241}
+          height={241}
+          delay={6000}
+          images={image}
         />
       </Link>
 

@@ -33,7 +33,7 @@ export function ViewProduct({ data }: Props) {
 
       <div className={s.container}>
         <TiresImage
-          image={data.image_url}
+          images={[data.image_url]}
           season={data.characteristics.season}
         />
 

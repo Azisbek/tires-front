@@ -1,193 +1,175 @@
-import { useState } from 'react'
-
 import { AppButton } from 'shared/ui/AppButton/AppButton'
+import { Checkbox } from 'shared/ui/Checkbox'
 import { CheckboxList } from 'shared/ui/CheckboxList'
-import { CustomInput } from 'shared/ui/Input'
-import { InputSelect } from 'shared/ui/input-components'
+import { FilterLabel } from 'shared/ui/FilterLabel/FilterLabel'
+import { InputFilter, InputSelect } from 'shared/ui/input-components'
 
-import { tireFilters } from '../api/data'
+import { useFilters } from '../model/useFilters'
 
 import s from './CatalogFilter.module.scss'
-import { FilterLabel } from './FilterLabel/FilterLabel'
 
-export function CatalogFilter() {
-  const [filters, setFilters] = useState({
-    width: '',
-    profile: '',
-    diameter: '',
-    price: ['', ''],
-    type: tireFilters.type.map(() => false),
-    season: tireFilters.season.map(() => false),
-    condition: tireFilters.condition.map(() => false),
-    manufacturer: tireFilters.manufacturer.map(() => false),
-    discount: tireFilters.discount.map(() => false),
-    runflat: tireFilters.runflat.map(() => false),
-    offroad: tireFilters.offroad.map(() => false),
-    efficiency: tireFilters.efficiency.map(() => false),
-    wetGrip: tireFilters.wetGrip.map(() => false),
-  })
+interface Props {
+  refetch: () => void
+}
 
-  const handleChange = (key: string, value: string | string[]) => {
-    setFilters((prevFilters) => ({ ...prevFilters, [key]: value }))
+export function CatalogFilter({ refetch }: Props) {
+  const { setFilterField, applyFilters, resetFilters, filterData } =
+    useFilters()
+
+  const filterApplyHandler = () => {
+    applyFilters()
+    refetch()
   }
 
-  const handlePriceChange = (index: number, value: string) => {
-    setFilters((prevFilters) => {
-      const updatedPrice = [...prevFilters.price]
-      updatedPrice[index] = value
-      return { ...prevFilters, price: updatedPrice }
-    })
-  }
-
-  const handleChangeCheckbox = (
-    key:
-      | 'type'
-      | 'season'
-      | 'manufacturer'
-      | 'discount'
-      | 'runflat'
-      | 'offroad'
-      | 'efficiency'
-      | 'wetGrip',
-    index: number,
-    value: boolean,
-  ) => {
-    setFilters((prevFilters) => {
-      const updatedData = [...prevFilters[key]]
-      updatedData[index] = value
-      return { ...prevFilters, [key]: updatedData }
-    })
+  const filterResetHandler = () => {
+    resetFilters()
+    refetch()
   }
 
   return (
     <div className={s.filterContainer}>
       <FilterLabel label="Ширина">
         <InputSelect
-          options={tireFilters.width}
+          options={['175', '185', '195', '205', '215', '225', '235']}
           color="white"
           defaultValue="Все"
-          onChange={(value) => handleChange('width', value)}
+          onChange={(value) => setFilterField('width', value)}
         />
       </FilterLabel>
       <FilterLabel label="Профиль">
         <InputSelect
-          options={tireFilters.profile}
+          options={['30', '35', '40', '45', '50', '55', '60']}
           color="white"
           defaultValue="Все"
-          onChange={(value) => handleChange('profile', value)}
+          onChange={(value) => setFilterField('profile', value)}
         />
       </FilterLabel>
       <FilterLabel label="Диаметр">
         <InputSelect
-          options={tireFilters.diameter}
+          options={['13', '14', '15', '16', '17', '18', '19']}
           color="white"
           defaultValue="Все"
-          onChange={(value) => handleChange('diameter', value)}
+          onChange={(value) => setFilterField('diameter', value)}
         />
       </FilterLabel>
       <FilterLabel label="Цена">
         <div className={s.priceFlex}>
-          <CustomInput
+          <InputFilter
             type="number"
-            value={filters.price[0]}
-            onChange={(event) => handlePriceChange(0, event.target.value)}
+            value={filterData.minPrice}
+            onChange={(event) =>
+              setFilterField('minPrice', Number(event.target.value))
+            }
+            min={0}
           />
-          <CustomInput
+          <InputFilter
             type="number"
-            value={filters.price[1]}
-            onChange={(event) => handlePriceChange(1, event.target.value)}
+            value={filterData.maxPrice}
+            onChange={(event) =>
+              setFilterField('maxPrice', Number(event.target.value))
+            }
+            min={0}
           />
         </div>
       </FilterLabel>
 
       <FilterLabel label="Тип шин">
         <CheckboxList
-          dataTexts={tireFilters.type}
-          data={filters.type}
-          setData={(index, value) => handleChangeCheckbox('type', index, value)}
+          dataTexts={['Легковые', 'Легкогрузовой (LTR)', 'Внедорожник (SUV)']}
+          data={filterData.tiresType}
+          setData={setFilterField.bind(null, 'tiresType')}
         />
       </FilterLabel>
       <FilterLabel label="Сезонность">
         <CheckboxList
-          dataTexts={tireFilters.season}
-          data={filters.season}
-          setData={(value, index) =>
-            handleChangeCheckbox('season', value, index)
-          }
+          dataTexts={['Летние', 'Зимние', 'Всесезонные']}
+          data={filterData.season}
+          setData={setFilterField.bind(null, 'season')}
         />
       </FilterLabel>
       <FilterLabel label="Производитель">
         <CheckboxList
-          dataTexts={tireFilters.manufacturer}
-          data={filters.manufacturer}
-          setData={(value, index) =>
-            handleChangeCheckbox('manufacturer', value, index)
-          }
+          dataTexts={['Michelin', 'Bridgestone', 'Continental']}
+          data={filterData.manufacturer}
+          setData={setFilterField.bind(null, 'manufacturer')}
         />
       </FilterLabel>
       <FilterLabel label="Скидки">
-        <CheckboxList
-          dataTexts={tireFilters.discount}
-          data={filters.discount}
-          setData={(value, index) =>
-            handleChangeCheckbox('discount', value, index)
-          }
-        />
+        <Checkbox
+          checked={filterData.promotion}
+          onChange={setFilterField.bind(null, 'promotion')}
+        >
+          Да
+        </Checkbox>
       </FilterLabel>
       <FilterLabel label="Runflat">
-        <CheckboxList
-          dataTexts={tireFilters.runflat}
-          data={filters.runflat}
-          setData={(value, index) =>
-            handleChangeCheckbox('runflat', value, index)
-          }
-        />
-      </FilterLabel>
-      <FilterLabel label="Off-Road">
-        <CheckboxList
-          dataTexts={tireFilters.offroad}
-          data={filters.offroad}
-          setData={(value, index) =>
-            handleChangeCheckbox('offroad', value, index)
-          }
-        />
+        <Checkbox
+          checked={filterData.runflat}
+          onChange={setFilterField.bind(null, 'runflat')}
+        >
+          Да
+        </Checkbox>
       </FilterLabel>
       <FilterLabel label="Индекс скорости">
         <InputSelect
-          options={tireFilters.speedIndex}
+          options={['Q', 'R', 'S', 'T', 'H', 'V', 'W', 'Y', 'Z']}
           color="white"
-          defaultValue={tireFilters.speedIndex[4]}
-          onChange={(value) => handleChange('speedIndex', value)}
+          defaultValue="Все"
+          onChange={(value) => setFilterField('speedIndex', value)}
         />
       </FilterLabel>
-      <FilterLabel label="Топливная экономичность">
-        <CheckboxList
-          dataTexts={tireFilters.efficiency}
-          data={filters.efficiency}
-          setData={(value, index) =>
-            handleChangeCheckbox('efficiency', value, index)
-          }
-        />
+      <FilterLabel label="Индекс нагрузки">
+        <div className={s.priceFlex}>
+          <InputFilter
+            type="number"
+            value={filterData.minLoadIndex}
+            onChange={(event) =>
+              setFilterField('minLoadIndex', Number(event.target.value))
+            }
+            min={0}
+          />
+          <InputFilter
+            type="number"
+            value={filterData.maxLoadIndex}
+            onChange={(event) =>
+              setFilterField('maxLoadIndex', Number(event.target.value))
+            }
+            min={0}
+          />
+        </div>
       </FilterLabel>
-      <FilterLabel label="Сцепление с мокрой поверхностью">
-        <CheckboxList
-          dataTexts={tireFilters.wetGrip}
-          data={filters.wetGrip}
-          setData={(value, index) =>
-            handleChangeCheckbox('wetGrip', value, index)
-          }
-        />
+      <FilterLabel label="Уровень внешнего шума">
+        <div className={s.priceFlex}>
+          <InputFilter
+            type="number"
+            value={filterData.minNoiseLevel}
+            onChange={(event) =>
+              setFilterField('minNoiseLevel', Number(event.target.value))
+            }
+            min={0}
+          />
+          <InputFilter
+            type="number"
+            value={filterData.maxNoiseLevel}
+            onChange={(event) =>
+              setFilterField('maxNoiseLevel', Number(event.target.value))
+            }
+            min={0}
+          />
+        </div>
       </FilterLabel>
 
       <AppButton
         variant="accent"
         className={s.applyButton}
+        onClick={filterApplyHandler}
       >
         Подобрать
       </AppButton>
       <AppButton
         variant="border"
         className={s.applyButton}
+        onClick={filterResetHandler}
       >
         Сбросить всё
       </AppButton>

@@ -4,16 +4,39 @@ import { TireInfoSection } from 'widgets/tireInfoSection'
 
 import { Pagination } from 'features/pagination'
 
-import { useCatalogProducts } from 'shared/hooks/useCatalogProducts'
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
+import { useAppSelector } from 'shared/lib/hooks'
 import { Title } from 'shared/ui/Text'
+
+import { useFilters } from '../../../widgets/catalog-filter/model/useFilters'
+import { useGetProductsQuery } from '../api'
+import { cleanParams } from '../model/cleanParams'
+import { useCatalogParams } from '../model/useCatalogParams '
 
 import s from './Catalog.module.scss'
 
 export function Catalog() {
   const { isMobile } = useScreenWidth()
-  const { data, isLoading, handlePageChange, handleSortChange, currentSort } =
-    useCatalogProducts()
+  const searchProducts = useAppSelector((state) => state.search.productSearch)
+
+  const { currentPage, setCurrentPage, ordering, setOrdering } =
+    useCatalogParams()
+
+  const { filters } = useFilters()
+  const rawParams = {
+    ...filters,
+    search: searchProducts,
+    page: currentPage,
+    ordering: ordering,
+    tire_type: '',
+    season: filters.season[0],
+    manufacturer: '',
+    cond: filters.condition[0],
+  }
+
+  const queryParams = cleanParams(rawParams)
+
+  const { data, isFetching, refetch } = useGetProductsQuery(queryParams)
 
   return (
     <div className={s.wrapper}>
@@ -24,21 +47,25 @@ export function Catalog() {
         Шины в Бишкеке
       </Title>
       <div className={s.container}>
-        {!isMobile && <CatalogFilter />}
+        {!isMobile && <CatalogFilter refetch={refetch} />}
         <div className={s.content}>
           <CatalogProducts
             data={data}
-            isLoading={isLoading}
-            onSortChange={handleSortChange}
-            currentSort={currentSort}
+            isLoading={isFetching}
+            setOrdering={setOrdering}
+            ordering={ordering}
+            refetch={refetch}
           />
-          {data && (
-            <Pagination
-              meta={data}
-              className={s.mgTop22}
-              onPageChange={handlePageChange}
-            />
-          )}
+
+          <div className={s.pagination}>
+            {data && (
+              <Pagination
+                data={data}
+                onPageChange={setCurrentPage}
+              />
+            )}
+          </div>
+
           <TireInfoSection />
         </div>
       </div>

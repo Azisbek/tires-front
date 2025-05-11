@@ -3,7 +3,7 @@ import { ProductType } from 'shared/types/CatalogpageTypes'
 export const popularProductsMock: ProductType[] = [
   {
     product_Id: 30,
-    image: '/tire.jpeg',
+    image: ['/tire.jpeg'],
     season: 'winter',
     average_rating: 4.5,
     comments_count: 3,
@@ -14,7 +14,7 @@ export const popularProductsMock: ProductType[] = [
   },
   {
     product_Id: 31,
-    image: '/tire.jpeg',
+    image: ['/tire.jpeg'],
     season: 'summer',
     average_rating: 4.2,
     comments_count: 5,
@@ -25,8 +25,8 @@ export const popularProductsMock: ProductType[] = [
   },
   {
     product_Id: 32,
-    image: '/tire.jpeg',
-    season: 'all_season',
+    image: ['/tire.jpeg'],
+    season: 'winter',
     average_rating: 4.8,
     comments_count: 8,
     title: 'Continental AllSeason',
@@ -36,7 +36,7 @@ export const popularProductsMock: ProductType[] = [
   },
   {
     product_Id: 33,
-    image: '/tire.jpeg',
+    image: ['/tire.jpeg'],
     season: 'winter',
     average_rating: 4.6,
     comments_count: 4,

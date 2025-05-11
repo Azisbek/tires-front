@@ -2,18 +2,14 @@ import clsx from 'clsx'
 
 import React from 'react'
 
-import s from './CustomInput.module.scss'
+import s from './InputFilter.module.scss'
 
-interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string
   type?: 'text' | 'number' | 'checkbox' | 'radio' | 'password' | 'email'
 }
 
-export function CustomInput({
-  className,
-  type = 'text',
-  ...props
-}: CustomInputProps) {
+export function InputFilter({ className, type = 'text', ...props }: Props) {
   return (
     <input
       className={clsx(s.input, className)}

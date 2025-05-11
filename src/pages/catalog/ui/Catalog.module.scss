@@ -1,7 +1,7 @@
 .wrapper {
   max-width: 1280px;
   padding: 0 15px;
-  margin: 24px auto 40px;
+  margin: 24px auto 40px auto;
 
   @media (max-width: 480px) {
     padding: 0;
@@ -11,8 +11,15 @@
   }
   .container {
     display: flex;
+
     .content {
       min-width: 0;
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 22px;
+      }
     }
   }
 }
