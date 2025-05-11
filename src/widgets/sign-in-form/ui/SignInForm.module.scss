@@ -1,0 +1,23 @@
+.form {
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  background: rgba(26, 30, 41, 0.15);
+  max-width: 566px;
+  width: 100%;
+  margin: 94px auto 0 auto;
+  padding: 38px 80px 54px 80px;
+  display: grid;
+  gap: 33px;
+  text-align: center;
+
+  .error {
+    color: #ff4d4f;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 38px 16px 80px 16px;
+  }
+}

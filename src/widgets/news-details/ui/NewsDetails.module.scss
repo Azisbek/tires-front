@@ -1,0 +1,36 @@
+.container {
+  max-width: 1252px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  .title {
+    padding: 24px 0 10px 0;
+  }
+  .img {
+    max-width: 808px;
+    width: 100%;
+    padding: 24px 0;
+  }
+  .description {
+    line-height: 24px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 392px;
+    width: 100%;
+
+    .title {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 28px;
+    }
+    .img {
+      max-width: 392px;
+      width: 100%;
+    }
+    .description {
+      max-width: 404px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.menuNav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+
+  .title {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .burger {
+    display: grid;
+    gap: 2px;
+
+    .line {
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .middle {
+      width: 20px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .active {
+    color: #ff7e00;
+
+    .line:first-child {
+      background-color: #ff7e00;
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .line:last-child {
+      background-color: #ff7e00;
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .middle {
+      opacity: 0;
+    }
+  }
+}

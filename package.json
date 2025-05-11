@@ -13,19 +13,21 @@
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint '**/*.scss'",
     "prettier": "prettier --write .",
-    "prepare": "husky",
-    "jscpd": "jscpd ./src"
+    "prepare": "husky"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
+    "@rollup/rollup-win32-x64-msvc": "^4.36.0",
     "@vitejs/plugin-react-swc": "^3.8.0",
+    "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "nanoid": "^5.1.2",
-    "node-sass": "^9.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.2.0",
+    "react-simple-star-rating": "^5.1.7",
+    "sass": "^1.86.0",
     "scss": "^0.2.4"
   },
   "lint-staged": {
@@ -35,14 +37,13 @@
       "bun run lint:prettier",
       "bun run lint:stylelint",
       "git add"
-    ],
-    "src/**/*": [
-      "bunx jscpd ./src",
-      "git add"
     ]
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@jscpd/core": "^4.0.1",
+    "@jscpd/finder": "^4.0.1",
+    "@jscpd/tokenizer": "^4.0.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^22.13.5",
     "@types/react": "^19.0.10",
@@ -53,6 +54,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "husky": "^9.1.7",
+    "jscpd": "^4.0.5",
     "lint-staged": "^15.4.3",
     "prettier": "^3.5.2",
     "sass-embedded": "^1.85.1",

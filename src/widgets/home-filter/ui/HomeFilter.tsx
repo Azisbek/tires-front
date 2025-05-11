@@ -1,0 +1,20 @@
+import { Link } from 'react-router-dom'
+
+import { FilterTypes } from 'features/filter-types'
+
+import { HomeFilterTypes } from 'shared/types/HomepageTypes'
+
+import s from './HomeFilter.module.scss'
+
+export function HomeFilter({ filters }: HomeFilterTypes) {
+  return (
+    <section className={s.container}>
+      <p className={s.title}>
+        Подберём <span>шины по марке автомобиля</span> или{' '}
+        <Link to={`#`}>параметрам товара</Link>
+      </p>
+
+      <FilterTypes filters={filters} />
+    </section>
+  )
+}

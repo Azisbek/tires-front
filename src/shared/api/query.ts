@@ -17,7 +17,8 @@ interface RefreshQueryResponseBody {
 
 export const $baseQuery = fetchBaseQuery({
   baseUrl: apiMap.base,
-  credentials: 'include',
+  // credentials: 'include',
+
   prepareHeaders: (headers) => {
     const token = TokenStorageService.getToken()
 

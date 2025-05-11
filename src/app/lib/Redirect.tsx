@@ -6,10 +6,10 @@ import { navigationMap } from 'shared/model/navigation'
 export function Redirect() {
   const access = TokenService.getToken()
 
-  if (access)
+  if (!access)
     return (
       <Navigate
-        to={navigationMap.Home}
+        to={navigationMap.SignIn}
         replace
       />
     )

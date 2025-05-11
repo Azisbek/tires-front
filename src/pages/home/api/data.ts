@@ -1,0 +1,48 @@
+import { ProductType } from 'shared/types/CatalogpageTypes'
+
+export const popularProductsMock: ProductType[] = [
+  {
+    product_Id: 30,
+    image: '/tire.jpeg',
+    season: 'winter',
+    average_rating: 4.5,
+    comments_count: 3,
+    title: 'Vector',
+    in_stock: 3,
+    price: 3000,
+    is_favorite: true,
+  },
+  {
+    product_Id: 31,
+    image: '/tire.jpeg',
+    season: 'summer',
+    average_rating: 4.2,
+    comments_count: 5,
+    title: 'Goodyear Vector 4Seasons',
+    in_stock: 5,
+    price: 4500,
+    is_favorite: false,
+  },
+  {
+    product_Id: 32,
+    image: '/tire.jpeg',
+    season: 'all_season',
+    average_rating: 4.8,
+    comments_count: 8,
+    title: 'Continental AllSeason',
+    in_stock: 2,
+    price: 5200,
+    is_favorite: true,
+  },
+  {
+    product_Id: 33,
+    image: '/tire.jpeg',
+    season: 'winter',
+    average_rating: 4.6,
+    comments_count: 4,
+    title: 'Goodyear UltraGrip',
+    in_stock: 7,
+    price: 3800,
+    is_favorite: false,
+  },
+]

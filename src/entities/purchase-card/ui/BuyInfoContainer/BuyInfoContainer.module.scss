@@ -1,0 +1,24 @@
+.buyInfoContainer {
+  display: grid;
+  gap: 16px;
+
+  .title {
+    color: rgb(196, 196, 196);
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+  }
+
+  .infoTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .link {
+    color: rgb(76, 101, 189);
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px dashed rgb(76, 101, 189);
+  }
+}

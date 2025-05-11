@@ -4,7 +4,7 @@ class TokenStorageService {
   }
 
   getToken() {
-    return localStorage.getItem(this.storageKeys.access) || ''
+    return localStorage.getItem(this.storageKeys.access) || null
   }
 
   setToken(access: string) {

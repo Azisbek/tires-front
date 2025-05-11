@@ -1,0 +1,21 @@
+.title {
+  margin: 20px 0;
+}
+
+.personalDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  p {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+  }
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 28px;
+}
