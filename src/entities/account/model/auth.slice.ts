@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import { signInApi } from 'pages/sign-in/api'
+import { signUpApi } from 'pages/sign-up/api'
 
 import TokenService from 'shared/lib/TokenService'
 
@@ -44,11 +45,26 @@ export const signInSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addMatcher(
+        signUpApi.endpoints.registerUser.matchFulfilled,
+        (state, { payload }) => {
+          if (payload.access) {
+            TokenService.setToken(payload.access)
+          } else {
+            console.error('Access token is undefined')
+          }
+          state.user = {
+            id: payload.id,
+            username: payload.username,
+            email: payload.email,
+            phone: payload.phone,
+          }
+        },
+      )
+      .addMatcher(
         signInApi.endpoints.authUser.matchFulfilled,
         (state, { payload }) => {
-          const accessToken = payload.access
-          if (accessToken) {
-            TokenService.setToken(accessToken)
+          if (payload.access) {
+            TokenService.setToken(payload.access)
             // signInApi.endpoints.getMe.initiate()
           } else {
             console.error('Access token is undefined')
