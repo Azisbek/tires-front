@@ -1,33 +1,38 @@
 import { useState } from 'react'
 
-// import { CatalogFilter } from 'widgets/catalog-filter'
+import { CatalogFilter } from 'widgets/catalog-filter'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
+import { Modal } from 'shared/ui/Modal'
 
-// import { Modal } from 'shared/ui/Modal'
+import s from './FilterModal.module.scss'
 
-// import s from './FilterModal.module.scss'
+interface FilterModalProps {
+  refetch: () => void
+}
 
-export function FilterModal() {
+export function FilterModal({ refetch }: FilterModalProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  console.log(isOpen)
+  const openModal = () => setIsOpen(true)
+  const closeModal = () => setIsOpen(false)
 
   return (
     <>
       <AppButton
         variant="accent"
-        onClick={() => setIsOpen(true)}
+        onClick={openModal}
       >
         Фильтр
       </AppButton>
-      {/* <Modal
+
+      <Modal
         isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
+        onClose={closeModal}
         className={s.filterModal}
       >
-        <CatalogFilter />
-      </Modal> */}
+        <CatalogFilter refetch={refetch} />
+      </Modal>
     </>
   )
 }

@@ -45,9 +45,10 @@ export function CatalogProducts({
         />
         {isMobile && (
           <div className={s.grid}>
-            <FilterModal />
+            <FilterModal refetch={refetch} />
           </div>
         )}
+
         <Text
           size="sm-14"
           className={s.text}
