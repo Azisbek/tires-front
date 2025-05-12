@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { OrderForm } from 'widgets/order-form'
@@ -6,15 +6,20 @@ import { OrderForm } from 'widgets/order-form'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Checkbox } from 'shared/ui/Checkbox'
 import { InfoCard } from 'shared/ui/InfoCard'
+import { Modal } from 'shared/ui/Modal'
 import { SpecItem } from 'shared/ui/ProductSpecs/ui/SpecItem/SpecItem'
 import { Title } from 'shared/ui/Text'
 
-import { usePostOrderMutation } from '../api'
+import { useGetCartItemQuery, usePostOrderMutation } from '../api'
+import { validateOrderForm } from '../model/validateOrderForm'
 
 import s from './OrderPage.module.scss'
 
 export function OrderPage() {
-  const [PostOrder] = usePostOrderMutation()
+  const [PostOrder, { isSuccess }] = usePostOrderMutation()
+  const { data } = useGetCartItemQuery()
+  const [isOpen, setIsOpen] = useState(false)
+
   const [orderData, setOrderData] = useState({
     first_name: '',
     last_name: '',
@@ -28,6 +33,11 @@ export function OrderPage() {
     receive_news: false,
     accept_terms: false,
   })
+  type OrderFormError = {
+    [key in keyof typeof orderData]?: string
+  }
+
+  const [error, setError] = useState<OrderFormError>({})
 
   const handleChange =
     (key: keyof typeof orderData) =>
@@ -43,39 +53,44 @@ export function OrderPage() {
     }
 
   const handlePostOrder = () => {
-    const {
-      first_name,
-      last_name,
-      phone,
-      email,
-      address,
-      pickup,
-      payment,
-      accept_terms,
-    } = orderData
+    const errors = validateOrderForm(orderData)
 
-    const isEmpty = [first_name, last_name, phone, email, payment].some(
-      (field) => field.trim() === '',
-    )
-    const isAddressOrPickupEmpty = address.trim() === '' && pickup.trim() === ''
+    if (Object.keys(errors).length > 0) {
+      setError(errors)
+      return
+    }
 
-    if (isEmpty || isAddressOrPickupEmpty || !accept_terms) return
+    setError({})
+
+    const { first_name, last_name, phone, email, address, pickup, payment } =
+      orderData
 
     PostOrder({
       first_name,
       last_name,
       phone,
       email,
-      address,
+      address: address === '' ? pickup : address,
       delivery: address !== '',
       pickup: pickup !== '',
       payment_cash: payment === 'Наличными',
       payment_online: payment === 'Банковской картой',
     })
   }
+  useEffect(() => {
+    if (isSuccess) {
+      setIsOpen(true)
+    }
+  }, [isSuccess])
 
   return (
     <div className={s.root}>
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
+        <p>Успешно заявка отправлено</p>
+      </Modal>
       <Title
         className={s.title}
         size="xl-40"
@@ -84,18 +99,19 @@ export function OrderPage() {
       </Title>
       <div className={s.wrapper}>
         <OrderForm
+          error={error}
           data={orderData}
           onChange={handleChange}
         />
         <InfoCard className={s.infoCard}>
           <SpecItem
-            label="Стоимость"
-            value="2200"
+            label="Количество"
+            value={data?.cart.total_quantity.toString() || ''}
             color="dark"
           />
           <SpecItem
             label="Итоговая цена"
-            value="123 000 С"
+            value={data?.cart.total_price.toString() || ''}
             color="dark"
           />
           <AppButton
@@ -121,7 +137,7 @@ export function OrderPage() {
             }
             checked={orderData.accept_terms}
           >
-            Я согласен с
+            Я согласен с{' '}
             <Link
               to="#"
               className={s.blue}
@@ -130,6 +146,7 @@ export function OrderPage() {
             </Link>
             и правилами продажи товаров
           </Checkbox>
+          {error && <p className={s.error}>{error.accept_terms}</p>}
         </InfoCard>
       </div>
     </div>

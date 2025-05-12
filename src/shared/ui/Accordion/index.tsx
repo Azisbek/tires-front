@@ -7,6 +7,7 @@ interface AccordionProps {
   isOpen: boolean
   onToggle: () => void
   children: React.ReactNode
+  isValid?: boolean
 }
 
 export const AccordionSection = ({
@@ -14,12 +15,13 @@ export const AccordionSection = ({
   isOpen,
   onToggle,
   children,
+  isValid,
 }: AccordionProps) => {
   return (
     <>
       <button
         onClick={onToggle}
-        className={clsx(s.accordion, isOpen && s.open)}
+        className={clsx(s.accordion, isOpen && s.open, isValid && s.error)}
         type="button"
       >
         {title}

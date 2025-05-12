@@ -1,0 +1,28 @@
+.formInput {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 16px;
+  .inputBlock {
+    max-width: 372px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.autocomplete {
+  padding: 24px 32px;
+  background: #f8f8f8;
+  margin: 16px 0;
+}
+.blue {
+  cursor: pointer;
+  color: #4c65bd;
+}
+.error {
+  color: red;
+  font-size: 14px;
+}
