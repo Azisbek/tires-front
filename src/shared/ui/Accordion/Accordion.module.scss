@@ -1,0 +1,36 @@
+.accordion {
+  margin: 16px 0;
+  color: #1a1e29;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.open {
+  color: #4c65bd;
+  &:focus {
+    color: #ff7e00;
+  }
+}
+.error {
+  color: rgb(211, 95, 95);
+}
+.panel {
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.2s ease-out;
+  padding-left: 35px;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #4c65bd;
+  }
+}

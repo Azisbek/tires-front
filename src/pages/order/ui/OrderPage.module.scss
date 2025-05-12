@@ -1,0 +1,32 @@
+.root {
+  max-width: 1224px;
+  margin: 0 auto;
+  padding: 24px 12px;
+  .title {
+    margin-bottom: 24px;
+  }
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .infoCard {
+    max-width: 392px;
+  }
+}
+
+.blue {
+  cursor: pointer;
+  color: #4c65bd;
+}
+.error {
+  color: red;
+  font-size: 14px;
+}

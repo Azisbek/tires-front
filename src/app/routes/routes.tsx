@@ -32,6 +32,7 @@ const AddProduct = lazy(() => import('pages/add-product-page'))
 const AddNews = lazy(() => import('pages/add-news'))
 const AdminPage = lazy(() => import('pages/admin-page'))
 const ApplicationsList = lazy(() => import('pages/applications-page'))
+const OrderPage = lazy(() => import('pages/order'))
 const BodyTypeList = lazy(() => import('pages/add-body-type'))
 const TiresTypeList = lazy(() => import('pages/add-tires-type'))
 
@@ -85,6 +86,7 @@ export const router = createBrowserRouter([
         children: [
           { path: navigationMap.ProfilePage, element: <ProfilePage /> },
           { path: navigationMap.Favorite, element: <FavoritePage /> },
+          { path: navigationMap.Order, element: <OrderPage /> },
         ].map((config) => ({
           ...config,
           loader: meLoader,

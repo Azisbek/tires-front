@@ -20,12 +20,13 @@ export function Checkbox({
   className,
 }: CheckboxProps) {
   return (
-    <label className={clsx(s.wrapper, className)}>
+    <label className={clsx(s.checkbox, className)}>
       <input
         type="checkbox"
         checked={checked}
         onChange={() => onChange(!checked)}
       />
+      <span className={s.customCheckbox}></span>
       <Text size="sm-14">{children}</Text>
     </label>
   )

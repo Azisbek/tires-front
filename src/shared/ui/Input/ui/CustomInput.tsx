@@ -6,7 +6,7 @@ import s from './CustomInput.module.scss'
 
 interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string
-  type?: 'text' | 'number' | 'checkbox' | 'radio' | 'password' | 'email'
+  type?: 'text' | 'number' | 'checkbox' | 'radio' | 'password' | 'email' | 'tel'
 }
 
 export function CustomInput({
