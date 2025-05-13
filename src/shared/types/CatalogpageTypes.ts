@@ -3,9 +3,9 @@ export type ProductQueryParams = {
   page?: number
   page_size?: number
   ordering?: string
-  season?: string
-  manufacturer?: string
-  tire_type?: string
+  season?: string[]
+  manufacturer?: string[]
+  tire_type?: string[]
   min_price?: number
   max_price?: number
   runflat?: boolean
@@ -18,6 +18,9 @@ export type ProductQueryParams = {
   profile?: string
   diameter?: string
   speed_index?: string
+  fuel_efficiency?: string
+  wet_grip?: string
+  off_road?: boolean
 }
 
 export interface ProductListResponse {

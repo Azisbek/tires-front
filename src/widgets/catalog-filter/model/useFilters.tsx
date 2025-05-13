@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import { useAppDispatch, useAppSelector } from 'shared/lib/hooks'
+
+import { resetFilters, setFilters } from './filter.slice'
 import { FilterState } from './types'
 
 const defaultFilters: FilterState = {
@@ -10,7 +13,7 @@ const defaultFilters: FilterState = {
   maxPrice: 99999,
   tiresType: [],
   season: [],
-  condition: [],
+  condition: false,
   manufacturer: [],
   promotion: false,
   runflat: false,
@@ -19,11 +22,15 @@ const defaultFilters: FilterState = {
   minNoiseLevel: 0,
   maxNoiseLevel: 0,
   speedIndex: '',
+  fuel_efficiency: '',
+  wet_grip: '',
+  off_road: false,
 }
 
 export function useFilters() {
-  const [filters, setFilters] = useState<FilterState>(defaultFilters)
-  const [draft, setDraft] = useState<FilterState>(defaultFilters)
+  const dispatch = useAppDispatch()
+  const filters = useAppSelector((state) => state.filters)
+  const [draft, setDraft] = useState<FilterState>(filters)
 
   const updateDraft = <K extends keyof FilterState>(
     key: K,
@@ -33,12 +40,12 @@ export function useFilters() {
   }
 
   const applyFilters = () => {
-    setFilters(draft)
+    dispatch(setFilters(draft))
   }
 
-  const resetFilters = () => {
+  const reset = () => {
+    dispatch(resetFilters())
     setDraft(defaultFilters)
-    setFilters(defaultFilters)
   }
 
   return {
@@ -46,6 +53,6 @@ export function useFilters() {
     filters,
     setFilterField: updateDraft,
     applyFilters,
-    resetFilters,
+    resetFilters: reset,
   }
 }

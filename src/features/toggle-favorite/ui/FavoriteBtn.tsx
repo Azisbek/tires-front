@@ -16,7 +16,6 @@ export function FavoriteBtn({ is_favorite, product_Id }: FavoriteBtnProps) {
   const [isActive, setIsActive] = useState(is_favorite)
   const [updateFavoriteStatus] = useUpdateFavoriteStatusMutation()
 
-  console.log(isActive)
   const toggleFavorite = async () => {
     const newFavoriteStatus = !isActive
     setIsActive(newFavoriteStatus)

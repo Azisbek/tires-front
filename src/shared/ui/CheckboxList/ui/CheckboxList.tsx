@@ -14,7 +14,7 @@ interface CheckboxListProps {
 }
 
 export function CheckboxList({ dataTexts, data, setData }: CheckboxListProps) {
-  const [isOpen, setIsOpen] = useState(dataTexts.length < 6)
+  const [isOpen, setIsOpen] = useState(dataTexts.length > 6)
 
   const toggle = (value: string) => {
     if (data.includes(value)) {

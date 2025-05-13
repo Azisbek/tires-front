@@ -22,13 +22,11 @@ export function CatalogProducts({
   setOrdering,
   isLoading,
   ordering,
-  refetch,
 }: CatalogProductsProps) {
   const { isMobile } = useScreenWidth()
 
   const handleChange = () => {
-    setOrdering(ordering === 'price' ? '-price' : 'price')
-    refetch()
+    setOrdering(ordering === 'expensive' ? 'cheap' : 'expensive')
   }
 
   return (
@@ -40,12 +38,12 @@ export function CatalogProducts({
           color="white"
           options={['Сначала дорогие', 'Сначала дешевые']}
           defaultValue={
-            ordering === 'price' ? 'Сначала дешевые' : 'Сначала дорогие'
+            ordering === 'expensive' ? 'Сначала дорогие' : 'Сначала дешевые'
           }
         />
         {isMobile && (
           <div className={s.grid}>
-            <FilterModal refetch={refetch} />
+            <FilterModal />
           </div>
         )}
 

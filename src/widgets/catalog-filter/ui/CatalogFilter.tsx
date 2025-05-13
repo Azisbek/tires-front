@@ -4,33 +4,42 @@ import { CheckboxList } from 'shared/ui/CheckboxList'
 import { FilterLabel } from 'shared/ui/FilterLabel/FilterLabel'
 import { InputFilter, InputSelect } from 'shared/ui/input-components'
 
+import { useGetProductFilterQuery } from '../api'
+import { FilterData } from '../model/types'
 import { useFilters } from '../model/useFilters'
 
 import s from './CatalogFilter.module.scss'
 
-interface Props {
-  refetch: () => void
+const SEASON_MAP: Record<string, string> = {
+  winter: 'Зимние',
+  summer: 'Летние',
+  all_seasons: 'Всесезонные',
 }
 
-export function CatalogFilter({ refetch }: Props) {
+const reverseSeasonMap: Record<string, string> = Object.fromEntries(
+  Object.entries(SEASON_MAP).map(([key, value]) => [value, key]),
+)
+
+export function CatalogFilter() {
+  const { data } = useGetProductFilterQuery()
+  const filters: Partial<FilterData> = data?.filter_data || {}
+
   const { setFilterField, applyFilters, resetFilters, filterData } =
     useFilters()
 
   const filterApplyHandler = () => {
     applyFilters()
-    refetch()
   }
 
   const filterResetHandler = () => {
     resetFilters()
-    refetch()
   }
 
   return (
     <div className={s.filterContainer}>
       <FilterLabel label="Ширина">
         <InputSelect
-          options={['175', '185', '195', '205', '215', '225', '235']}
+          options={['Все', ...(filters?.widths || '')]}
           color="white"
           defaultValue="Все"
           onChange={(value) => setFilterField('width', value)}
@@ -38,7 +47,7 @@ export function CatalogFilter({ refetch }: Props) {
       </FilterLabel>
       <FilterLabel label="Профиль">
         <InputSelect
-          options={['30', '35', '40', '45', '50', '55', '60']}
+          options={['Все', ...(filters?.profiles || '')]}
           color="white"
           defaultValue="Все"
           onChange={(value) => setFilterField('profile', value)}
@@ -46,7 +55,7 @@ export function CatalogFilter({ refetch }: Props) {
       </FilterLabel>
       <FilterLabel label="Диаметр">
         <InputSelect
-          options={['13', '14', '15', '16', '17', '18', '19']}
+          options={['Все', ...(filters?.diameters || '')]}
           color="white"
           defaultValue="Все"
           onChange={(value) => setFilterField('diameter', value)}
@@ -75,21 +84,28 @@ export function CatalogFilter({ refetch }: Props) {
 
       <FilterLabel label="Тип шин">
         <CheckboxList
-          dataTexts={['Легковые', 'Легкогрузовой (LTR)', 'Внедорожник (SUV)']}
+          dataTexts={filters?.tire_types || []}
           data={filterData.tiresType}
           setData={setFilterField.bind(null, 'tiresType')}
         />
       </FilterLabel>
       <FilterLabel label="Сезонность">
         <CheckboxList
-          dataTexts={['Летние', 'Зимние', 'Всесезонные']}
-          data={filterData.season}
-          setData={setFilterField.bind(null, 'season')}
+          dataTexts={
+            data?.filter_data?.seasons.map((season) => SEASON_MAP[season]) || []
+          }
+          data={filterData.season.map((item) => SEASON_MAP[item] || '')}
+          setData={(selected) => {
+            const mappedValues = selected
+              .map((item) => reverseSeasonMap[item])
+              .filter((item): item is string => !!item)
+            setFilterField('season', mappedValues)
+          }}
         />
       </FilterLabel>
       <FilterLabel label="Производитель">
         <CheckboxList
-          dataTexts={['Michelin', 'Bridgestone', 'Continental']}
+          dataTexts={filters?.manufacturers || []}
           data={filterData.manufacturer}
           setData={setFilterField.bind(null, 'manufacturer')}
         />
@@ -102,6 +118,14 @@ export function CatalogFilter({ refetch }: Props) {
           Да
         </Checkbox>
       </FilterLabel>
+      <FilterLabel label="off_road">
+        <Checkbox
+          checked={filterData.off_road}
+          onChange={setFilterField.bind(null, 'off_road')}
+        >
+          Да
+        </Checkbox>
+      </FilterLabel>
       <FilterLabel label="Runflat">
         <Checkbox
           checked={filterData.runflat}
@@ -110,9 +134,17 @@ export function CatalogFilter({ refetch }: Props) {
           Да
         </Checkbox>
       </FilterLabel>
+      <FilterLabel label="Cостояние">
+        <Checkbox
+          checked={filterData.condition}
+          onChange={setFilterField.bind(null, 'condition')}
+        >
+          Только новый
+        </Checkbox>
+      </FilterLabel>
       <FilterLabel label="Индекс скорости">
         <InputSelect
-          options={['Q', 'R', 'S', 'T', 'H', 'V', 'W', 'Y', 'Z']}
+          options={['Все', ...(filters?.speed_indexes || '')]}
           color="white"
           defaultValue="Все"
           onChange={(value) => setFilterField('speedIndex', value)}

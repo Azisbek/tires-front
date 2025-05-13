@@ -4,7 +4,7 @@ import {
   ProductQueryParams,
 } from 'shared/types/CatalogpageTypes'
 
-export const homeProductApi = $api.injectEndpoints({
+export const catalogProductApi = $api.injectEndpoints({
   endpoints: (build) => ({
     getProducts: build.query<ProductListResponse, ProductQueryParams>({
       query: (params) => ({
@@ -16,4 +16,4 @@ export const homeProductApi = $api.injectEndpoints({
   }),
 })
 
-export const { useGetProductsQuery } = homeProductApi
+export const { useGetProductsQuery } = catalogProductApi

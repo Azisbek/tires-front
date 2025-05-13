@@ -7,11 +7,7 @@ import { Modal } from 'shared/ui/Modal'
 
 import s from './FilterModal.module.scss'
 
-interface FilterModalProps {
-  refetch: () => void
-}
-
-export function FilterModal({ refetch }: FilterModalProps) {
+export function FilterModal() {
   const [isOpen, setIsOpen] = useState(false)
 
   const openModal = () => setIsOpen(true)
@@ -31,7 +27,7 @@ export function FilterModal({ refetch }: FilterModalProps) {
         onClose={closeModal}
         className={s.filterModal}
       >
-        <CatalogFilter refetch={refetch} />
+        <CatalogFilter />
       </Modal>
     </>
   )

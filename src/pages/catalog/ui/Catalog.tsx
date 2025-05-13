@@ -23,15 +23,12 @@ export function Catalog() {
     useCatalogParams()
 
   const { filters } = useFilters()
+
   const rawParams = {
     ...filters,
     search: searchProducts,
     page: currentPage,
-    ordering: ordering,
-    tire_type: '',
-    season: filters.season[0],
-    manufacturer: '',
-    cond: filters.condition[0],
+    sort_by_price: ordering,
   }
 
   const queryParams = cleanParams(rawParams)
@@ -47,7 +44,7 @@ export function Catalog() {
         Шины в Бишкеке
       </Title>
       <div className={s.container}>
-        {!isMobile && <CatalogFilter refetch={refetch} />}
+        {!isMobile && <CatalogFilter />}
         <div className={s.content}>
           <CatalogProducts
             data={data}
