@@ -12,6 +12,8 @@ export function FavoritePage() {
 
   if (!data) return <SkeletonPage />
 
+  console.log(data)
+
   return (
     <div className={s.container}>
       <Title
@@ -31,10 +33,7 @@ export function FavoritePage() {
 
       <ProductList
         className={s.productList}
-        // products={data.favorites.map((favorite) => ({
-        //   ...favorite,
-        //   season: favorite.season.value, // Возможно временное решение, нужно будет исправить в будущем
-        // }))}
+        products={data.favorites}
       />
     </div>
   )

@@ -26,6 +26,8 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
     comments_count,
     average_rating,
     product_Id,
+    promotion,
+    negotiable,
   } = product
 
   return (
@@ -75,7 +77,14 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
         </Text>
 
         <div className={s.buttonWrapper}>
-          <ProductPrice id={product_Id}>{price}</ProductPrice>
+          <ProductPrice
+            id={product_Id}
+            price={price}
+            promotion={promotion}
+            negotiable={negotiable}
+            className={s.price}
+          />
+
           <div className={s.fav}>{FavoriteBtn}</div>
         </div>
       </div>
