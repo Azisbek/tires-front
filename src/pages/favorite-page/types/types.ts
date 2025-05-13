@@ -1,6 +1,6 @@
-import { ProductCardProps } from 'entities/product/types/types'
+import { ProductType } from 'shared/types/CatalogpageTypes'
 
 export interface FavoritesResponse {
-  favorites: ProductCardProps[]
+  favorites: ProductType[]
   total_favorites: number
 }

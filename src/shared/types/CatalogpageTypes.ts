@@ -47,4 +47,6 @@ export interface ProductType {
   price: number
   is_favorite: boolean
   season: SeasonType
+  promotion?: number
+  negotiable?: boolean
 }

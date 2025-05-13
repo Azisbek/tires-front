@@ -30,6 +30,7 @@
     .title {
       min-height: 64px;
       margin: 17px 0 41px;
+
       .color {
         color: #1a1e29;
       }
@@ -47,6 +48,11 @@
     gap: 10px;
     box-sizing: border-box;
     height: 40px;
+
+    .negotiable {
+      font-weight: bold;
+      color: #d97706;
+    }
 
     button {
       width: 100%;
