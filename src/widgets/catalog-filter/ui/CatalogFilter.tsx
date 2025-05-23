@@ -5,20 +5,11 @@ import { FilterLabel } from 'shared/ui/FilterLabel/FilterLabel'
 import { InputFilter, InputSelect } from 'shared/ui/input-components'
 
 import { useGetProductFilterQuery } from '../api'
+import { mapSeasonToEn, mapSeasonToRu } from '../model/season.const'
 import { FilterData } from '../model/types'
 import { useFilters } from '../model/useFilters'
 
 import s from './CatalogFilter.module.scss'
-
-const SEASON_MAP: Record<string, string> = {
-  winter: 'Зимние',
-  summer: 'Летние',
-  all_seasons: 'Всесезонные',
-}
-
-const reverseSeasonMap: Record<string, string> = Object.fromEntries(
-  Object.entries(SEASON_MAP).map(([key, value]) => [value, key]),
-)
 
 export function CatalogFilter() {
   const { data } = useGetProductFilterQuery()
@@ -91,17 +82,20 @@ export function CatalogFilter() {
       </FilterLabel>
       <FilterLabel label="Сезонность">
         <CheckboxList
-          dataTexts={
-            data?.filter_data?.seasons.map((season) => SEASON_MAP[season]) || []
-          }
-          data={filterData.season.map((item) => SEASON_MAP[item] || '')}
+          dataTexts={mapSeasonToRu(data?.filter_data.seasons || [])}
+          data={mapSeasonToRu(filterData.season)}
           setData={(selected) => {
-            const mappedValues = selected
-              .map((item) => reverseSeasonMap[item])
-              .filter((item): item is string => !!item)
-            setFilterField('season', mappedValues)
+            setFilterField('season', mapSeasonToEn(selected))
           }}
         />
+      </FilterLabel>
+      <FilterLabel label="Cостояние">
+        <Checkbox
+          checked={filterData.condition}
+          onChange={setFilterField.bind(null, 'condition')}
+        >
+          Только новый
+        </Checkbox>
       </FilterLabel>
       <FilterLabel label="Производитель">
         <CheckboxList
@@ -118,14 +112,6 @@ export function CatalogFilter() {
           Да
         </Checkbox>
       </FilterLabel>
-      <FilterLabel label="off_road">
-        <Checkbox
-          checked={filterData.off_road}
-          onChange={setFilterField.bind(null, 'off_road')}
-        >
-          Да
-        </Checkbox>
-      </FilterLabel>
       <FilterLabel label="Runflat">
         <Checkbox
           checked={filterData.runflat}
@@ -134,12 +120,12 @@ export function CatalogFilter() {
           Да
         </Checkbox>
       </FilterLabel>
-      <FilterLabel label="Cостояние">
+      <FilterLabel label="off_road">
         <Checkbox
-          checked={filterData.condition}
-          onChange={setFilterField.bind(null, 'condition')}
+          checked={filterData.off_road}
+          onChange={setFilterField.bind(null, 'off_road')}
         >
-          Только новый
+          Да
         </Checkbox>
       </FilterLabel>
       <FilterLabel label="Индекс скорости">
@@ -150,6 +136,7 @@ export function CatalogFilter() {
           onChange={(value) => setFilterField('speedIndex', value)}
         />
       </FilterLabel>
+
       <FilterLabel label="Индекс нагрузки">
         <div className={s.priceFlex}>
           <InputFilter
@@ -170,6 +157,22 @@ export function CatalogFilter() {
           />
         </div>
       </FilterLabel>
+
+      <FilterLabel label="Топливная экономичность">
+        <CheckboxList
+          dataTexts={[...Object.values(filters?.fuel_efficiency || {})]}
+          data={filterData.fuel_efficiency}
+          setData={setFilterField.bind(null, 'fuel_efficiency')}
+        />
+      </FilterLabel>
+      <FilterLabel label="Сцепление с мокрой поверхностью">
+        <CheckboxList
+          dataTexts={[...Object.values(filters?.wet_grip || {})]}
+          data={filterData.wet_grip}
+          setData={setFilterField.bind(null, 'wet_grip')}
+        />
+      </FilterLabel>
+
       <FilterLabel label="Уровень внешнего шума">
         <div className={s.priceFlex}>
           <InputFilter

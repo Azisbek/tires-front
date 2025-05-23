@@ -22,8 +22,8 @@ const defaultFilters: FilterState = {
   minNoiseLevel: 0,
   maxNoiseLevel: 0,
   speedIndex: '',
-  fuel_efficiency: '',
-  wet_grip: '',
+  fuel_efficiency: [],
+  wet_grip: [],
   off_road: false,
 }
 

@@ -15,9 +15,9 @@ export type FilterState = {
   minNoiseLevel: number
   maxNoiseLevel: number
   speedIndex: string
-  fuel_efficiency: string
+  fuel_efficiency: string[]
   off_road: boolean
-  wet_grip: string
+  wet_grip: string[]
 }
 
 export interface FilterData {

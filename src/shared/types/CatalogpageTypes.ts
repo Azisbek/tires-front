@@ -18,8 +18,8 @@ export type ProductQueryParams = {
   profile?: string
   diameter?: string
   speed_index?: string
-  fuel_efficiency?: string
-  wet_grip?: string
+  fuel_efficiency?: string[]
+  wet_grip?: string[]
   off_road?: boolean
 }
 
