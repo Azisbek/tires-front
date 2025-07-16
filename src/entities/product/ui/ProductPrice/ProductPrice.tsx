@@ -1,35 +1,22 @@
-import { useNavigate } from 'react-router-dom'
-
 import { formatPrice } from 'shared/lib/formatPrice'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 
 import s from './ProductPrice.module.scss'
 
-interface ProductPriceProps {
-  id: number
+interface Props {
   price: number
   promotion?: number
   negotiable?: boolean
   className?: string
+  onClick?: () => void
 }
 
-export function ProductPrice({
-  id,
-  price,
-  promotion,
-  negotiable,
-}: ProductPriceProps) {
-  const navigate = useNavigate()
-
-  const handleClick = () => {
-    navigate(`/catalog/${id}`)
-  }
-
+export function ProductPrice({ price, promotion, negotiable, onClick }: Props) {
   return (
     <AppButton
       className={s.btn}
       variant="accent"
-      onClick={handleClick}
+      onClick={onClick}
     >
       {negotiable ? (
         <span className={s.dogovornaya}>Договорная</span>

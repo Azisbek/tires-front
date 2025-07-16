@@ -1,62 +1,13 @@
-.root {
-  background: #3e465f;
-  padding: 73px 0;
-  color: #fff;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 16px;
-  max-width: 1440px;
-}
-
-.title {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 83px;
-  margin-bottom: 72px;
-  text-align: center;
-}
-
-.formWrapper {
+.addProduct {
   display: flex;
-  gap: 20px;
-  justify-content: flex-end;
-  .inputsGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    max-width: 500px;
-    width: 100%;
-  }
-}
-
-.flexGroup {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  gap: 10px;
-}
-
-.formLabelPosition {
-  position: absolute;
-  left: -150px;
-  top: 43px;
-}
-
-.buttonSubmit {
-  max-width: 250px;
-  padding: 15px 80px;
-  border-radius: 0;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 16px;
-}
-
-.successModal {
-  color: #000;
-  display: flex;
-  gap: 20px;
   flex-direction: column;
-  h3 {
+  padding: 2rem 0 14rem 0;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+
+  .title {
     text-align: center;
+    margin-bottom: 1rem;
   }
 }

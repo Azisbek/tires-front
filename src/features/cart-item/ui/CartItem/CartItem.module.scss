@@ -1,0 +1,68 @@
+.cartItem {
+  position: relative;
+  display: flex;
+  border: 1px solid #e5e5e5;
+  padding: 8px;
+  width: 100%;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+
+    .details {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      .title {
+        color: rgb(26, 30, 41);
+        font-size: 18px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+    }
+
+    .code {
+      color: rgb(106, 106, 106);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0%;
+      margin-top: 4px;
+    }
+
+    .inStock {
+      color: rgb(26, 30, 41);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0%;
+      margin-top: 16px;
+    }
+
+    .price {
+      position: absolute;
+      top: 28px;
+      right: 40px;
+      color: rgb(26, 30, 41);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+      white-space: nowrap;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    padding: 4px;
+
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      background-color: rgba(235, 235, 235, 0.8);
+    }
+  }
+}

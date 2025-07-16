@@ -7,13 +7,13 @@
   .title {
     padding: 24px 0 10px 0;
   }
+
   .img {
-    max-width: 808px;
-    width: 100%;
     padding: 24px 0;
   }
-  .description {
-    line-height: 24px;
+
+  .text {
+    margin-top: 24px;
   }
 
   @media (max-width: 768px) {
@@ -29,7 +29,7 @@
       max-width: 392px;
       width: 100%;
     }
-    .description {
+    .text {
       max-width: 404px;
     }
   }

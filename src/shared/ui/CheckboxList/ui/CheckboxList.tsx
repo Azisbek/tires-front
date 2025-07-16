@@ -31,7 +31,7 @@ export function CheckboxList({ dataTexts, data, setData }: CheckboxListProps) {
           <Checkbox
             key={text}
             checked={data.includes(text)}
-            onChange={() => toggle(text)}
+            onClick={() => toggle(text)}
           >
             {text}
           </Checkbox>

@@ -1,14 +1,12 @@
-import { useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { MainBanner } from 'widgets/banner'
 import { HomeFilter } from 'widgets/home-filter/ui/HomeFilter'
 import { Partners } from 'widgets/partners'
 import { ProductList } from 'widgets/product-list'
 import { NewsListWithSkeleton } from 'widgets/promotionList'
-import { PromotionData } from 'widgets/promotionList/api'
 
-import { NavigateBtn } from 'features/navigate-button'
-
+import { navigationMap } from 'shared/model/navigation'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { SkeletonPage } from 'shared/ui/skeleton-components'
 
@@ -18,45 +16,52 @@ import s from './Home.module.scss'
 
 export function Home() {
   const { data } = useGetHomeProductQuery()
-
-  const filters = useMemo(() => data?.filters, [data])
-  const popularProducts = useMemo(() => data?.popular, [data])
+  const navigate = useNavigate()
 
   if (!data) return <SkeletonPage />
-
-  console.log(data)
 
   return (
     <>
       <MainBanner />
 
-      <HomeFilter filters={filters} />
+      <HomeFilter filters={data?.filters} />
 
-      <div className={s.section}>
-        <h2 className={s.title}>Популярные шины</h2>
+      {data?.popular.length > 0 && (
+        <div className={s.section}>
+          <h2 className={s.title}>Популярные шины</h2>
 
-        <ProductList
-          className={s.popularProducts}
-          products={popularProducts}
-        />
+          <ProductList
+            className={s.popularProducts}
+            products={data?.popular}
+          />
 
-        <NavigateBtn>Посмотреть все шины</NavigateBtn>
-      </div>
+          <AppButton
+            onClick={() => navigate(navigationMap.Catalog)}
+            variant="border"
+          >
+            Посмотреть все шины
+          </AppButton>
+        </div>
+      )}
 
-      <div className={s.promotion}>
-        <NewsListWithSkeleton
-          title="Акции"
-          data={PromotionData}
-          isLoading={false}
-        />
+      {data?.promotion.length > 0 && (
+        <div className={s.promotion}>
+          <NewsListWithSkeleton
+            emptyTitle="Нет акций"
+            title="Акции"
+            data={[]}
+            isLoading={false}
+          />
 
-        <AppButton
-          className={s.btn}
-          variant="border"
-        >
-          Посмотреть все шины
-        </AppButton>
-      </div>
+          <AppButton
+            className={s.btn}
+            onClick={() => navigate(navigationMap.News)}
+            variant="border"
+          >
+            Посмотреть все акции
+          </AppButton>
+        </div>
+      )}
 
       <Partners />
     </>

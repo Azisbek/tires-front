@@ -92,7 +92,7 @@ export function CatalogFilter() {
       <FilterLabel label="Cостояние">
         <Checkbox
           checked={filterData.condition}
-          onChange={setFilterField.bind(null, 'condition')}
+          onClick={setFilterField.bind(null, 'condition')}
         >
           Только новый
         </Checkbox>
@@ -107,7 +107,7 @@ export function CatalogFilter() {
       <FilterLabel label="Скидки">
         <Checkbox
           checked={filterData.promotion}
-          onChange={setFilterField.bind(null, 'promotion')}
+          onClick={setFilterField.bind(null, 'promotion')}
         >
           Да
         </Checkbox>
@@ -115,7 +115,7 @@ export function CatalogFilter() {
       <FilterLabel label="Runflat">
         <Checkbox
           checked={filterData.runflat}
-          onChange={setFilterField.bind(null, 'runflat')}
+          onClick={setFilterField.bind(null, 'runflat')}
         >
           Да
         </Checkbox>
@@ -123,7 +123,7 @@ export function CatalogFilter() {
       <FilterLabel label="off_road">
         <Checkbox
           checked={filterData.off_road}
-          onChange={setFilterField.bind(null, 'off_road')}
+          onClick={setFilterField.bind(null, 'off_road')}
         >
           Да
         </Checkbox>

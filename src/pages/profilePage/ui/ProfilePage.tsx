@@ -13,6 +13,7 @@ export function ProfilePage() {
       >
         Личный кабинет
       </Title>
+
       <PersonalAccount />
 
       <div className={s.orderHistory}>

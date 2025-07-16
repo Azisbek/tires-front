@@ -4,17 +4,21 @@ import s from './Input.module.scss'
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   value?: string | number
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   className?: string
+  border?: boolean
 }
 
-export function Input({ value = '', onChange, className, ...props }: Props) {
+export function Input({
+  value = '',
+  className,
+  border = false,
+  ...props
+}: Props) {
   return (
     <div className={clsx(s.myInput, className)}>
       <input
         value={value}
-        onChange={onChange}
-        className={s.input}
+        className={clsx(border ? s.border : s.input)}
         {...props}
       />
     </div>

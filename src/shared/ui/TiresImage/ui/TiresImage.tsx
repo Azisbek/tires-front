@@ -26,8 +26,8 @@ export function TiresImage({ images, className, season }: Props) {
   return (
     <div className={clsx(s.imageContainer, className)}>
       <SwipingImage
-        width={241}
-        height={241}
+        width={390}
+        height={390}
         delay={5000}
         images={images}
       />

@@ -4,7 +4,7 @@ import { AddNewsTypes, errorTypes } from 'pages/add-news/ui/AddNews'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
 import { Space } from 'shared/ui/Space/Space'
-import { ImageUploader } from 'shared/ui/admin-components'
+import { ImageUploader } from 'shared/ui/admin-components/ui/imageUploader/ImageUploader'
 
 import s from './AddnewsForm.module.scss'
 

@@ -11,12 +11,13 @@ import { Text, Title } from 'shared/ui/Text'
 
 import s from './ProductCard.module.scss'
 
-interface ProductCardItemProps {
+interface Props {
   product: ProductType
   FavoriteBtn: ReactNode
+  onClick?: () => void
 }
 
-export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
+export function ProductCard({ product, FavoriteBtn, onClick }: Props) {
   const {
     image,
     title,
@@ -78,11 +79,11 @@ export function ProductCard({ product, FavoriteBtn }: ProductCardItemProps) {
 
         <div className={s.buttonWrapper}>
           <ProductPrice
-            id={product_Id}
             price={price}
             promotion={promotion}
             negotiable={negotiable}
             className={s.price}
+            onClick={onClick}
           />
 
           <div className={s.fav}>{FavoriteBtn}</div>

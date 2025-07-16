@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .subTitle {
+      display: flex;
+      gap: 8px;
+      color: rgb(26, 30, 41);
+      font-size: 14px;
+      font-weight: 400;
+
+      .canceled {
+        color: #ed1846;
+      }
+
+      .success {
+        color: #12bb9d;
+      }
+    }
+  }
+
+  .orderDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .cartList {
+      max-height: 300px;
+      height: 100%;
+      overflow: auto;
+      scrollbar-width: none;
+    }
+
+    .subTitle {
+      text-align: end;
+      color: rgb(26, 30, 41);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .btn {
+    max-width: 106px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 126, 0);
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

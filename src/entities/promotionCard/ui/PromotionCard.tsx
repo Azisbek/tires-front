@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { formatPromotionDate } from 'shared/lib/formatDate'
+import { SwipingImage } from 'shared/ui/SwipingImage/ui/SwipingImage'
 
 import { Date } from './Date/Date'
 import s from './PromotionCard.module.scss'
@@ -9,7 +10,7 @@ interface Props {
   id: string
   title: string
   expiryDate?: boolean
-  imageUrl: string
+  imageUrl: string[]
   date: string
 }
 
@@ -25,10 +26,12 @@ export function PromotionCard({
   return (
     <div className={s.promotion}>
       <Link to={`${id}`}>
-        <img
-          className={s.promotionImage}
-          src={imageUrl}
-          alt={title}
+        <SwipingImage
+          images={imageUrl}
+          className={s.image}
+          width="100%"
+          maxWidth={392}
+          height={272}
         />
       </Link>
 
@@ -39,6 +42,7 @@ export function PromotionCard({
 
         <Date
           date={newDate}
+          className={s.date}
           expiryDate={expiryDate}
         />
       </div>

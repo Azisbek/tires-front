@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { NewsListWithSkeleton } from 'widgets/promotionList'
 
 import { AppButton } from 'shared/ui/AppButton/AppButton'
+import { Empty } from 'shared/ui/Empty'
 import { Title } from 'shared/ui/Text'
 
 import { useGetNewsQuery } from '../api'
@@ -31,10 +32,19 @@ export function News() {
         Новости и статьи
       </Title>
 
-      <NewsListWithSkeleton
-        data={data?.results || []}
-        isLoading={isLoading}
-      />
+      {data?.results.length === 0 && !isLoading ? (
+        <Empty
+          className={s.empty}
+          title="Нет новостей"
+          description="К сожалению, мы не нашли новостей, соответствующих вашему запросу."
+        />
+      ) : (
+        <NewsListWithSkeleton
+          emptyTitle="Нет новостей"
+          data={data?.results || []}
+          isLoading={isLoading}
+        />
+      )}
 
       {data?.next && (
         <AppButton

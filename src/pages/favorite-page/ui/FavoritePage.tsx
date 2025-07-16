@@ -1,5 +1,7 @@
 import { ProductList } from 'widgets/product-list'
 
+import { navigationMap } from 'shared/model/navigation'
+import { Empty } from 'shared/ui/Empty'
 import { Text, Title } from 'shared/ui/Text'
 import { SkeletonPage } from 'shared/ui/skeleton-components'
 
@@ -11,8 +13,6 @@ export function FavoritePage() {
   const { data } = useGetFavoritesQuery()
 
   if (!data) return <SkeletonPage />
-
-  console.log(data)
 
   return (
     <div className={s.container}>
@@ -31,10 +31,18 @@ export function FavoritePage() {
         Товаров: {data.total_favorites}
       </Text>
 
-      <ProductList
-        className={s.productList}
-        products={data.favorites}
-      />
+      {data.favorites.length === 0 || !data ? (
+        <Empty
+          to={navigationMap.Catalog}
+          title="Нет избранных товаров"
+          description="Добавьте товары в избранное, чтобы они отображались здесь."
+        />
+      ) : (
+        <ProductList
+          className={s.productList}
+          products={data.favorites}
+        />
+      )}
     </div>
   )
 }

@@ -1,7 +1,5 @@
 import { FormEvent, useState } from 'react'
 
-import { GoogleAuthBtn } from 'features/social-login-btns'
-
 import { SignInHeader } from 'entities/auth-components/ui/SignInHeader/ui/SignInHeader'
 
 import { SignInErrorTypes, SignInFormTypes } from 'shared/types/AuthTypes'
@@ -58,8 +56,6 @@ export function SignInForm({ onSubmit, errors }: Props) {
       </AppButton>
 
       <Title>Войти с помощью</Title>
-
-      <GoogleAuthBtn />
     </form>
   )
 }

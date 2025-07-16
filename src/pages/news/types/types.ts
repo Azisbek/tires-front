@@ -1,6 +1,6 @@
 export interface NewsItemTypes {
   id: string
-  news_image: string
+  news_image: string[]
   news_title: string
   news_time: string
 }

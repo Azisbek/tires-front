@@ -1,0 +1,44 @@
+.radioBox {
+  display: flex;
+  gap: 8px;
+
+  .radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ff7e00;
+    border-radius: 50%;
+    margin-top: 4px;
+
+    .checked {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ff7e00;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .title {
+      color: rgb(26, 30, 41);
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .workTimes {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgb(106, 106, 106);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

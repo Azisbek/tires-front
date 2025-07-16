@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  max-width: 1258px;
+  margin: 0 auto;
+}
+
+.confirmOrder {
+  padding: 24px 20px 60px 20px;
+
+  .title {
+    color: rgb(26, 30, 41);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0%;
+    margin-bottom: 24px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      margin-top: auto;
+    }
+  }
+}

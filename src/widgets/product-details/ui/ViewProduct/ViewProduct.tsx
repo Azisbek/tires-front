@@ -33,7 +33,7 @@ export function ViewProduct({ data }: Props) {
 
       <div className={s.container}>
         <TiresImage
-          images={[data.image_url]}
+          images={data.image || []}
           season={data.characteristics.season}
         />
 
@@ -43,7 +43,11 @@ export function ViewProduct({ data }: Props) {
           <BriefDescription data={data.characteristics} />
         )}
 
-        <BuyCard data={data} />
+        <BuyCard
+          data={data}
+          title={data.title}
+          images={data.image}
+        />
       </div>
     </section>
   )

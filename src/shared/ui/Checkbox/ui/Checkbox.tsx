@@ -8,25 +8,32 @@ import s from './Checkbox.module.scss'
 
 interface CheckboxProps {
   children: ReactNode
-  onChange: (value: boolean) => void
+  onClick: (value: boolean) => void
   checked: boolean
   className?: string
+  color?: 'black' | 'orange'
 }
 
 export function Checkbox({
   children,
-  onChange,
+  onClick,
   checked,
   className,
+  color = 'black',
 }: CheckboxProps) {
   return (
-    <label className={clsx(s.wrapper, className)}>
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={() => onChange(!checked)}
-      />
-      <Text size="sm-14">{children}</Text>
-    </label>
+    <div
+      className={clsx(s.wrapper, className)}
+      onClick={() => onClick(!checked)}
+    >
+      <div className={clsx(s.check, checked && s.activeCheck)}></div>
+
+      <Text
+        size="sm-14"
+        className={s[color]}
+      >
+        {children}
+      </Text>
+    </div>
   )
 }

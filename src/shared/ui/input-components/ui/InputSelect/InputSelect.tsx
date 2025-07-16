@@ -8,9 +8,16 @@ import { useClickOutside } from 'shared/hooks/useClickOutside'
 
 import s from './InputSelect.module.scss'
 
+export interface SelectOption {
+  label: string
+  value: string | number
+}
+
+type OptionType = string | SelectOption
+
 interface Props {
-  options: string[] | undefined
-  onChange?: (value: string) => void
+  options: OptionType[] | undefined
+  onChange?: (value: string | number) => void
   defaultValue?: string
   color: 'grey' | 'white' | 'darkGrey'
   className?: string
@@ -24,19 +31,27 @@ export function InputSelect({
   className,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false)
-  const [value, setValue] = useState(defaultValue ?? '')
+  const [selectedLabel, setSelectedLabel] = useState(() => {
+    const initial = options?.find((opt) =>
+      typeof opt === 'string'
+        ? opt === defaultValue
+        : opt.value === defaultValue,
+    )
+    return typeof initial === 'string' ? initial : initial?.label || ''
+  })
 
   const selectRef = useRef<HTMLDivElement>(null)
   useClickOutside(selectRef, () => setIsOpen(false), isOpen)
 
-  const toggleOpen = () => setIsOpen((prev: boolean) => !prev)
+  const toggleOpen = () => setIsOpen((prev) => !prev)
 
-  const setValueChange = (value: string) => {
-    setValue(value)
-    if (onChange) {
-      onChange(value)
-    }
-    toggleOpen()
+  const handleSelect = (option: OptionType) => {
+    const label = typeof option === 'string' ? option : option.label
+    const value = typeof option === 'string' ? option : option.value
+
+    setSelectedLabel(label)
+    onChange?.(value)
+    setIsOpen(false)
   }
 
   return (
@@ -50,24 +65,27 @@ export function InputSelect({
           isOpen ? `${s.inputActive} ${s[color]}` : `${s.input} ${s[color]}`
         }
       >
-        <p className={s.defaultTitle}>{value}</p>
+        <p className={s.defaultTitle}>{selectedLabel || 'Выберите'}</p>
         <img
           src={isOpen ? arrowTopIcon : arrowBottomIcon}
-          alt={isOpen ? arrowTopIcon : arrowBottomIcon}
+          alt="arrow"
         />
       </div>
 
       {isOpen && (
         <ul className={s.options}>
-          {options?.map((option, index) => (
-            <li
-              key={index}
-              className={s.option}
-              onClick={() => setValueChange(option)}
-            >
-              {option}
-            </li>
-          ))}
+          {options?.map((option, index) => {
+            const label = typeof option === 'string' ? option : option.label
+            return (
+              <li
+                key={index}
+                className={s.option}
+                onClick={() => handleSelect(option)}
+              >
+                {label}
+              </li>
+            )
+          })}
         </ul>
       )}
     </div>

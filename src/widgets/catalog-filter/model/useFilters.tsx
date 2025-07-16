@@ -34,7 +34,7 @@ export function useFilters() {
 
   const updateDraft = <K extends keyof FilterState>(
     key: K,
-    value: FilterState[K],
+    value: FilterState[K] | string | number,
   ) => {
     setDraft((prev) => ({ ...prev, [key]: value }))
   }

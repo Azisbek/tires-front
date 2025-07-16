@@ -1,17 +1,12 @@
+import { useAppSelector } from 'shared/lib/hooks'
 import { Title } from 'shared/ui/Text'
-
-import { useGetProfileQuery } from '../../api/index'
 
 import s from './PersonalAccount.module.scss'
 
 export const PersonalAccount = () => {
-  const { data, isLoading } = useGetProfileQuery({})
-
-  console.log('Полученные данные:', data)
-
-  if (isLoading) return <p>Загрузка...</p>
-
-  const { email, username, phone } = data!.UserMe!.user
+  const { username, email, phone } = useAppSelector(
+    (state) => state.signIn.user,
+  )
 
   return (
     <div className={s.container}>

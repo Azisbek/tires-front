@@ -56,6 +56,7 @@ export function Contact() {
   return (
     <div className={s.container}>
       <Contacts />
+
       <FeedbackForm
         formData={formData}
         onChange={handleChange}
@@ -63,6 +64,7 @@ export function Contact() {
         errors={errors}
         successMessage={successMessage}
       />
+
       {isLoading && <LoaderFullScreen />}
     </div>
   )

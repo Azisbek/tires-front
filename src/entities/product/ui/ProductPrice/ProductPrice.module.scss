@@ -9,15 +9,21 @@
 .prices {
   display: flex;
   flex-direction: column;
+  gap: 4px;
   align-items: center;
   line-height: 0.9;
 }
 
+.oldPrice,
+.newPrice {
+  transition: all 0.2s ease;
+}
+
 .oldPrice {
   font-size: 14px;
-  color: #888;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: line-through;
-  margin-bottom: 2px;
+  text-decoration-thickness: 2px;
 }
 
 .newPrice {

@@ -1,25 +1,38 @@
 .wrapper {
   max-width: 1280px;
-  padding: 0 15px;
+  padding: 0 20px;
   margin: 24px auto 40px auto;
 
-  @media (max-width: 480px) {
-    padding: 0;
-  }
   .title {
     margin-bottom: 24px;
   }
+
   .container {
     display: flex;
 
     .content {
       min-width: 0;
+      padding: 0 20px;
+
+      .empty {
+        width: 100%;
+        max-width: 400px;
+        margin: 50px auto 80px auto;
+      }
 
       .pagination {
         display: flex;
         justify-content: center;
         margin-top: 22px;
       }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0;
+
+    .title {
+      padding: 0 20px;
     }
   }
 }

@@ -33,7 +33,7 @@ export interface ProductDetailsTypes {
   count: number
   season: string
   favorite: boolean
-  image_url: string
+  image: string[]
   average_rating: number
   comments_count: number
   model_description: string

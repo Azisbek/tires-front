@@ -6,6 +6,7 @@ import { Pagination } from 'features/pagination'
 
 import { useScreenWidth } from 'shared/hooks/useScreenWidth'
 import { useAppSelector } from 'shared/lib/hooks'
+import { Empty } from 'shared/ui/Empty'
 import { Title } from 'shared/ui/Text'
 
 import { useFilters } from '../../../widgets/catalog-filter/model/useFilters'
@@ -45,14 +46,23 @@ export function Catalog() {
       </Title>
       <div className={s.container}>
         {!isMobile && <CatalogFilter />}
+
         <div className={s.content}>
-          <CatalogProducts
-            data={data}
-            isLoading={isFetching}
-            setOrdering={setOrdering}
-            ordering={ordering}
-            refetch={refetch}
-          />
+          {data?.products.length === 0 ? (
+            <Empty
+              className={s.empty}
+              title="Нет товаров"
+              description="К сожалению, мы не нашли товаров, соответствующих вашему запросу."
+            />
+          ) : (
+            <CatalogProducts
+              data={data}
+              isLoading={isFetching}
+              setOrdering={setOrdering}
+              ordering={ordering}
+              refetch={refetch}
+            />
+          )}
 
           <div className={s.pagination}>
             {data && (
