@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 
 import { OrderData } from 'entities/personalAccount/types/types'
 
+import { navigationMap } from 'shared/model/navigation'
 import { AppButton } from 'shared/ui/AppButton/AppButton'
+import { Empty } from 'shared/ui/Empty'
 import { Modal } from 'shared/ui/Modal'
 import { Title } from 'shared/ui/Text'
 
@@ -29,7 +31,6 @@ export const OrderHistory = () => {
     useLazyGetOrderDetailsQuery()
 
   useEffect(() => {
-    console.log('Received data:', data)
     if (data?.UserMe?.order_history) {
       setOrders(data.UserMe.order_history)
     }
@@ -92,33 +93,40 @@ export const OrderHistory = () => {
               ))}
             </tbody>
           </table>
-
-          <div className={s.pagination}>
-            <AppButton
-              variant="white"
-              onClick={handlePrevPage}
-            >
-              ‹
-            </AppButton>
-
-            <span>Страница {Math.floor(offset / limit) + 1}</span>
-
-            <AppButton
-              variant="white"
-              onClick={handleNextPage}
-            >
-              ›
-            </AppButton>
-          </div>
         </>
-      ) : (
+      ) : isProfileLoading ? (
         <Title
           size="md-24"
           className={s.title}
         >
-          {isProfileLoading ? 'Загрузка...' : 'Пока нет заказов!'}
+          Загрузка...
         </Title>
+      ) : (
+        <Empty
+          title="История заказов пуста"
+          description="Вы пока не совершали ни одного заказа"
+          className={s.empty}
+          to={navigationMap.Catalog}
+        />
       )}
+
+      <div className={s.pagination}>
+        <AppButton
+          variant="white"
+          onClick={handlePrevPage}
+        >
+          ‹
+        </AppButton>
+
+        <span>Страница {Math.floor(offset / limit) + 1}</span>
+
+        <AppButton
+          variant="white"
+          onClick={handleNextPage}
+        >
+          ›
+        </AppButton>
+      </div>
 
       <Modal
         isOpen={isOpen}

@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 
+import { Link } from 'react-router-dom'
+
 import arrowBottomIcon from 'shared/assets/icons/arrows-icon/arrowBottomWhite.webp'
 import arrowTopIcon from 'shared/assets/icons/arrows-icon/arrowTopOrange.webp'
 
@@ -26,12 +28,12 @@ export function MenuButton({
       onMouseLeave={() => onMouseLeave?.(false)}
       className={clsx(s.menuButton, value && s.active)}
     >
-      <a
-        href={to}
+      <Link
+        to={to || ''}
         className={s.link}
       >
         {title}
-      </a>
+      </Link>
 
       <img
         className={s.image}

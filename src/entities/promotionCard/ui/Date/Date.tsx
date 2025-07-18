@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import time from '/src/shared/assets/icons/Icon_time.svg'
 
 import s from './Date.module.scss'
@@ -10,7 +12,7 @@ interface Props {
 
 export function Date({ className, date, expiryDate }: Props) {
   return (
-    <div className={s.container}>
+    <div className={clsx(s.container, className)}>
       <img
         src={time}
         alt="time"
@@ -20,7 +22,7 @@ export function Date({ className, date, expiryDate }: Props) {
           <span>Действует до:</span> <span className={s.title}>{date}</span>
         </>
       ) : (
-        <div className={className}>{date}</div>
+        <div>{date}</div>
       )}
     </div>
   )

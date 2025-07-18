@@ -8,13 +8,12 @@ import { useValidation } from 'shared/hooks/useValidation'
 import { SignInErrorTypes, SignInFormTypes } from 'shared/types/AuthTypes'
 import { LoaderFullScreen } from 'shared/ui/loader-components'
 
-import { useAuthUserMutation, useLazyGetMeQuery } from '../api'
+import { useAuthUserMutation } from '../api'
 
 import s from './SignIn.module.scss'
 
 export function SignIn() {
   const [authUser, { isLoading }] = useAuthUserMutation()
-  const [getUser] = useLazyGetMeQuery()
   const navigate = useNavigate()
 
   const { errors, setValidationErrors } = useValidation<SignInErrorTypes>()
@@ -22,7 +21,6 @@ export function SignIn() {
   const handleSubmit = async (data: SignInFormTypes) => {
     try {
       await authUser(data).unwrap()
-      await getUser().unwrap()
       navigate('/')
     } catch (error) {
       const err = error as FetchBaseQueryError

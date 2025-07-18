@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 
+import { useNavigate } from 'react-router-dom'
+
 import { FavoriteBtn } from 'features/toggle-favorite'
 
 import { ProductCard } from 'entities/product'
@@ -20,7 +22,14 @@ export function ProductList({
   className,
   isLoading,
 }: ProductListProps) {
+  const navigate = useNavigate()
+
   const skeletons = [...new Array(6)].map((_, i) => <SkeletonProduct key={i} />)
+
+  const handleClick = (id: number) => {
+    navigate(`/catalog/${id}`)
+  }
+
   return (
     <div className={clsx(s.list, className)}>
       {isLoading
@@ -29,6 +38,7 @@ export function ProductList({
             <ProductCard
               key={product.product_Id}
               product={product}
+              onClick={() => handleClick(product.product_Id)}
               FavoriteBtn={
                 <FavoriteBtn
                   product_Id={product.product_Id}

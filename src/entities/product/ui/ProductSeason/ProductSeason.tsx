@@ -6,7 +6,7 @@ import { SeasonType } from 'shared/types/CatalogpageTypes'
 const seasonIcons = {
   summer: <BrightnessIcon />,
   winter: <SnowIcon />,
-  all_season: <AllSeasonIcon />,
+  all_seasons: <AllSeasonIcon />,
 }
 
 interface ProductSeasonProps {

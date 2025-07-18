@@ -11,30 +11,22 @@ import s from './CatalogProducts.module.scss'
 
 interface CatalogProductsProps {
   data?: ProductListResponse
-  onSortChange: (sort: string) => void
+  setOrdering: (sort: string) => void
   isLoading: boolean
-  currentSort: string
+  ordering: string
+  refetch: () => void
 }
-
-const sortOptions = [
-  { id: 'price', label: 'Сначала дорогие' },
-  { id: '-price', label: 'Сначала дешевые' },
-]
 
 export function CatalogProducts({
   data,
-  onSortChange,
+  setOrdering,
   isLoading,
-  currentSort,
+  ordering,
 }: CatalogProductsProps) {
   const { isMobile } = useScreenWidth()
-  const selectedOption = sortOptions.find((opt) => opt.id === currentSort)
 
-  const handleChange = (label: string) => {
-    const selected = sortOptions.find((opt) => opt.label === label)
-    if (selected) {
-      onSortChange(selected.id)
-    }
+  const handleChange = () => {
+    setOrdering(ordering === 'expensive' ? 'cheap' : 'expensive')
   }
 
   return (
@@ -44,14 +36,17 @@ export function CatalogProducts({
           onChange={handleChange}
           className="select"
           color="white"
-          options={sortOptions.map((opt) => opt.label)}
-          defaultValue={selectedOption?.label}
+          options={['Сначала дорогие', 'Сначала дешевые']}
+          defaultValue={
+            ordering === 'expensive' ? 'Сначала дорогие' : 'Сначала дешевые'
+          }
         />
         {isMobile && (
           <div className={s.grid}>
             <FilterModal />
           </div>
         )}
+
         <Text
           size="sm-14"
           className={s.text}

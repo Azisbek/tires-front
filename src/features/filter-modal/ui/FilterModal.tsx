@@ -10,17 +10,21 @@ import s from './FilterModal.module.scss'
 export function FilterModal() {
   const [isOpen, setIsOpen] = useState(false)
 
+  const openModal = () => setIsOpen(true)
+  const closeModal = () => setIsOpen(false)
+
   return (
     <>
       <AppButton
         variant="accent"
-        onClick={() => setIsOpen(true)}
+        onClick={openModal}
       >
         Фильтр
       </AppButton>
+
       <Modal
         isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
+        onClose={closeModal}
         className={s.filterModal}
       >
         <CatalogFilter />

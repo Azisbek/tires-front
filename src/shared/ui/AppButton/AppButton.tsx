@@ -18,12 +18,14 @@ export function AppButton({
   variant,
   className,
   type,
+  ...props
 }: Props) {
   return (
     <button
       type={type}
       onClick={onClick}
       className={clsx(s[variant], className)}
+      {...props}
     >
       {children}
     </button>

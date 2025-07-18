@@ -1,0 +1,22 @@
+.details {
+  max-width: 800px;
+  width: 100%;
+
+  .title {
+    display: flex;
+    gap: 10px;
+    color: rgb(76, 101, 189);
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+
+    .active {
+      color: rgb(255, 126, 0);
+    }
+  }
+
+  .content {
+    padding: 24px 32px;
+  }
+}

@@ -20,15 +20,14 @@ export function PurchaseCard({
   className,
   count = 0,
 }: Props) {
-  const totalPrice = promotion < price ? promotion : price
-
+  const totalPrice = promotion !== null ? promotion : price
   const formattedPrice = formatPrice(totalPrice)
   const formattedPrice4 = formatPrice(totalPrice * count)
 
   return (
     <div className={s.purchaseCard}>
       <div className={s.priceContainer}>
-        {promotion < price && (
+        {promotion && (
           <Text className={s.promotion}>{formatPrice(price)} C</Text>
         )}
 

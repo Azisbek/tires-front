@@ -4,16 +4,10 @@ import { signInApi } from 'pages/sign-in/api'
 import { signUpApi } from 'pages/sign-up/api'
 
 import TokenService from 'shared/lib/TokenService'
-
-interface User {
-  id: number | null
-  username: string
-  email: string
-  phone: string
-}
+import { GetMeApiResponse, UserTypes } from 'shared/types/AuthTypes'
 
 interface AuthState {
-  user: User
+  user: UserTypes
   isUserLoaded: boolean
 }
 
@@ -28,12 +22,15 @@ const initialState: AuthState = {
   isUserLoaded: false,
 }
 
-const actionSetUser = (state: AuthState, { payload }: PayloadAction<User>) => {
+const actionSetUser = (
+  state: AuthState,
+  { payload }: PayloadAction<GetMeApiResponse>,
+) => {
   state.user = {
-    id: payload.id || null,
-    username: payload.username || '',
-    email: payload.email || '',
-    phone: payload.phone || '',
+    id: payload.UserMe.user.id || null,
+    username: payload.UserMe.user.username || '',
+    email: payload.UserMe.user.email || '',
+    phone: payload.UserMe.user.phone || '',
   }
   state.isUserLoaded = true
 }
@@ -49,6 +46,7 @@ export const signInSlice = createSlice({
         (state, { payload }) => {
           if (payload.access) {
             TokenService.setToken(payload.access)
+            signInApi.endpoints.getMe.initiate()
           } else {
             console.error('Access token is undefined')
           }
@@ -65,7 +63,7 @@ export const signInSlice = createSlice({
         (state, { payload }) => {
           if (payload.access) {
             TokenService.setToken(payload.access)
-            // signInApi.endpoints.getMe.initiate()
+            signInApi.endpoints.getMe.initiate()
           } else {
             console.error('Access token is undefined')
           }

@@ -9,21 +9,29 @@ import s from './CheckboxList.module.scss'
 
 interface CheckboxListProps {
   dataTexts: string[]
-  data: boolean[]
-  setData: (index: number, value: boolean) => void
+  data: string[]
+  setData: (updated: string[]) => void
 }
 
 export function CheckboxList({ dataTexts, data, setData }: CheckboxListProps) {
-  const [isOpen, setIsOpen] = useState(dataTexts.length < 6)
+  const [isOpen, setIsOpen] = useState(dataTexts.length > 6)
+
+  const toggle = (value: string) => {
+    if (data.includes(value)) {
+      setData(data.filter((v) => v !== value))
+    } else {
+      setData([...data, value])
+    }
+  }
 
   return (
     <>
       <div className={clsx(s.wrapper, isOpen && s.open)}>
-        {dataTexts.map((text, i) => (
+        {dataTexts.map((text) => (
           <Checkbox
-            key={`${text}${i}`}
-            checked={data[i]}
-            onChange={(checked) => setData(i, checked)}
+            key={text}
+            checked={data.includes(text)}
+            onClick={() => toggle(text)}
           >
             {text}
           </Checkbox>

@@ -7,7 +7,12 @@ import s from './Contacts.module.scss'
 export function Contacts() {
   return (
     <section className={s.contactsContainer}>
-      <Title>Контактная информация</Title>
+      <Title
+        size="xl-40"
+        color="black"
+      >
+        Контактная информация
+      </Title>
 
       <div className={s.contacts}>
         <img

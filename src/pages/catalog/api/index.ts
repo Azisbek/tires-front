@@ -1,19 +1,19 @@
 import { $api } from 'shared/api/api'
-import { ProductListResponse } from 'shared/types/CatalogpageTypes'
+import {
+  ProductListResponse,
+  ProductQueryParams,
+} from 'shared/types/CatalogpageTypes'
 
-export const homeProductApi = $api.injectEndpoints({
+export const catalogProductApi = $api.injectEndpoints({
   endpoints: (build) => ({
-    getProducts: build.query<
-      ProductListResponse,
-      { search?: string; page?: number; page_size?: number; ordering?: string }
-    >({
-      query: ({ search, page = 1, page_size = 12, ordering }) => ({
+    getProducts: build.query<ProductListResponse, ProductQueryParams>({
+      query: (params) => ({
         url: '/product/all/',
         method: 'GET',
-        params: { search, page, page_size, ordering },
+        params,
       }),
     }),
   }),
 })
 
-export const { useGetProductsQuery } = homeProductApi
+export const { useGetProductsQuery } = catalogProductApi

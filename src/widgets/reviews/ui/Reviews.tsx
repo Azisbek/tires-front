@@ -38,7 +38,7 @@ export function Reviews() {
       />
 
       <CommentListWithSkeleton
-        data={data?.results}
+        data={data?.results || []}
         isLoading={isLoading}
         isFetching={isFetching}
       />

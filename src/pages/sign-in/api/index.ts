@@ -1,5 +1,5 @@
 import { $api } from 'shared/api/api'
-import { GetMeResponse } from 'shared/types/AuthTypes'
+import { GetMeApiResponse } from 'shared/types/AuthTypes'
 
 export const signInApi = $api.injectEndpoints({
   endpoints: (build) => ({
@@ -10,7 +10,7 @@ export const signInApi = $api.injectEndpoints({
         body,
       }),
     }),
-    getMe: build.query<GetMeResponse, void>({
+    getMe: build.query<GetMeApiResponse, void>({
       query: () => ({
         url: '/users/me/',
         method: 'GET',
@@ -26,4 +26,4 @@ export const signInApi = $api.injectEndpoints({
   }),
 })
 
-export const { useAuthUserMutation, useLazyGetMeQuery } = signInApi
+export const { useAuthUserMutation } = signInApi

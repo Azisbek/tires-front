@@ -4,16 +4,17 @@ import allSeasonIcon from 'shared/assets/icons/season/allSeason.webp'
 import summerIcon from 'shared/assets/icons/season/brightness.webp'
 import winterIcon from 'shared/assets/icons/season/snow.webp'
 import { Season } from 'shared/types/ProductDetailsTypes'
+import { SwipingImage } from 'shared/ui/SwipingImage/ui/SwipingImage'
 
 import s from './TiresImage.module.scss'
 
 interface Props {
   className?: string
-  image: string
+  images: string[]
   season: Season
 }
 
-export function TiresImage({ image, className, season }: Props) {
+export function TiresImage({ images, className, season }: Props) {
   const seasonIcons: Record<Season, string | null> = {
     summer: summerIcon,
     winter: winterIcon,
@@ -24,10 +25,11 @@ export function TiresImage({ image, className, season }: Props) {
 
   return (
     <div className={clsx(s.imageContainer, className)}>
-      <img
-        className={s.image}
-        src={image}
-        alt={image}
+      <SwipingImage
+        width={390}
+        height={390}
+        delay={5000}
+        images={images}
       />
 
       <img

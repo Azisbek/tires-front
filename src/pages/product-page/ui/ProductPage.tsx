@@ -19,8 +19,6 @@ export function ProductPage() {
   const { id } = useParams<string>()
   const { data } = useGetProductIdQuery({ id: id || '' })
 
-  console.log(data) // Вренно консоль, чтобы проверять данные с бэка
-
   if (!data) return <SkeletonPage />
 
   return (
@@ -33,21 +31,23 @@ export function ProductPage() {
 
       <Space h={72} />
 
-      <div className={s.productContainer}>
-        <Title
-          className={s.title}
-          size="lg-32"
-        >
-          Похожие товары
-        </Title>
+      {data.similar_products.length > 0 && (
+        <div className={s.productContainer}>
+          <Title
+            className={s.title}
+            size="lg-32"
+          >
+            Похожие товары
+          </Title>
 
-        <ProductList
-          className={s.productList}
-          products={popularProductsMock}
-        />
+          <ProductList
+            className={s.productList}
+            products={popularProductsMock}
+          />
 
-        <NavigateBtn className={s.btn}>Посмотреть все шины</NavigateBtn>
-      </div>
+          <NavigateBtn className={s.btn}>Посмотреть все шины</NavigateBtn>
+        </div>
+      )}
     </div>
   )
 }

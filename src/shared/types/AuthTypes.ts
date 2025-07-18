@@ -1,3 +1,5 @@
+import { OrderData } from 'entities/personalAccount/types/types'
+
 export interface SignUpFormTypes {
   username: string
   email: string
@@ -11,8 +13,15 @@ export interface SignInFormTypes {
   password: string
 }
 
-export interface GetMeResponse {
-  id: number
+export interface GetMeApiResponse {
+  UserMe: {
+    order_history: OrderData[]
+    user: UserTypes
+  }
+}
+
+export interface UserTypes {
+  id: number | null
   email: string
   username: string
   phone: string

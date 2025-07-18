@@ -17,9 +17,12 @@ import {
 import { navigationMap } from 'shared/model/navigation'
 import { ErrorScreen } from 'shared/ui/error-boundary'
 
+// Client Pages
 const Home = lazy(() => import('pages/home'))
 const Catalog = lazy(() => import('pages/catalog'))
 const ProductPage = lazy(() => import('pages/product-page'))
+const CartPage = lazy(() => import('pages/cart'))
+const ConfirmOrderPage = lazy(() => import('pages/confirm-order-page'))
 const News = lazy(() => import('pages/news'))
 const About = lazy(() => import('pages/about'))
 const ProfilePage = lazy(() => import('pages/profilePage'))
@@ -28,6 +31,8 @@ const SignInPage = lazy(() => import('pages/sign-in'))
 const SignUpPage = lazy(() => import('pages/sign-up'))
 const FavoritePage = lazy(() => import('pages/favorite-page'))
 const Contacts = lazy(() => import('pages/contacts'))
+
+// Admin Pages
 const AddProduct = lazy(() => import('pages/add-product-page'))
 const AddNews = lazy(() => import('pages/add-news'))
 const AdminPage = lazy(() => import('pages/admin-page'))
@@ -47,6 +52,8 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       { path: navigationMap.Catalog, element: <Catalog /> },
+
+      { path: navigationMap.ConfirmOrder, element: <ConfirmOrderPage /> },
       { path: navigationMap.News, element: <News /> },
       { path: navigationMap.About, element: <About /> },
       { path: navigationMap.NewsItem, element: <NewsPage /> },
@@ -78,6 +85,10 @@ export const router = createBrowserRouter([
           { path: `payment`, element: <Payment /> },
           { path: `reviews`, element: <Reviews /> },
         ],
+      },
+      {
+        path: navigationMap.Cart,
+        element: <CartPage />,
       },
 
       {

@@ -19,7 +19,6 @@
     "@reduxjs/toolkit": "^2.6.0",
     "@rollup/rollup-win32-x64-msvc": "^4.36.0",
     "@vitejs/plugin-react-swc": "^3.8.0",
-    "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "jscpd": "^4.0.5",
     "nanoid": "^5.1.2",
@@ -28,8 +27,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.2.0",
     "react-simple-star-rating": "^5.1.7",
-    "sass": "^1.86.0",
-    "scss": "^0.2.4"
+    "sass": "^1.86.0"
   },
   "lint-staged": {
     "**/*.{ts,tsx,js,jsx}": [

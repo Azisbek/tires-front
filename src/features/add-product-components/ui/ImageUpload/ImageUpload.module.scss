@@ -1,0 +1,18 @@
+.imageBlock {
+  .square {
+    .block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      background: rgb(217, 217, 217);
+      overflow: hidden;
+
+      .previewImg {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+}

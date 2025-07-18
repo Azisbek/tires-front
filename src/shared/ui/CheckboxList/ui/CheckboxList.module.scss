@@ -1,4 +1,7 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
   max-height: 117px;
   overflow: hidden;
 }

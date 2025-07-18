@@ -6,18 +6,11 @@
   position: relative;
   box-sizing: border-box;
 
-  padding: 0 21px 0 20px;
+  padding: 20px 21px 0 20px;
   max-width: 290px;
   border: #e5e5e5 solid 1px;
 
   background: #fff;
-
-  .image {
-    width: 100%;
-    max-width: 241px;
-    margin-top: 28px;
-    object-fit: cover;
-  }
 
   .season {
     position: absolute;
@@ -37,6 +30,7 @@
     .title {
       min-height: 64px;
       margin: 17px 0 41px;
+
       .color {
         color: #1a1e29;
       }
@@ -54,6 +48,11 @@
     gap: 10px;
     box-sizing: border-box;
     height: 40px;
+
+    .negotiable {
+      font-weight: bold;
+      color: #d97706;
+    }
 
     button {
       width: 100%;

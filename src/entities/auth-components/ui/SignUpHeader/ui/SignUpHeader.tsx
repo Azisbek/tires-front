@@ -20,12 +20,12 @@ export function SignUpHeader({ children }: Props) {
 
       {children}
 
-      <Text
+      {/* <Text
         type="medium"
         color="black"
       >
         Зарегистрируйтесь с помощью электронной почты
-      </Text>
+      </Text> */}
 
       <Text
         className={s.textContent}

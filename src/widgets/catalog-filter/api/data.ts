@@ -35,7 +35,11 @@ export const tireFilters = {
     max: 50000,
   },
   type: ['Легковые', 'Легкогрузовой (LTR)', 'Внедорожник (SUV)'],
-  season: ['Зима', 'Лето', 'Всесезонные'],
+  season: {
+    summer: 'Летние',
+    winter: 'Зимние',
+    allSeason: 'Всесезонные',
+  },
   condition: ['Только новые'],
   manufacturer: [
     'Michelin',

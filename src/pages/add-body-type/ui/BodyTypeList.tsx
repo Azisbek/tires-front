@@ -28,7 +28,8 @@ export function BodyTypeList() {
   return (
     <div className={s.container}>
       <Title
-        size="md-24"
+        size="xl-40"
+        color="orange"
         className={s.title}
       >
         Тип Кузова
@@ -45,7 +46,7 @@ export function BodyTypeList() {
         />
         <AppButton
           className={s.createBodyType}
-          variant="white"
+          variant="accent"
           onClick={handleAdd}
         >
           Добавить тип кузова

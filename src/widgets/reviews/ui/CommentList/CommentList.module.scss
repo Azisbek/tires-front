@@ -1,4 +1,9 @@
 .commentList {
   display: grid;
   gap: 8px;
+
+  .empty {
+    margin: 3rem auto 0 auto;
+    max-width: 400px;
+  }
 }
