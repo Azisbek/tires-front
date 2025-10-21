@@ -1,10 +1,25 @@
 import { configureStore } from '@reduxjs/toolkit'
 
+import { addProductSlice } from 'pages/add-product-page/model/add-product.slice'
+
+import { filtersSlice } from 'widgets/catalog-filter/model/filter.slice'
+
+import { searchSlice } from 'features/search/model/search.slice'
+
+import { signInSlice } from 'entities/account/model/auth.slice'
+
 import { $api } from 'shared/api/api'
+
+import { screenSlice } from './screen.slice'
 
 export const store = configureStore({
   reducer: {
     [$api.reducerPath]: $api.reducer,
+    [screenSlice.name]: screenSlice.reducer,
+    [signInSlice.name]: signInSlice.reducer,
+    [searchSlice.name]: searchSlice.reducer,
+    [filtersSlice.name]: filtersSlice.reducer,
+    [addProductSlice.name]: addProductSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

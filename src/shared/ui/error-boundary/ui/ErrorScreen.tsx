@@ -1,17 +1,22 @@
-import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 
 import s from './ErrorScreen.module.scss'
 
-//TODO
 export function ErrorScreen() {
   return (
-    <div className={clsx('container', s.container)}>
-      <div className={s.content}>
-        <p className={s.title}>Произошла ошибка</p>
-        <p className={s.subtitle}>
-          У нас ведутся технические работы, скоро обязательно все починим
-        </p>
-      </div>
+    <div className={s.container}>
+      <h1 className={s.title}>Пшш…Страница не найдена </h1>
+      <img
+        src="/src/shared/assets/icons/404.svg"
+        className={s.errImage}
+        alt="error 404 image"
+      />
+      <Link
+        to="/"
+        className={s.link}
+      >
+        Перейти на главную страницу
+      </Link>
     </div>
   )
 }

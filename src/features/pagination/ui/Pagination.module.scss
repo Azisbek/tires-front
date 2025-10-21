@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  gap: 16px;
+
+  .blueText {
+    color: #4c65bd;
+    background: none;
+    border: none;
+    padding: 12px;
+  }
+  .active {
+    color: rgb(255, 126, 0);
+  }
+
+  .arrows {
+    padding: 12px 24px;
+  }
+}

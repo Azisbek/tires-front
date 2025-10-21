@@ -1,0 +1,64 @@
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #3e465f;
+
+  .title {
+    margin-bottom: 16px;
+  }
+
+  .inputContainer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .enterBodyType {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .enterBodyType:focus {
+    border-color: #d69f46;
+  }
+
+  .error {
+    color: red;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .labelWrapper {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .label {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .value {
+    color: #888;
+    font-size: 14px;
+    font-style: italic;
+  }
+}

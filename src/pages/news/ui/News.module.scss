@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1252px;
+  padding: 0 20px 80px 20px;
+
+  .title {
+    padding: 20px 0;
+  }
+
+  .empty {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto 80px auto;
+  }
+
+  .btn {
+    margin: 32px auto 86px auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 25px;
+    }
+  }
+}

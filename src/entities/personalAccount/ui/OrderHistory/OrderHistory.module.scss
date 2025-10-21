@@ -1,0 +1,66 @@
+.title {
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+thead {
+  background-color: #ffe9d5;
+  font-weight: bold;
+}
+
+.status_paid {
+  color: #12bb9d;
+}
+
+.status_cancelled {
+  color: #df3c18;
+}
+
+.arrow {
+  text-align: right;
+  color: #4c65bd;
+  cursor: pointer;
+}
+
+.modalContent {
+  padding: 10px;
+  max-width: 600px;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.productsTitle {
+  margin-top: 10px;
+}
+
+.productsList {
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+}
+
+.productItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.empty {
+  max-width: 400px;
+}

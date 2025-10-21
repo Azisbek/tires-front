@@ -1,0 +1,43 @@
+.title {
+  margin-bottom: 24px;
+}
+
+.container {
+  box-shadow:
+    0px 8px 32px 0px rgba(255, 126, 0, 0.16),
+    0px 2px 4px 0px rgba(172, 85, 0, 0.08);
+  background: rgb(255, 255, 255);
+  padding: 24px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .buttons {
+    display: flex;
+    gap: 16px;
+
+    .btn {
+      width: 192px;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .prices {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;
+
+    .subTitle {
+      color: rgb(26, 30, 41);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

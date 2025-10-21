@@ -1,0 +1,38 @@
+.comment {
+  display: flex;
+  gap: 80px;
+  border: 1px solid #e5e5e5;
+  padding: 16px 24px;
+  max-width: 1224px;
+  max-width: 100%;
+
+  .commentUser {
+    display: grid;
+    gap: 10px;
+
+    .generalGrade {
+      display: grid;
+      gap: 5px;
+    }
+  }
+
+  .description {
+    max-width: 850px;
+    width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  @media (max-width: 768px) {
+    display: grid;
+    gap: 16px;
+
+    .reviewUser {
+      .generalGrade {
+        display: flex;
+        gap: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.adminLayout {
+  position: relative;
+  background-color: #3e465f;
+  height: 100%;
+  min-height: 100svh;
+}
+
+.adminBackBtn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 2px solid white;
+  background-color: #3e465f;
+  color: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}

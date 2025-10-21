@@ -1,0 +1,52 @@
+.OurPartners {
+  max-width: 1212px;
+  text-align: center;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .logo {
+      margin: 10px 20px;
+      height: 46.08px;
+      transition: all 0.3s ease-in-out;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .OurPartners {
+      margin-bottom: 50px;
+
+      .title {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 30px;
+      }
+
+      .logos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(15, auto);
+        gap: 10px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 20px 0;
+        place-items: center;
+      }
+    }
+  }
+}

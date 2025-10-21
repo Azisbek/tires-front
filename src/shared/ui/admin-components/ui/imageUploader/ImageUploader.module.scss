@@ -1,0 +1,63 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  label {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.photosWrapper {
+  display: flex;
+  max-width: 250px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.photoBg {
+  background: #d9d9d9;
+}
+.w315 {
+  width: 315px;
+  height: 258px;
+}
+.w120 {
+  width: 120px;
+  height: 100px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.addButton {
+  color: #ff7e00;
+  cursor: pointer;
+}
+
+.controls {
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  gap: 5px;
+  label {
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .removeButton {
+    font-weight: 500;
+    font-size: 13px;
+    width: 50px;
+    cursor: pointer;
+    color: rgb(203, 80, 80);
+    margin: 0;
+  }
+}
+
+.error {
+  font-size: 14px;
+  font-weight: 400;
+  color: red;
+  max-width: 315px;
+}

@@ -1,0 +1,46 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+  .empty {
+    width: 400px;
+    margin: 30px auto;
+  }
+
+  .title {
+    margin: 25px 0;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 1120px) {
+    max-width: 780px;
+  }
+
+  @media (max-width: 830px) {
+    .content {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 25px;
+    }
+
+    .content {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}

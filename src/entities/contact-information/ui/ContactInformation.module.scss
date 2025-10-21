@@ -1,0 +1,19 @@
+.container {
+  max-width: 392px;
+  width: 100%;
+
+  .text {
+    padding-bottom: 24px;
+    padding-top: 8px;
+  }
+  .email {
+    color: rgb(76, 101, 189);
+    padding-bottom: 24px;
+    padding-top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    text-align: start;
+  }
+}

@@ -1,0 +1,27 @@
+name: Codeball PR rating
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    # по желанию: ограничить на пути
+    # paths:
+    #   - 'src/**'
+    #   - '!docs/**'
+
+permissions:
+  contents: read # чтение кода
+  pull-requests: write # нужно, если хотим ставить approve / комментировать
+  issues: write # если хотим проставлять label'ы
+
+jobs:
+  codeball:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Codeball action
+        uses: sturdy-dev/codeball-action@v2
+        with:
+          # Базовые опции — начни с безопасных:
+          approvePullRequests: 'false' # не аппрувим автоматически на старте
+          labelPullRequestsWhenApproved: 'true' # добавить метку, когда approve (если включим)
+          labelPullRequestsWhenReviewNeeded: 'true'
+          failJobsWhenReviewNeeded: 'false' # не фейлить job'ы при "needs review"

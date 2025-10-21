@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  .orange {
+    color: rgb(255, 126, 0);
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .black {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .check {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 126, 0);
+    animation: hideActive 0.3s forwards;
+  }
+
+  .activeCheck {
+    background-color: rgb(255, 126, 0);
+    animation: showActive 0.3s forwards;
+  }
+}
+
+@keyframes showActive {
+  from {
+    background-color: transparent;
+    transition: opacity 0.3s ease-in-out;
+  }
+  to {
+    background-color: rgb(255, 126, 0);
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+@keyframes hideActive {
+  from {
+    background-color: rgb(255, 126, 0);
+    transition: opacity 0.3s ease-in-out;
+  }
+  to {
+    background-color: transparent;
+    transition: opacity 0.3s ease-in-out;
+  }
+}

@@ -1,0 +1,40 @@
+.container {
+  max-width: 1224px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  padding: 0 20px;
+  padding-bottom: 80px;
+
+  .title {
+    margin: 24px;
+  }
+
+  .text {
+    margin: 28px;
+  }
+
+  .productList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+    margin-bottom: 110px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+
+    .title {
+      text-align: center;
+    }
+
+    .text {
+      display: none;
+    }
+
+    .productList {
+      justify-content: center;
+    }
+  }
+}

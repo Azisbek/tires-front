@@ -1,0 +1,31 @@
+.contactsContainer {
+  max-width: 1252px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+
+  .contacts {
+    display: grid;
+    grid-template-columns: minmax(0px, 2fr) minmax(150px, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+
+    .img {
+      max-width: 808px;
+      width: 100%;
+      border: 1px solid rgb(229, 229, 229);
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 392px;
+    display: grid;
+    text-align: center;
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
