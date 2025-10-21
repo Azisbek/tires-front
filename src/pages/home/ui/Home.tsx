@@ -15,10 +15,10 @@ import { useGetHomeProductQuery } from '../api'
 import s from './Home.module.scss'
 
 export function Home() {
-  const { data } = useGetHomeProductQuery()
+  const { data, isLoading } = useGetHomeProductQuery()
   const navigate = useNavigate()
 
-  if (!data) return <SkeletonPage />
+  if (isLoading) return <SkeletonPage />
 
   return (
     <>
@@ -26,7 +26,7 @@ export function Home() {
 
       <HomeFilter filters={data?.filters} />
 
-      {data?.popular.length > 0 && (
+      {data && data?.popular.length > 0 && (
         <div className={s.section}>
           <h2 className={s.title}>Популярные шины</h2>
 
@@ -44,7 +44,7 @@ export function Home() {
         </div>
       )}
 
-      {data?.promotion.length > 0 && (
+      {data && data?.promotion.length > 0 && (
         <div className={s.promotion}>
           <NewsListWithSkeleton
             emptyTitle="Нет акций"
